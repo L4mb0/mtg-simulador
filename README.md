@@ -5,24 +5,35 @@ Simuladores Monte Carlo de los mazos de Commander de Juan (Gandalf, Gorma, Giada
 ```
 git clone --depth 1 https://github.com/L4mb0/mtg-simulador
 cd mtg-simulador
-PYTHONHASHSEED=0 python3 linea_base.py          # cada mazo contra su número de referencia
-cd decks/<mazo> && PYTHONHASHSEED=0 python3 tests.py   # pruebas (Giada compara contra semillas guardadas con esta variable)
+python3 sim.py blor                                   # lista vigente en sus mesas por defecto
+python3 sim.py gorma -m B2,B3,B4 -n 6000 -g           # varias mesas + goldfish
+python3 sim.py blor -k "Rancor>Sylvan Library" "Explore>Ancient Tomb"   # candidatas, pareadas contra la base
+python3 sim.py gandalf -c "Shock>Needle Drop" --nuevas                  # cambio verificado con semillas nuevas
+python3 sim.py giada -L                               # listas y mesas disponibles
+python3 linea_base.py                                 # cada mazo contra su número de referencia
+cd decks/<mazo> && PYTHONHASHSEED=0 python3 tests.py  # pruebas de reglas de un mazo
 ```
+
+`sim.py` imprime un resumen de pocas líneas; cada partida y cada comparación quedan en `resultados/` (no va al repo).
+Se relanza solo con `PYTHONHASHSEED=0`, que es lo que hace reproducibles los números.
 
 ## Estructura
 
 | Carpeta | Qué hay |
 |---|---|
-| `decks/gandalf/` | Gandalf, Goblins' Bane (spellslinger). `lab.py` corre partidas, `gandalf_1.6.txt` es la lista vigente, `audit.py` revisa identidad de color contra `texts.json` |
-| `decks/gorma/` | Gorma (Witherbloom, aristócratas + persist). `gorma_ejemplo.py` tiene base, candidata, ablación y ruta |
-| `decks/giada/` | Giada (ángeles). `v2runs.py` tiene base, ablación, candidatas y verificación en la mesa v2 |
-| `decks/blight/` | Blight Curse (contadores -1/-1). `runs.py <fase>`; la mesa v2 está en `mesa2.py` |
-| `decks/blor/` | Blor the Impervious (voltron). `decks.py` tiene todas las versiones; `runs.py <paso>` |
-| `core/` | Base de cartas generada desde Forge (`cards_db.json`) y la comparación con los `cards.py` |
+| `sim.py` | Punto de entrada único: lista, mesas, cambios, candidatas, semillas nuevas |
+| `core/mesa.py` | **Fuente única de la mesa v2**: relojes, remoción, counters, barridas, odio, curva rival y tipos de victoria por bracket; receta de la Mazmorra; reloj (`attempt_p`) y sorteo (`pick`). `DESVIOS` lista lo que cada mazo hace distinto |
+| `core/harness.py` | Lotes con semillas fijas, comparación pareada e intervalos al 95% |
+| `core/cards_db.json` | Base de cartas generada desde Forge y su comparación con los `cards.py` |
+| `decks/<mazo>/` | Motor, cartas, IA y la parte de la mesa propia del mazo (pesos por carta, blancos). `adaptador.py` conecta el mazo con `sim.py` |
+| `tools/huella.py` | Para refactorizar: 150 partidas por mesa y mazo que tienen que salir idénticas |
 
-Cada simulador está **tal cual** venía del Project de Claude (fase 1 de la migración); solo se cambiaron rutas fijas.
-La explicación de las reglas de cada mesa y el checklist de auditoría siguen en el Project
-(`claude/simulador-montecarlo.md`).
+Mazos: `gandalf` (Goblins' Bane, spellslinger), `gorma` (Witherbloom, aristócratas + persist), `giada` (ángeles),
+`blight` (Blight Curse, contadores -1/-1), `blor` (voltron). Las reglas de cada mesa y el checklist de auditoría
+están en el Project de Claude (`claude/simulador-montecarlo.md`).
+
+**Para agregar un mazo:** su carpeta en `decks/` con motor y cartas, tablas de mesa armadas desde `core/mesa.py`,
+y un `adaptador.py` con `SEED0`, `LISTAS`, `DEFAULT`, `MESAS`, `DEFAULT_MESAS`, `lista()`, `conoce()` y `_one()`.
 
 ## Base de cartas (fase 2)
 

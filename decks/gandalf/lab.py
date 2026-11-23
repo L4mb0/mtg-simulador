@@ -1,7 +1,9 @@
 import os, sys, math, statistics
 from multiprocessing import Pool
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 import table, engine, ai
+from core import harness as H
 from cards import C, OFF_COLOR
 
 def load(path):
@@ -34,7 +36,7 @@ def run(deck, n, seed0, mesa, procs=None):
     for z in sz:
         jobs.append((deck, mesa, s0, z)); s0 += z
     with Pool(procs) as p:
-        return [x for part in p.map(_one, jobs) for x in part]
+        return [x for part in H.run_batch(_one, jobs, p, chunksize=1) for x in part]
 
 def gf(deck, n=2000):
     ts = [ai.play_game(deck, "C", 700000 + i)[0] for i in range(n)]

@@ -1,4 +1,7 @@
 import math, statistics, sys
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import harness as H
 from multiprocessing import Pool
 from engine import play, TableCfg
 
@@ -15,9 +18,7 @@ def _one(args):
 
 def run(deck, N, mode="table", cfg=None, mull="guide", seed0=SEED0, pool=None):
     args = [(deck, seed0 + i, mode, cfg, mull) for i in range(N)]
-    if pool:
-        return pool.map(_one, args, chunksize=200)
-    return [_one(a) for a in args]
+    return H.run_batch(_one, args, pool, chunksize=200)
 
 
 def summary(res):
@@ -32,14 +33,8 @@ def summary(res):
 
 def paired(a, b, idx=0):
     """mean difference b-a (pts) with 95% CI half-width"""
-    d = [(y[idx] - x[idx]) for x, y in zip(a, b)]
-    m = statistics.mean(d)
-    sd = statistics.pstdev(d)
-    return 100 * m, 100 * 1.96 * sd / math.sqrt(len(d))
+    return H.paired(a, b, idx)
 
 
 def paired_turn(a, b):
-    d = [(y[1] - x[1]) for x, y in zip(a, b)]
-    m = statistics.mean(d)
-    sd = statistics.pstdev(d)
-    return m, 1.96 * sd / math.sqrt(len(d))
+    return H.paired(a, b, 1, scale=1)

@@ -1,4 +1,7 @@
 import math, statistics
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import harness as H
 from engine import play, TableCfg
 
 SEED0 = 700_000
@@ -16,9 +19,7 @@ def _one(args):
 
 def run(deck, N, mode="table", cfg=None, policy=None, seed0=SEED0, pool=None):
     args = [(deck, seed0 + i, mode, cfg, policy) for i in range(N)]
-    if pool:
-        return pool.map(_one, args, chunksize=100)
-    return [_one(a) for a in args]
+    return H.run_batch(_one, args, pool, chunksize=100)
 
 
 def summary(res):
@@ -36,12 +37,8 @@ def summary(res):
 
 
 def paired(a, b, key="win"):
-    d = [(y[key] - x[key]) for x, y in zip(a, b)]
-    m = statistics.mean(d)
-    sd = statistics.pstdev(d)
-    return 100 * m, 100 * 1.96 * sd / math.sqrt(len(d))
+    return H.paired(a, b, key)
 
 
 def paired_turn(a, b):
-    d = [(y["wt"] - x["wt"]) for x, y in zip(a, b)]
-    return statistics.mean(d), 1.96 * statistics.pstdev(d) / math.sqrt(len(d))
+    return H.paired(a, b, "wt", scale=1)

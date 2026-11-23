@@ -1,5 +1,8 @@
 """Batch runner: same seeds for paired comparisons, IC 95%, multiprocessing (same pattern as Gorma/Giada/Blight)."""
 import math
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import harness as H
 from multiprocessing import Pool
 from engine import play, TableCfg
 
@@ -18,9 +21,7 @@ def _one(args):
 
 def run(deck, N=4000, mode="table", cfg=None, mull="guide", seed0=SEED0, pool=None):
     args = [(deck, seed0 + i, mode, cfg, mull) for i in range(N)]
-    if pool is None:
-        return [_one(a) for a in args]
-    return pool.map(_one, args, chunksize=200)
+    return H.run_batch(_one, args, pool, chunksize=200)
 
 
 def summary(res):
@@ -30,7 +31,7 @@ def summary(res):
     turns = [r["turn"] for r in w]
     k1 = [r["k1"] for r in res if r["k1"]]
     bts = [r["bt"] for r in res if r["bt"]]
-    return dict(n=n, win=100 * p, ci=100 * 1.96 * math.sqrt(p * (1 - p) / n),
+    return dict(n=n, win=100 * p, ci=H.win_ci(len(w), n)[1],
                 mean_turn=sum(turns) / len(turns) if turns else None,
                 k8=100 * sum(1 for t in turns if t <= 8) / n,
                 k10=100 * sum(1 for t in turns if t <= 10) / n,
@@ -45,22 +46,12 @@ def summary(res):
 
 def paired(a, b):
     """mean difference b-a in win points (pp), with 95% CI."""
-    d = [(1 if y["win"] else 0) - (1 if x["win"] else 0) for x, y in zip(a, b)]
-    n = len(d)
-    m = sum(d) / n
-    sd = math.sqrt(sum((x - m) ** 2 for x in d) / (n - 1))
-    return 100 * m, 100 * 1.96 * sd / math.sqrt(n)
+    return H.paired(a, b, "win")
 
 
 def paired_turn(a, b, cap=20):
     """goldfish: mean kill-turn difference b-a (no win = cap+1)."""
-    ta = [x["turn"] if x["win"] else cap + 1 for x in a]
-    tb = [x["turn"] if x["win"] else cap + 1 for x in b]
-    d = [y - x for x, y in zip(ta, tb)]
-    n = len(d)
-    m = sum(d) / n
-    sd = math.sqrt(sum((x - m) ** 2 for x in d) / (n - 1))
-    return m, 1.96 * sd / math.sqrt(n)
+    return H.paired(a, b, lambda r: r["turn"] if r["win"] else cap + 1, scale=1)
 
 
 def cast_rate(res, card):
