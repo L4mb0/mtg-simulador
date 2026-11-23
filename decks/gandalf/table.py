@@ -36,40 +36,44 @@ def reserve(s, n):
             out.append(got)
     return out
 
-OPP_CURVE = {"B1": (-0.1, 0.1, 0.8), "B2": (0.0, 0.1, 0.9), "B3": (0.1, 0.1, 1.0), "B4": (0.2, 0.1, 1.1), "B5": (0.3, 0.1, 1.2)}
+# Parámetros por bracket: fuente única en core/mesa.py (aquí se arman las tablas con el formato de Gandalf)
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import mesa as M
+OPP_CURVE = {b: v["curve"] for b, v in M.BRACKETS.items()}
 # nb (22/11): fraccion de tierras no basicas de los rivales, para Price of Progress (supuesto de Claude)
-NB = {"B1": 0.2, "B2": 0.35, "B3": 0.5, "B4": 0.65, "B5": 0.8}
-def _ix(rem, cpt, blue, cnt, wipes, wlo, whi, gyh, gyh_perm, arth, arch=0.3, curve="B3", tau=0.3, noise=0.2, cnt_up=0.75):
+NB = {b: v["nb"] for b, v in M.BRACKETS.items()}
+def _ix(rem, cpt, blue, cnt, wipes, wlo, whi, gyh, gyh_perm, arth, arch=M.ARCH, curve="B3", tau=M.TAU, noise=M.NOISE, cnt_up=M.CNT_UP):
     v0, dv, vmax = OPP_CURVE[curve]
     return dict(opp_v0=v0, opp_dv=dv, opp_vmax=vmax, opp_noise=noise, tau=tau,
-                rem=rem, cpt=cpt, blue=blue, cnt=cnt, cnt_up=cnt_up, p_inst=0.5,
+                rem=rem, cpt=cpt, blue=blue, cnt=cnt, cnt_up=cnt_up, p_inst=M.P_INST,
                 wipes=wipes, wipe_lo=wlo, wipe_hi=whi, gyh=gyh, gyh_perm=gyh_perm, gyh_lo=wlo - 1, gyh_hi=whi + 1,
                 arth=arth, arth_lo=wlo - 1, arth_hi=whi + 1, arch=arch, nb=NB[curve])
-BRACKETS = {
-    "B1": (dict(mus=[10, 11, 12], spread=0.9, a=0.7, delay=2), _ix(5, 1.1, 1, 3, 2, 6, 10, 0.05, 0.0, 0.10, curve="B1")),
-    "B2": (dict(mus=[9, 10, 11], spread=0.9, a=0.7, delay=2), _ix(5, 1.2, 1, 3, 2, 5, 9, 0.10, 0.2, 0.15, curve="B2")),
-    "B3": (dict(mus=[7, 8, 9], spread=0.9, a=0.7, delay=2), _ix(5, 1.3, 1, 5, 2, 4, 8, 0.20, 0.3, 0.25, curve="B3")),
-    "B4": (dict(mus=[5, 6, 7], spread=0.9, a=0.7, delay=2), _ix(5, 1.5, 1, 7, 2, 4, 7, 0.35, 0.4, 0.35, curve="B4")),
-    "B5": (dict(mus=[3, 4, 4], spread=0.9, a=0.7, delay=2), _ix(4, 2.0, 2, 10, 1, 3, 6, 0.50, 0.5, 0.40, curve="B5")),
-    "B3+B4": (dict(mus=[5, 8, 9], spread=0.9, a=0.7, delay=2), _ix(5, 1.4, 1, 6, 2, 4, 8, 0.25, 0.3, 0.30, curve="B3")),
-}
-TIME_TURNS = [(6, 0.2), (7, 0.4), (8, 0.4)]
-def _mz(mus, spread=1.0, delay=2, retry=0.7, delay_turbo=1, retry_turbo=0.85, p_partial=0.4, rem=7, cnt=8, cpt=1.5,
-        edict=3 / 11, edict_rate=0.35, ld=3 / 11, ld_rate=0.5, rem_stop=0.4, rem_slows=0.0,
-        time_turns=TIME_TURNS, me_life=(25, 38), opp_other_dmg=(0, 15)):
-    ix = _ix(rem, cpt, 1, cnt, 2, 4, 7, 0.30, 0.4, 0.35, curve="B4")
-    ix.update(edict=edict, edict_rate=edict_rate, ld=ld, ld_rate=ld_rate, rem_slows=rem_slows, nb=0.7)
+def _br(b):
+    v = M.BRACKETS[b]
+    return (dict(mus=list(v["mus"]), spread=M.SPREAD, a=0.7, delay=M.DELAY),
+            _ix(v["rem"], v["cpt"], v["blue"], v["cnt"], v["wipes"], v["wipe_lo"], v["wipe_hi"], v["gyh"], v["gyh_perm"],
+                v["arth"], curve=b))
+BRACKETS = {b: _br(b) for b in M.BRACKETS}
+_Z = M.MAZMORRA
+TIME_TURNS = [tuple(x) for x in _Z["time_turns"]]
+# Desvíos de Gandalf en la Mazmorra (core.mesa.DESVIOS): odio a cementerio 0,30 (B4 dice 0,35) y tierras no básicas 0,7
+MZ_GYH, MZ_NB = 0.30, 0.7
+def _mz(mus, spread=_Z["spread"], delay=_Z["delay"], retry=_Z["retry"], delay_turbo=_Z["delay_turbo"],
+        retry_turbo=_Z["retry_turbo"], p_partial=_Z["p_partial"], rem=_Z["rem"], cnt=_Z["cnt"], cpt=_Z["cpt"],
+        edict=_Z["edict"][0], edict_rate=_Z["edict"][1], ld=_Z["strip"][0], ld_rate=_Z["strip"][1],
+        rem_stop=_Z["rem_stop"], rem_slows=0.0, time_turns=TIME_TURNS, me_life=_Z["me_life"], opp_other_dmg=_Z["opp_other_dmg"]):
+    b4 = M.BRACKETS["B4"]
+    ix = _ix(rem, cpt, 1, cnt, _Z["wipes"], b4["wipe_lo"], b4["wipe_hi"], MZ_GYH, b4["gyh_perm"], b4["arth"], curve="B4")
+    ix.update(edict=edict, edict_rate=edict_rate, ld=ld, ld_rate=ld_rate, rem_slows=rem_slows, nb=MZ_NB)
     return (dict(mus=list(mus), spread=spread, a=0.7, delay=delay, retry=retry, delay_turbo=delay_turbo, retry_turbo=retry_turbo,
                  p_partial=p_partial, rem_stop=rem_stop, time_turns=time_turns, me_life=me_life, opp_other_dmg=opp_other_dmg), ix)
-BRACKETS["Mazmorra"] = _mz([4, 5, 6], rem_slows=0.5)
+BRACKETS["Mazmorra"] = _mz(_Z["mus"], rem_slows=_Z["rem_slows"])
 
-P_REM_STOP = 0.4
-RETRY = 0.7
-def _F(t, mu, sp):
-    return 1 / (1 + math.exp(-(t + 0.5 - mu) / sp))
-def attempt_p(t, mu, sp):
-    f0 = _F(t - 1, mu, sp)
-    return (_F(t, mu, sp) - f0) / max(1e-9, 1 - f0)
+P_REM_STOP = M.P_REM_STOP
+RETRY = M.RETRY
+_F = M.F
+attempt_p = M.attempt_p
 
 SEARCH_KILL = [8]
 KRARK_VOTES = [5]   # 17/11 (rehecho 22/11): con Krark el piloto decide el all-in con 5 tiradas nuevas, no con las monedas reales

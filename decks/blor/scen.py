@@ -60,30 +60,20 @@ BASE = dict(BASE, target="open", deterrence=0.7)
 # combate ~55% + dano de comandante ~10% + veneno ~1% -> combat 0.66; dano no de combate ~19% -> dmg 0.10 / loss 0.09
 # (Playgroup no separa dano directo de perdida de vida: mitad y mitad, estimado); combo ~7% + alternativa ~6% + mill ~2% -> 0.15.
 # Playgroup no lo separa por bracket: B4 y B5 corridos hacia el combo (estimado).
-WT_CASUAL = (("combat", 0.66), ("dmg", 0.10), ("loss", 0.09), ("combo", 0.15))
-WT_B4 = (("combat", 0.55), ("dmg", 0.10), ("loss", 0.10), ("combo", 0.25))
-WT_B5 = (("combat", 0.25), ("dmg", 0.05), ("loss", 0.05), ("combo", 0.65))
-# el azul (Juan 15/11): comandantes azules en Playgroup (180 dias, 9.344 partidas): combate 41,0 + comandante 6,4 + veneno 1,8
-# -> 0.49; dano no de combate 10,1 -> 0.05 / 0.05; alternativa 17,5 + combo 12,0 + mill 11,2 -> 0.41. B4/B5 corridos al combo.
-WB_CASUAL = (("combat", 0.49), ("dmg", 0.05), ("loss", 0.05), ("combo", 0.41))
-WB_B4 = (("combat", 0.40), ("dmg", 0.05), ("loss", 0.05), ("combo", 0.50))
-WB_B5 = (("combat", 0.15), ("dmg", 0.03), ("loss", 0.02), ("combo", 0.80))
-BRACKETS = {
-    "B1": dict(BASE, bracket="B1", win_blue=WB_CASUAL, mus=(10, 11, 12), win_types=WT_CASUAL, aem=0.2, opp_curve=(-0.1, 0.1, 0.8), rem=5, cpt=1.1, wipes=2, cnt=3),
-    "B2": dict(BASE, bracket="B2", win_blue=WB_CASUAL, mus=(9, 10, 11), win_types=WT_CASUAL, aem=0.25, opp_curve=(0.0, 0.1, 0.9), rem=5, cpt=1.2, wipes=2, cnt=3),
-    "B3": dict(BASE, bracket="B3", win_blue=WB_CASUAL, mus=(7, 8, 9), win_types=WT_CASUAL, aem=0.3, opp_curve=(0.1, 0.1, 1.0), rem=5, cpt=1.3, wipes=2, cnt=5),
-    "B4": dict(BASE, bracket="B4", win_blue=WB_B4, mus=(5, 6, 7), win_types=WT_B4, aem=0.35, opp_curve=(0.2, 0.1, 1.1), rem=5, cpt=1.5, wipes=2, cnt=7),
-    "B5": dict(BASE, bracket="B5", win_blue=WB_B5, mus=(3, 4, 4), win_types=WT_B5, aem=0.4, opp_curve=(0.3, 0.1, 1.2), rem=4, cpt=2.0, wipes=1, cnt=10, n_blue=2),
-    "B3+B4": dict(BASE, bracket="B3+B4", win_blue=WB_CASUAL, mus=(5, 8, 9), win_types=WT_CASUAL, aem=0.3, opp_curve=(0.1, 0.1, 1.0), rem=5, cpt=1.4, wipes=2, cnt=6),
-}
-# ---- mesa "Mazmorra" (torneo B3 de La Mazmorra TCG; claude/mesa-mazmorra.md, receta del 16/11; portada 19/11) ----
-# reglas 1-3: relojes 4/5/6 (dispersion 1,0), 7 remociones, azul con 8 counters, 1,5 cartas por turno, curva de B4.
-# Tipo de victoria: el reparto de B4 (mas combo que B3; los mazos son cEDH ajustados al bracket). Regla 8 (tiempo): apagada.
-MZ = dict(BRACKETS["B3"], bracket="Mazmorra", mz=True, mus=(4, 5, 6), spread=1.0, rem=7, cnt=8, cpt=1.5,
-          opp_curve=(0.2, 0.1, 1.1), wipes=2, aem=0.35, win_types=WT_B4, win_blue=WB_B4)
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import mesa as M
+WT_CASUAL, WT_B4, WT_B5, WB_CASUAL, WB_B4, WB_B5 = M.WT_CASUAL, M.WT_B4, M.WT_B5, M.WB_CASUAL, M.WB_B4, M.WB_B5
+BRACKETS = {b: dict(BASE, **M.cfg_v2(b)) for b in M.BRACKET_NAMES}
+# ---- mesa "Mazmorra" (torneo B3 de La Mazmorra TCG; core.mesa.MAZMORRA; portada 19/11) ----
+# Parte de B3 y toma de la receta relojes, dispersión, remoción, counters, cartas por turno, curva, barridas,
+# odio masivo y tipos de victoria (los de B4). Regla 8 (tiempo): apagada.
+_Z = M.MAZMORRA
+MZ = dict(BRACKETS["B3"], bracket="Mazmorra", mz=True, mus=_Z["mus"], spread=_Z["spread"], rem=_Z["rem"], cnt=_Z["cnt"],
+          cpt=_Z["cpt"], opp_curve=_Z["curve"], wipes=_Z["wipes"], aem=_Z["aem"], win_types=_Z["wt"], win_blue=_Z["wb"])
 BRACKETS["Mazmorra"] = MZ
-BRACKETS["Mazmorra optimista"] = dict(MZ, mus=(4, 5, 7))
-BRACKETS["Mazmorra pesimista"] = dict(MZ, mus=(3, 5, 6))
+for _n, _v in M.MAZMORRA_VARIANTES.items():
+    BRACKETS[_n] = dict(MZ, **_v)
 SCEN.update(BRACKETS)
 
 

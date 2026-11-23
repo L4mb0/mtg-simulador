@@ -10,6 +10,9 @@ rival combat, p_others), with a voltron combat engine for our side:
 Abstractions and calibration: see simulador-montecarlo.md (section 12).
 """
 import random
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import mesa as M
 from dataclasses import dataclass, field
 from itertools import combinations
 from cards import C, LANDS, COMMANDER, is_land
@@ -794,8 +797,8 @@ class Game:
     def key_spell(self, c):
         return c == B or (sum(C[c]["cost"]) >= 5 and C[c]["t"] in ("aura", "equip", "cre", "sorc"))
 
-    CNT_BY_CMC = {0: 0.02, 1: 0.02, 2: 0.05, 3: 0.15}     # regla 9: hechizos que no son clave, segun su costo (Gandalf)
-    CNT_HI = 0.3
+    CNT_BY_CMC = M.COUNTER_BY_MV     # regla 9: hechizos que no son clave, segun su costo (Gandalf)
+    CNT_HI = M.COUNTER_HI
 
     def flail_locks(self):
         return self.equip_on_blor("Conqueror's Flail") or any(e["name"] == "Conqueror's Flail" and e["on"] and e.get("cre")
@@ -2551,22 +2554,10 @@ class Game:
             return cres + blor
         return cres + blor + perms * (1.0 if sub == "exile_ae" else 0.5)   # Farewell / Rift
 
-    @staticmethod
-    def pick_r(rng, table):
-        r = rng.random()
-        for k, p in table:
-            r -= p
-            if r < 0:
-                return k
-        return table[-1][0]
+    pick_r = staticmethod(M.pick)
 
     def pick(self, table):
-        r = self.rng.random()
-        for k, p in table:
-            r -= p
-            if r < 0:
-                return k
-        return table[-1][0]
+        return M.pick(self.rng, table)
 
     AEM_OWN = {"art": 0.0, "both": 0.2, "ench": 0.2}    # Vandalblast con overload es solo de los oponentes
 
@@ -2753,16 +2744,12 @@ class Game:
 
     MU_SHIFT = {"combat": 0.4, "dmg": -0.5, "loss": -0.5, "combo": -1.5}   # Playgroup: combo gana ~2 rondas antes
 
-    @staticmethod
-    def _F(t, mu, sp):
-        import math
-        return 1 / (1 + math.exp(-(t + 0.5 - mu) / sp))
+    _F = staticmethod(M.F)
 
     def attempt_p(self, t, mu):
-        f0 = self._F(t - 1, mu, self.cfg.spread)
-        return (self._F(t, mu, self.cfg.spread) - f0) / max(1e-9, 1 - f0)
+        return M.attempt_p(t, mu, self.cfg.spread)
 
-    P_REM_STOP = 0.4
+    P_REM_STOP = M.P_REM_STOP
 
     def others_stop(self, i):
         """regla 11 (como Gandalf): antes que tus respuestas, los OTROS rivales frenan el intento de i con lo que guardaron.
@@ -2953,8 +2940,8 @@ class Game:
         return self.cfg.rem_types[-1][0]
 
     # ---------------- regla 4 (14/11): a quien va la remocion (estructura de Forge, pesos de Juan) ----------------
-    REM_THR = 0.5
-    KEEP_LAST = 0.4
+    REM_THR = M.REM_THR
+    KEEP_LAST = M.KEEP_LAST
 
     def our_target(self, kind, i):
         """mejor blanco LEGAL nuestro para una remocion de este tipo, visto por el rival i: (peso, accion) o None"""

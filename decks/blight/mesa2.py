@@ -44,47 +44,45 @@ W_DEFAULT = 0.2
 W_TOKEN = 0.05          # una ficha suelta: solo cuenta para las barridas
 W_COMBO = 0.7           # Blowfly + motor en mesa
 WARD_COST = 0.1
-ARCH = 0.3
 
 # ---------------------------------------------------------------- brackets
 # curve = (v0, dv, vmax): motor no-criatura de cada rival (misma escala que tus piezas)
 # size/grow: tamaño y ritmo de las criaturas rivales; rem/wipes/cnt por mazo (Archidekt por bracket, guía 5.1)
-MIX13 = (0.66, 0.10, 0.09, 0.15)      # combate, daño directo, pérdida de vida, combo/alternativa (Playgroup 2026)
-MIX4 = (0.55, 0.10, 0.10, 0.25)
-MIX5 = (0.25, 0.05, 0.05, 0.65)
-BLUE13, BLUE4, BLUE5 = (0.49, 0.05, 0.05, 0.41), (0.40, 0.05, 0.05, 0.50), (0.15, 0.03, 0.02, 0.80)
-BRACKETS = {
-    "B1": dict(mus=(10, 11, 12), cpt=1.1, rem=5, blue=1, cnt=3, wipes=2, gyh=0.05, size=0.85, grow=0.70,
-               curve=(-0.1, 0.1, 0.8), mix=MIX13, bmix=BLUE13),
-    "B2": dict(mus=(9, 10, 11), cpt=1.2, rem=5, blue=1, cnt=3, wipes=2, gyh=0.10, size=1.00, grow=0.75,
-               curve=(0.0, 0.1, 0.9), mix=MIX13, bmix=BLUE13),
-    "B3": dict(mus=(7, 8, 9), cpt=1.3, rem=5, blue=1, cnt=5, wipes=2, gyh=0.20, size=1.15, grow=0.80,
-               curve=(0.1, 0.1, 1.0), mix=MIX13, bmix=BLUE13),
-    "B4": dict(mus=(5, 6, 7), cpt=1.5, rem=5, blue=1, cnt=7, wipes=2, gyh=0.35, size=1.30, grow=0.85,
-               curve=(0.2, 0.1, 1.1), mix=MIX4, bmix=BLUE4),
-    "B5": dict(mus=(3, 4, 4), cpt=2.0, rem=4, blue=2, cnt=10, wipes=1, gyh=0.50, size=1.30, grow=0.85,
-               curve=(0.3, 0.1, 1.2), mix=MIX5, bmix=BLUE5),
-    "B3+B4": dict(mus=(5, 8, 9), cpt=1.4, rem=5, blue=1, cnt=6, wipes=2, gyh=0.25, size=1.20, grow=0.80,
-                  curve=(0.1, 0.1, 1.0), mix=MIX13, bmix=BLUE13, fast_mix=MIX4),
-}
-SPREAD, RETRY, DELAY = 0.9, 0.7, 2
-REM_THR, KEEP_LAST, BOMB, TAU, P_INST = 0.5, 0.4, 0.8, 0.3, 0.5
-P_REM_STOP, CNT_UP = 0.4, 0.75
-WIPE_MARGIN = 1.5
-REM_MIX = (("cre", 0.55), ("any", 0.20), ("ae", 0.20), ("edict", 0.05))
-COUNTER_BY_MV = {0: 0.02, 1: 0.02, 2: 0.05, 3: 0.15}
-COUNTER_HI = 0.30
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import mesa as M
+# Tipos de victoria (combate, daño directo, pérdida de vida, combo/alternativa) y el azul: core.mesa (Playgroup 2026)
+MIX13, MIX4, MIX5 = M.mix(M.WT_CASUAL), M.mix(M.WT_B4), M.mix(M.WT_B5)
+BLUE13, BLUE4, BLUE5 = M.mix(M.WB_CASUAL), M.mix(M.WB_B4), M.mix(M.WB_B5)
+# Propio de Blight: tamaño y crecimiento de la mesa de criaturas rival
+SIZE_GROW = {"B1": (0.85, 0.70), "B2": (1.00, 0.75), "B3": (1.15, 0.80), "B4": (1.30, 0.85), "B5": (1.30, 0.85),
+             "B3+B4": (1.20, 0.80)}
+
+
+def _br(b):
+    v = M.BRACKETS[b]
+    d = dict(mus=v["mus"], cpt=v["cpt"], rem=v["rem"], blue=v["blue"], cnt=v["cnt"], wipes=v["wipes"], gyh=v["gyh"],
+             size=SIZE_GROW[b][0], grow=SIZE_GROW[b][1], curve=v["curve"], mix=M.mix(v["wt"]), bmix=M.mix(v["wb"]))
+    if b == "B3+B4":
+        d["fast_mix"] = MIX4
+    return d
+
+
+BRACKETS = {b: _br(b) for b in M.BRACKET_NAMES}
+SPREAD, RETRY, DELAY = M.SPREAD, M.RETRY, M.DELAY
+REM_THR, KEEP_LAST, BOMB, TAU, P_INST = M.REM_THR, M.KEEP_LAST, M.BOMB, M.TAU, M.P_INST
+P_REM_STOP, CNT_UP = M.P_REM_STOP, M.CNT_UP
+WIPE_MARGIN = M.WIPE_MARGIN
+REM_MIX = M.REM_TYPES
+COUNTER_BY_MV = M.COUNTER_BY_MV
+COUNTER_HI = M.COUNTER_HI
+ARCH = M.ARCH
 TRADE = 0.05            # cada criatura rival muere en combate entre rivales con esta prob. por turno
 RIVAL_DMG = [0.5]       # (regla 14) fracción del poder de un rival de combate que llega a OTRO rival cuando no te ataca a ti
 
 
-def _F(t, mu, sp):
-    return 1 / (1 + math.exp(-(t + 0.5 - mu) / sp))
-
-
-def attempt_p(t, mu, sp=SPREAD):
-    f0 = _F(t - 1, mu, sp)
-    return (_F(t, mu, sp) - f0) / max(1e-9, 1 - f0)
+_F = M.F
+attempt_p = M.attempt_p
 
 
 class Game2(Game):

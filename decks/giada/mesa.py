@@ -20,6 +20,9 @@ Reglas (aprobadas por Juan el 16/11, una tabla en la respuesta del chat):
  12 Combate rival: a quién ataca sale de tu poder aéreo de forma continua (sin el escalón de 15 de poder).
 """
 import math
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import mesa as M
 
 # ---- regla 1: pesos (propuestos el 16/11; Juan pre-aprobó) ----
 W_CARD = {
@@ -39,23 +42,13 @@ W_ROCK = 0.1
 W_NONCRE = 0.15
 CLOSERS = {"Felidar Sovereign", "Emeria's Call", "Akroma's Will", "Avacyn, Angel of Hope", "Sephara, Sky's Blade",
            "Starnheim Unleashed"}
-REM_THR = 0.5
-KEEP_LAST = 0.4
-TAU = 0.3
-P_REM_STOP = 0.4
-CNT_BY_CMC = {0: 0.02, 1: 0.02, 2: 0.05, 3: 0.15}
-CNT_HI = 0.3
+REM_THR, KEEP_LAST, TAU, P_REM_STOP = M.REM_THR, M.KEEP_LAST, M.TAU, M.P_REM_STOP
+CNT_BY_CMC, CNT_HI = M.COUNTER_BY_MV, M.COUNTER_HI
 MU_SHIFT = {"combat": 0.4, "dmg": -0.5, "loss": -0.5, "combo": -1.5}
 MINUS_X = 5            # -X/-X típico (Toxic Deluge, Crux of Fate no): mata resistencia <= 5
 
 
-def pick(rng, table):
-    r = rng.random()
-    for k, p in table:
-        r -= p
-        if r < 0:
-            return k
-    return table[-1][0]
+pick = M.pick
 
 
 class MesaV2:
@@ -434,13 +427,10 @@ class MesaV2:
         return False
 
     # ------------------------------------------------------------ regla 8/9: relojes y frenos
-    @staticmethod
-    def _F(t, mu, sp):
-        return 1 / (1 + math.exp(-(t + 0.5 - mu) / sp))
+    _F = staticmethod(M.F)
 
     def attempt_p(self, t, mu):
-        f0 = self._F(t - 1, mu, self.cfg.spread)
-        return (self._F(t, mu, self.cfg.spread) - f0) / max(1e-9, 1 - f0)
+        return M.attempt_p(t, mu, self.cfg.spread)
 
     def roll_attempts(self):
         for i in range(3):

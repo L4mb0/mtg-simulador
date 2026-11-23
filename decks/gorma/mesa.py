@@ -38,46 +38,43 @@ for _n in ("Putrid Goblin", "Rendclaw Trow", "Lesser Masticore", "Wingrattle Sca
 W_TOKEN = 0.05
 W_DEFAULT = 0.2          # ramp, Haywire Mite, Fungus, Bloodghast, Gyre Sage y el resto
 
-OPP_CURVE = {"B1": (-0.1, 0.1, 0.8), "B2": (0.0, 0.1, 0.9), "B3": (0.1, 0.1, 1.0), "B4": (0.2, 0.1, 1.1),
-             "B5": (0.3, 0.1, 1.2), "B3+B4": (0.1, 0.1, 1.0)}
-STOCK = {"B1": (5, 1.1), "B2": (5, 1.2), "B3": (5, 1.3), "B4": (5, 1.5), "B5": (4, 2.0), "B3+B4": (5, 1.4)}
-REM_THR = 0.5
-KEEP_LAST = 0.4
-TAU = 0.3
-ARCH = 0.3
-NOISE = 0.2
+# Parámetros por bracket: fuente única en core/mesa.py (aquí solo se arman las tablas que usa Gorma)
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import mesa as M
+_B = M.BRACKETS
+OPP_CURVE = {b: v["curve"] for b, v in _B.items()}
+STOCK = {b: (v["rem"], v["cpt"]) for b, v in _B.items()}
+REM_THR, KEEP_LAST, TAU, ARCH, NOISE = M.REM_THR, M.KEEP_LAST, M.TAU, M.ARCH, M.NOISE
 KINDS = ("cre", "any", "ae", "edict")
-# Regla 2 ("cnt"): counters del jugador azul (mazo azul: 3/3/5/7/10 de B1 a B5)
-CNT = {"B1": 3, "B2": 3, "B3": 5, "B4": 7, "B5": 10, "B3+B4": 6}
-CNT_UP = 0.75                 # el azul deja mana arriba en tu turno
-COUNTER_BY_CMC = {0: 0.02, 1: 0.02, 2: 0.05, 3: 0.15}
-COUNTER_HI = 0.30             # coste 4+ que no es clave
-# Regla 3 ("wipe"): barridas robadas (2 por mazo; 1 en B5); barre si la mesa de los demas supera la suya por 1,5
-WIPES = {"B1": 2, "B2": 2, "B3": 2, "B4": 2, "B5": 1, "B3+B4": 2}
-WIPE_MARGIN = 1.5
-# Regla 4 ("clock"): turno tipico de cada rival (logistica, dispersion 0,9); frenado, rearma 2 turnos y reintenta al 70%
-MUS = {"B1": (10, 11, 12), "B2": (9, 10, 11), "B3": (7, 8, 9), "B4": (5, 6, 7), "B5": (3, 4, 4), "B3+B4": (5, 8, 9)}
-SPREAD = 0.9
-RETRY = 0.7
-P_REM_STOP = 0.4              # la remocion de otro rival frena un intento el 40% de las veces
-# Regla 6 ("hate"): odio a cementerio (prob., fraccion permanente tipo Rest in Peace) y a artefactos, por bracket
-HATE = {"B1": (0.05, 0.0, 0.10, 6, 10), "B2": (0.10, 0.2, 0.15, 5, 9), "B3": (0.20, 0.3, 0.25, 4, 8),
-        "B4": (0.35, 0.4, 0.35, 4, 7), "B5": (0.50, 0.5, 0.40, 3, 6), "B3+B4": (0.25, 0.3, 0.30, 4, 8)}
+# Regla 2 ("cnt"): counters del jugador azul
+CNT = {b: v["cnt"] for b, v in _B.items()}
+CNT_UP = M.CNT_UP
+COUNTER_BY_CMC, COUNTER_HI = M.COUNTER_BY_MV, M.COUNTER_HI
+# Regla 3 ("wipe"): barridas robadas; barre si la mesa de los demas supera la suya por 1,5
+WIPES = {b: v["wipes"] for b, v in _B.items()}
+WIPE_MARGIN = M.WIPE_MARGIN
+# Regla 4 ("clock"): turno tipico de cada rival; frenado, rearma 2 turnos y reintenta al 70%
+MUS = {b: v["mus"] for b, v in _B.items()}
+SPREAD, RETRY, P_REM_STOP = M.SPREAD, M.RETRY, M.P_REM_STOP
+# Regla 6 ("hate"): odio a cementerio (prob., fraccion permanente) y a artefactos, con su ventana
+HATE = {b: (v["gyh"], v["gyh_perm"], v["arth"], v["wipe_lo"], v["wipe_hi"]) for b, v in _B.items()}
 # Regla 7 ("combat"): desde que turno atacan los rivales de combate
-COMBAT_START = {"B1": 6, "B2": 6, "B3": 5, "B4": 4, "B5": 3, "B3+B4": 5}
+COMBAT_START = {b: v["combat_start"] for b, v in _B.items()}
 # Regla 5 ("edict"): cada edicto de Butcher/Grave Pact/Dictate baja 0,03 la mejor pieza de cada rival (max 0,3; dura 2 turnos)
 PACT_HIT = 0.03
-# Mesa "Mazmorra" (torneo B3 de La Mazmorra TCG, claude/mesa-mazmorra.md; 16/11): solo esa mesa usa estas claves
+# Mesa "Mazmorra" (core.mesa.MAZMORRA). Desvío de Gorma: odio y combate de B3 (core.mesa.DESVIOS)
 MZ = "Mazmorra"
-OPP_CURVE[MZ] = OPP_CURVE["B4"]; STOCK[MZ] = (7, 1.5); CNT[MZ] = 8; WIPES[MZ] = 2
-MUS[MZ] = (4, 5, 6); HATE[MZ] = HATE["B3"]; COMBAT_START[MZ] = COMBAT_START["B3"]
-MZ_SPREAD = 1.0
-MZ_TURBO = (1, 0.85)          # el turbo rearma en 1 turno y reintenta al 85%
-MZ_REM_SLOWS = 0.5            # remocion entre rivales: el mas rapido pierde su proximo intento
-MZ_PARTIAL = 0.4              # intento sin freno: 40% mata solo a un jugador al azar
-MZ_EDICT = (3 / 11, 0.35)     # rival de edictos (Sephiroth): presente en 3/11 de las mesas, 35% por vuelta desde T3
-MZ_STRIP = (3 / 11, 0.5)      # Strip Mine en bucle (el turbo): 3/11 de las mesas, 50% por vuelta desde T3
-MZ_CUT = ((6, 0.2), (7, 0.4), (8, 0.4))
+_Z = M.MAZMORRA
+OPP_CURVE[MZ] = _Z["curve"]; STOCK[MZ] = (_Z["rem"], _Z["cpt"]); CNT[MZ] = _Z["cnt"]; WIPES[MZ] = _Z["wipes"]
+MUS[MZ] = _Z["mus"]; HATE[MZ] = HATE["B3"]; COMBAT_START[MZ] = COMBAT_START["B3"]
+MZ_SPREAD = _Z["spread"]
+MZ_TURBO = (_Z["delay_turbo"], _Z["retry_turbo"])
+MZ_REM_SLOWS = _Z["rem_slows"]
+MZ_PARTIAL = _Z["p_partial"]
+MZ_EDICT = _Z["edict"]
+MZ_STRIP = _Z["strip"]
+MZ_CUT = _Z["time_turns"]
 
 
 class MesaV2:
@@ -348,9 +345,7 @@ class MesaV2:
     # ---------------- regla 2: counters ----------------
     def attempt_p(self, t, mu):
         sp = MZ_SPREAD if getattr(self, "mz", False) else SPREAD
-        F = lambda x: 1 / (1 + math.exp(-(x + 0.5 - mu) / sp))
-        f0 = F(t - 1)
-        return (F(t) - f0) / max(1e-9, 1 - f0)
+        return M.attempt_p(t, mu, sp)
 
     def v2_turn_start(self):
         """inicio de nuestro turno: quien intenta ganar en esta vuelta (regla 4) y el mana del azul (regla 2)"""
