@@ -13,23 +13,18 @@ from dataclasses import dataclass, field
 from cards import CARDS, LANDS, COMMANDER, GREEN, LEGENDS
 from mesa import MesaV2
 
-PERSIST_LOOP = {"Putrid Goblin", "Puppeteer Clique", "Rendclaw Trow", "Lesser Masticore", "Wingrattle Scarecrow",
-                "Lingering Tormentor", "Aerie Ouphes"}
-OUTLETS = {"Viscera Seer", "Umbral Collar Zealot", "Yahenni, Undying Partisan", "Phyrexian Altar",
-           "Ashnod's Altar", "Woe Strider", "Bloodflow Connoisseur", "Carrion Feeder",
-           "Vampire Aristocrat", "Altar of Dementia", "Blasting Station", "Warren Soultrader",
-           "Bloodthrone Vampire", "Spawning Pit", "Yawgmoth, Thran Physician"}
-INF_MANA_OUTLETS = {"Phyrexian Altar", "Ashnod's Altar", "Warren Soultrader"}
-DRAINERS = {"Blood Artist", "Zulaport Cutthroat", "Cauldron of Essence", "Vengeance Mission", "Bastion of Remembrance",
-            "Poison-Tip Archer", "Falkenrath Noble", "Syr Konrad, the Grim", "Blasting Station",
-            "Vengeful Bloodwitch", "Massacre Girl, Most Wanted", "Marionette Apprentice", "The Meathook Massacre",
-            "Sephiroth, Fabled SOLDIER"}
-ZOMBIES = {"Putrid Goblin", "Warren Soultrader", "Mikaeus, the Unhallowed"}
-ENABLERS = {"Mazirek, Kraul Death Priest": 5, "Melira, Sylvok Outcast": 2, "Thran Vigil": 2, "Mikaeus, the Unhallowed": 6,
-            "Support Mission": 3, "Renata, Called to the Hunt": 4, "Tribute to the World Tree": 3}
-PACT = {"Butcher of Malakir", "Grave Pact", "Dictate of Erebos"}
-RECUR = {"Reassembling Skeleton": (2, 2), "Teacher's Pest": (2, 2), "Tenacious Dead": (1, 2), "Gravecrawler": (1, 1)}
-TUTORS = {"Diabolic Tutor", "Grim Tutor", "Diabolic Intent"}
+# Roles: data/efectos.yaml (fase 4), solo entre las cartas que Gorma conoce
+from core import efectos as EF
+PERSIST_LOOP = set(EF.with_tag("persist", CARDS))
+OUTLETS = set(EF.with_tag("outlet", CARDS))
+INF_MANA_OUTLETS = set(EF.with_tag("inf_mana_outlet", CARDS))
+DRAINERS = set(EF.with_tag("drainer", CARDS))
+ZOMBIES = set(EF.with_tag("zombie", CARDS))
+ENABLERS = EF.field("enabler", CARDS)
+PACT = set(EF.with_tag("pact", CARDS))
+RECUR = {n: tuple(v) for n, v in EF.field("recur", CARDS).items()}
+TUTORS = set(EF.with_tag("tutor_hand", CARDS))
+ON_DEATH = EF.triggers("on_death", CARDS)
 FODDER = {"pest", "zombie", "snake", "spawn", "goat", "ninja", "stolen", "sap", "soldier", "squirrel"}
 BASIC_TYPES = {"Forest", "Swamp"}
 
@@ -541,56 +536,39 @@ class Game(MesaV2):
             elif p.kind == "card":
                 self.gy.append(p.name)
 
+    def death_triggers(self, p, sacrificed, tok):
+        """Disparadores "cuando muere una criatura" de data/efectos.yaml, en el orden en que los apila el piloto."""
+        for _, group in ON_DEATH:
+            done = set()
+            for q in self.bf + [p]:
+                tr = group.get(q.name)
+                if tr is None or (q is p and not tr.get("propia")) or (tr.get("otra") and q is p):
+                    continue
+                if (tr.get("no_ficha") and tok) or (tr.get("sacrificada") and not sacrificed):
+                    continue
+                if tr.get("una_vez"):
+                    if q.name in done:
+                        continue
+                    done.add(q.name)
+                for k, v in tr["efectos"].items():
+                    if k == "drain_one": self.drain_target(v)
+                    elif k == "drain_each": self.drain_each(v)
+                    elif k == "gain": self.gain_life(v)
+                    elif k == "draw": self.draw(v)
+                    elif k == "token": self.make_token(v)
+
     def dies(self, p, sacrificed):
         self.deaths_turn += 1
         self.all_deaths_turn += 1
         pw = self.power(p)
         tok = p.kind == "token"
-        # drains
-        for q in self.bf + [p]:
-            if q.name == "Blood Artist":
-                self.drain_target(1); self.gain_life(1)
-        for q in self.bf + [p]:
-            if q.name == "Zulaport Cutthroat":
-                self.drain_each(1); self.gain_life(1)
-        for q in self.bf:
-            if q.name == "Cauldron of Essence":
-                self.drain_each(1); self.gain_life(1)
-        for q in self.bf:
-            if q.name == "Vengeance Mission":
-                self.drain_target(1)
-            if q.name == "Bastion of Remembrance":
-                self.drain_each(1); self.gain_life(1)
-            if q.name in ("Poison-Tip Archer", "Syr Konrad, the Grim") and q is not p:
-                self.drain_each(1)
-            if q.name == "Falkenrath Noble":
-                self.drain_target(1); self.gain_life(1)
-            if q.name == "Vengeful Bloodwitch":
-                self.drain_target(1); self.gain_life(1)
-            if q.name == "Massacre Girl, Most Wanted" and q is not p:
-                self.drain_target(1); self.gain_life(1)
-            if q.name == "Marionette Apprentice" and q is not p:
-                self.drain_each(1)
-            if q.name == "Sifter of Skulls" and not tok and q is not p:
-                self.make_token("spawn")
-            if q.name == "Blasting Station" and sacrificed:
-                self.drain_target(1)
-            if q.name == "Midnight Reaper" and not tok:
-                self.draw(1)
-            if q.name == "Grim Haruspex" and not tok and q is not p:
-                self.draw(1)
-            if q.name == "Fecundity" and not tok:
-                self.draw(1)
+        self.death_triggers(p, sacrificed, tok)
         if self.on_bf("Grand Nagus Zek") and not getattr(self, "_zek", None) == (self.turn, self._our):
             self._zek = (self.turn, self._our); self.make_token("treasure")
         if sacrificed and self.on_bf("Yawgmoth, Thran Physician") and getattr(self, "_yawg", (None, 0))[0] != self.turn:
             self._yawg = (self.turn, 0)
         if sacrificed and self.on_bf("Yawgmoth, Thran Physician") and self._yawg[1] < 2 and self.life > 10 and p.name != "Yawgmoth, Thran Physician":
             self._yawg = (self.turn, self._yawg[1] + 1); self.life -= 1; self.draw(1)
-        if self.on_bf("Sephiroth, Fabled SOLDIER") and p.name != "Sephiroth, Fabled SOLDIER":
-            self.drain_target(1); self.gain_life(1)
-        if self.on_bf("The Meathook Massacre"):
-            self.drain_each(1)
         if self.mode == "table" and "edict" in self.cfg.rules and (any(self.on_bf(x) for x in PACT) or p.name == "Butcher of Malakir"):
             self.pact_t = getattr(self, "pact_t", []) + [self.turn]
             self.stats["pact_edicts"] = self.stats.get("pact_edicts", 0) + 1
@@ -605,23 +583,10 @@ class Game(MesaV2):
                 q.counters += 1
             if q.equipped == "blade":
                 q.counters += 1
-        for q in self.bf:
-            if q.name == "Moldervine Reclamation":
-                self.gain_life(1); self.draw(1)
         if self.on_bf("Morbid Opportunist") and not self.opp_used:
             self.opp_used = True; self.draw(1)
         if sacrificed and self.on_bf("Dina, Essence Brewer") and not self.dina_used:
             self.dina_used = True; self.draw(1)
-        for q in self.bf:
-            if q.name == "Pitiless Plunderer":
-                self.make_token("treasure")
-        if not tok:
-            for q in self.bf + [p]:
-                if q.name == "Pawn of Ulamog":
-                    self.make_token("spawn")
-            for q in self.bf:
-                if q.name == "Blight Mound":
-                    self.make_token("pest")
         if tok and p.tok == "pest":
             self.gain_life(1)
         if p.name == "Haywire Mite":

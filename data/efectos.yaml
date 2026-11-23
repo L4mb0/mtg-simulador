@@ -1,0 +1,1261 @@
+# Efectos de las cartas como datos (fase 4). Una entrada por carta, compartida por todos los mazos.
+# Vocabulario: data/VOCABULARIO.md. Lector: core/efectos.py.
+# Costes, tipos y P/T todavía salen de cada decks/<mazo>/cards.py (ver core/diferencias.md antes de unificarlos).
+Gorma, the Gullet: {}
+Blood Artist:
+  tags: [black, closer, drainer]
+  on_death:
+  - orden: 0
+    propia: true
+    efectos: {drain_one: 1, gain: 1}
+Zulaport Cutthroat:
+  tags: [black, closer, drain_each, drainer]
+  on_death:
+  - orden: 1
+    propia: true
+    efectos: {drain_each: 1, gain: 1}
+Bloodghast:
+  tags: [cantblock]
+Butcher of Malakir:
+  tags: [flying, pact]
+Defiling Daemogoth:
+  tags: [menace]
+Dina, Essence Brewer: {propio: 'gorma/engine.dies: roba una vez por turno si se sacrificó'}
+Eccentric Pestfinder:
+  tags: [trample]
+Emeritus of Woe: {}
+Fanatic of Rhonas:
+  tags: [dork, ramp]
+  blor: {mana: 1}
+Feral Ghoul:
+  tags: [menace]
+  propio: 'gorma/engine.dies: +1 contador; al morir, radiación'
+Gyre Sage: {}
+Haywire Mite:
+  tags: [answer_ae_inst, artifact]
+  propio: 'gorma/engine.dies: gana 2 al morir'
+Jadar, Ghoulcaller of Nephalia: {}
+Jarad, Golgari Lich Lord:
+  tags: [closer]
+Jenova, Ancient Calamity: {}
+Mazirek, Kraul Death Priest:
+  tags: [enabler, flying]
+  enabler: 5
+Merchant of Venom:
+  tags: [menace]
+Morbid Opportunist: {propio: 'gorma/engine.dies: roba una vez por turno'}
+Nether Traitor:
+  tags: [haste, shadow]
+  propio: 'gorma/engine.dies: vuelve pagando B'
+Ophiomancer: {}
+Pawn of Ulamog:
+  on_death:
+  - orden: 41
+    propia: true
+    no_ficha: true
+    efectos: {token: spawn}
+Pest Rescuer: {}
+Pitiless Plunderer:
+  on_death:
+  - orden: 40
+    efectos: {token: treasure}
+Priest of Forgotten Gods: {}
+Puppeteer Clique:
+  tags: [black, flying, persist]
+Putrid Goblin:
+  tags: [persist, zombie]
+Rendclaw Trow:
+  tags: [persist]
+Woodfall Primus:
+  tags: [trample]
+Rampant Rejuvenator: {propio: 'gorma/engine.dies: busca tierras según su poder'}
+Sakura-Tribe Elder:
+  tags: [ramp]
+Selvala, Heart of the Wilds:
+  tags: [ramp]
+Elvish Mystic:
+  tags: [dork, ramp]
+  blor: {mana: 1}
+Twitching Doll:
+  tags: [artifact, dork, ramp]
+The Gitrog, Ravenous Ride:
+  tags: [haste, trample]
+Umbral Collar Zealot:
+  tags: [outlet]
+Veinwitch Coven:
+  tags: [menace]
+Viscera Seer:
+  tags: [outlet]
+Wight of the Reliquary:
+  tags: [ramp]
+Yahenni, Undying Partisan:
+  tags: [haste, outlet]
+Insidious Fungus:
+  tags: [answer_ae_inst]
+Woe Strider:
+  tags: [outlet]
+Smothering Abomination:
+  tags: [flying]
+Thrashing Brontodon:
+  tags: [answer_ae_inst]
+Bloodflow Connoisseur:
+  tags: [outlet]
+Carrion Feeder:
+  tags: [cantblock, outlet]
+Driver of the Dead: {}
+Phyrexian Altar:
+  tags: [inf_mana_outlet, outlet]
+Ashnod's Altar:
+  tags: [inf_mana_outlet, outlet]
+Sol Ring:
+  tags: [ramp]
+  rock: CC
+Arcane Signet:
+  tags: [ramp]
+  rock: COM
+Blade of the Bloodchief: {}
+Blight Mound:
+  on_death:
+  - orden: 42
+    no_ficha: true
+    efectos: {token: pest}
+Cauldron of Essence:
+  tags: [closer, drain_each, drainer]
+  on_death:
+  - orden: 2
+    efectos: {drain_each: 1, gain: 1}
+Culling Ritual:
+  tags: [wipe_small]
+Desperate Plea:
+  tags: [answer_cre_sorc]
+Find // Finality:
+  tags: [wipe]
+Foot Chopper: {}
+Garruk's Uprising: {}
+Greater Good: {}
+Immoral Bargain:
+  tags: [answer_any_sorc]
+Moldervine Reclamation:
+  on_death:
+  - orden: 30
+    efectos: {gain: 1, draw: 1}
+Mortality Spear:
+  tags: [answer_any_inst]
+Pest Infestation:
+  tags: [answer_ae_sorc]
+Profane Tutor: {}
+Diabolic Tutor:
+  tags: [tutor, tutor_hand]
+Toxic Deluge:
+  tags: [wipe]
+Traverse the Outlands: {}
+Veil of Summer:
+  tags: [prot_spot]
+Vicious Rivalry:
+  tags: [wipe]
+Witherbloom Charm: {}
+Assassin's Trophy:
+  tags: [answer_any_inst]
+Infernal Grasp:
+  tags: [answer_cre_inst]
+Tragic Slip:
+  tags: [answer_cre_inst]
+Fell:
+  tags: [answer_cre_sorc]
+Heroic Intervention:
+  tags: [prot_spot]
+Victimize: {}
+Skullclamp: {equip: 1}
+Eldritch Evolution: {}
+Dr. Joseph M'Benga: {}
+Vengeance Mission:
+  tags: [closer, drainer]
+  on_death:
+  - orden: 3
+    efectos: {drain_one: 1}
+Bastion of Remembrance:
+  tags: [closer, drainer]
+  on_death:
+  - orden: 3
+    efectos: {drain_each: 1, gain: 1}
+Poison-Tip Archer:
+  tags: [closer, drainer]
+  on_death:
+  - orden: 3
+    otra: true
+    efectos: {drain_each: 1}
+Falkenrath Noble:
+  tags: [closer, drainer, flying]
+  on_death:
+  - orden: 3
+    efectos: {drain_one: 1, gain: 1}
+Syr Konrad, the Grim:
+  tags: [closer, drainer]
+  on_death:
+  - orden: 3
+    otra: true
+    efectos: {drain_each: 1}
+Vampire Aristocrat:
+  tags: [outlet]
+Altar of Dementia:
+  tags: [outlet]
+Blasting Station:
+  tags: [closer, drainer, outlet]
+  on_death:
+  - orden: 3
+    sacrificada: true
+    efectos: {drain_one: 1}
+Village Rites:
+  tags: [rites]
+Deadly Dispute:
+  tags: [rites]
+Khan, Vengeful Heart: {}
+Midnight Reaper:
+  on_death:
+  - orden: 3
+    no_ficha: true
+    efectos: {draw: 1}
+Grim Haruspex:
+  tags: [black]
+  on_death:
+  - orden: 3
+    otra: true
+    no_ficha: true
+    efectos: {draw: 1}
+Fecundity:
+  on_death:
+  - orden: 3
+    no_ficha: true
+    efectos: {draw: 1}
+Grand Nagus Zek: {propio: 'gorma/engine.dies: un tesoro por turno'}
+Jadzia Dax:
+  tags: [dork, ramp]
+Xenobotanist:
+  tags: [dork, ramp]
+Birds of Paradise:
+  tags: [dork, flying, ramp]
+  blor: {mana: 1}
+Golgari Charm:
+  tags: [prot_spot]
+Tamiyo's Safekeeping:
+  tags: [prot_spot]
+  blor:
+    'no': [prot_spot]
+Snakeskin Veil:
+  tags: [prot_spot]
+  blor:
+    pump: true
+    'no': [prot_spot]
+Diabolic Intent:
+  tags: [tutor, tutor_hand]
+Grim Tutor:
+  tags: [tutor, tutor_hand]
+Lesser Masticore:
+  tags: [artifact, persist]
+Go for the Throat:
+  tags: [answer_cre_inst]
+Eject the Warp Core:
+  tags: [answer_cre_inst]
+Feed the Swarm:
+  tags: [answer_ae_sorc, answer_cre_sorc]
+Test of Courage:
+  tags: [answer_ae_hand]
+Tear Asunder:
+  tags: [answer_ae_hand]
+Wingrattle Scarecrow:
+  tags: [artifact, persist]
+Lingering Tormentor:
+  tags: [persist]
+Aerie Ouphes:
+  tags: [persist]
+Warren Soultrader:
+  tags: [inf_mana_outlet, outlet, zombie]
+Vengeful Bloodwitch:
+  tags: [closer, drainer]
+  on_death:
+  - orden: 3
+    efectos: {drain_one: 1, gain: 1}
+Massacre Girl, Most Wanted:
+  tags: [closer, drainer]
+  on_death:
+  - orden: 3
+    otra: true
+    efectos: {drain_one: 1, gain: 1}
+Marionette Apprentice:
+  tags: [closer, drainer]
+  on_death:
+  - orden: 3
+    otra: true
+    efectos: {drain_each: 1}
+Dark Ritual:
+  tags: [ritual]
+Culling the Weak:
+  tags: [ritual]
+Persist: {}
+Dina's Guidance:
+  tags: [tutor]
+Awakening Zone: {}
+Sifter of Skulls:
+  on_death:
+  - orden: 3
+    otra: true
+    no_ficha: true
+    efectos: {token: spawn}
+Tendershoot Dryad: {}
+Creakwood Liege: {}
+Beast Within:
+  tags: [answer_any_inst]
+  answer: [cre, ae, other]
+Pernicious Deed:
+  tags: [wipe]
+Melira, Sylvok Outcast:
+  tags: [enabler]
+  enabler: 2
+Thran Vigil:
+  tags: [enabler]
+  enabler: 2
+Mikaeus, the Unhallowed:
+  tags: [enabler, zombie]
+  enabler: 6
+Bloodthrone Vampire:
+  tags: [outlet]
+Spawning Pit:
+  tags: [outlet]
+Gravecrawler:
+  tags: [recursive, zombie]
+  recur: [1, 1]
+Yawgmoth, Thran Physician:
+  tags: [black, legendary, outlet]
+  propio: 'gorma/engine.dies: paga 1 vida y roba, 2 por turno'
+The Meathook Massacre:
+  tags: [closer, drainer]
+  on_death:
+  - orden: 21
+    una_vez: true
+    efectos: {drain_each: 1}
+Sephiroth, Fabled SOLDIER:
+  tags: [closer, drainer]
+  on_death:
+  - orden: 20
+    otra: true
+    una_vez: true
+    efectos: {drain_one: 1, gain: 1}
+Braids, Arisen Nightmare: {}
+Mirkwood Bats:
+  tags: [flying]
+Basking Broodscale:
+  tags: [mazirek_combo]
+Scurry Oak:
+  tags: [mazirek_combo]
+Teacher's Pest:
+  tags: [menace, recursive]
+  recur: [2, 2]
+Reassembling Skeleton:
+  tags: [recursive]
+  recur: [2, 2]
+Tenacious Dead:
+  tags: [recursive]
+  recur: [1, 2]
+  propio: 'gorma/engine.dies: vuelve pagando 1B'
+Grave Pact:
+  tags: [pact]
+Dictate of Erebos:
+  tags: [pact]
+Tireless Provisioner: {}
+Support Mission:
+  tags: [enabler]
+  enabler: 3
+Renata, Called to the Hunt:
+  tags: [enabler]
+  enabler: 4
+Tribute to the World Tree:
+  tags: [enabler]
+  enabler: 3
+Beifong's Bounty Hunters: {}
+Chatterfang, Squirrel General: {}
+Cankerbloom: {}
+Demonic Tutor:
+  tags: [tutor]
+Vampiric Tutor:
+  tags: [tutor]
+Imperial Seal:
+  tags: [tutor]
+Worldly Tutor:
+  tags: [game_changer, tutor]
+Chord of Calling:
+  tags: [tutor]
+Finale of Devastation:
+  tags: [tutor]
+Fauna Shaman:
+  tags: [tutor]
+Sidisi, Undead Vizier:
+  tags: [tutor]
+Wishclaw Talisman:
+  tags: [tutor]
+Beseech the Mirror:
+  tags: [tutor]
+Archdruid's Charm:
+  tags: [answer_ae_hand, tutor]
+  answer: [cre, ae]
+Collected Company: {}
+Ravenous Chupacabra:
+  tags: [answer_cre_sorc]
+Cast Down:
+  tags: [answer_cre_inst]
+Power Word Kill:
+  tags: [answer_cre_inst]
+Llanowar Elves:
+  tags: [dork, ramp]
+  blor: {mana: 1}
+Three Visits:
+  tags: [ramp]
+  blor:
+    fetch: [1, 0, false]
+Cultivate:
+  tags: [ramp]
+  blor:
+    fetch: [1, 1, true]
+Thought Vessel:
+  tags: [ramp]
+  rock: C
+Coalition Relic:
+  tags: [ramp]
+  rock: G
+Dread Return: {}
+Blasphemous Edict:
+  tags: [wipe]
+Damnation:
+  tags: [wipe]
+Ygra, Eater of All: {propio: 'gorma/engine.dies: +2 contadores'}
+Sylvan Library: {}
+Walking Ballista:
+  tags: [artifact]
+Witherbloom Apprentice: {}
+Chain of Smog: {}
+Carpet of Flowers:
+  tags: [ramp]
+Mox Amber:
+  tags: [ramp]
+Lotus Petal:
+  tags: [ritual]
+Cabal Ritual:
+  tags: [ritual]
+Elves of Deep Shadow:
+  tags: [dork, ramp]
+Fyndhorn Elves:
+  tags: [dork, ramp]
+  blor: {mana: 1}
+Arbor Elf:
+  tags: [dork, ramp]
+  blor: {mana: 1}
+Deathrite Shaman:
+  tags: [dork, ramp]
+Talisman of Resilience:
+  tags: [ramp]
+Green Sun's Zenith:
+  tags: [tutor]
+Allosaurus Shepherd: {}
+Defense Grid: {}
+Night's Whisper: {}
+Blank: {}
+Mountain:
+  gandalf: {mtn: true, prod: R}
+War Room:
+  gandalf: {prod: C}
+Rogue's Passage:
+  gandalf: {prod: C}
+Lindblum, Industrial Regency:
+  gandalf:
+    prod: R
+    tapped: true
+    adv: [instant, 2, 1]
+Shatterskull Smashing:
+  tags: [mdfc]
+Sundering Eruption:
+  tags: [mdfc]
+Valakut Awakening:
+  tags: [mdfc]
+  gandalf: {mdfc_tapped: true}
+Pinnacle Monk:
+  tags: [mdfc]
+Mind Stone: {rock: C}
+Tablet of Discovery: {}
+The Fire Crystal: {}
+Ruby Medallion: {}
+Primal Amulet: {}
+The One Ring:
+  tags: [game_changer]
+Lightning Greaves: {equip: 0}
+Swiftfoot Boots: {equip: 1}
+Simian Spirit Guide: {}
+Mishra's Bauble: {}
+Harmonic Prodigy:
+  tags: [wizard]
+Coruscation Mage:
+  tags: [wizard]
+Erebor Flamesmith: {}
+Guttersnipe:
+  tags: [shaman]
+Kessig Flamebreather:
+  tags: [shaman]
+Thunderdrum Soloist: {}
+Emeritus of Conflict:
+  tags: [wizard]
+Krark, the Thumbless:
+  tags: [wizard]
+Tomik, Izzet Sparkmage:
+  tags: [wizard]
+Party Thrasher:
+  tags: [wizard]
+Burning Prophet:
+  tags: [wizard]
+Mysidian Elder:
+  tags: [wizard]
+Electro, Assaulting Battery: {}
+Pyre Rhymer: {}
+Ashling, Flame Dancer:
+  tags: [shaman]
+Longshot, Rebel Bowman: {}
+Ojer Axonil, Deepest Might: {}
+Storm-Kiln Artist:
+  tags: [shaman]
+Urabrask: {}
+Wiccan, Young Avenger: {}
+Artist's Talent: {}
+Count on Luck: {}
+Fiery Inscription: {}
+Burn, Burn, Tree and Fern: {}
+Virtue of Courage: {}
+Faithless Looting: {}
+Gamble: {}
+Gut Shot: {}
+Lightning Bolt: {}
+Redirect Lightning: {}
+Vandalblast: {}
+Commune with Lava: {}
+Demand Answers: {}
+Desperate Ritual: {}
+Pyretic Ritual: {}
+Seething Song: {}
+Grapeshot: {}
+Reckless Impulse: {}
+Wrenn's Resolve: {}
+Tormenting Voice: {}
+Return the Favor: {}
+Reverberate: {}
+Doublecast: {}
+Untimely Malfunction: {}
+Chaos Warp: {}
+Delayed Blast Fireball: {}
+Jeska's Will: {}
+Light Up the Stage: {}
+Wheel of Misfortune: {}
+Seize the Spoils: {}
+Big Score: {}
+Fiery Confluence: {}
+Mizzix's Mastery: {}
+Past in Flames: {}
+Will of the Jeskai: {}
+Mana Geyser: {}
+Blasphemous Act: {}
+Thunderclap: {}
+Fireblast: {}
+Lava Dart: {}
+Spikefield Hazard:
+  tags: [mdfc]
+  gandalf: {mdfc_tapped: true}
+Rite of Flame: {}
+Burst Lightning: {}
+Strike It Rich: {}
+Torbran, Thane of Red Fell: {}
+Birgi, God of Storytelling: {}
+Electrostatic Field: {}
+Thermo-Alchemist:
+  tags: [shaman]
+Firebrand Archer: {}
+Solphim, Mayhem Dominus: {}
+Fiery Emancipation: {}
+Fire Diamond: {}
+Thrill of Possibility: {}
+Mine Collapse: {}
+Shock: {}
+Magma Spray: {}
+Lightning Strike: {}
+Demon Bolt: {}
+Abrade: {}
+Fiery Impulse: {}
+Searing Spear: {}
+Play with Fire: {}
+Unholy Heat: {}
+Unexpected Windfall: {}
+Pirate's Pillage: {}
+Runaway Steam-Kin: {}
+Neheb, the Eternal: {}
+Faithless Salvaging: {}
+Frost Bite: {}
+Implement of Combustion: {}
+Renegade Map: {}
+The Flame of Keld: {}
+Skullcrack: {}
+Underworld Breach: {}
+Ancient Tomb:
+  gandalf: {prod: C2}
+Mana Vault:
+  tags: [game_changer]
+  rock: CCC
+Grim Monolith:
+  tags: [game_changer]
+  rock: CCC
+Chrome Mox:
+  tags: [game_changer]
+  rock: G
+Mox Diamond:
+  tags: [game_changer]
+  rock: G
+Reiterate: {}
+Flashback: {}
+Overmaster: {}
+Manamorphose: {}
+Crash Through: {}
+Needle Drop: {}
+Bonus Round: {}
+Fork: {}
+Increasing Vengeance: {}
+Grinning Ignus: {}
+Fated Firepower: {}
+Aetherflux Reservoir: {}
+Crown of Flames: {}
+Helm of Awakening: {}
+Harnfel, Horn of Bounty: {}
+Embereth Blaze: {}
+Boltwave: {}
+Magmatic Insight: {}
+Cathartic Reunion: {}
+Price of Progress: {}
+Lotus Bloom: {}
+Chromatic Lantern: {rock: G}
+Giada, Font of Hope:
+  tags: [angel, flying, vigilance]
+Angel of Finality:
+  tags: [angel, flying]
+Angel of Vitality:
+  tags: [angel, flying]
+Angel of the Ruins:
+  tags: [angel, artifact, flying]
+Angelic Field Marshal:
+  tags: [angel, flying]
+Angelic Sleuth:
+  tags: [angel, flying]
+Archangel of Tithes:
+  tags: [angel, flying]
+Bishop of Wings:
+  tags: [cleric]
+Dazzling Angel:
+  tags: [angel, flying]
+Emeria Shepherd:
+  tags: [angel, flying]
+Exemplar of Light:
+  tags: [angel, flying]
+Firemane Commando:
+  tags: [angel, flying]
+Herald of Eternal Dawn:
+  tags: [angel, flash, flying]
+Herald of War:
+  tags: [angel, flying]
+Inspiring Overseer:
+  tags: [angel, cleric, flying]
+Linvala, the Preserver:
+  tags: [angel, flying]
+Lyra Dawnbringer:
+  tags: [angel, first_strike, flying, lifelink]
+Merchant of Truth:
+  tags: [angel, flying]
+Metallic Mimic:
+  tags: [artifact]
+Metropolis Reformer:
+  tags: [angel, cleric, flying, vigilance]
+Norn's Choirmaster:
+  tags: [angel, first_strike, flying]
+Reya Dawnbringer:
+  tags: [angel, flying]
+Righteous Valkyrie:
+  tags: [angel, cleric, flying]
+Segovian Angel:
+  tags: [angel, flying, vigilance]
+Sephara, Sky's Blade:
+  tags: [angel, flying, lifelink]
+Seraph of the Sword:
+  tags: [angel, flying]
+Serra Avenger:
+  tags: [angel, flying, vigilance]
+Speaker of the Heavens:
+  tags: [cleric, lifelink, vigilance]
+Starnheim Aspirant:
+  tags: [cleric]
+Sunblast Angel:
+  tags: [angel, flying]
+Thraben Watcher:
+  tags: [angel, flying, vigilance]
+Vanguard Seraph:
+  tags: [angel, flying]
+Wojek Investigator:
+  tags: [angel, flying, vigilance]
+Youthful Valkyrie:
+  tags: [angel, flying]
+Destroy Evil:
+  answer: [ae, cre]
+Fateful Absence:
+  answer: [cre]
+Invoke the Divine:
+  answer: [ae]
+Swords to Plowshares:
+  answer: [cre]
+Valorous Stance:
+  tags: [prot_spot]
+  answer: [cre]
+Austere Command:
+  tags: [wipe]
+Cleansing Nova:
+  tags: [wipe]
+Cut a Deal: {draw: 3}
+Day of Judgment:
+  tags: [wipe]
+Defy Death: {}
+Exorcise:
+  answer_sorc: [ae, cre]
+Secret Rendezvous: {draw: 3}
+Commander's Sphere: {rock: W}
+Cryptic Gateway: {}
+Endless Atlas: {}
+Heraldic Banner: {rock: W}
+Herald's Horn: {}
+Marble Diamond:
+  tags: [etb_tapped]
+  rock: W
+Patchwork Banner: {rock: W}
+Tome of Legends: {}
+Vanquisher's Banner: {}
+Always Watching: {}
+Angelic Destiny: {}
+Court of Grace: {}
+Grasp of Fate:
+  answer_sorc: [ae, cre, other]
+Search the Premises: {}
+Path to Exile:
+  answer: [cre]
+Generous Gift:
+  answer: [ae, cre, other]
+Valkyrie Harbinger:
+  tags: [angel, cleric, flying, lifelink]
+Resplendent Angel:
+  tags: [angel, flying]
+Lyra, Archangel of Dawn:
+  tags: [angel, flying]
+Pearl Medallion: {}
+Guide of Souls:
+  tags: [cleric]
+Soul Warden:
+  tags: [cleric]
+Folk Hero: {}
+Flawless Maneuver: {}
+Kindred Judgment:
+  tags: [wipe]
+  giada: {onesided: true}
+Ob Nixilis, the Ascended:
+  tags: [angel, flying]
+Blinding Angel:
+  tags: [angel, flying]
+Sigarda's Vanguard:
+  tags: [angel, flash, flying]
+Felidar Sovereign:
+  tags: [lifelink, vigilance]
+Akroma's Will: {}
+Karmic Guide:
+  tags: [angel, flying]
+Archangel of Thune:
+  tags: [angel, flying, lifelink]
+Avacyn, Angel of Hope:
+  tags: [angel, flying, vigilance]
+Serra Ascendant:
+  tags: [lifelink]
+Smothering Tithe: {}
+Emeria's Call:
+  tags: [mdfc]
+Lingering Souls:
+  giada: {spirits: 2}
+Disenchant:
+  answer: [ae]
+Millikin:
+  tags: [artifact, colorless, etb_tapped]
+  rock: C
+  blor:
+    mana: 1
+    'no': [rock]
+  giada:
+    'no': [artifact]
+Urza's Incubator: {}
+Starnheim Unleashed:
+  giada: {starn: true}
+Herald of the Host:
+  tags: [angel, flying, myriad, vigilance]
+Restoration Angel:
+  tags: [angel, flash, flying]
+Serra Angel:
+  tags: [angel, flying, vigilance]
+Leader's Talent: {}
+Auntie Ool, Cursewretch:
+  tags: [black, legendary]
+Archfiend of Ifnir:
+  tags: [black, flying]
+Carnifex Demon:
+  tags: [black, flying, selfc]
+Channeler Initiate:
+  tags: [selfc]
+Devoted Druid: {}
+Dread Tiller:
+  tags: [black]
+Dusk Urchins:
+  tags: [black]
+Evolution Sage: {}
+Ferrafor, Young Yew:
+  tags: [legendary]
+Glissa Sunslayer:
+  tags: [black, deathtouch, legendary]
+Grave Titan:
+  tags: [black, deathtouch]
+Grim Poppet:
+  tags: [selfc]
+Hapatra, Vizier of Poisons:
+  tags: [black, legendary]
+Ignoble Hierarch: {}
+Kulrath Knight:
+  tags: [black, flying, wither]
+Massacre Girl, Known Killer:
+  tags: [black, legendary, menace]
+Midnight Banshee:
+  tags: [black, wither]
+Necroskitter:
+  tags: [black, wither]
+Oft-Nabbed Goat:
+  tags: [black]
+Sinister Gnarlbark:
+  tags: [black]
+Skinrender:
+  tags: [black]
+Soul Snuffers:
+  tags: [black]
+The Reaper, King No More:
+  tags: [black, legendary]
+The Scorpion God:
+  tags: [black, legendary]
+Tree of Perdition:
+  tags: [black, defender]
+Village Pillagers:
+  tags: [wither]
+Wickerbough Elder:
+  tags: [selfc]
+Cathartic Pyre: {}
+Fire Covenant: {}
+Putrefy: {}
+Terminate: {}
+Aberrant Return: {}
+Black Sun's Zenith: {}
+Burning Curiosity: {}
+Chain Reaction: {}
+Eventide's Shadow: {}
+Harmonize: {draw: 3}
+Hoarder's Greed: {}
+Incremental Blight: {}
+Painful Truths: {}
+Chimil, the Inner Sun:
+  tags: [legendary]
+Contagion Clasp: {}
+Wickersmith's Tools: {}
+Binding the Old Gods: {}
+Blowfly Infestation: {}
+Everlasting Torment: {}
+Flourishing Defenses: {}
+Grave Venerations: {}
+Lasting Tarfire: {}
+Puca's Covenant: {}
+Liliana, Death Wielder: {}
+Vraska, Betrayal's Sting: {}
+Generous Patron: {}
+Dawnhand Dissident:
+  tags: [black]
+Grim Affliction: {}
+Farseek:
+  blor:
+    fetch: [0, 0, true]
+Rampant Growth:
+  blor:
+    fetch: [1, 0, true]
+Nature's Lore:
+  blor:
+    fetch: [1, 0, false]
+Obelisk Spider:
+  tags: [black, reach]
+Maha, Its Feathers Night:
+  tags: [black, flying, legendary]
+Persistent Constrictor:
+  tags: [black, persist]
+Nest of Scarabs: {}
+Harbinger of Night:
+  tags: [black]
+Scuzzback Scrounger: {}
+Darkness Descends: {}
+Ammit Eternal:
+  tags: [black]
+Atomize: {}
+Shadow Urchin:
+  tags: [black]
+Banewhip Punisher:
+  tags: [black]
+Mahadi, Emporium Master:
+  tags: [black, legendary]
+Whisper of the Dross: {}
+All Will Be One: {}
+Contagion Engine: {}
+Crumbling Ashes: {}
+Massacre Wurm:
+  tags: [black]
+Pollenbright Druid: {}
+Tezzeret's Gambit: {}
+Archfiend of Sorrows:
+  tags: [black, flying]
+Soul Immolation: {}
+Morselhoarder:
+  tags: [selfc]
+High-Society Hunter:
+  tags: [black, flying]
+Agent Venom:
+  tags: [black, menace]
+Blight Rot: {}
+Murder: {}
+Blor the Impervious: {}
+Forest: {}
+Reliquary Tower: {}
+Witch's Clinic: {}
+Boseiju, Who Endures: {}
+Nykthos, Shrine to Nyx: {}
+Yavimaya, Cradle of Growth: {}
+Roiling Canopy: {}
+Castle Garenbrig: {}
+Cavern of Souls: {}
+Myriad Landscape: {}
+Gaea's Cradle: {}
+Oran-Rief, the Vastwood: {}
+Command Tower: {}
+Evolving Wilds: {}
+Terramorphic Expanse: {}
+Thriving Grove: {}
+Hickory Woodlot: {}
+Path of Ancestry: {}
+Gemstone Mine: {}
+Rishadan Port: {}
+Delighted Halfling:
+  blor: {mana: 1}
+Drover of the Mighty:
+  blor: {mana: 1}
+Bugenhagen, Wise Elder:
+  blor: {mana: 1}
+Sanctum Weaver:
+  tags: [enchantment]
+  blor: {mana: 0}
+Kami of Whispered Hopes:
+  blor: {mana: 0}
+Herd Heirloom: {rock: G}
+Necklace of Girion: {rock: G}
+Emerald Medallion:
+  blor: {reducer: true}
+The Earth Crystal:
+  blor: {reducer: true}
+Wild Growth:
+  blor: {landaura: 1}
+Utopia Sprawl:
+  blor: {landaura: 1}
+Wolfwillow Haven:
+  blor: {landaura: 1}
+Overgrowth:
+  blor: {landaura: 2}
+Kodama's Reach:
+  blor:
+    fetch: [1, 1, true]
+Skyshroud Claim:
+  blor:
+    fetch: [2, 0, false]
+Far Wanderings:
+  blor:
+    fetch: [1, 0, true]
+Explore:
+  draw: 1
+  blor: {extra_land: true}
+Crop Rotation:
+  tags: [game_changer]
+Expedition Map: {}
+Rishkar's Expertise: {}
+Return of the Wildspeaker:
+  blor: {pump: true}
+Hunter's Insight: {}
+Garruk, Primal Hunter: {}
+Colossal Majesty: {}
+Enchantress's Presence: {}
+Season of Growth: {}
+Toski, Bearer of Secrets: {}
+Ohran Frostfang: {}
+Eidolon of Blossoms:
+  tags: [enchantment]
+Setessan Champion: {}
+Verduran Enchantress: {}
+Argothian Enchantress: {}
+Adventurous Impulse: {}
+Pia, Aether Ascetic: {}
+Eternal Witness: {}
+Blanchwood Armor: {}
+Crystalline Armor: {}
+Strong Back: {}
+Level Up: {}
+Ancestral Mask: {}
+Bear Umbra: {}
+Lion Umbra:
+  blor: {modified: true}
+Snake Umbra: {}
+Spider Umbra: {}
+Rancor: {}
+Hydra's Growth: {}
+Colossification: {}
+Indomitable Might: {}
+Keen Sense: {}
+Sixth Sense: {}
+Curse of Predation: {}
+Unnatural Growth: {}
+Hardened Scales: {}
+Branching Evolution: {}
+Primal Rage: {}
+Blackblade Reforged:
+  equip: 7
+  blor: {leq: 3}
+Staff of Titania: {equip: 3}
+Commander's Plate:
+  equip: 5
+  blor: {leq: 3}
+Shadowspear: {equip: 2}
+Basilisk Collar: {equip: 2}
+Fireshrieker: {equip: 2}
+Leyline Axe: {equip: 3}
+Genji Glove: {equip: 3}
+Inquisitor's Flail: {equip: 2}
+Power Fist: {equip: 2}
+Buster Sword: {equip: 2}
+Bone Sabres: {equip: 3}
+Colossus Hammer: {equip: 8}
+World War Hulk: {}
+Gavel of the Righteous: {equip: 3}
+Sword of Feast and Famine: {equip: 2}
+Sword of Fire and Ice: {equip: 2}
+Sword of Truth and Justice: {equip: 2}
+Sword of Hearth and Home: {equip: 2}
+Sword of the Animist: {equip: 2}
+Grafted Exoskeleton: {equip: 2}
+Pariah's Shield: {equip: 3}
+Avarice Amulet: {equip: 2}
+Mask of Memory: {equip: 1}
+Umezawa's Jitte: {equip: 2}
+Loxodon Warhammer: {equip: 3}
+Thran Power Suit: {equip: 2}
+Assault Suit: {equip: 3}
+Tarrian's Soulcleaver: {equip: 2}
+Belt of Giant Strength: {equip: 10}
+Trailblazer's Boots: {equip: 2}
+Long-Lost Lances: {equip: 2}
+Short Bow: {equip: 1}
+Helm of the Host: {equip: 5}
+Berserk:
+  blor: {pump: true}
+Become Immense:
+  blor: {pump: true}
+Primal Bellow:
+  blor: {pump: true}
+Giant Growth:
+  blor: {pump: true}
+Invigorate:
+  blor: {pump: true}
+Might of Old Krosa:
+  blor: {pump: true}
+Gift of the Viper:
+  blor: {pump: true}
+Tyvar's Stand:
+  blor: {pump: true}
+Overprotect:
+  blor: {pump: true}
+Vines of Vastwood:
+  blor: {pump: true}
+Blossoming Defense:
+  blor: {pump: true}
+Stony Strength:
+  blor: {pump: true}
+Triumph of the Hordes:
+  blor: {pump: true}
+Epic Fight:
+  answer_sorc: [cre]
+  blor: {pump: true}
+Krosan Grip:
+  answer: [ae]
+Nature's Claim:
+  answer: [ae]
+Return to Nature:
+  answer: [ae]
+Ram Through:
+  answer: [cre]
+Khalni Ambush:
+  answer: [cre]
+Inscription of Abundance:
+  answer: [cre]
+  blor: {pump: true}
+Bridgeworks Battle:
+  answer_sorc: [cre]
+Primal Might:
+  answer_sorc: [cre]
+Song of the Dryads:
+  answer_sorc: [cre, ae, other]
+  blor: {rival_aura: true}
+Kenrith's Transformation:
+  answer_sorc: [cre]
+  blor: {rival_aura: true}
+Fog:
+  tags: [fog]
+Moment's Peace:
+  tags: [fog]
+Constant Mists:
+  tags: [fog]
+Silent Arbiter:
+  tags: [artifact]
+Spore Frog: {}
+Tajuru Preserver: {}
+Forgotten Ancient: {}
+Frenzied Baloth: {}
+Questing Beast: {}
+Hexhaven Invigorator: {}
+Fynn, the Fangbearer: {}
+Seedborn Muse:
+  tags: [game_changer]
+Scavenging Ooze: {}
+Crawlspace: {}
+Natural Order:
+  tags: [game_changer]
+Survival of the Fittest:
+  tags: [game_changer]
+Brass Squire:
+  tags: [artifact]
+Lavaspur Boots: {equip: 1}
+Wayfarer's Bauble: {}
+Elvish Spirit Guide: {}
+Somberwald Sage: {}
+Exploration: {}
+Burgeoning: {}
+Harrow: {}
+Priest of Titania: {}
+Karametra's Acolyte: {}
+Sylvan Caryatid:
+  blor: {mana: 1}
+Paradise Druid:
+  blor: {mana: 1}
+Lotus Cobra: {}
+Sakura-Tribe Scout: {}
+Elemental Bond: {}
+Guardian Project: {}
+Esika's Chariot: {}
+Scute Swarm: {}
+Wood Elves: {}
+Saproling Migration: {}
+Sprout Swarm:
+  tags: [prot_spot]
+Kodama of the West Tree: {}
+Dryad Arbor: {}
+Verdant Embrace: {}
+From Beyond: {}
+Nettlecyst:
+  equip: 2
+  blor: {germ: true}
+Batterskull:
+  equip: 5
+  blor: {germ: true}
+Flayer Husk:
+  equip: 2
+  blor: {germ: true}
+Lair of the Hydra: {}
+Treetop Village: {}
+Mutavault: {}
+Conqueror's Flail: {equip: 2}
+Destiny Spinner:
+  tags: [enchantment]
+Semblance Anvil: {}
+Foundry Inspector:
+  tags: [artifact]
+Cloud Key: {}
+Jhoira's Familiar:
+  tags: [artifact]
+Hammer of Nazahn: {equip: 4}
+Shuko: {equip: 0}
+Whispersilk Cloak: {equip: 2}
+Darksteel Plate: {equip: 2}
+Crystal Chimes: {}
+Talon Gates of Madara: {}
+Spinning Wheel Kick:
+  answer_sorc: [cre]
+Tanuki Transplanter: {equip: 3}
+Nightshade Peddler: {}
+Quietus Spike: {equip: 3}
+Gorgon's Head: {equip: 2}
+Hunter's Blowgun: {equip: 2}
+Lure: {}
+Gaea's Embrace: {}
+Tower Above:
+  blor: {pump: true}
+Studious First-Year: {}
+Gemhide Sliver:
+  blor: {mana: 1}
+Scuttlemutt:
+  tags: [artifact, colorless]
+  blor: {mana: 1}
+Elfhame Druid:
+  blor: {mana: 1}
+Goobbue Gardener:
+  blor: {mana: 1}
+Guy in the Chair:
+  blor: {mana: 1}
+Moss Diamond: {rock: G}
+Glittering Frost:
+  blor: {landaura: 1}
+Fertilid: {}
+Elvish Rejuvenator: {}
+Silken Strength: {}
+Cultist's Staff: {equip: 3}
+Spider-Suit: {equip: 3}
+Neglected Heirloom: {equip: 1}
+Bestow Greatness:
+  blor: {pump: true}
+Grow Extra Arms:
+  blor: {pump: true}
+Mammoth Growth:
+  blor: {pump: true}
+Flourishing Strike:
+  blor: {pump: true}
+Efflorescence:
+  blor: {pump: true}
+Satyr Grovedancer: {}
+Vinelasher Adept: {}
+Bloom Hulk: {}
+Slice in Twain:
+  answer: [ae]
+Glorious Sunrise: {}
+Mithril Coat: {equip: 3}
+Sylvan Safekeeper: {}
+Akroma's Memorial: {}
+Spellskite: {}
+Thran Dynamo: {rock: CCC}
+Bloom Tender:
+  blor: {mana: 1}
+Azusa, Lost but Seeking: {}
+Collector Ouphe: {}
+Colossal Dreadmaw: {}

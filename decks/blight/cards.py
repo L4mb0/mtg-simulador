@@ -10,40 +10,40 @@ import re
 COMMANDER = "Auntie Ool, Cursewretch"
 
 
-def C(cost, t, p=0, tg=0, *tags):
-    return dict(cost=cost, t=t, p=p, tg=tg, tags=set(tags))
+def C(cost, t, p=0, tg=0):
+    return dict(cost=cost, t=t, p=p, tg=tg)
 
 
 CARDS = {
     # ---------------------------------------------------------------- precon (60 no-tierra + comandante)
-    COMMANDER: C("1BRG", "C", 4, 4, "legend", "black"),
-    "Archfiend of Ifnir": C("3BB", "C", 5, 4, "fly", "black"),
-    "Carnifex Demon": C("4BB", "C", 6, 6, "fly", "black", "selfc"),
-    "Channeler Initiate": C("1G", "C", 3, 4, "selfc"),
+    COMMANDER: C("1BRG", "C", 4, 4),
+    "Archfiend of Ifnir": C("3BB", "C", 5, 4),
+    "Carnifex Demon": C("4BB", "C", 6, 6),
+    "Channeler Initiate": C("1G", "C", 3, 4),
     "Devoted Druid": C("1G", "C", 0, 2),
-    "Dread Tiller": C("1BG", "C", 2, 4, "black"),
-    "Dusk Urchins": C("2B", "C", 4, 3, "black"),
+    "Dread Tiller": C("1BG", "C", 2, 4),
+    "Dusk Urchins": C("2B", "C", 4, 3),
     "Evolution Sage": C("2G", "C", 3, 2),
-    "Ferrafor, Young Yew": C("6G", "C", 4, 7, "legend"),
-    "Glissa Sunslayer": C("1BG", "C", 3, 3, "dt", "legend", "black"),
-    "Grave Titan": C("4BB", "C", 6, 6, "dt", "black"),
-    "Grim Poppet": C("7", "C", 4, 4, "selfc"),
-    "Hapatra, Vizier of Poisons": C("BG", "C", 2, 2, "legend", "black"),
+    "Ferrafor, Young Yew": C("6G", "C", 4, 7),
+    "Glissa Sunslayer": C("1BG", "C", 3, 3),
+    "Grave Titan": C("4BB", "C", 6, 6),
+    "Grim Poppet": C("7", "C", 4, 4),
+    "Hapatra, Vizier of Poisons": C("BG", "C", 2, 2),
     "Ignoble Hierarch": C("G", "C", 0, 1),
-    "Kulrath Knight": C("3(BR)(BR)", "C", 3, 3, "fly", "wither", "black"),
-    "Massacre Girl, Known Killer": C("2BB", "C", 4, 4, "menace", "legend", "black"),
-    "Midnight Banshee": C("3BBB", "C", 5, 5, "wither", "black"),
-    "Necroskitter": C("1BB", "C", 1, 4, "wither", "black"),
-    "Oft-Nabbed Goat": C("1B", "C", 0, 5, "black"),
-    "Puppeteer Clique": C("3BB", "C", 3, 2, "fly", "black", "persist"),
-    "Sinister Gnarlbark": C("2B", "C", 0, 4, "black"),
-    "Skinrender": C("2BB", "C", 3, 3, "black"),
-    "Soul Snuffers": C("2BB", "C", 3, 3, "black"),
-    "The Reaper, King No More": C("BRG", "C", 3, 3, "legend", "black"),   # {2/B}{2/R}{2/G}: se paga con colores
-    "The Scorpion God": C("3BR", "C", 6, 5, "legend", "black"),
-    "Tree of Perdition": C("3B", "C", 0, 13, "defender", "black"),
-    "Village Pillagers": C("3RR", "C", 5, 5, "wither"),
-    "Wickerbough Elder": C("3G", "C", 4, 4, "selfc"),
+    "Kulrath Knight": C("3(BR)(BR)", "C", 3, 3),
+    "Massacre Girl, Known Killer": C("2BB", "C", 4, 4),
+    "Midnight Banshee": C("3BBB", "C", 5, 5),
+    "Necroskitter": C("1BB", "C", 1, 4),
+    "Oft-Nabbed Goat": C("1B", "C", 0, 5),
+    "Puppeteer Clique": C("3BB", "C", 3, 2),
+    "Sinister Gnarlbark": C("2B", "C", 0, 4),
+    "Skinrender": C("2BB", "C", 3, 3),
+    "Soul Snuffers": C("2BB", "C", 3, 3),
+    "The Reaper, King No More": C("BRG", "C", 3, 3),   # {2/B}{2/R}{2/G}: se paga con colores
+    "The Scorpion God": C("3BR", "C", 6, 5),
+    "Tree of Perdition": C("3B", "C", 0, 13),
+    "Village Pillagers": C("3RR", "C", 5, 5),
+    "Wickerbough Elder": C("3G", "C", 4, 4),
     "Assassin's Trophy": C("BG", "I"),
     "Cathartic Pyre": C("1R", "I"),
     "Fire Covenant": C("1BR", "I"),
@@ -63,7 +63,7 @@ CARDS = {
     "Painful Truths": C("2B", "S"),
     "Persist": C("1B", "S"),
     "Arcane Signet": C("2", "A"),
-    "Chimil, the Inner Sun": C("6", "A", 0, 0, "legend"),
+    "Chimil, the Inner Sun": C("6", "A", 0, 0),
     "Commander's Sphere": C("3", "A"),
     "Contagion Clasp": C("2", "A"),
     "Sol Ring": C("1", "A"),
@@ -79,49 +79,49 @@ CARDS = {
     "Vraska, Betrayal's Sting": C("4BB", "W"),
     # ---------------------------------------------------------------- candidatas (guías y EDHREC)
     "Generous Patron": C("2G", "C", 1, 4),
-    "Dawnhand Dissident": C("B", "C", 1, 2, "black"),
+    "Dawnhand Dissident": C("B", "C", 1, 2),
     "Grim Affliction": C("2B", "I"),
     "Farseek": C("1G", "S"),
     "Rampant Growth": C("1G", "S"),
     "Nature's Lore": C("1G", "S"),
-    "Obelisk Spider": C("1BG", "C", 1, 4, "reach", "black"),
-    "Maha, Its Feathers Night": C("3BB", "C", 6, 5, "fly", "legend", "black"),
-    "Persistent Constrictor": C("4B", "C", 5, 3, "black", "persist"),
+    "Obelisk Spider": C("1BG", "C", 1, 4),
+    "Maha, Its Feathers Night": C("3BB", "C", 6, 5),
+    "Persistent Constrictor": C("4B", "C", 5, 3),
     "Nest of Scarabs": C("2B", "E"),
-    "Harbinger of Night": C("2BB", "C", 2, 3, "black"),
+    "Harbinger of Night": C("2BB", "C", 2, 3),
     "Scuzzback Scrounger": C("1R", "C", 3, 2),
     "Darkness Descends": C("2BB", "S"),
     "Heroic Intervention": C("1G", "I"),
     "Swiftfoot Boots": C("2", "A"),
     "Lightning Greaves": C("2", "A"),
-    "Ammit Eternal": C("2B", "C", 5, 5, "black"),
+    "Ammit Eternal": C("2B", "C", 5, 5),
     "Atomize": C("2BG", "I"),
-    "Shadow Urchin": C("2(BR)", "C", 3, 4, "black"),
-    "Banewhip Punisher": C("2B", "C", 2, 2, "black"),
-    "Mahadi, Emporium Master": C("1BR", "C", 3, 3, "legend", "black"),
+    "Shadow Urchin": C("2(BR)", "C", 3, 4),
+    "Banewhip Punisher": C("2B", "C", 2, 2),
+    "Mahadi, Emporium Master": C("1BR", "C", 3, 3),
     "Whisper of the Dross": C("B", "I"),
     "Skullclamp": C("1", "A"),
-    "Yawgmoth, Thran Physician": C("2BB", "C", 2, 4, "legend", "black"),
+    "Yawgmoth, Thran Physician": C("2BB", "C", 2, 4),
     "All Will Be One": C("3RR", "E"),
     "Contagion Engine": C("6", "A"),
     "Crumbling Ashes": C("1B", "E"),
-    "Massacre Wurm": C("3BBB", "C", 6, 5, "black"),
+    "Massacre Wurm": C("3BBB", "C", 6, 5),
     "Diabolic Tutor": C("2BB", "S"),
     "Grim Tutor": C("1BB", "S"),
     "Diabolic Intent": C("1B", "S"),
     "Pollenbright Druid": C("1G", "C", 1, 1),
     "Tezzeret's Gambit": C("3", "S"),          # {3}{U/P}: se paga la parte phyrexiana con 2 de vida
-    "Archfiend of Sorrows": C("5BB", "C", 4, 5, "black", "fly"),
+    "Archfiend of Sorrows": C("5BB", "C", 4, 5),
     "The Meathook Massacre": C("2BB", "E"),   # X fijo por el piloto (coste base BB + X)
-    "Zulaport Cutthroat": C("1B", "C", 1, 1, "black"),
-    "Blood Artist": C("1B", "C", 0, 1, "black"),
+    "Zulaport Cutthroat": C("1B", "C", 1, 1),
+    "Blood Artist": C("1B", "C", 0, 1),
     "Bastion of Remembrance": C("2B", "E"),
     "Cauldron of Essence": C("1BG", "A"),
     "Soul Immolation": C("3RR", "S"),
-    "Morselhoarder": C("4(RG)(RG)", "C", 6, 4, "selfc"),
-    "High-Society Hunter": C("3BB", "C", 5, 3, "fly", "black"),
-    "Agent Venom": C("2B", "C", 2, 3, "menace", "black"),
-    "Grim Haruspex": C("2B", "C", 3, 2, "black"),
+    "Morselhoarder": C("4(RG)(RG)", "C", 6, 4),
+    "High-Society Hunter": C("3BB", "C", 5, 3),
+    "Agent Venom": C("2B", "C", 2, 3),
+    "Grim Haruspex": C("2B", "C", 3, 2),
     "Demonic Tutor": C("1B", "S"),
     "Vampiric Tutor": C("B", "I"),
     "Worldly Tutor": C("G", "I"),
@@ -129,6 +129,14 @@ CARDS = {
     "Murder": C("1BB", "I"),
     "Blank": C("99", "S"),   # carta muerta para la ablación
 }
+
+# Fase 4: los efectos de cada carta (roles, palabras clave, respuestas, rocas...) viven en data/efectos.yaml;
+# aquí quedan coste, tipo y P/T. core/mapeo.py los vuelve a poner con las claves de siempre.
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import mapeo as _MP
+for _n in list(CARDS):
+    CARDS[_n] = _MP.importar("blight", _n, CARDS[_n])
 
 # ---------------------------------------------------------------- tierras
 # col: colores que produce; mode: U (sin girar), T (girada), basics2, check:<tipos>, fetch, bounce

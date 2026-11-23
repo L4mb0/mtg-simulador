@@ -2,19 +2,19 @@
 # t: land / creature / artifact / enchantment / instant / sorcery
 # g: generic cost, r: red pips, red: is the spell red (Ruby Medallion etc.)
 C = {}
-def card(name, t, g=0, r=0, red=True, **kw):
-    d = dict(t=t, g=g, r=r, red=red); d.update(kw); C[name] = d
+def card(name, t, g=0, r=0, red=True):
+    C[name] = dict(t=t, g=g, r=r, red=red)
 
 # lands
-card("Mountain", "land", mtn=True, prod="R")
-card("War Room", "land", prod="C")
-card("Rogue's Passage", "land", prod="C")
+card("Mountain", "land")
+card("War Room", "land")
+card("Rogue's Passage", "land")
 # MDFC / land-adventure
-card("Lindblum, Industrial Regency", "land", prod="R", tapped=True, adv=("instant", 2, 1))
-card("Shatterskull Smashing", "sorcery", 0, 2, mdfc=True)
-card("Sundering Eruption", "sorcery", 2, 1, mdfc=True)
-card("Valakut Awakening", "instant", 2, 1, mdfc=True, mdfc_tapped=True)
-card("Pinnacle Monk", "creature", 3, 2, mdfc=True)
+card("Lindblum, Industrial Regency", "land")
+card("Shatterskull Smashing", "sorcery", 0, 2)
+card("Sundering Eruption", "sorcery", 2, 1)
+card("Valakut Awakening", "instant", 2, 1)
+card("Pinnacle Monk", "creature", 3, 2)
 # rocks / mana permanents
 card("Sol Ring", "artifact", 1, 0, red=False)
 card("Arcane Signet", "artifact", 2, 0, red=False)
@@ -29,24 +29,24 @@ card("Swiftfoot Boots", "artifact", 2, 0, red=False)
 card("Simian Spirit Guide", "creature", 2, 1)
 card("Mishra's Bauble", "artifact", 0, 0, red=False)
 # creatures
-card("Harmonic Prodigy", "creature", 1, 1, wiz=True)
-card("Coruscation Mage", "creature", 1, 1, wiz=True)
+card("Harmonic Prodigy", "creature", 1, 1)
+card("Coruscation Mage", "creature", 1, 1)
 card("Erebor Flamesmith", "creature", 1, 1)
-card("Guttersnipe", "creature", 2, 1, shaman=True)
-card("Kessig Flamebreather", "creature", 1, 1, shaman=True)
+card("Guttersnipe", "creature", 2, 1)
+card("Kessig Flamebreather", "creature", 1, 1)
 card("Thunderdrum Soloist", "creature", 1, 1)
-card("Emeritus of Conflict", "creature", 1, 1, wiz=True)
-card("Krark, the Thumbless", "creature", 1, 1, wiz=True)
-card("Tomik, Izzet Sparkmage", "creature", 1, 1, wiz=True)
-card("Party Thrasher", "creature", 1, 1, wiz=True)
-card("Burning Prophet", "creature", 1, 1, wiz=True)
-card("Mysidian Elder", "creature", 2, 1, wiz=True)
+card("Emeritus of Conflict", "creature", 1, 1)
+card("Krark, the Thumbless", "creature", 1, 1)
+card("Tomik, Izzet Sparkmage", "creature", 1, 1)
+card("Party Thrasher", "creature", 1, 1)
+card("Burning Prophet", "creature", 1, 1)
+card("Mysidian Elder", "creature", 2, 1)
 card("Electro, Assaulting Battery", "creature", 1, 2)
 card("Pyre Rhymer", "creature", 1, 2)
-card("Ashling, Flame Dancer", "creature", 2, 2, shaman=True)
+card("Ashling, Flame Dancer", "creature", 2, 2)
 card("Longshot, Rebel Bowman", "creature", 3, 1)
 card("Ojer Axonil, Deepest Might", "creature", 2, 2)
-card("Storm-Kiln Artist", "creature", 3, 1, shaman=True)
+card("Storm-Kiln Artist", "creature", 3, 1)
 card("Urabrask", "creature", 2, 2)
 card("Wiccan, Young Avenger", "creature", 3, 1)
 # enchantments
@@ -107,14 +107,14 @@ card("Lotus Petal", "artifact", 0, 0, red=False)
 card("Mox Amber", "artifact", 0, 0, red=False)
 card("Fireblast", "instant", 4, 2)
 card("Lava Dart", "instant", 0, 1)
-card("Spikefield Hazard", "instant", 0, 1, mdfc=True, mdfc_tapped=True)
+card("Spikefield Hazard", "instant", 0, 1)
 card("Rite of Flame", "sorcery", 0, 1)
 card("Burst Lightning", "instant", 0, 1)
 card("Strike It Rich", "sorcery", 0, 1)
 card("Torbran, Thane of Red Fell", "creature", 1, 3)
 card("Birgi, God of Storytelling", "creature", 2, 1)
 card("Electrostatic Field", "creature", 1, 1)
-card("Thermo-Alchemist", "creature", 1, 1, shaman=True)
+card("Thermo-Alchemist", "creature", 1, 1)
 card("Firebrand Archer", "creature", 1, 1)
 VALUE.update({"Simian Spirit Guide": 6})
 card("Solphim, Mayhem Dominus", "creature", 2, 2)
@@ -143,7 +143,7 @@ card("The Flame of Keld", "enchantment", 1, 1)
 card("Skullcrack", "instant", 1, 1)
 
 card("Underworld Breach", "enchantment", 1, 1)
-card("Ancient Tomb", "land", prod="C2")
+card("Ancient Tomb", "land")
 card("Mana Vault", "artifact", 1, 0, red=False)
 card("Grim Monolith", "artifact", 2, 0, red=False)
 card("Chrome Mox", "artifact", 0, 0, red=False)
@@ -179,3 +179,11 @@ card("Price of Progress", "instant", 1, 1)       # 2 de dano por cada tierra no 
 card("Lotus Bloom", "artifact", 0, 0, red=False) # suspend 3: entra al 4to turno desde que se suspende; se sacrifica por 3 de un color
 card("Chromatic Lantern", "artifact", 3, 0, red=False)
 card("Skullclamp", "artifact", 1, 0, red=False)
+
+# Fase 4: los efectos de cada carta (roles, palabras clave, respuestas, rocas...) viven en data/efectos.yaml;
+# aquí quedan coste, tipo y P/T. core/mapeo.py los vuelve a poner con las claves de siempre.
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import mapeo as _MP
+for _n in list(C):
+    C[_n] = _MP.importar("gandalf", _n, C[_n])
