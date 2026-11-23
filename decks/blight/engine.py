@@ -393,10 +393,17 @@ class Game:
     def pay_generic(self, n):
         return self.pay((n, []))
 
+    PHYREXIAN_LIFE = 10   # paga vida por un pip phyrexiano solo con más de 10 de vida
+
     def cost(self, name):
         g, pips = parse_cost(CARDS[name]["cost"])
         if name == COMMANDER:
             g += self.tax
+        phy = [p for p in pips if "P" in p]
+        if phy and not self.can_pay((g, pips)) and self.life - 2 * len(phy) > self.PHYREXIAN_LIFE:
+            rest = [p for p in pips if "P" not in p]
+            if self.can_pay((g, rest)):
+                return g, rest      # pagar vida le deja lanzarla este turno
         return g, pips
 
     # ================================================================ contadores
@@ -1104,8 +1111,13 @@ class Game:
         return False
 
     def cast(self, n):
-        if not self.pay(self.cost(n)):
+        c = self.cost(n)
+        if not self.pay(c):
             return False
+        phy_life = 2 * (len(parse_cost(CARDS[n]["cost"])[1]) - len(c[1]))
+        if phy_life:
+            self.life -= phy_life
+            self.log("paga", phy_life, "de vida por maná phyrexiano")
         self.cast_count[n] = self.cast_count.get(n, 0) + 1
         if n == COMMANDER:
             if self.countered(n):

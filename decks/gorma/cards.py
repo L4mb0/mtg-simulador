@@ -97,7 +97,7 @@ CARDS = {
     "Blasting Station": dict(cost=(3, 0), t="A"),
     "Village Rites": dict(cost=(0, 1), t="I"),
     "Deadly Dispute": dict(cost=(1, 1), t="I"),
-    "Khan, Vengeful Heart": dict(cost=(2, 2), t="C", p=4),
+    "Khan, Vengeful Heart": dict(cost=(2, 2), t="C", p=5),   # 5/3 (corregido 23/11)
     "Midnight Reaper": dict(cost=(2, 1), t="C", p=3),
     "Grim Haruspex": dict(cost=(2, 1), t="C", p=3),
     "Fecundity": dict(cost=(2, 1), t="E"),
@@ -110,7 +110,7 @@ CARDS = {
     "Snakeskin Veil": dict(cost=(0, 1), t="I"),
     "Diabolic Intent": dict(cost=(1, 1), t="S"),
     "Grim Tutor": dict(cost=(1, 2), t="S"),
-    "Lesser Masticore": dict(cost=(2, 0), t="C", p=4),
+    "Lesser Masticore": dict(cost=(2, 0), t="C", p=2),   # 2/2 (corregido 23/11)
     "Go for the Throat": dict(cost=(1, 1), t="I"),
     "Eject the Warp Core": dict(cost=(1, 1), t="I"),
     "Feed the Swarm": dict(cost=(1, 1), t="S"),

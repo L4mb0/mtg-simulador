@@ -50,7 +50,20 @@ def leer_lista(A, nombre):
     return A.lista(nombre)
 
 
-def aplicar(A, deck, cambios):
+def identidad(mazo):
+    """Identidad de color de cada carta según Forge (core/cards_db.json) y la del comandante."""
+    from core.compare import COMMANDER_CI
+    from core.deck_cards import ALIAS
+    db = json.load(open(os.path.join(ROOT, "core", "cards_db.json"), encoding="utf-8"))
+    alias = ALIAS.get(mazo, {})
+    def ci(n):
+        c = db.get(alias.get(n, n)) or next((v for v in db.values() if v.get("full_name") == n), None)
+        return None if c is None else set(c["color_identity"])
+    return ci, set(COMMANDER_CI[mazo])
+
+
+def aplicar(A, deck, cambios, mazo):
+    ci, cmd = identidad(mazo)
     d = list(deck)
     for c in cambios:
         out, inn = [x.strip() for x in c.split(">")]
@@ -60,6 +73,10 @@ def aplicar(A, deck, cambios):
             sys.exit(f"'{inn}' ya está en la lista (Commander es singleton)")
         if not A.conoce(inn):
             sys.exit(f"el simulador no conoce '{inn}' (agregarla a cards.py y a su motor)")
+        fuera = (ci(inn) or set()) - cmd
+        if fuera:
+            sys.exit(f"'{inn}' tiene identidad {''.join(sorted(ci(inn)))}, fuera de la del comandante "
+                     f"({''.join(sorted(cmd))}); no se puede jugar")
         d[d.index(out)] = inn
     return d
 
@@ -113,9 +130,13 @@ def main():
 
     variantes = []
     if a.cambio:
-        variantes.append((" + ".join(a.cambio), aplicar(A, base, a.cambio)))
+        variantes.append((" + ".join(a.cambio), aplicar(A, base, a.cambio, a.mazo)))
     for c in a.candidatas:
-        variantes.append((c, aplicar(A, base, [c])))
+        variantes.append((c, aplicar(A, base, [c], a.mazo)))
+    ci, cmd = identidad(a.mazo)
+    ilegales = sorted({n for n in base if (ci(n) or set()) - cmd})
+    if ilegales:
+        print(f"AVISO: la lista tiene cartas fuera de la identidad del comandante: {', '.join(ilegales)}")
 
     t0 = time.time()
     out = dict(mazo=a.mazo, lista=nombre, n=a.n, semilla=seed0, fecha=datetime.datetime.now().isoformat(timespec="seconds"),

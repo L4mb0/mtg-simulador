@@ -1,1 +1,38 @@
-# Diferencias revisadas con Juan y aceptadas: mazo|carta|campo (una por línea)
+# Diferencias revisadas con Juan y aceptadas: mazo|carta|campo (una por línea). Revisión del 23/11/2026.
+
+# Modelado a propósito
+# Gut Shot: paga 2 de vida en vez de {R}
+gandalf|Gut Shot|valor de maná
+gandalf|Gut Shot|pips R
+# Return the Favor: spree, {R}{R} + {1} del modo copiar
+gandalf|Return the Favor|valor de maná
+# Profane Tutor: se modela suspendida con {1}{B}
+gorma|Profane Tutor|valor de maná
+gorma|Profane Tutor|pips de color
+# Grand Nagus Zek: 1/1 +1/+1 por tesoro, se calcula como si tuviera uno
+gorma|Grand Nagus Zek|poder
+# Jadzia Dax: gana un contador +1/+1 en cada fase principal
+gorma|Jadzia Dax, Living Legacy|poder
+# The Reaper, King No More: paga {B}{R}{G} por los {2/x}; el valor de maná 6 lo usa cards.mv()
+blight|The Reaper, King No More|valor de maná
+blight|The Reaper, King No More|pips de color
+# Fertilid: entra con dos contadores +1/+1
+blor|Fertilid|poder
+blor|Fertilid|resistencia
+# Tower Above: modelada como truco de combate pagando {G}{G}{G}
+blor|Tower Above|tipo
+blor|Tower Above|valor de maná
+# Vines of Vastwood: siempre con kicker ({G} + {G})
+blor|Vines of Vastwood|valor de maná
+blor|Vines of Vastwood|pips G
+
+# Fuera de la identidad del comandante: sim.py las rechaza como candidatas
+gandalf|Manamorphose|identidad de color
+giada|Blossoming Sands|identidad de color
+giada|Lingering Souls|identidad de color
+giada|Scoured Barrens|identidad de color
+giada|Tranquil Cove|identidad de color
+blight|Tezzeret's Gambit|valor de maná
+blight|Tezzeret's Gambit|pips de color
+blight|Tezzeret's Gambit|identidad de color
+blor|Spellskite|identidad de color

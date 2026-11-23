@@ -78,13 +78,15 @@ def main():
     old = json.load(open(path))
     bad = 0
     for n in names:
+        mine = 0
         for m, v in now[n].items():
             diff = [i for i, (a, b) in enumerate(zip(old[n][m], v)) if a != b]
             if diff or len(v) != len(old[n][m]):
-                bad += 1
+                mine += 1
                 print(f"{n:8} {m:9} CAMBIÓ en {len(diff)} de {len(v)} partidas (primera: {diff[:1]})")
+        bad += mine
         h = hashlib.sha1(json.dumps(now[n], sort_keys=True).encode()).hexdigest()[:10]
-        print(f"{n:8} {'idéntico' if not bad else ''} {h}")
+        print(f"{n:8} {'idéntico' if not mine else 'cambió'} {h}")
     sys.exit(1 if bad else 0)
 
 

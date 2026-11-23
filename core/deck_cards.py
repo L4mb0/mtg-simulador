@@ -40,9 +40,9 @@ def _module(deck):
 
 def _blight_cost(s):
     pips = {}
-    for h in re.findall(r"\(([BRG]+)\)", s):
+    for h in re.findall(r"\(([BRGP]+)\)", s):
         k = "/".join(h); pips[k] = pips.get(k, 0) + 1
-    s2 = re.sub(r"\([BRG]+\)", "", s)
+    s2 = re.sub(r"\([BRGP]+\)", "", s)
     g = sum(int(x) for x in re.findall(r"\d+", s2))
     for c in s2:
         if c in "WUBRG":

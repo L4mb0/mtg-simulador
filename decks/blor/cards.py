@@ -313,7 +313,7 @@ card("Hunter's Blowgun", "equip", 1, 0)      # +1/+1; toque mortal en tu turno, 
 card("Lure", "aura", 1, 2)                          # todas las criaturas que pueden bloquear al encantado lo hacen
 
 # --- 16/11: cartas de la coleccion de Juan para la version fisica ---
-card("Gaea's Embrace", "aura", 2, 3)                      # +3/+3, arrollar, {G}: regenera
+card("Gaea's Embrace", "aura", 2, 2)                      # {2}{G}{G} (corregido 23/11) +3/+3, arrollar, {G}: regenera
 card("Tower Above", "inst", 0, 3)             # CONJURO {2/G}x3: +4/+4, arrollar, marchitar hasta fin de turno (modelado como truco antes del combate)
 card("Pollenbright Druid", "cre", 1, 1, p=1, x=1)         # ETB: contador +1/+1 en Blor (o proliferar)
 card("Studious First-Year", "cre", 0, 1, p=1, x=1)        # {G} 1/1, entra "prepared": luego se puede lanzar una copia de Rampant Growth

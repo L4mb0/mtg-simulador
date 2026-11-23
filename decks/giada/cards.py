@@ -44,7 +44,7 @@ CARDS = {
     "Thraben Watcher": C(2, 2, 2, 2),
     "Vanguard Seraph": C(3, 1, 3, 3),
     "Wojek Investigator": C(2, 1, 2, 4),
-    "Youthful Valkyrie": C(1, 1, 1, 1),
+    "Youthful Valkyrie": C(1, 1, 1, 3),   # 1/3 (corregido 23/11; antes 1/1)
     # --- precon noncreatures ---
     "Destroy Evil": N("I", 1, 1),
     "Fateful Absence": N("I", 1, 1),

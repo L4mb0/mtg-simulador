@@ -76,7 +76,7 @@ CARDS = {
     "Lasting Tarfire": C("1R", "E"),
     "Puca's Covenant": C("2G", "E"),
     "Liliana, Death Wielder": C("5BB", "W"),
-    "Vraska, Betrayal's Sting": C("4BB", "W"),
+    "Vraska, Betrayal's Sting": C("4B(BP)", "W"),   # {B/P}: B o 2 de vida (23/11)
     # ---------------------------------------------------------------- candidatas (guías y EDHREC)
     "Generous Patron": C("2G", "C", 1, 4),
     "Dawnhand Dissident": C("B", "C", 1, 2),
@@ -271,9 +271,10 @@ def load(text):
 
 
 def parse_cost(s):
-    """'3(BR)(BR)' -> (generic, [pips]); cada pip es un string de colores aceptados."""
-    pips = re.findall(r"\(([BRG]+)\)", s)
-    s2 = re.sub(r"\([BRG]+\)", "", s)
+    """'3(BR)(BR)' -> (generic, [pips]); cada pip es un string de colores aceptados.
+    '(BP)' es maná phyrexiano: se paga con B o con 2 de vida (lo decide Game.cost)."""
+    pips = re.findall(r"\(([BRGP]+)\)", s)
+    s2 = re.sub(r"\([BRGP]+\)", "", s)
     g = sum(int(x) for x in re.findall(r"\d+", s2))
     pips += [c for c in s2 if c in "BRG"]
     return g, pips
