@@ -1,0 +1,1 @@
+# Diferencias revisadas con Juan y aceptadas: mazo|carta|campo (una por línea)
