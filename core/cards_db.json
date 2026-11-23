@@ -68,12 +68,13 @@
 "G": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Ouphe"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Ouphe"
+"Creature"
 ]
 },
 "Aetherflux Reservoir": {
@@ -108,16 +109,17 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Symbiote",
+"Soldier",
+"Hero"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Symbiote",
-"Soldier",
-"Hero"
+"Creature"
 ]
 },
 "Akroma's Memorial": {
@@ -187,13 +189,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Shaman"
+"Creature"
 ]
 },
 "Altar of Dementia": {
@@ -245,14 +248,15 @@
 "B": 1
 },
 "power": "5",
-"subtypes": [],
-"supertypes": [],
-"toughness": "5",
-"types": [
-"Creature",
+"subtypes": [
 "Zombie",
 "Crocodile",
 "Demon"
+],
+"supertypes": [],
+"toughness": "5",
+"types": [
+"Creature"
 ]
 },
 "Ancestral Mask": {
@@ -269,11 +273,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Ancient Tomb": {
@@ -307,12 +312,13 @@
 "W": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Angel of Vitality": {
@@ -330,12 +336,13 @@
 "W": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Angel of the Ruins": {
@@ -353,13 +360,14 @@
 "W": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "7",
 "types": [
 "Artifact",
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Angelic Destiny": {
@@ -376,11 +384,12 @@
 "pips": {
 "W": 2
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Angelic Field Marshal": {
@@ -398,12 +407,13 @@
 "W": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Angelic Sleuth": {
@@ -421,13 +431,14 @@
 "W": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Advisor"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel",
-"Advisor"
+"Creature"
 ]
 },
 "Arbor Elf": {
@@ -443,13 +454,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Arcane Signet": {
@@ -484,12 +496,13 @@
 "W": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Archangel of Tithes": {
@@ -507,12 +520,13 @@
 "W": 3
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Archdruid's Charm": {
@@ -549,12 +563,13 @@
 "B": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Demon"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Demon"
+"Creature"
 ]
 },
 "Archfiend of Sorrows": {
@@ -573,12 +588,13 @@
 "B": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Demon"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
-"Creature",
-"Demon"
+"Creature"
 ]
 },
 "Argothian Enchantress": {
@@ -596,13 +612,14 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Druid"
+"Creature"
 ]
 },
 "Artist's Talent": {
@@ -617,11 +634,12 @@
 "pips": {
 "R": 1
 },
-"subtypes": [],
+"subtypes": [
+"Class"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Class"
+"Enchantment"
 ]
 },
 "Ashling, Flame Dancer": {
@@ -637,15 +655,16 @@
 "R": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Elemental",
+"Shaman"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Elemental",
-"Shaman"
+"Creature"
 ]
 },
 "Ashnod's Altar": {
@@ -695,11 +714,12 @@
 "name": "Assault Suit",
 "oracle": "Equipped creature gets +2/+2, has haste, can't attack you or planeswalkers you control, and can't be sacrificed.\nAt the beginning of each opponent's upkeep, you may have that player gain control of equipped creature until end of turn. If you do, untap it.\nEquip {3}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Atomize": {
@@ -738,15 +758,16 @@
 "R": 1
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Goblin",
+"Warlock"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Goblin",
-"Warlock"
+"Creature"
 ]
 },
 "Austere Command": {
@@ -784,14 +805,15 @@
 "W": 3
 },
 "power": "8",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "8",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Avarice Amulet": {
@@ -806,11 +828,12 @@
 "name": "Avarice Amulet",
 "oracle": "Equipped creature gets +2/+0 and has vigilance and \"At the beginning of your upkeep, draw a card.\"\nWhenever equipped creature dies, target opponent gains control of Avarice Amulet.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Awakening Zone": {
@@ -844,15 +867,16 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Monk"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Monk"
+"Creature"
 ]
 },
 "Banewhip Punisher": {
@@ -868,13 +892,14 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Warrior"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Warrior"
+"Creature"
 ]
 },
 "Basilisk Collar": {
@@ -889,11 +914,12 @@
 "name": "Basilisk Collar",
 "oracle": "Equipped creature has deathtouch and lifelink.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Basking Broodscale": {
@@ -911,13 +937,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Eldrazi",
+"Lizard"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Eldrazi",
-"Lizard"
+"Creature"
 ]
 },
 "Bastion of Remembrance": {
@@ -951,11 +978,12 @@
 "name": "Batterskull",
 "oracle": "Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.)\nEquipped creature gets +4/+4 and has vigilance and lifelink.\n{3}: Return Batterskull to its owner's hand.\nEquip {5}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Bear Umbra": {
@@ -973,11 +1001,12 @@
 "pips": {
 "G": 2
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Beast Within": {
@@ -1032,13 +1061,14 @@
 "G": 1
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Mercenary"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Human",
-"Mercenary"
+"Creature"
 ]
 },
 "Belt of Giant Strength": {
@@ -1055,11 +1085,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Berserk": {
@@ -1149,11 +1180,12 @@
 "B": 1,
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Saga"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Saga"
+"Enchantment"
 ]
 },
 "Birds of Paradise": {
@@ -1171,12 +1203,13 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Bird"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Bird"
+"Creature"
 ]
 },
 "Birgi, God of Storytelling": {
@@ -1213,14 +1246,15 @@
 "R": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"God"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"God"
+"Creature"
 ]
 },
 "Bishop of Wings": {
@@ -1236,13 +1270,14 @@
 "W": 2
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Human",
-"Cleric"
+"Creature"
 ]
 },
 "Black Sun's Zenith": {
@@ -1275,13 +1310,14 @@
 "name": "Blackblade Reforged",
 "oracle": "Equipped creature gets +1/+1 for each land you control.\nEquip legendary creature {3}\nEquip {7}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Blade of the Bloodchief": {
@@ -1296,11 +1332,12 @@
 "name": "Blade of the Bloodchief",
 "oracle": "Whenever a creature dies, put a +1/+1 counter on equipped creature. If equipped creature is a Vampire, put two +1/+1 counters on it instead.\nEquip {1}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Blanchwood Armor": {
@@ -1317,11 +1354,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Blasphemous Act": {
@@ -1427,12 +1465,13 @@
 "W": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Blood Artist": {
@@ -1448,12 +1487,13 @@
 "B": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Vampire"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Vampire"
+"Creature"
 ]
 },
 "Blood Crypt": {
@@ -1466,12 +1506,13 @@
 "name": "Blood Crypt",
 "oracle": "({T}: Add {B} or {R}.)\nAs Blood Crypt enters, you may pay 2 life. If you don't, it enters tapped.",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Swamp",
 "Mountain"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Bloodflow Connoisseur": {
@@ -1487,12 +1528,13 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Vampire"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Vampire"
+"Creature"
 ]
 },
 "Bloodghast": {
@@ -1508,13 +1550,14 @@
 "B": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Vampire",
+"Spirit"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Vampire",
-"Spirit"
+"Creature"
 ]
 },
 "Bloodthrone Vampire": {
@@ -1530,12 +1573,13 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Vampire"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Vampire"
+"Creature"
 ]
 },
 "Bloom Hulk": {
@@ -1551,13 +1595,14 @@
 "G": 1
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Plant",
+"Elemental"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Plant",
-"Elemental"
+"Creature"
 ]
 },
 "Bloom Tender": {
@@ -1573,13 +1618,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Blor the Impervious": {
@@ -1599,15 +1645,16 @@
 "G": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Frog",
+"Warrior"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Frog",
-"Warrior"
+"Creature"
 ]
 },
 "Blossoming Defense": {
@@ -1726,11 +1773,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Bonus Round": {
@@ -1782,14 +1830,15 @@
 "B": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Nightmare"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Nightmare"
+"Creature"
 ]
 },
 "Branching Evolution": {
@@ -1821,13 +1870,14 @@
 "oracle": "{T}: Attach target Equipment you control to target creature you control.",
 "pips": {},
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Myr"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
 "Artifact",
-"Creature",
-"Myr"
+"Creature"
 ]
 },
 "Bridgeworks Battle": {
@@ -1880,15 +1930,16 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Shaman"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Shaman"
+"Creature"
 ]
 },
 "Burgeoning": {
@@ -1921,11 +1972,12 @@
 "pips": {
 "R": 1
 },
-"subtypes": [],
+"subtypes": [
+"Saga"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Saga"
+"Enchantment"
 ]
 },
 "Burning Curiosity": {
@@ -1959,13 +2011,14 @@
 "R": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Wizard"
+"Creature"
 ]
 },
 "Burst Lightning": {
@@ -2000,11 +2053,12 @@
 "name": "Buster Sword",
 "oracle": "Equipped creature gets +3/+2.\nWhenever equipped creature deals combat damage to a player, draw a card, then you may cast a spell from your hand with mana value less than or equal to that damage without paying its mana cost.",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Butcher of Malakir": {
@@ -2022,13 +2076,14 @@
 "B": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Vampire",
+"Warrior"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Vampire",
-"Warrior"
+"Creature"
 ]
 },
 "Cabal Ritual": {
@@ -2062,13 +2117,14 @@
 "G": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Phyrexian",
+"Fungus"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Phyrexian",
-"Fungus"
+"Creature"
 ]
 },
 "Canyon Slough": {
@@ -2083,12 +2139,13 @@
 "name": "Canyon Slough",
 "oracle": "({T}: Add {B} or {R}.)\nCanyon Slough enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Swamp",
 "Mountain"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Carnifex Demon": {
@@ -2106,13 +2163,14 @@
 "B": 2
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Phyrexian",
+"Demon"
+],
 "supertypes": [],
 "toughness": "6",
 "types": [
-"Creature",
-"Phyrexian",
-"Demon"
+"Creature"
 ]
 },
 "Carpet of Flowers": {
@@ -2146,12 +2204,13 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Zombie"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Zombie"
+"Creature"
 ]
 },
 "Cast Down": {
@@ -2308,13 +2367,14 @@
 "G": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Druid"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Human",
-"Druid"
+"Creature"
 ]
 },
 "Chaos Warp": {
@@ -2350,15 +2410,16 @@
 "G": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Squirrel",
+"Warrior"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Squirrel",
-"Warrior"
+"Creature"
 ]
 },
 "Chimil, the Inner Sun": {
@@ -2441,12 +2502,13 @@
 "name": "Cinder Glade",
 "oracle": "({T}: Add {R} or {G}.)\nCinder Glade enters tapped unless you control two or more basic lands.",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Mountain",
 "Forest"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Cleansing Nova": {
@@ -2530,12 +2592,13 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Ouphe"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Ouphe"
+"Creature"
 ]
 },
 "Colossal Dreadmaw": {
@@ -2553,12 +2616,13 @@
 "G": 2
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Dinosaur"
+],
 "supertypes": [],
 "toughness": "6",
 "types": [
-"Creature",
-"Dinosaur"
+"Creature"
 ]
 },
 "Colossal Majesty": {
@@ -2593,11 +2657,12 @@
 "pips": {
 "G": 2
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Colossus Hammer": {
@@ -2612,11 +2677,12 @@
 "name": "Colossus Hammer",
 "oracle": "Equipped creature gets +10/+10 and loses flying.\nEquip {8} ({8}: Attach to target creature you control. Equip only as a sorcery.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Command Tower": {
@@ -2647,11 +2713,12 @@
 "name": "Commander's Plate",
 "oracle": "Equipped creature gets +3/+3 and has protection from each color that's not in your commander's color identity.\nEquip commander {3}\nEquip {5}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Commander's Sphere": {
@@ -2700,11 +2767,12 @@
 "name": "Conqueror's Flail",
 "oracle": "Equipped creature gets +1/+1 for each color among permanents you control.\nAs long as Conqueror's Flail is attached to a creature, your opponents can't cast spells during your turn.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Constant Mists": {
@@ -2774,13 +2842,14 @@
 "R": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Otter",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Otter",
-"Wizard"
+"Creature"
 ]
 },
 "Count on Luck": {
@@ -2866,12 +2935,13 @@
 "B/G": 3
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Horror"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Horror"
+"Creature"
 ]
 },
 "Crop Rotation": {
@@ -2906,11 +2976,12 @@
 "pips": {
 "R": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Crumbling Ashes": {
@@ -2977,11 +3048,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Culling Ritual": {
@@ -3033,11 +3105,12 @@
 "name": "Cultist's Staff",
 "oracle": "Equipped creature gets +2/+2.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Cultivate": {
@@ -3072,12 +3145,13 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Enchantment",
+"subtypes": [
 "Aura",
 "Curse"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
 ]
 },
 "Cut a Deal": {
@@ -3165,11 +3239,12 @@
 "name": "Darksteel Plate",
 "oracle": "Indestructible\nEquipped creature has indestructible.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Dawnhand Dissident": {
@@ -3185,13 +3260,14 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Warlock"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Elf",
-"Warlock"
+"Creature"
 ]
 },
 "Day of Judgment": {
@@ -3227,12 +3303,13 @@
 "W": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Deadly Dispute": {
@@ -3282,13 +3359,14 @@
 "B/G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Elf",
-"Shaman"
+"Creature"
 ]
 },
 "Defense Grid": {
@@ -3322,12 +3400,13 @@
 "B": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Demon"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Demon"
+"Creature"
 ]
 },
 "Defy Death": {
@@ -3381,13 +3460,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Halfling",
+"Citizen"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Halfling",
-"Citizen"
+"Creature"
 ]
 },
 "Demand Answers": {
@@ -3460,11 +3540,12 @@
 "pips": {
 "B": 1
 },
-"subtypes": [],
+"subtypes": [
+"Lesson"
+],
 "supertypes": [],
 "types": [
-"Sorcery",
-"Lesson"
+"Sorcery"
 ]
 },
 "Desperate Ritual": {
@@ -3481,11 +3562,12 @@
 "pips": {
 "R": 1
 },
-"subtypes": [],
+"subtypes": [
+"Arcane"
+],
 "supertypes": [],
 "types": [
-"Instant",
-"Arcane"
+"Instant"
 ]
 },
 "Destiny Spinner": {
@@ -3501,13 +3583,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
 "Enchantment",
-"Creature",
-"Human"
+"Creature"
 ]
 },
 "Destroy Evil": {
@@ -3541,13 +3624,14 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Diabolic Intent": {
@@ -3639,15 +3723,16 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Dryad",
+"Druid"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Dryad",
-"Druid"
+"Creature"
 ]
 },
 "Disenchant": {
@@ -3699,15 +3784,16 @@
 "G": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Doctor"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Doctor"
+"Creature"
 ]
 },
 "Dragonskull Summit": {
@@ -3760,13 +3846,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Scarecrow"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
 "Artifact",
-"Creature",
-"Scarecrow"
+"Creature"
 ]
 },
 "Drifting Meadow": {
@@ -3800,12 +3887,13 @@
 "B": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Vampire"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Vampire"
+"Creature"
 ]
 },
 "Drover of the Mighty": {
@@ -3821,13 +3909,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Druid"
+"Creature"
 ]
 },
 "Dryad Arbor": {
@@ -3841,14 +3930,15 @@
 "oracle": "(Dryad Arbor isn't a spell, it's affected by summoning sickness, and it has \"{T}: Add {G}.\")",
 "pips": {},
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Forest",
+"Dryad"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
 "Land",
-"Creature",
-"Forest",
-"Dryad"
+"Creature"
 ]
 },
 "Dusk Urchins": {
@@ -3864,12 +3954,13 @@
 "B": 1
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Ouphe"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Ouphe"
+"Creature"
 ]
 },
 "Eccentric Pestfinder": {
@@ -3908,13 +3999,14 @@
 "G": 1
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Troll",
+"Druid"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
-"Creature",
-"Troll",
-"Druid"
+"Creature"
 ]
 },
 "Efflorescence": {
@@ -3948,13 +4040,14 @@
 "G": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Spirit"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
 "Enchantment",
-"Creature",
-"Spirit"
+"Creature"
 ]
 },
 "Eject the Warp Core": {
@@ -4010,15 +4103,16 @@
 "R": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Villain"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Villain"
+"Creature"
 ]
 },
 "Electrostatic Field": {
@@ -4036,12 +4130,13 @@
 "R": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Wall"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Wall"
+"Creature"
 ]
 },
 "Elemental Bond": {
@@ -4075,13 +4170,14 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Elves of Deep Shadow": {
@@ -4097,13 +4193,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Elvish Mystic": {
@@ -4119,13 +4216,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Elvish Rejuvenator": {
@@ -4141,13 +4239,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Elvish Spirit Guide": {
@@ -4163,13 +4262,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Spirit"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Elf",
-"Spirit"
+"Creature"
 ]
 },
 "Emerald Medallion": {
@@ -4203,12 +4303,13 @@
 "W": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Emeria's Call": {
@@ -4261,13 +4362,14 @@
 "R": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Wizard"
+"Creature"
 ]
 },
 "Emeritus of Woe": {
@@ -4283,13 +4385,14 @@
 "B": 1
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Vampire",
+"Warlock"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Vampire",
-"Warlock"
+"Creature"
 ]
 },
 "Enchantress's Presence": {
@@ -4357,13 +4460,14 @@
 "R": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Dwarf",
+"Artificer"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Dwarf",
-"Artificer"
+"Creature"
 ]
 },
 "Esika's Chariot": {
@@ -4381,14 +4485,15 @@
 "G": 1
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Vehicle"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Artifact",
-"Vehicle"
+"Artifact"
 ]
 },
 "Eternal Witness": {
@@ -4404,13 +4509,14 @@
 "G": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Shaman"
+"Creature"
 ]
 },
 "Eventide's Shadow": {
@@ -4462,13 +4568,14 @@
 "G": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Evolving Wilds": {
@@ -4502,12 +4609,13 @@
 "W": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Exorcise": {
@@ -4667,13 +4775,14 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Vampire",
+"Noble"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Vampire",
-"Noble"
+"Creature"
 ]
 },
 "Fanatic of Rhonas": {
@@ -4691,13 +4800,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Snake",
+"Druid"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Snake",
-"Druid"
+"Creature"
 ]
 },
 "Far Wanderings": {
@@ -4787,13 +4897,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Elf",
-"Shaman"
+"Creature"
 ]
 },
 "Fecundity": {
@@ -4848,13 +4959,14 @@
 "W": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Cat",
+"Beast"
+],
 "supertypes": [],
 "toughness": "6",
 "types": [
-"Creature",
-"Cat",
-"Beast"
+"Creature"
 ]
 },
 "Fell": {
@@ -4890,13 +5002,14 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Zombie",
+"Mutant"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Zombie",
-"Mutant"
+"Creature"
 ]
 },
 "Ferrafor, Young Yew": {
@@ -4912,15 +5025,16 @@
 "G": 1
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Treefolk",
+"Druid"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "7",
 "types": [
-"Creature",
-"Treefolk",
-"Druid"
+"Creature"
 ]
 },
 "Fertilid": {
@@ -4936,12 +5050,13 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Elemental"
+],
 "supertypes": [],
 "toughness": "0",
 "types": [
-"Creature",
-"Elemental"
+"Creature"
 ]
 },
 "Festering Thicket": {
@@ -4956,12 +5071,13 @@
 "name": "Festering Thicket",
 "oracle": "({T}: Add {B} or {G}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Swamp",
 "Forest"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Fiery Confluence": {
@@ -5158,13 +5274,14 @@
 "R": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Archer"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Archer"
+"Creature"
 ]
 },
 "Firemane Commando": {
@@ -5182,13 +5299,14 @@
 "W": 1
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Soldier"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel",
-"Soldier"
+"Creature"
 ]
 },
 "Fireshrieker": {
@@ -5203,11 +5321,12 @@
 "name": "Fireshrieker",
 "oracle": "Equipped creature has double strike. (It deals both first-strike and regular combat damage.)\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Flashback": {
@@ -5259,11 +5378,12 @@
 "name": "Flayer Husk",
 "oracle": "Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.)\nEquipped creature gets +1/+1.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Flourishing Defenses": {
@@ -5334,13 +5454,14 @@
 "pips": {
 "W": 1
 },
-"subtypes": [],
+"subtypes": [
+"Background"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Enchantment",
-"Background"
+"Enchantment"
 ]
 },
 "Foot Chopper": {
@@ -5357,11 +5478,12 @@
 "pips": {
 "B": 1
 },
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Forest": {
@@ -5374,13 +5496,14 @@
 "name": "Forest",
 "oracle": "({T}: Add {G}.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Forest"
+],
 "supertypes": [
 "Basic"
 ],
 "types": [
-"Land",
-"Forest"
+"Land"
 ]
 },
 "Forgotten Ancient": {
@@ -5396,12 +5519,13 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Elemental"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Elemental"
+"Creature"
 ]
 },
 "Fork": {
@@ -5433,13 +5557,14 @@
 "oracle": "Artifact spells you cast cost {1} less to cast.",
 "pips": {},
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Construct"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
 "Artifact",
-"Creature",
-"Construct"
+"Creature"
 ]
 },
 "Frenzied Baloth": {
@@ -5458,12 +5583,13 @@
 "G": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Beast"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Beast"
+"Creature"
 ]
 },
 "From Beyond": {
@@ -5519,13 +5645,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Fynn, the Fangbearer": {
@@ -5543,15 +5670,16 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Warrior"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Warrior"
+"Creature"
 ]
 },
 "Gaea's Cradle": {
@@ -5586,11 +5714,12 @@
 "pips": {
 "G": 2
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Gamble": {
@@ -5609,6 +5738,52 @@
 "supertypes": [],
 "types": [
 "Sorcery"
+]
+},
+"Gandalf, Goblins' Bane": {
+"color_identity": "R",
+"faces": [
+{
+"generic": 1,
+"keywords": [],
+"mana_cost": "{1}{R}",
+"mv": 2,
+"name": "Flameshape",
+"oracle": "Look at the top two cards of your library and exile them face down. For as long as they remain exiled, you may play them if you control a Wizard.",
+"pips": {
+"R": 1
+},
+"subtypes": [
+"Adventure"
+],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+}
+],
+"full_name": "Gandalf, Goblins' Bane // Flameshape",
+"generic": 2,
+"keywords": [],
+"layout": "adventure",
+"mana_cost": "{2}{R}",
+"mv": 3,
+"name": "Gandalf, Goblins' Bane",
+"oracle": "Whenever you cast a noncreature spell, Gandalf gets +1/+1 until end of turn and deals 1 damage to each opponent.",
+"pips": {
+"R": 1
+},
+"power": "2",
+"subtypes": [
+"Avatar",
+"Wizard"
+],
+"supertypes": [
+"Legendary"
+],
+"toughness": "3",
+"types": [
+"Creature"
 ]
 },
 "Garruk's Uprising": {
@@ -5642,13 +5817,14 @@
 "pips": {
 "G": 3
 },
-"subtypes": [],
+"subtypes": [
+"Garruk"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Planeswalker",
-"Garruk"
+"Planeswalker"
 ]
 },
 "Gavel of the Righteous": {
@@ -5663,11 +5839,12 @@
 "name": "Gavel of the Righteous",
 "oracle": "At the beginning of combat on your turn, put a charge counter on Gavel of the Righteous.\nEquipped creature gets +1/+1 for each counter on Gavel of the Righteous.\nAs long as Gavel of the Righteous has four or more counters on it, equipped creature has double strike.\nEquip—Pay {3} or remove a counter from Gavel of the Righteous.",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Gemhide Sliver": {
@@ -5683,12 +5860,13 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Sliver"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Sliver"
+"Creature"
 ]
 },
 "Gemstone Mine": {
@@ -5738,13 +5916,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Advisor"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Elf",
-"Advisor"
+"Creature"
 ]
 },
 "Genji Glove": {
@@ -5759,11 +5938,12 @@
 "name": "Genji Glove",
 "oracle": "Equipped creature has double strike.\nWhenever equipped creature attacks, if it's the first combat phase of the turn, untap it. After this phase, there is an additional combat phase.\nEquip {3}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Giada, Font of Hope": {
@@ -5782,14 +5962,15 @@
 "W": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "2",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Giant Growth": {
@@ -5845,16 +6026,17 @@
 "G": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Phyrexian",
+"Zombie",
+"Elf"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Phyrexian",
-"Zombie",
-"Elf"
+"Creature"
 ]
 },
 "Glittering Frost": {
@@ -5871,13 +6053,14 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [
 "Snow"
 ],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Glorious Sunrise": {
@@ -5964,13 +6147,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Plant",
+"Beast"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Plant",
-"Beast"
+"Creature"
 ]
 },
 "Gorgon's Head": {
@@ -5985,11 +6169,12 @@
 "name": "Gorgon's Head",
 "oracle": "Equipped creature has deathtouch.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Gorma, the Gullet": {
@@ -6008,15 +6193,16 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Pest",
+"Frog"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "1",
 "types": [
-"Creature",
-"Pest",
-"Frog"
+"Creature"
 ]
 },
 "Grafted Exoskeleton": {
@@ -6031,11 +6217,12 @@
 "name": "Grafted Exoskeleton",
 "oracle": "Equipped creature gets +2/+2 and has infect. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhenever Grafted Exoskeleton becomes unattached from a permanent, sacrifice that permanent.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Grand Nagus Zek": {
@@ -6051,15 +6238,16 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Ferengi",
+"Noble"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "1",
 "types": [
-"Creature",
-"Ferengi",
-"Noble"
+"Creature"
 ]
 },
 "Grapeshot": {
@@ -6133,12 +6321,13 @@
 "B": 2
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Giant"
+],
 "supertypes": [],
 "toughness": "6",
 "types": [
-"Creature",
-"Giant"
+"Creature"
 ]
 },
 "Grave Venerations": {
@@ -6172,12 +6361,13 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Zombie"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Zombie"
+"Creature"
 ]
 },
 "Greater Good": {
@@ -6249,13 +6439,14 @@
 "B": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Wizard"
+"Creature"
 ]
 },
 "Grim Monolith": {
@@ -6285,13 +6476,14 @@
 "oracle": "Grim Poppet enters with three -1/-1 counters on it.\nRemove a -1/-1 counter from Grim Poppet: Put a -1/-1 counter on another target creature.",
 "pips": {},
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Scarecrow"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
 "Artifact",
-"Creature",
-"Scarecrow"
+"Creature"
 ]
 },
 "Grim Tutor": {
@@ -6325,12 +6517,13 @@
 "R": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Elemental"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Elemental"
+"Creature"
 ]
 },
 "Grow Extra Arms": {
@@ -6398,13 +6591,14 @@
 "W": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Cleric"
+"Creature"
 ]
 },
 "Gut Shot": {
@@ -6438,13 +6632,14 @@
 "R": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Goblin",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Goblin",
-"Shaman"
+"Creature"
 ]
 },
 "Guy in the Chair": {
@@ -6460,13 +6655,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Advisor"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Advisor"
+"Creature"
 ]
 },
 "Gyre Sage": {
@@ -6484,13 +6680,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Hammer of Nazahn": {
@@ -6505,13 +6702,14 @@
 "name": "Hammer of Nazahn",
 "oracle": "Whenever Hammer of Nazahn or another Equipment you control enters, you may attach that Equipment to target creature you control.\nEquipped creature gets +2/+0 and has indestructible.\nEquip {4}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Hapatra, Vizier of Poisons": {
@@ -6528,15 +6726,16 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Cleric"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Cleric"
+"Creature"
 ]
 },
 "Harbinger of Night": {
@@ -6552,12 +6751,13 @@
 "B": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Spirit"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Spirit"
+"Creature"
 ]
 },
 "Hardened Scales": {
@@ -6593,13 +6793,14 @@
 "R": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Wizard"
+"Creature"
 ]
 },
 "Harmonize": {
@@ -6648,12 +6849,13 @@
 "name": "Haunted Mire",
 "oracle": "({T}: Add {B} or {G}.)\nHaunted Mire enters tapped.",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Swamp",
 "Forest"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Haywire Mite": {
@@ -6667,13 +6869,14 @@
 "oracle": "When Haywire Mite dies, you gain 2 life.\n{G}, Sacrifice Haywire Mite: Exile target noncreature artifact or noncreature enchantment.",
 "pips": {},
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Insect"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
 "Artifact",
-"Creature",
-"Insect"
+"Creature"
 ]
 },
 "Helm of Awakening": {
@@ -6704,13 +6907,14 @@
 "name": "Helm of the Host",
 "oracle": "At the beginning of combat on your turn, create a token that's a copy of equipped creature, except the token isn't legendary if equipped creature is legendary. That token gains haste.\nEquip {5}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Herald of Eternal Dawn": {
@@ -6729,12 +6933,13 @@
 "W": 3
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "6",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Herald of War": {
@@ -6752,12 +6957,13 @@
 "W": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Herald of the Host": {
@@ -6777,12 +6983,13 @@
 "W": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Herald's Horn": {
@@ -6868,13 +7075,14 @@
 "G": 4
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Chimera",
+"Horror"
+],
 "supertypes": [],
 "toughness": "6",
 "types": [
-"Creature",
-"Chimera",
-"Horror"
+"Creature"
 ]
 },
 "Hickory Woodlot": {
@@ -6924,13 +7132,14 @@
 "B": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Vampire",
+"Noble"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Vampire",
-"Noble"
+"Creature"
 ]
 },
 "Hoarder's Greed": {
@@ -6963,11 +7172,12 @@
 "name": "Hunter's Blowgun",
 "oracle": "Equipped creature gets +1/+1.\nEquipped creature has deathtouch during your turn. Otherwise, it has reach.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Hunter's Insight": {
@@ -7002,11 +7212,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Ifnir Deadlands": {
@@ -7019,11 +7230,12 @@
 "name": "Ifnir Deadlands",
 "oracle": "{T}: Add {C}.\n{T}, Pay 1 life: Add {B}.\n{2}{B}{B}, {T}, Sacrifice a Desert: Put two -1/-1 counters on target creature an opponent controls. Activate only as a sorcery.",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Desert"
+],
 "supertypes": [],
 "types": [
-"Land",
-"Desert"
+"Land"
 ]
 },
 "Ignoble Hierarch": {
@@ -7041,13 +7253,14 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Goblin",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Goblin",
-"Shaman"
+"Creature"
 ]
 },
 "Immoral Bargain": {
@@ -7156,11 +7369,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Infernal Grasp": {
@@ -7193,11 +7407,12 @@
 "name": "Inquisitor's Flail",
 "oracle": "If equipped creature would deal combat damage, it deals double that damage instead.\nIf another creature would deal combat damage to equipped creature, it deals double that damage to equipped creature instead.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Inscription of Abundance": {
@@ -7233,12 +7448,13 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Fungus"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Fungus"
+"Creature"
 ]
 },
 "Inspiring Overseer": {
@@ -7256,13 +7472,14 @@
 "W": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Angel",
-"Cleric"
+"Creature"
 ]
 },
 "Invigorate": {
@@ -7314,15 +7531,16 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Wizard"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Wizard"
+"Creature"
 ]
 },
 "Jadzia Dax, Living Legacy": {
@@ -7338,15 +7556,16 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Trill",
+"Scientist"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "1",
 "types": [
-"Creature",
-"Trill",
-"Scientist"
+"Creature"
 ]
 },
 "Jarad, Golgari Lich Lord": {
@@ -7363,15 +7582,16 @@
 "G": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Zombie",
+"Elf"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "2",
 "types": [
-"Creature",
-"Zombie",
-"Elf"
+"Creature"
 ]
 },
 "Jenova, Ancient Calamity": {
@@ -7388,14 +7608,15 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Alien"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "5",
 "types": [
-"Creature",
-"Alien"
+"Creature"
 ]
 },
 "Jeska's Will": {
@@ -7429,13 +7650,14 @@
 "oracle": "Flying\nHistoric spells you cast cost {1} less to cast. (Artifacts, legendaries, and Sagas are historic.)",
 "pips": {},
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Bird"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
 "Artifact",
-"Creature",
-"Bird"
+"Creature"
 ]
 },
 "Kami of Whispered Hopes": {
@@ -7451,12 +7673,13 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Spirit"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Spirit"
+"Creature"
 ]
 },
 "Karametra's Acolyte": {
@@ -7472,13 +7695,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Druid"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Human",
-"Druid"
+"Creature"
 ]
 },
 "Karmic Guide": {
@@ -7498,13 +7722,14 @@
 "W": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Spirit"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Angel",
-"Spirit"
+"Creature"
 ]
 },
 "Keen Sense": {
@@ -7521,11 +7746,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Kenrith's Transformation": {
@@ -7542,11 +7768,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Kessig Flamebreather": {
@@ -7562,13 +7789,14 @@
 "R": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Shaman"
+"Creature"
 ]
 },
 "Khalni Ambush": {
@@ -7619,15 +7847,16 @@
 "B": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Warrior"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Warrior"
+"Creature"
 ]
 },
 "Kindred Judgment": {
@@ -7663,14 +7892,15 @@
 "G": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Spirit"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Spirit"
+"Creature"
 ]
 },
 "Kodama's Reach": {
@@ -7685,11 +7915,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Arcane"
+],
 "supertypes": [],
 "types": [
-"Sorcery",
-"Arcane"
+"Sorcery"
 ]
 },
 "Krark, the Thumbless": {
@@ -7707,15 +7938,16 @@
 "R": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Goblin",
+"Wizard"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "2",
 "types": [
-"Creature",
-"Goblin",
-"Wizard"
+"Creature"
 ]
 },
 "Krosan Grip": {
@@ -7754,13 +7986,14 @@
 "B/R": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Elemental",
+"Knight"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Elemental",
-"Knight"
+"Creature"
 ]
 },
 "Lair of the Hydra": {
@@ -7829,11 +8062,12 @@
 "name": "Lavaspur Boots",
 "oracle": "Equipped creature gets +1/+0 and has haste and ward {1}.\nEquip {1}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Leader's Talent": {
@@ -7848,11 +8082,12 @@
 "pips": {
 "W": 1
 },
-"subtypes": [],
+"subtypes": [
+"Class"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Class"
+"Enchantment"
 ]
 },
 "Lesser Masticore": {
@@ -7868,13 +8103,14 @@
 "oracle": "As an additional cost to cast this spell, discard a card.\n{4}: Lesser Masticore deals 1 damage to target creature.\nPersist (When this creature dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner's control with a -1/-1 counter on it.)",
 "pips": {},
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Masticore"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
 "Artifact",
-"Creature",
-"Masticore"
+"Creature"
 ]
 },
 "Level Up": {
@@ -7891,11 +8127,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Leyline Axe": {
@@ -7910,11 +8147,12 @@
 "name": "Leyline Axe",
 "oracle": "If this card is in your opening hand, you may begin the game with it on the battlefield.\nEquipped creature gets +1/+1 and has double strike and trample.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Light Up the Stage": {
@@ -7967,11 +8205,12 @@
 "name": "Lightning Greaves",
 "oracle": "Equipped creature has haste and shroud. (It can't be the target of spells or abilities.)\nEquip {0}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Lightning Strike": {
@@ -8005,13 +8244,14 @@
 "pips": {
 "B": 2
 },
-"subtypes": [],
+"subtypes": [
+"Liliana"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Planeswalker",
-"Liliana"
+"Planeswalker"
 ]
 },
 "Lindblum, Industrial Regency": {
@@ -8027,11 +8267,12 @@
 "pips": {
 "R": 1
 },
-"subtypes": [],
+"subtypes": [
+"Adventure"
+],
 "supertypes": [],
 "types": [
-"Instant",
-"Adventure"
+"Instant"
 ]
 }
 ],
@@ -8044,11 +8285,12 @@
 "name": "Lindblum, Industrial Regency",
 "oracle": "This land enters tapped.\n{T}: Add {R}.",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Town"
+],
 "supertypes": [],
 "types": [
-"Land",
-"Town"
+"Land"
 ]
 },
 "Lingering Souls": {
@@ -8087,12 +8329,13 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Spirit"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Spirit"
+"Creature"
 ]
 },
 "Linvala, the Preserver": {
@@ -8110,14 +8353,15 @@
 "W": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "5",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Lion Umbra": {
@@ -8135,11 +8379,12 @@
 "pips": {
 "G": 2
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Llanowar Elves": {
@@ -8155,13 +8400,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Llanowar Wastes": {
@@ -8192,11 +8438,12 @@
 "name": "Long-Lost Lances",
 "oracle": "Equipped creature gets +2/+0.\nDuring your turn, creatures you control that are equipped have first strike and vigilance.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Longshot, Rebel Bowman": {
@@ -8214,16 +8461,17 @@
 "R": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Rebel",
+"Ally"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Rebel",
-"Ally"
+"Creature"
 ]
 },
 "Lotus Bloom": {
@@ -8257,12 +8505,13 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Snake"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Snake"
+"Creature"
 ]
 },
 "Lotus Petal": {
@@ -8293,11 +8542,12 @@
 "name": "Loxodon Warhammer",
 "oracle": "Equipped creature gets +3/+0 and has trample and lifelink.\nEquip {3}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Lure": {
@@ -8314,11 +8564,12 @@
 "pips": {
 "G": 2
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Lyra Dawnbringer": {
@@ -8338,14 +8589,15 @@
 "W": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "5",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Lyra, Archangel of Dawn": {
@@ -8363,15 +8615,16 @@
 "W": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Knight"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel",
-"Knight"
+"Creature"
 ]
 },
 "Magma Spray": {
@@ -8427,15 +8680,16 @@
 "B": 2
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Elemental",
+"Bird"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "5",
 "types": [
-"Creature",
-"Elemental",
-"Bird"
+"Creature"
 ]
 },
 "Mahadi, Emporium Master": {
@@ -8452,14 +8706,15 @@
 "R": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Devil"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Devil"
+"Creature"
 ]
 },
 "Mammoth Growth": {
@@ -8565,13 +8820,14 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Artificer"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Artificer"
+"Creature"
 ]
 },
 "Mask of Memory": {
@@ -8586,11 +8842,12 @@
 "name": "Mask of Memory",
 "oracle": "Whenever equipped creature deals combat damage to a player, you may draw two cards. If you do, discard a card.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Massacre Girl, Known Killer": {
@@ -8608,15 +8865,16 @@
 "B": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Assassin"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Human",
-"Assassin"
+"Creature"
 ]
 },
 "Massacre Girl, Most Wanted": {
@@ -8632,15 +8890,16 @@
 "B": 1
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Assassin"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Human",
-"Assassin"
+"Creature"
 ]
 },
 "Massacre Wurm": {
@@ -8656,13 +8915,14 @@
 "B": 3
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Phyrexian",
+"Wurm"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
-"Creature",
-"Phyrexian",
-"Wurm"
+"Creature"
 ]
 },
 "Mazirek, Kraul Death Priest": {
@@ -8681,15 +8941,16 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Insect",
+"Shaman"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "2",
 "types": [
-"Creature",
-"Insect",
-"Shaman"
+"Creature"
 ]
 },
 "Melira, Sylvok Outcast": {
@@ -8705,15 +8966,16 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Scout"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Scout"
+"Creature"
 ]
 },
 "Memorial to Glory": {
@@ -8747,13 +9009,14 @@
 "W": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Detective"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
-"Creature",
-"Angel",
-"Detective"
+"Creature"
 ]
 },
 "Merchant of Venom": {
@@ -8771,13 +9034,14 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Cat",
+"Warlock"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Cat",
-"Warlock"
+"Creature"
 ]
 },
 "Metallic Mimic": {
@@ -8791,13 +9055,14 @@
 "oracle": "As Metallic Mimic enters, choose a creature type.\nMetallic Mimic is the chosen type in addition to its other types.\nEach other creature you control of the chosen type enters with an additional +1/+1 counter on it.",
 "pips": {},
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Shapeshifter"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
 "Artifact",
-"Creature",
-"Shapeshifter"
+"Creature"
 ]
 },
 "Metropolis Reformer": {
@@ -8816,13 +9081,14 @@
 "W": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel",
-"Cleric"
+"Creature"
 ]
 },
 "Midnight Banshee": {
@@ -8840,12 +9106,13 @@
 "B": 3
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Spirit"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
-"Creature",
-"Spirit"
+"Creature"
 ]
 },
 "Midnight Reaper": {
@@ -8861,13 +9128,14 @@
 "B": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Zombie",
+"Knight"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Zombie",
-"Knight"
+"Creature"
 ]
 },
 "Might of Old Krosa": {
@@ -8903,15 +9171,16 @@
 "B": 3
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Zombie",
+"Cleric"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "5",
 "types": [
-"Creature",
-"Zombie",
-"Cleric"
+"Creature"
 ]
 },
 "Millikin": {
@@ -8925,13 +9194,14 @@
 "oracle": "{T}, Mill a card: Add {C}. (To mill a card, put the top card of your library into your graveyard.)",
 "pips": {},
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Construct"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
 "Artifact",
-"Creature",
-"Construct"
+"Creature"
 ]
 },
 "Minas Tirith": {
@@ -9001,12 +9271,13 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Bat"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Bat"
+"Creature"
 ]
 },
 "Mishra's Bauble": {
@@ -9039,13 +9310,14 @@
 "name": "Mithril Coat",
 "oracle": "Flash\nIndestructible\nWhen Mithril Coat enters, attach it to target legendary creature you control.\nEquipped creature has indestructible.\nEquip {3}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Mizzix's Mastery": {
@@ -9120,13 +9392,14 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Rogue"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Rogue"
+"Creature"
 ]
 },
 "Morselhoarder": {
@@ -9142,12 +9415,13 @@
 "R/G": 2
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Elemental"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Elemental"
+"Creature"
 ]
 },
 "Mortality Spear": {
@@ -9195,13 +9469,14 @@
 "name": "Mountain",
 "oracle": "({T}: Add {R}.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Mountain"
+],
 "supertypes": [
 "Basic"
 ],
 "types": [
-"Land",
-"Mountain"
+"Land"
 ]
 },
 "Mox Amber": {
@@ -9301,13 +9576,14 @@
 "R": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Wizard"
+"Creature"
 ]
 },
 "Natural Order": {
@@ -9415,12 +9691,13 @@
 "B": 2
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elemental"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Elemental"
+"Creature"
 ]
 },
 "Needle Drop": {
@@ -9454,11 +9731,12 @@
 "name": "Ashmouth Blade",
 "oracle": "Equipped creature gets +3/+3 and has first strike.\nEquip {3}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 }
 ],
@@ -9473,11 +9751,12 @@
 "name": "Neglected Heirloom",
 "oracle": "Equipped creature gets +1/+1.\nWhen equipped creature transforms, transform Neglected Heirloom.\nEquip {1}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Neheb, the Eternal": {
@@ -9495,16 +9774,17 @@
 "R": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Zombie",
+"Minotaur",
+"Warrior"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "6",
 "types": [
-"Creature",
-"Zombie",
-"Minotaur",
-"Warrior"
+"Creature"
 ]
 },
 "Nest of Scarabs": {
@@ -9557,12 +9837,13 @@
 "B": 2
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Spirit"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Spirit"
+"Creature"
 ]
 },
 "Nettlecyst": {
@@ -9578,11 +9859,12 @@
 "name": "Nettlecyst",
 "oracle": "Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.)\nEquipped creature gets +1/+1 for each artifact and/or enchantment you control.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Night's Whisper": {
@@ -9618,13 +9900,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Druid"
+"Creature"
 ]
 },
 "Norn's Choirmaster": {
@@ -9643,13 +9926,14 @@
 "W": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Phyrexian",
+"Angel"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Phyrexian",
-"Angel"
+"Creature"
 ]
 },
 "Nykthos, Shrine to Nyx": {
@@ -9685,14 +9969,15 @@
 "W": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Obelisk Spider": {
@@ -9711,12 +9996,13 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Spider"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Spider"
+"Creature"
 ]
 },
 "Oft-Nabbed Goat": {
@@ -9732,12 +10018,13 @@
 "B": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Goat"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
-"Creature",
-"Goat"
+"Creature"
 ]
 },
 "Ohran Frostfang": {
@@ -9753,14 +10040,15 @@
 "G": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Snake"
+],
 "supertypes": [
 "Snow"
 ],
 "toughness": "6",
 "types": [
-"Creature",
-"Snake"
+"Creature"
 ]
 },
 "Ojer Axonil, Deepest Might": {
@@ -9795,14 +10083,15 @@
 "R": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"God"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"God"
+"Creature"
 ]
 },
 "Ophiomancer": {
@@ -9818,13 +10107,14 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Shaman"
+"Creature"
 ]
 },
 "Oran-Rief, the Vastwood": {
@@ -9853,12 +10143,13 @@
 "name": "Overgrown Tomb",
 "oracle": "({T}: Add {B} or {G}.)\nAs Overgrown Tomb enters, you may pay 2 life. If you don't, it enters tapped.",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Swamp",
 "Forest"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Overgrowth": {
@@ -9875,11 +10166,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Overmaster": {
@@ -9949,13 +10241,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Pariah's Shield": {
@@ -9970,11 +10263,12 @@
 "name": "Pariah's Shield",
 "oracle": "All damage that would be dealt to you is dealt to equipped creature instead.\nEquip {3}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Party Thrasher": {
@@ -9990,13 +10284,14 @@
 "R": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Lizard",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Lizard",
-"Wizard"
+"Creature"
 ]
 },
 "Past in Flames": {
@@ -10082,13 +10377,14 @@
 "B": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Vampire",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Vampire",
-"Shaman"
+"Creature"
 ]
 },
 "Pearl Medallion": {
@@ -10159,13 +10455,14 @@
 "B": 1
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Zombie",
+"Snake"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Zombie",
-"Snake"
+"Creature"
 ]
 },
 "Pest Infestation": {
@@ -10199,13 +10496,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Dryad",
+"Druid"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Dryad",
-"Druid"
+"Creature"
 ]
 },
 "Phyrexian Altar": {
@@ -10255,15 +10553,16 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Druid"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Druid"
+"Creature"
 ]
 },
 "Pinnacle Monk": {
@@ -10298,13 +10597,14 @@
 "R": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Djinn",
+"Monk"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Djinn",
-"Monk"
+"Creature"
 ]
 },
 "Pirate's Pillage": {
@@ -10338,13 +10638,14 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Pirate"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Human",
-"Pirate"
+"Creature"
 ]
 },
 "Plains": {
@@ -10357,13 +10658,14 @@
 "name": "Plains",
 "oracle": "({T}: Add {W}.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Plains"
+],
 "supertypes": [
 "Basic"
 ],
 "types": [
-"Land",
-"Plains"
+"Land"
 ]
 },
 "Play with Fire": {
@@ -10401,13 +10703,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Archer"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Elf",
-"Archer"
+"Creature"
 ]
 },
 "Pollenbright Druid": {
@@ -10423,13 +10726,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Power Fist": {
@@ -10446,11 +10750,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Power Word Kill": {
@@ -10502,13 +10807,14 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Cleric"
+"Creature"
 ]
 },
 "Priest of Titania": {
@@ -10524,13 +10830,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Druid"
+"Creature"
 ]
 },
 "Primal Amulet": {
@@ -10672,13 +10979,14 @@
 "B": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Faerie",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Faerie",
-"Wizard"
+"Creature"
 ]
 },
 "Putrefy": {
@@ -10715,13 +11023,14 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Zombie",
+"Goblin"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Zombie",
-"Goblin"
+"Creature"
 ]
 },
 "Pyre Rhymer": {
@@ -10758,13 +11067,14 @@
 "R": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Elemental",
+"Sorcerer"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Elemental",
-"Sorcerer"
+"Creature"
 ]
 },
 "Pyretic Ritual": {
@@ -10802,14 +11112,15 @@
 "G": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Beast"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Beast"
+"Creature"
 ]
 },
 "Quietus Spike": {
@@ -10824,11 +11135,12 @@
 "name": "Quietus Spike",
 "oracle": "Equipped creature has deathtouch.\nWhenever equipped creature deals combat damage to a player, that player loses half their life, rounded up.\nEquip {3}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Radiant Fountain": {
@@ -10912,13 +11224,14 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Plant",
+"Hydra"
+],
 "supertypes": [],
 "toughness": "0",
 "types": [
-"Creature",
-"Plant",
-"Hydra"
+"Creature"
 ]
 },
 "Rancor": {
@@ -10935,11 +11248,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Ravenous Chupacabra": {
@@ -10955,13 +11269,14 @@
 "B": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Beast",
+"Horror"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Beast",
-"Horror"
+"Creature"
 ]
 },
 "Reassembling Skeleton": {
@@ -10977,13 +11292,14 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Skeleton",
+"Warrior"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Skeleton",
-"Warrior"
+"Creature"
 ]
 },
 "Reckless Impulse": {
@@ -11018,11 +11334,12 @@
 "pips": {
 "R": 1
 },
-"subtypes": [],
+"subtypes": [
+"Lesson"
+],
 "supertypes": [],
 "types": [
-"Instant",
-"Lesson"
+"Instant"
 ]
 },
 "Reiterate": {
@@ -11074,15 +11391,16 @@
 "G": 2
 },
 "power": "*",
-"subtypes": [],
+"subtypes": [
+"Demigod"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
 "Enchantment",
-"Creature",
-"Demigod"
+"Creature"
 ]
 },
 "Rendclaw Trow": {
@@ -11101,12 +11419,13 @@
 "B/G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Troll"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Troll"
+"Creature"
 ]
 },
 "Renegade Map": {
@@ -11140,12 +11459,13 @@
 "W": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Restoration Angel": {
@@ -11164,12 +11484,13 @@
 "W": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Return of the Wildspeaker": {
@@ -11261,14 +11582,15 @@
 "W": 3
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "6",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Righteous Valkyrie": {
@@ -11286,13 +11608,14 @@
 "W": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Angel",
-"Cleric"
+"Creature"
 ]
 },
 "Rishadan Port": {
@@ -11440,12 +11763,13 @@
 "R": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elemental"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elemental"
+"Creature"
 ]
 },
 "Sakura-Tribe Elder": {
@@ -11461,13 +11785,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Snake",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Snake",
-"Shaman"
+"Creature"
 ]
 },
 "Sakura-Tribe Scout": {
@@ -11483,14 +11808,15 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
-"supertypes": [],
-"toughness": "1",
-"types": [
-"Creature",
+"subtypes": [
 "Snake",
 "Shaman",
 "Scout"
+],
+"supertypes": [],
+"toughness": "1",
+"types": [
+"Creature"
 ]
 },
 "Sanctum Weaver": {
@@ -11506,13 +11832,14 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Dryad"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
 "Enchantment",
-"Creature",
-"Dryad"
+"Creature"
 ]
 },
 "Saproling Migration": {
@@ -11548,13 +11875,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Satyr",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Satyr",
-"Shaman"
+"Creature"
 ]
 },
 "Savage Lands": {
@@ -11586,12 +11914,13 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Ooze"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Ooze"
+"Creature"
 ]
 },
 "Scoured Barrens": {
@@ -11625,12 +11954,13 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Treefolk"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Treefolk"
+"Creature"
 ]
 },
 "Scute Swarm": {
@@ -11646,12 +11976,13 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Insect"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Insect"
+"Creature"
 ]
 },
 "Scuttlemutt": {
@@ -11665,13 +11996,14 @@
 "oracle": "{T}: Add one mana of any color.\n{T}: Target creature becomes the color or colors of your choice until end of turn.",
 "pips": {},
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Scarecrow"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
 "Artifact",
-"Creature",
-"Scarecrow"
+"Creature"
 ]
 },
 "Scuzzback Scrounger": {
@@ -11687,13 +12019,14 @@
 "R": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Goblin",
+"Warrior"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Goblin",
-"Warrior"
+"Creature"
 ]
 },
 "Search the Premises": {
@@ -11799,12 +12132,13 @@
 "G": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Spirit"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Spirit"
+"Creature"
 ]
 },
 "Seething Song": {
@@ -11841,12 +12175,13 @@
 "W": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Seize the Spoils": {
@@ -11880,15 +12215,16 @@
 "G": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Scout"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Elf",
-"Scout"
+"Creature"
 ]
 },
 "Semblance Anvil": {
@@ -11923,14 +12259,15 @@
 "W": 3
 },
 "power": "7",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "7",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Sephiroth, Fabled SOLDIER": {
@@ -11947,16 +12284,17 @@
 "oracle": "Flying\nSuper Nova — As this creature transforms into Sephiroth, One-Winged Angel, you get an emblem with \"Whenever a creature dies, target opponent loses 1 life and you gain 1 life.\"\nWhenever Sephiroth attacks, you may sacrifice any number of other creatures. If you do, draw that many cards.",
 "pips": {},
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Nightmare",
+"Avatar"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "5",
 "types": [
-"Creature",
-"Angel",
-"Nightmare",
-"Avatar"
+"Creature"
 ]
 }
 ],
@@ -11972,16 +12310,17 @@
 "B": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Avatar",
+"Soldier"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Avatar",
-"Soldier"
+"Creature"
 ]
 },
 "Seraph Sanctuary": {
@@ -12015,12 +12354,13 @@
 "W": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Serra Angel": {
@@ -12039,12 +12379,13 @@
 "W": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Serra Ascendant": {
@@ -12062,13 +12403,14 @@
 "W": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Monk"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Monk"
+"Creature"
 ]
 },
 "Serra Avenger": {
@@ -12087,12 +12429,13 @@
 "W": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Setessan Champion": {
@@ -12108,13 +12451,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Warrior"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Warrior"
+"Creature"
 ]
 },
 "Shadow Urchin": {
@@ -12130,12 +12474,13 @@
 "B/R": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Ouphe"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Ouphe"
+"Creature"
 ]
 },
 "Shadowspear": {
@@ -12150,13 +12495,14 @@
 "name": "Shadowspear",
 "oracle": "Equipped creature gets +1/+1 and has trample and lifelink.\n{1}: Permanents your opponents control lose hexproof and indestructible until end of turn.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Shatterskull Smashing": {
@@ -12206,12 +12552,13 @@
 "name": "Sheltered Thicket",
 "oracle": "({T}: Add {R} or {G}.)\nSheltered Thicket enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Mountain",
 "Forest"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Shock": {
@@ -12244,11 +12591,12 @@
 "name": "Short Bow",
 "oracle": "Equipped creature gets +1/+1 and has vigilance and reach.\nEquip {1}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Shuko": {
@@ -12263,11 +12611,12 @@
 "name": "Shuko",
 "oracle": "Equipped creature gets +1/+0.\nEquip {0} ({0}: Attach to target creature you control. Equip only as a sorcery.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Sidisi, Undead Vizier": {
@@ -12286,15 +12635,16 @@
 "B": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Zombie",
+"Snake"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "6",
 "types": [
-"Creature",
-"Zombie",
-"Snake"
+"Creature"
 ]
 },
 "Sifter of Skulls": {
@@ -12312,12 +12662,13 @@
 "B": 1
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Eldrazi"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Eldrazi"
+"Creature"
 ]
 },
 "Sigarda's Vanguard": {
@@ -12336,12 +12687,13 @@
 "W": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Silent Arbiter": {
@@ -12355,13 +12707,14 @@
 "oracle": "No more than one creature can attack each combat.\nNo more than one creature can block each combat.",
 "pips": {},
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Construct"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
 "Artifact",
-"Creature",
-"Construct"
+"Creature"
 ]
 },
 "Silken Strength": {
@@ -12379,11 +12732,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Simian Spirit Guide": {
@@ -12399,13 +12753,14 @@
 "R": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Ape",
+"Spirit"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Ape",
-"Spirit"
+"Creature"
 ]
 },
 "Sinister Gnarlbark": {
@@ -12421,13 +12776,14 @@
 "B": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Treefolk",
+"Warlock"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Treefolk",
-"Warlock"
+"Creature"
 ]
 },
 "Sixth Sense": {
@@ -12444,11 +12800,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Skinrender": {
@@ -12464,13 +12821,14 @@
 "B": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Phyrexian",
+"Zombie"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Phyrexian",
-"Zombie"
+"Creature"
 ]
 },
 "Skullclamp": {
@@ -12485,11 +12843,12 @@
 "name": "Skullclamp",
 "oracle": "Equipped creature gets +1/-1.\nWhenever equipped creature dies, draw two cards.\nEquip {1}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Skullcrack": {
@@ -12556,12 +12915,13 @@
 "name": "Smoldering Marsh",
 "oracle": "({T}: Add {B} or {R}.)\nSmoldering Marsh enters tapped unless you control two or more basic lands.",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Swamp",
 "Mountain"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Smothering Abomination": {
@@ -12580,12 +12940,13 @@
 "B": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Eldrazi"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Eldrazi"
+"Creature"
 ]
 },
 "Smothering Tithe": {
@@ -12621,11 +12982,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Snakeskin Veil": {
@@ -12675,15 +13037,16 @@
 "R": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Phyrexian",
+"Horror"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Phyrexian",
-"Horror"
+"Creature"
 ]
 },
 "Somberwald Sage": {
@@ -12699,13 +13062,14 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Druid"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Druid"
+"Creature"
 ]
 },
 "Song of the Dryads": {
@@ -12722,11 +13086,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Soul Immolation": {
@@ -12760,13 +13125,14 @@
 "B": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Elemental",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Elemental",
-"Shaman"
+"Creature"
 ]
 },
 "Soul Warden": {
@@ -12782,13 +13148,14 @@
 "W": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Cleric"
+"Creature"
 ]
 },
 "Spawning Pit": {
@@ -12823,13 +13190,14 @@
 "W": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Cleric"
+"Creature"
 ]
 },
 "Spellskite": {
@@ -12843,14 +13211,15 @@
 "oracle": "{U/P}: Change a target of target spell or ability to Spellskite. ({U/P} can be paid with either {U} or 2 life.)",
 "pips": {},
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Phyrexian",
+"Horror"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
 "Artifact",
-"Creature",
-"Phyrexian",
-"Horror"
+"Creature"
 ]
 },
 "Spider Umbra": {
@@ -12868,11 +13237,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Spider-Suit": {
@@ -12887,11 +13257,12 @@
 "name": "Spider-Suit",
 "oracle": "Equipped creature gets +2/+2 and is a Spider Hero in addition to its other types.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Spikefield Hazard": {
@@ -12960,12 +13331,13 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Frog"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Frog"
+"Creature"
 ]
 },
 "Sprout Swarm": {
@@ -13001,11 +13373,12 @@
 "name": "Staff of Titania",
 "oracle": "Equipped creature gets +X/+X, where X is the number of Forests you control. Whenever equipped creature attacks, create a 1/1 green Forest Dryad land creature token. (It's affected by summoning sickness.)\nEquip {3}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Starnheim Aspirant": {
@@ -13021,13 +13394,14 @@
 "W": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Cleric"
+"Creature"
 ]
 },
 "Starnheim Unleashed": {
@@ -13060,12 +13434,13 @@
 "name": "Stomping Ground",
 "oracle": "({T}: Add {R} or {G}.)\nAs Stomping Ground enters, you may pay 2 life. If you don't, it enters tapped.",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Mountain",
 "Forest"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Stony Strength": {
@@ -13099,13 +13474,14 @@
 "R": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Dwarf",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Dwarf",
-"Shaman"
+"Creature"
 ]
 },
 "Strike It Rich": {
@@ -13142,11 +13518,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Studious First-Year": {
@@ -13162,13 +13539,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Bear",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Bear",
-"Wizard"
+"Creature"
 ]
 },
 "Sunblast Angel": {
@@ -13186,12 +13564,13 @@
 "W": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Sundering Eruption": {
@@ -13275,13 +13654,14 @@
 "name": "Swamp",
 "oracle": "({T}: Add {B}.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Swamp"
+],
 "supertypes": [
 "Basic"
 ],
 "types": [
-"Land",
-"Swamp"
+"Land"
 ]
 },
 "Swiftfoot Boots": {
@@ -13296,11 +13676,12 @@
 "name": "Swiftfoot Boots",
 "oracle": "Equipped creature has hexproof and haste.\nEquip {1}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Sword of Feast and Famine": {
@@ -13315,11 +13696,12 @@
 "name": "Sword of Feast and Famine",
 "oracle": "Equipped creature gets +2/+2 and has protection from black and from green.\nWhenever equipped creature deals combat damage to a player, that player discards a card and you untap all lands you control.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Sword of Fire and Ice": {
@@ -13334,11 +13716,12 @@
 "name": "Sword of Fire and Ice",
 "oracle": "Equipped creature gets +2/+2 and has protection from red and from blue.\nWhenever equipped creature deals combat damage to a player, Sword of Fire and Ice deals 2 damage to any target and you draw a card.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Sword of Hearth and Home": {
@@ -13353,11 +13736,12 @@
 "name": "Sword of Hearth and Home",
 "oracle": "Equipped creature gets +2/+2 and has protection from green and from white.\nWhenever equipped creature deals combat damage to a player, exile up to one target creature you own, then search your library for a basic land card. Put both cards onto the battlefield under your control, then shuffle.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Sword of Truth and Justice": {
@@ -13372,11 +13756,12 @@
 "name": "Sword of Truth and Justice",
 "oracle": "Equipped creature gets +2/+2 and has protection from white and from blue.\nWhenever equipped creature deals combat damage to a player, put a +1/+1 counter on a creature you control, then proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Sword of the Animist": {
@@ -13391,13 +13776,14 @@
 "name": "Sword of the Animist",
 "oracle": "Equipped creature gets +1/+1.\nWhenever equipped creature attacks, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Swords to Plowshares": {
@@ -13434,12 +13820,13 @@
 "G": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Plant"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Plant"
+"Creature"
 ]
 },
 "Sylvan Library": {
@@ -13473,13 +13860,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Human",
-"Wizard"
+"Creature"
 ]
 },
 "Syr Konrad, the Grim": {
@@ -13495,15 +13883,16 @@
 "B": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Knight"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Human",
-"Knight"
+"Creature"
 ]
 },
 "Tablet of Discovery": {
@@ -13537,13 +13926,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Shaman"
+"Creature"
 ]
 },
 "Talisman of Resilience": {
@@ -13572,11 +13962,12 @@
 "name": "Talon Gates of Madara",
 "oracle": "When Talon Gates of Madara enters, up to one target creature phases out.\n{T}: Add {C}.\n{1}, {T}: Add one mana of any color.\n{4}: Put Talon Gates of Madara from your hand onto the battlefield.",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Gate"
+],
 "supertypes": [],
 "types": [
-"Land",
-"Gate"
+"Land"
 ]
 },
 "Tamiyo's Safekeeping": {
@@ -13612,14 +14003,15 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Equipment",
+"Dog"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
 "Artifact",
-"Creature",
-"Equipment",
-"Dog"
+"Creature"
 ]
 },
 "Tarrian's Soulcleaver": {
@@ -13634,13 +14026,14 @@
 "name": "Tarrian's Soulcleaver",
 "oracle": "Equipped creature has vigilance.\nWhenever another artifact or creature is put into a graveyard from the battlefield, put a +1/+1 counter on equipped creature.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Teacher's Pest": {
@@ -13659,13 +14052,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Skeleton",
+"Pest"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Skeleton",
-"Pest"
+"Creature"
 ]
 },
 "Tear Asunder": {
@@ -13733,13 +14127,14 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Skeleton",
+"Warrior"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Skeleton",
-"Warrior"
+"Creature"
 ]
 },
 "Tendershoot Dryad": {
@@ -13757,12 +14152,13 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Dryad"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Dryad"
+"Creature"
 ]
 },
 "Terminate": {
@@ -13888,11 +14284,12 @@
 "pips": {
 "R": 1
 },
-"subtypes": [],
+"subtypes": [
+"Saga"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Saga"
+"Enchantment"
 ]
 },
 "The Gitrog, Ravenous Ride": {
@@ -13913,16 +14310,17 @@
 "G": 1
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Frog",
+"Horror",
+"Mount"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "5",
 "types": [
-"Creature",
-"Frog",
-"Horror",
-"Mount"
+"Creature"
 ]
 },
 "The Meathook Massacre": {
@@ -13980,15 +14378,16 @@
 "2/R": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Scarecrow"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
 "Artifact",
-"Creature",
-"Scarecrow"
+"Creature"
 ]
 },
 "The Scorpion God": {
@@ -14005,14 +14404,15 @@
 "R": 1
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"God"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "5",
 "types": [
-"Creature",
-"God"
+"Creature"
 ]
 },
 "Thermo-Alchemist": {
@@ -14030,13 +14430,14 @@
 "R": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Human",
-"Shaman"
+"Creature"
 ]
 },
 "Thought Vessel": {
@@ -14071,12 +14472,13 @@
 "W": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Thran Dynamo": {
@@ -14107,11 +14509,12 @@
 "name": "Thran Power Suit",
 "oracle": "Equipped creature gets +1/+1 for each Aura and Equipment attached to it and has ward {2}. (Whenever equipped creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Thran Vigil": {
@@ -14145,12 +14548,13 @@
 "G": 2
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Dinosaur"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Dinosaur"
+"Creature"
 ]
 },
 "Three Visits": {
@@ -14254,13 +14658,14 @@
 "R": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Dwarf",
+"Bard"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Dwarf",
-"Bard"
+"Creature"
 ]
 },
 "Tireless Provisioner": {
@@ -14276,13 +14681,14 @@
 "G": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Scout"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Elf",
-"Scout"
+"Creature"
 ]
 },
 "Tome of Legends": {
@@ -14295,11 +14701,12 @@
 "name": "Tome of Legends",
 "oracle": "Tome of Legends enters with a page counter on it.\nWhenever your commander enters or attacks, put a page counter on Tome of Legends.\n{1}, {T}, Remove a page counter from Tome of Legends: Draw a card.",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Book"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Book"
+"Artifact"
 ]
 },
 "Tomik, Izzet Sparkmage": {
@@ -14317,15 +14724,16 @@
 "R": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Wizard"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Wizard"
+"Creature"
 ]
 },
 "Torbran, Thane of Red Fell": {
@@ -14341,15 +14749,16 @@
 "R": 3
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Dwarf",
+"Noble"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Dwarf",
-"Noble"
+"Creature"
 ]
 },
 "Tormenting Voice": {
@@ -14385,14 +14794,15 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Squirrel"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "1",
 "types": [
-"Creature",
-"Squirrel"
+"Creature"
 ]
 },
 "Tower Above": {
@@ -14461,11 +14871,12 @@
 "name": "Trailblazer's Boots",
 "oracle": "Equipped creature has nonbasic landwalk. (It can't be blocked as long as defending player controls a nonbasic land.)\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Tranquil Cove": {
@@ -14517,12 +14928,13 @@
 "B": 1
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Plant"
+],
 "supertypes": [],
 "toughness": "13",
 "types": [
-"Creature",
-"Plant"
+"Creature"
 ]
 },
 "Treetop Village": {
@@ -14587,12 +14999,13 @@
 "name": "Turbulent Fen",
 "oracle": "({T}: Add {B} or {G}.)\nThis land enters tapped unless your opponents control eight or more lands.",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Swamp",
 "Forest"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Twilight Mire": {
@@ -14624,14 +15037,15 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Spider",
+"Toy"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
 "Artifact",
-"Creature",
-"Spider",
-"Toy"
+"Creature"
 ]
 },
 "Tyvar's Stand": {
@@ -14665,13 +15079,14 @@
 "B": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Cleric"
+"Creature"
 ]
 },
 "Umezawa's Jitte": {
@@ -14686,13 +15101,14 @@
 "name": "Umezawa's Jitte",
 "oracle": "Whenever equipped creature deals combat damage, put two charge counters on Umezawa's Jitte.\nRemove a charge counter from Umezawa's Jitte: Choose one —\n• Equipped creature gets +2/+2 until end of turn.\n• Target creature gets -1/-1 until end of turn.\n• You gain 2 life.\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Underworld Breach": {
@@ -14796,11 +15212,12 @@
 "name": "The Great Work",
 "oracle": "(As this Saga enters and after your draw step, add a lore counter.)\nI — The Great Work deals 3 damage to target opponent and each creature they control.\nII — Create three Treasure tokens.\nIII — Until end of turn, you may cast instant and sorcery spells from any graveyard. If a spell cast this way would be put into a graveyard, exile it instead. Exile The Great Work, then return it to the battlefield (front face up).",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Saga"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Saga"
+"Enchantment"
 ]
 }
 ],
@@ -14818,15 +15235,16 @@
 "R": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Phyrexian",
+"Praetor"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Phyrexian",
-"Praetor"
+"Creature"
 ]
 },
 "Urza's Incubator": {
@@ -14859,11 +15277,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Valakut Awakening": {
@@ -14917,13 +15336,14 @@
 "W": 2
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Cleric"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
-"Creature",
-"Angel",
-"Cleric"
+"Creature"
 ]
 },
 "Valorous Stance": {
@@ -14957,14 +15377,15 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
-"supertypes": [],
-"toughness": "2",
-"types": [
-"Creature",
+"subtypes": [
 "Vampire",
 "Rogue",
 "Noble"
+],
+"supertypes": [],
+"toughness": "2",
+"types": [
+"Creature"
 ]
 },
 "Vampiric Tutor": {
@@ -15020,13 +15441,14 @@
 "W": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Warrior"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel",
-"Warrior"
+"Creature"
 ]
 },
 "Vanquisher's Banner": {
@@ -15078,13 +15500,14 @@
 "B": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Vampire",
+"Warlock"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Vampire",
-"Warlock"
+"Creature"
 ]
 },
 "Vengeance Mission": {
@@ -15118,13 +15541,14 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Vampire",
+"Warlock"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Vampire",
-"Warlock"
+"Creature"
 ]
 },
 "Verdant Embrace": {
@@ -15141,11 +15565,12 @@
 "pips": {
 "G": 2
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Verduran Enchantress": {
@@ -15161,13 +15586,14 @@
 "G": 2
 },
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Druid"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Druid"
+"Creature"
 ]
 },
 "Vernal Fen": {
@@ -15180,12 +15606,13 @@
 "name": "Vernal Fen",
 "oracle": "({T}: Add {B} or {G}.)\nThis land enters tapped unless you control two or more basic lands.",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Swamp",
 "Forest"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Vicious Rivalry": {
@@ -15240,13 +15667,14 @@
 "R": 2
 },
 "power": "5",
-"subtypes": [],
+"subtypes": [
+"Goblin",
+"Warrior"
+],
 "supertypes": [],
 "toughness": "5",
 "types": [
-"Creature",
-"Goblin",
-"Warrior"
+"Creature"
 ]
 },
 "Village Rites": {
@@ -15282,13 +15710,14 @@
 "G": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Rhino",
+"Soldier"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Rhino",
-"Soldier"
+"Creature"
 ]
 },
 "Vines of Vastwood": {
@@ -15340,11 +15769,12 @@
 "pips": {
 "R": 1
 },
-"subtypes": [],
+"subtypes": [
+"Adventure"
+],
 "supertypes": [],
 "types": [
-"Instant",
-"Adventure"
+"Instant"
 ]
 }
 ],
@@ -15378,13 +15808,14 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Vampire",
+"Wizard"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Vampire",
-"Wizard"
+"Creature"
 ]
 },
 "Vraska, Betrayal's Sting": {
@@ -15403,13 +15834,14 @@
 "B": 1,
 "B/P": 1
 },
-"subtypes": [],
+"subtypes": [
+"Vraska"
+],
 "supertypes": [
 "Legendary"
 ],
 "types": [
-"Planeswalker",
-"Vraska"
+"Planeswalker"
 ]
 },
 "Walking Ballista": {
@@ -15423,13 +15855,14 @@
 "oracle": "Walking Ballista enters with X +1/+1 counters on it.\n{4}: Put a +1/+1 counter on Walking Ballista.\nRemove a +1/+1 counter from Walking Ballista: It deals 1 damage to any target.",
 "pips": {},
 "power": "0",
-"subtypes": [],
+"subtypes": [
+"Construct"
+],
 "supertypes": [],
 "toughness": "0",
 "types": [
 "Artifact",
-"Creature",
-"Construct"
+"Creature"
 ]
 },
 "War Room": {
@@ -15461,14 +15894,15 @@
 "B": 1
 },
 "power": "3",
-"subtypes": [],
-"supertypes": [],
-"toughness": "3",
-"types": [
-"Creature",
+"subtypes": [
 "Zombie",
 "Goblin",
 "Wizard"
+],
+"supertypes": [],
+"toughness": "3",
+"types": [
+"Creature"
 ]
 },
 "Wayfarer's Bauble": {
@@ -15535,11 +15969,12 @@
 "name": "Whispersilk Cloak",
 "oracle": "Equipped creature can't be blocked and has shroud. (It can't be the target of spells or abilities.)\nEquip {2}",
 "pips": {},
-"subtypes": [],
+"subtypes": [
+"Equipment"
+],
 "supertypes": [],
 "types": [
-"Artifact",
-"Equipment"
+"Artifact"
 ]
 },
 "Wiccan, Young Avenger": {
@@ -15555,16 +15990,17 @@
 "R": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Mutant",
+"Warlock",
+"Hero"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "3",
 "types": [
-"Creature",
-"Mutant",
-"Warlock",
-"Hero"
+"Creature"
 ]
 },
 "Wickerbough Elder": {
@@ -15580,13 +16016,14 @@
 "G": 1
 },
 "power": "4",
-"subtypes": [],
+"subtypes": [
+"Treefolk",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Treefolk",
-"Shaman"
+"Creature"
 ]
 },
 "Wickersmith's Tools": {
@@ -15621,13 +16058,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Zombie",
+"Knight"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Zombie",
-"Knight"
+"Creature"
 ]
 },
 "Wild Growth": {
@@ -15644,11 +16082,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Will of the Jeskai": {
@@ -15680,13 +16119,14 @@
 "oracle": "Wingrattle Scarecrow has flying as long as you control a blue creature.\nWingrattle Scarecrow has persist as long as you control a black creature. (When this creature dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner's control with a -1/-1 counter on it.)",
 "pips": {},
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Scarecrow"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
 "Artifact",
-"Creature",
-"Scarecrow"
+"Creature"
 ]
 },
 "Wishclaw Talisman": {
@@ -15737,13 +16177,14 @@
 "G": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Druid"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Human",
-"Druid"
+"Creature"
 ]
 },
 "Witherbloom Charm": {
@@ -15780,12 +16221,13 @@
 "B": 1
 },
 "power": "3",
-"subtypes": [],
+"subtypes": [
+"Horror"
+],
 "supertypes": [],
 "toughness": "2",
 "types": [
-"Creature",
-"Horror"
+"Creature"
 ]
 },
 "Wojek Investigator": {
@@ -15804,13 +16246,14 @@
 "W": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Angel",
+"Detective"
+],
 "supertypes": [],
 "toughness": "4",
 "types": [
-"Creature",
-"Angel",
-"Detective"
+"Creature"
 ]
 },
 "Wolfwillow Haven": {
@@ -15827,11 +16270,12 @@
 "pips": {
 "G": 1
 },
-"subtypes": [],
+"subtypes": [
+"Aura"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Aura"
+"Enchantment"
 ]
 },
 "Wood Elves": {
@@ -15847,13 +16291,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Elf",
+"Scout"
+],
 "supertypes": [],
 "toughness": "1",
 "types": [
-"Creature",
-"Elf",
-"Scout"
+"Creature"
 ]
 },
 "Woodfall Primus": {
@@ -15872,13 +16317,14 @@
 "G": 3
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Treefolk",
+"Shaman"
+],
 "supertypes": [],
 "toughness": "6",
 "types": [
-"Creature",
-"Treefolk",
-"Shaman"
+"Creature"
 ]
 },
 "Woodland Cemetery": {
@@ -15909,11 +16355,12 @@
 "pips": {
 "G": 2
 },
-"subtypes": [],
+"subtypes": [
+"Saga"
+],
 "supertypes": [],
 "types": [
-"Enchantment",
-"Saga"
+"Enchantment"
 ]
 },
 "Worldly Tutor": {
@@ -15965,13 +16412,14 @@
 "G": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Vulcan",
+"Scientist"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Vulcan",
-"Scientist"
+"Creature"
 ]
 },
 "Yahenni, Undying Partisan": {
@@ -15989,15 +16437,16 @@
 "B": 1
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Aetherborn",
+"Vampire"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "2",
 "types": [
-"Creature",
-"Aetherborn",
-"Vampire"
+"Creature"
 ]
 },
 "Yavimaya, Cradle of Growth": {
@@ -16033,15 +16482,16 @@
 "B": 2
 },
 "power": "2",
-"subtypes": [],
+"subtypes": [
+"Human",
+"Cleric"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "4",
 "types": [
-"Creature",
-"Human",
-"Cleric"
+"Creature"
 ]
 },
 "Ygra, Eater of All": {
@@ -16060,15 +16510,16 @@
 "G": 1
 },
 "power": "6",
-"subtypes": [],
+"subtypes": [
+"Elemental",
+"Cat"
+],
 "supertypes": [
 "Legendary"
 ],
 "toughness": "6",
 "types": [
-"Creature",
-"Elemental",
-"Cat"
+"Creature"
 ]
 },
 "Youthful Valkyrie": {
@@ -16086,12 +16537,13 @@
 "W": 1
 },
 "power": "1",
-"subtypes": [],
+"subtypes": [
+"Angel"
+],
 "supertypes": [],
 "toughness": "3",
 "types": [
-"Creature",
-"Angel"
+"Creature"
 ]
 },
 "Ziatora's Proving Ground": {
@@ -16106,13 +16558,14 @@
 "name": "Ziatora's Proving Ground",
 "oracle": "({T}: Add {B}, {R}, or {G}.)\nZiatora's Proving Ground enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
 "pips": {},
-"subtypes": [],
-"supertypes": [],
-"types": [
-"Land",
+"subtypes": [
 "Swamp",
 "Mountain",
 "Forest"
+],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Zulaport Cutthroat": {
@@ -16128,14 +16581,15 @@
 "B": 1
 },
 "power": "1",
-"subtypes": [],
-"supertypes": [],
-"toughness": "1",
-"types": [
-"Creature",
+"subtypes": [
 "Human",
 "Rogue",
 "Ally"
+],
+"supertypes": [],
+"toughness": "1",
+"types": [
+"Creature"
 ]
 }
 }

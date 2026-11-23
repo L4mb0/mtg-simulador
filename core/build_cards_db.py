@@ -73,11 +73,10 @@ def parse_face(lines):
     mana, mv, generic, pips = parse_cost(f.get("mana_raw"))
     t = (f.get("types_raw") or "").split()
     sup = [x for x in t if x in SUPER]
-    if "-" in t:
-        i = t.index("-"); main, sub = t[:i], t[i + 1:]
-    else:
-        main, sub = t, []
-    types = [x for x in main if x not in SUPER]
+    if "-" in t:   # por si algún guion trae el separador
+        t = [x for x in t if x != "-"]
+    types = [x for x in t if x in CARD_TYPES]
+    sub = [x for x in t if x not in SUPER and x not in CARD_TYPES]
     out = {"name": f.get("name"), "mana_cost": mana, "mv": mv, "generic": generic, "pips": pips,
            "supertypes": sup, "types": types, "subtypes": sub,
            "keywords": sorted(set(f["keywords"])), "oracle": f.get("oracle", "")}

@@ -5,6 +5,8 @@ Las marcadas ✔ ya se revisaron con Juan (`core/revisadas.txt`).
 
 ## gandalf (6)
 
+Sin carta en Forge: Emeritus Bolt, Lindblum Siege
+
 | Carta | Campo | Simulador | Forge | En la lista vigente | |
 |---|---|---|---|---|---|
 | Gut Shot | valor de maná | 0 | 1 {R/P} | sí |  |

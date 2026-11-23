@@ -545,7 +545,6 @@ Erebor Flamesmith:
     motor:
       roles: [threat]
       threat_rank: 17
-      nota: es Dwarf Shaman en la carta real y no está marcada como chamán (revisar)
 Guttersnipe:
   tags: [shaman]
   on_cast:
