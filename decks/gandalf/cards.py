@@ -198,5 +198,5 @@ for _n, _v in list(C.items()):
         C[_n] = _ST.desde_forge("gandalf", _n)
 for _n in list(C):
     C[_n] = _MP.importar("gandalf", _n, C[_n])
-# (después de cargar los efectos; antes de la fase 4b se calculaba sin ellos)
+# (después de cargar los efectos; desde la fase 4 hasta el 23/11 se calculaba sin ellos)
 WIZ_OR_SHAMAN = {n for n, d in C.items() if d.get("wiz") or d.get("shaman")} | {"Gandalf"}

@@ -376,5 +376,5 @@ for _n, _v in list(C.items()):
         C[_n] = _ST.desde_forge("blor", _n)
 for _n in list(C):
     C[_n] = _MP.importar("blor", _n, C[_n])
-# (después de cargar los efectos; antes de la fase 4b se calculaba sin ellos)
+# (después de cargar los efectos; desde la fase 4 hasta el 23/11 se calculaba sin ellos)
 GAME_CHANGERS = {n for n, d in C.items() if d.get("gc")} | {"Gaea's Cradle", "Ancient Tomb"}
