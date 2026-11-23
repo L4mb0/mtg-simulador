@@ -1,8 +1,8 @@
 # Vocabulario de `data/efectos.yaml`
 
 Una entrada por carta, con el nombre que usa el simulador (Gandalf aparece como `Gandalf`), compartida por los cinco
-mazos. Lo que una carta **hace** va aquí; cómo la **pilotea** cada mazo sigue en su motor. Coste, tipo y P/T siguen en
-cada `decks/<mazo>/cards.py` hasta revisar `core/diferencias.md` (después pueden salir de `core/cards_db.json`).
+mazos. Lo que una carta **hace** va aquí; cómo la **pilotea** cada mazo sigue en su motor. Coste, tipo y P/T salen de
+Forge (`core/cards_db.json` vía `core/stats.py`); cada `cards.py` solo escribe a mano los ajustes revisados.
 
 Lector: `core/efectos.py`. Traducción a las claves de cada `cards.py`: `core/mapeo.py`.
 Pendientes (excepciones, notas, efectos escritos a mano): `python3 core/efectos.py`.
@@ -87,7 +87,9 @@ Ojer Axonil, Deepest Might:
 
 ## Agregar una carta
 
-1. Su línea en `decks/<mazo>/cards.py` (coste, tipo, P/T).
+1. Su línea en `decks/<mazo>/cards.py`: `"Nombre": FORGE,` (o `card("Nombre")` en Gandalf y Blor) y el coste, el tipo y
+   el P/T salen de Forge (`core/stats.py`). Solo si el simulador la modela distinto (un X elegido, una carta "mitad"),
+   se escriben a mano.
 2. Su entrada aquí con las etiquetas y efectos que correspondan. Si la carta ya existe por otro mazo, se comparte.
 3. Si su efecto no está en el vocabulario, va como `propio` y en el motor; si se repite en varias cartas, conviene
    sumarlo al vocabulario (y a `core/efectos.py`).

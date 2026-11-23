@@ -27,14 +27,15 @@ Se relanza solo con `PYTHONHASHSEED=0`, que es lo que hace reproducibles los nú
 | `data/efectos.yaml` | **Efectos de las cartas como datos** (una entrada por carta, compartida por los cinco mazos): roles, palabras clave, respuestas, rocas, equipos, disparadores de muerte y el bloque `motor` de cada mazo (pesos de amenaza, prioridades). Vocabulario en `data/VOCABULARIO.md` |
 | `core/efectos.py`, `core/mapeo.py` | Lector del YAML (`python3 core/efectos.py` lista pendientes) y traducción a las claves de cada `cards.py` |
 | `core/cards_db.json` | Base de cartas generada desde Forge y su comparación con los `cards.py` |
-| `decks/<mazo>/` | Motor, IA y la parte de la mesa propia del mazo. `cards.py` solo tiene coste, tipo y P/T. `adaptador.py` conecta el mazo con `sim.py` |
+| `decks/<mazo>/` | Motor, IA y la parte de la mesa propia del mazo. `cards.py` lista las cartas (`FORGE`) y los ajustes a mano. `adaptador.py` conecta el mazo con `sim.py` |
 | `tools/huella.py` | Para refactorizar: 150 partidas por mesa y mazo que tienen que salir idénticas |
 
 Mazos: `gandalf` (Goblins' Bane, spellslinger), `gorma` (Witherbloom, aristócratas + persist), `giada` (ángeles),
 `blight` (Blight Curse, contadores -1/-1), `blor` (voltron). Las reglas de cada mesa y el checklist de auditoría
 están en el Project de Claude (`claude/simulador-montecarlo.md`).
 
-**Para agregar una carta:** su línea en `decks/<mazo>/cards.py` y su entrada en `data/efectos.yaml` (ver
+**Para agregar una carta:** `"Nombre": FORGE` en `decks/<mazo>/cards.py` (coste, tipo y P/T salen de Forge; solo
+los ajustes van a mano, `python3 core/stats.py` los lista) y su entrada en `data/efectos.yaml` (ver
 `data/VOCABULARIO.md`); si el efecto no está en el vocabulario, en el motor y marcado como `propio`.
 `python3 core/tests.py` revisa el YAML.
 

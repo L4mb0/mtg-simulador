@@ -3,6 +3,8 @@
 # p/x = power/toughness (verified on mtg.wtf / Scryfall, 11/11/2026; Ob Nixilis checked on playgroup.gg).
 # kw: flying, vigilance, first, lifelink, flash.  angel: True if the card is an Angel on the stack.
 
+FORGE = "FORGE"   # coste, tipo y P/T desde core/cards_db.json (Forge); ver core/stats.py
+
 def C(g, w, p, x):
     return dict(cost=(g, w), t="C", p=p, x=x)
 
@@ -10,96 +12,96 @@ def N(t, g, w):
     return dict(cost=(g, w), t=t)
 
 CARDS = {
-    "Giada, Font of Hope": C(1, 1, 2, 2),
+    "Giada, Font of Hope": FORGE,
     # --- precon creatures ---
-    "Angel of Finality": C(3, 1, 3, 4),
-    "Angel of Vitality": C(2, 1, 2, 2),
-    "Angel of the Ruins": C(5, 2, 5, 7),
-    "Angelic Field Marshal": C(2, 2, 3, 3),
-    "Angelic Sleuth": C(2, 1, 2, 3),
-    "Archangel of Tithes": C(1, 3, 3, 5),
-    "Bishop of Wings": C(0, 2, 1, 4),
-    "Dazzling Angel": C(2, 1, 2, 3),
-    "Emeria Shepherd": C(5, 2, 4, 4),
-    "Exemplar of Light": C(2, 2, 3, 3),
-    "Firemane Commando": C(3, 1, 4, 3),
-    "Herald of Eternal Dawn": C(4, 3, 6, 6),
-    "Herald of War": C(3, 2, 3, 3),
-    "Inspiring Overseer": C(2, 1, 2, 1),
-    "Linvala, the Preserver": C(4, 2, 5, 5),
-    "Lyra Dawnbringer": C(3, 2, 5, 5),
-    "Merchant of Truth": C(2, 2, 2, 5),
-    "Metallic Mimic": C(2, 0, 2, 1),
-    "Metropolis Reformer": C(2, 1, 2, 3),
-    "Norn's Choirmaster": C(3, 2, 5, 4),
-    "Reya Dawnbringer": C(6, 3, 4, 6),
-    "Righteous Valkyrie": C(2, 1, 2, 4),
-    "Segovian Angel": C(0, 1, 1, 1),
-    "Sephara, Sky's Blade": C(4, 3, 7, 7),
-    "Seraph of the Sword": C(3, 1, 3, 3),
-    "Serra Avenger": C(0, 2, 3, 3),
-    "Speaker of the Heavens": C(0, 1, 1, 1),
-    "Starnheim Aspirant": C(2, 1, 2, 2),
-    "Sunblast Angel": C(4, 2, 4, 5),
-    "Thraben Watcher": C(2, 2, 2, 2),
-    "Vanguard Seraph": C(3, 1, 3, 3),
-    "Wojek Investigator": C(2, 1, 2, 4),
-    "Youthful Valkyrie": C(1, 1, 1, 3),   # 1/3 (corregido 23/11; antes 1/1)
+    "Angel of Finality": FORGE,
+    "Angel of Vitality": FORGE,
+    "Angel of the Ruins": FORGE,
+    "Angelic Field Marshal": FORGE,
+    "Angelic Sleuth": FORGE,
+    "Archangel of Tithes": FORGE,
+    "Bishop of Wings": FORGE,
+    "Dazzling Angel": FORGE,
+    "Emeria Shepherd": FORGE,
+    "Exemplar of Light": FORGE,
+    "Firemane Commando": FORGE,
+    "Herald of Eternal Dawn": FORGE,
+    "Herald of War": FORGE,
+    "Inspiring Overseer": FORGE,
+    "Linvala, the Preserver": FORGE,
+    "Lyra Dawnbringer": FORGE,
+    "Merchant of Truth": FORGE,
+    "Metallic Mimic": FORGE,
+    "Metropolis Reformer": FORGE,
+    "Norn's Choirmaster": FORGE,
+    "Reya Dawnbringer": FORGE,
+    "Righteous Valkyrie": FORGE,
+    "Segovian Angel": FORGE,
+    "Sephara, Sky's Blade": FORGE,
+    "Seraph of the Sword": FORGE,
+    "Serra Avenger": FORGE,
+    "Speaker of the Heavens": FORGE,
+    "Starnheim Aspirant": FORGE,
+    "Sunblast Angel": FORGE,
+    "Thraben Watcher": FORGE,
+    "Vanguard Seraph": FORGE,
+    "Wojek Investigator": FORGE,
+    "Youthful Valkyrie": FORGE,   # 1/3 (corregido 23/11; antes 1/1)
     # --- precon noncreatures ---
-    "Destroy Evil": N("I", 1, 1),
-    "Fateful Absence": N("I", 1, 1),
-    "Invoke the Divine": N("I", 2, 1),
-    "Swords to Plowshares": N("I", 0, 1),
-    "Valorous Stance": N("I", 1, 1),
-    "Austere Command": N("S", 4, 2),
-    "Cleansing Nova": N("S", 3, 2),
-    "Cut a Deal": N("S", 2, 1),
-    "Day of Judgment": N("S", 2, 2),
-    "Defy Death": N("S", 3, 2),
-    "Exorcise": N("S", 1, 1),
-    "Secret Rendezvous": N("S", 1, 2),
-    "Arcane Signet": N("A", 2, 0),
-    "Commander's Sphere": N("A", 3, 0),
-    "Cryptic Gateway": N("A", 5, 0),
-    "Endless Atlas": N("A", 2, 0),
-    "Heraldic Banner": N("A", 3, 0),
-    "Herald's Horn": N("A", 3, 0),
-    "Marble Diamond": N("A", 2, 0),
-    "Mind Stone": N("A", 2, 0),
-    "Patchwork Banner": N("A", 3, 0),
-    "Sol Ring": N("A", 1, 0),
-    "Swiftfoot Boots": N("A", 2, 0),
-    "Tome of Legends": N("A", 2, 0),
-    "Vanquisher's Banner": N("A", 5, 0),
-    "Always Watching": N("E", 1, 2),
-    "Angelic Destiny": N("E", 2, 2),
-    "Court of Grace": N("E", 2, 2),
-    "Grasp of Fate": N("E", 1, 2),
-    "Search the Premises": N("E", 3, 1),
+    "Destroy Evil": FORGE,
+    "Fateful Absence": FORGE,
+    "Invoke the Divine": FORGE,
+    "Swords to Plowshares": FORGE,
+    "Valorous Stance": FORGE,
+    "Austere Command": FORGE,
+    "Cleansing Nova": FORGE,
+    "Cut a Deal": FORGE,
+    "Day of Judgment": FORGE,
+    "Defy Death": FORGE,
+    "Exorcise": FORGE,
+    "Secret Rendezvous": FORGE,
+    "Arcane Signet": FORGE,
+    "Commander's Sphere": FORGE,
+    "Cryptic Gateway": FORGE,
+    "Endless Atlas": FORGE,
+    "Heraldic Banner": FORGE,
+    "Herald's Horn": FORGE,
+    "Marble Diamond": FORGE,
+    "Mind Stone": FORGE,
+    "Patchwork Banner": FORGE,
+    "Sol Ring": FORGE,
+    "Swiftfoot Boots": FORGE,
+    "Tome of Legends": FORGE,
+    "Vanquisher's Banner": FORGE,
+    "Always Watching": FORGE,
+    "Angelic Destiny": FORGE,
+    "Court of Grace": FORGE,
+    "Grasp of Fate": FORGE,
+    "Search the Premises": FORGE,
     # --- candidates (upgrade guides, EDHREC) ---
-    "Path to Exile": N("I", 0, 1),
-    "Generous Gift": N("I", 2, 1),
-    "Valkyrie Harbinger": C(4, 2, 4, 5),
-    "Resplendent Angel": C(1, 2, 3, 3),
-    "Lyra, Archangel of Dawn": C(2, 1, 3, 3),
-    "Pearl Medallion": N("A", 2, 0),
-    "Guide of Souls": C(0, 1, 1, 2),
-    "Soul Warden": C(0, 1, 1, 1),
-    "Folk Hero": N("E", 1, 1),
-    "Lightning Greaves": N("A", 2, 0),
-    "Flawless Maneuver": N("I", 2, 1),
-    "Kindred Judgment": N("S", 5, 2),
-    "Ob Nixilis, the Ascended": C(5, 2, 4, 4),
-    "Blinding Angel": C(3, 2, 2, 4),
-    "Sigarda's Vanguard": C(4, 1, 3, 3),
-    "Felidar Sovereign": C(4, 2, 4, 6),
-    "Akroma's Will": N("I", 3, 1),
-    "Karmic Guide": C(3, 2, 2, 2),
-    "Archangel of Thune": C(3, 2, 3, 4),
-    "Avacyn, Angel of Hope": C(5, 3, 8, 8),
-    "Serra Ascendant": C(0, 1, 1, 1),
-    "Smothering Tithe": N("E", 3, 1),
-    "Emeria's Call": N("S", 4, 3),
+    "Path to Exile": FORGE,
+    "Generous Gift": FORGE,
+    "Valkyrie Harbinger": FORGE,
+    "Resplendent Angel": FORGE,
+    "Lyra, Archangel of Dawn": FORGE,
+    "Pearl Medallion": FORGE,
+    "Guide of Souls": FORGE,
+    "Soul Warden": FORGE,
+    "Folk Hero": FORGE,
+    "Lightning Greaves": FORGE,
+    "Flawless Maneuver": FORGE,
+    "Kindred Judgment": FORGE,
+    "Ob Nixilis, the Ascended": FORGE,
+    "Blinding Angel": FORGE,
+    "Sigarda's Vanguard": FORGE,
+    "Felidar Sovereign": FORGE,
+    "Akroma's Will": FORGE,
+    "Karmic Guide": FORGE,
+    "Archangel of Thune": FORGE,
+    "Avacyn, Angel of Hope": FORGE,
+    "Serra Ascendant": FORGE,
+    "Smothering Tithe": FORGE,
+    "Emeria's Call": FORGE,
     "Blank": N("S", 4, 0),
 }
 
@@ -160,8 +162,8 @@ def load(path):
 
 # --- Juan's own loose cards (claude/coleccion-cartas.md) ---
 CARDS.update({
-    "Lingering Souls": N("S", 2, 1),            # flashback needs {B}: not usable here
-    "Disenchant": N("I", 1, 1),
+    "Lingering Souls": FORGE,            # flashback needs {B}: not usable here
+    "Disenchant": FORGE,
     "Millikin": N("A", 2, 0),   # 0/1 mana creature: modelled as a rock that waits a turn
 })
 LANDS.update({
@@ -194,11 +196,11 @@ PHASE1 = [("Exorcise", "Path to Exile"), ("Invoke the Divine", "Generous Gift"),
 
 # --- go-wide candidates (oracle checked on Scryfall 12/11/2026) ---
 CARDS.update({
-    "Urza's Incubator": N("A", 3, 0),                         # Angel creature spells cost {2} less
-    "Starnheim Unleashed": N("S", 2, 2),          # 4/4 flying vigilance Angel; foretell {X}{X}{W}: X tokens
-    "Herald of the Host": C(3, 2, 4, 4),
-    "Restoration Angel": C(3, 1, 3, 4),
-    "Serra Angel": C(3, 2, 4, 4),
+    "Urza's Incubator": FORGE,                         # Angel creature spells cost {2} less
+    "Starnheim Unleashed": FORGE,          # 4/4 flying vigilance Angel; foretell {X}{X}{W}: X tokens
+    "Herald of the Host": FORGE,
+    "Restoration Angel": FORGE,
+    "Serra Angel": FORGE,
 })
 PRICE.update({"Urza's Incubator": None, "Starnheim Unleashed": None, "Herald of the Host": None,
               "Restoration Angel": None, "Serra Angel": None})
@@ -208,7 +210,10 @@ CARDS["Leader's Talent"] = N("E", 1, 1)   # Class: L1 attack -> +1/+1 counter; L
 # aquí quedan coste, tipo y P/T. core/mapeo.py los vuelve a poner con las claves de siempre.
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
-from core import mapeo as _MP
+from core import mapeo as _MP, stats as _ST
+for _n, _v in list(CARDS.items()):
+    if _v is FORGE:
+        CARDS[_n] = _ST.desde_forge("giada", _n)
 for _n in list(CARDS):
     CARDS[_n] = _MP.importar("giada", _n, CARDS[_n])
 PRICE["Leader's Talent"] = None
