@@ -77,11 +77,19 @@ def motor_order(mazo, key, names):
     return sorted(f, key=f.get)
 
 
+def rival_death_effect(effect, names):
+    """Cartas con un disparador "cuando muere una criatura rival" (controla: rival) que tiene ese efecto."""
+    return [n for n in names if any(tr.get("controla") == "rival" and effect in tr.get("efectos", {})
+                                    for tr in db().get(n, {}).get("on_death", ()))]
+
+
 def with_death_effect(effect, names, controla=None):
     """Cartas con un disparador de muerte que tiene ese efecto (y, si se pide, `controla: cualquiera`)."""
     out = []
     for n in names:
         for tr in db().get(n, {}).get("on_death", ()):
+            if tr.get("controla") == "rival" and controla != "rival":
+                continue
             if effect in tr.get("efectos", {}) and (controla is None or tr.get("controla") == controla):
                 out.append(n); break
     return out
@@ -107,6 +115,8 @@ def triggers(event, names=None):
             bad = set(tr) - CONDICIONES - {"efectos"} or set(tr.get("efectos", {})) - EFECTOS
             if bad:
                 raise ValueError(f"{n}: {event} con claves desconocidas {bad}")
+            if tr.get("controla") == "rival":
+                continue   # "cuando muere una criatura rival": lo resuelve cada motor aparte (rival_death_effect)
             groups.setdefault(tr.get("orden", 99), {})[n] = tr
     return sorted(groups.items())
 

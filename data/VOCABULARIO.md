@@ -49,7 +49,7 @@ Blood Artist:
     efectos: {drain_one: 1, gain: 1}
 ```
 
-Condiciones: `propia`, `otra` (no cuando muere ella), `no_ficha` (la que muere no es una ficha), `sacrificada`,
+Condiciones: `propia`, `otra` (no cuando muere ella), `no_ficha` (la que muere no es una ficha), `sacrificada`, `controla: rival` (solo cuando muere una criatura rival; Meathook),
 `una_vez` (una vez por muerte aunque haya varias copias), `controla`.
 Efectos (en el orden escrito): `drain_one` (al rival con menos vida), `drain_each`, `gain`, `draw`, `token` (tipo de
 ficha: `spawn`, `pest`, `treasure`...).

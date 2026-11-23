@@ -80,8 +80,6 @@ Sakura-Tribe Elder:
   tags: [ramp]
 Selvala, Heart of the Wilds:
   tags: [dork, elf, ramp]
-  gorma:
-    'no': [dork]
 Elvish Mystic:
   tags: [dork, elf, ramp]
   blor: {mana: 1}
@@ -255,13 +253,9 @@ Golgari Charm:
   tags: [prot_spot]
 Tamiyo's Safekeeping:
   tags: [prot_spot]
-  blor:
-    'no': [prot_spot]
 Snakeskin Veil:
   tags: [prot_spot]
-  blor:
-    pump: true
-    'no': [prot_spot]
+  blor: {pump: true}
 Diabolic Intent:
   tags: [tutor, tutor_hand]
 Grim Tutor:
@@ -352,8 +346,10 @@ The Meathook Massacre:
   - orden: 21
     una_vez: true
     efectos: {drain_each: 1}
-  blight:
-    motor: {nota: Blight le suma ganar 1 cuando muere una criatura propia (la carta real no; revisar)}
+  - orden: 21
+    una_vez: true
+    controla: rival
+    efectos: {gain: 1}
 Sephiroth, Fabled SOLDIER:
   tags: [closer, drainer]
   on_death:
@@ -760,8 +756,7 @@ Thermo-Alchemist:
   on_cast:
   - hechizo: instant_sorcery
     efectos: {dmg_each: 1}
-  gandalf:
-    motor: {threat_rank: 15, nota: es chamán pero su disparador no se duplica con Harmonic Prodigy (revisar)}
+    multiplica: true
 Firebrand Archer:
   on_cast:
   - hechizo: noncreature
@@ -1056,12 +1051,8 @@ Disenchant:
   answer: [ae]
 Millikin:
   tags: [artifact, colorless, dork, etb_tapped]
-  rock: C
-  giada:
-    'no': [artifact]
-  blor:
-    mana: 1
-    'no': [rock]
+  giada: {rock: C}
+  blor: {mana: 1}
 Urza's Incubator: {}
 Starnheim Unleashed:
   giada: {starn: true}

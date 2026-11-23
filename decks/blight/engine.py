@@ -28,6 +28,8 @@ ENGINES = set(EF.motor_roles("blight", "engine", _NAMES))
 EACH_DRAIN = set(EF.with_death_effect("drain_each", _NAMES))
 DRAIN_ONE = set(EF.with_death_effect("drain_one", _NAMES))
 DRAIN_ANY = set(EF.with_death_effect("drain_one", _NAMES, controla="cualquiera"))   # también cuando muere una rival
+EACH_GAIN = {n for n in EACH_DRAIN if n in EF.with_death_effect("gain", [n])}        # drenan y además ganan
+GAIN_RIVAL = set(EF.rival_death_effect("gain", _NAMES))                              # ganan cuando muere una rival (Meathook)
 INSTANT_ANS = EF.motor_field("blight", "instant_ans", _NAMES)
 # probabilidad de que una respuesta frene la amenaza de un rival de combate (resistencia limitada)
 ANS_P = {"cre1": 0.35, "cre3": 0.6, "cre4": 0.8}
@@ -573,7 +575,8 @@ class Game:
                 k = self.count(n) + (1 if c.name == n else 0)
                 for _ in range(k):
                     self.drain_each(1)
-                    self.gain(1)
+                    if n in EACH_GAIN:
+                        self.gain(1)
         for _ in range(sum(self.count(n) for n in DRAIN_ONE) + (1 if c.name in DRAIN_ONE else 0)):
             self.drain_target(1)
             self.gain(1)
@@ -658,6 +661,8 @@ class Game:
             self.draw(1)
         for _ in range(sum(self.count(n) for n in DRAIN_ANY)):
             self.drain_target(1)
+            self.gain(1)
+        for _ in range(sum(self.count(n) for n in GAIN_RIVAL)):
             self.gain(1)
         if c.kind == "card":
             for _ in range(self.count("High-Society Hunter")):
@@ -849,7 +854,7 @@ class Game:
         tgt = sum(self.count(n) for n in DRAIN_ONE) + (1 if self.on("All Will Be One") else 0)
         if kind == "yawg" and self.auntie():
             tgt += 1   # el contador va a una criatura rival que no muere: Auntie le quita 1
-        gain = sum(self.count(n) for n in EACH_DRAIN) + self.count("Obelisk Spider") + sum(self.count(n) for n in DRAIN_ONE)
+        gain = sum(self.count(n) for n in EACH_GAIN) + self.count("Obelisk Spider") + sum(self.count(n) for n in DRAIN_ONE)
         engines = sum(self.count(e) for e in ENGINES)
         return draws, each, tgt, gain, engines
 
