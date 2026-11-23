@@ -68,22 +68,19 @@ BRACKET_NAMES = list(BRACKETS)
 # 1,5 cartas por turno, curva y victorias de B4; turbo que rearma en 1 turno y reintenta al 85%; remoción entre
 # rivales que le tumba un intento al más rápido; golpes parciales; edictos (Sephiroth) y Strip Mine (Tifa).
 # Juan (17/11): sin límite de tiempo salvo que se pida (time_turns es la variante "con desempate por vida").
+# Receta única (23/11, con Juan): parte de B4 —los rivales son listas cEDH recortadas al bracket, con interacción,
+# odio y bases de maná de B4— y cambia solo lo observado en el torneo. Todo simulador la toma de aquí, sin desvíos.
 MAZMORRA = dict(BRACKETS["B4"], mus=(4, 5, 6), spread=1.0, rem=7, cnt=8, cpt=1.5, wipes=2,
                 retry=RETRY, delay=DELAY, retry_turbo=0.85, delay_turbo=1, rem_slows=0.5, rem_stop=P_REM_STOP,
                 p_partial=0.4, edict=(3 / 11, 0.35), strip=(3 / 11, 0.5),
                 time_turns=((6, 0.2), (7, 0.4), (8, 0.4)), me_life=(25, 38), opp_other_dmg=(0, 15))
 MAZMORRA_VARIANTES = {"Mazmorra optimista": dict(mus=(4, 5, 7)), "Mazmorra pesimista": dict(mus=(3, 5, 6))}
+# "Mazmorra con tiempo": la misma mesa con la regla 8 (desempate por vida) encendida; solo cuando Juan la pide
 
-# Desvíos conocidos de un mazo respecto de esta tabla (se mantienen para no cambiar sus números; revisar con Juan)
-DESVIOS = {
-    "gandalf": "Mazmorra: odio a cementerio 0,30 (B4 dice 0,35; Gorma usa todo el odio de B3: 0,20 / 0,3 / 0,25, "
-               "ventana 4–8). No tiene las variantes optimista y pesimista.",
-    "gorma": "Mazmorra: odio a cementerio y combate desde el turno de B3, no de B4.",
-    "blor": "Mazmorra: parte de B3 y cambia relojes, remoción, counters, cartas por turno, curva y victorias a B4; "
-            "el odio masivo a artefactos y encantamientos queda en 0,35 (B4).",
-    "giada": "Sin Mazmorra todavía.",
-    "blight": "Sin Mazmorra todavía.",
-}
+# Desvíos: ninguno desde el 23/11 (Gandalf, Gorma y Blor leen la Mazmorra de aquí tal cual).
+# Pendiente, anotado con Juan (23/11): portar la Mazmorra a Giada y Blight cuando vayan a torneo (hace falta programar en
+# sus motores la remoción que frena al más rápido, los golpes parciales, los edictos y Strip Mine).
+SIN_MAZMORRA = {"giada", "blight"}
 
 
 def bracket(name):

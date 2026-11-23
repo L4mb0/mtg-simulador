@@ -56,12 +56,20 @@ python3 core/compare.py                                                 # cards.
 Para agregar una carta que todavía no usa ningún simulador, anotarla en `core/extra.txt` y regenerar.
 Las diferencias que Juan revise y acepte van a `core/revisadas.txt`; `compare.py --test` falla solo con las nuevas.
 
-## Línea base (22/11/2026, 2.000 partidas, `PYTHONHASHSEED=0`)
+## Línea base (23/11/2026, `python3 linea_base.py`)
 
-| Mazo | Bracket | Hoy | Referencia |
-|---|---|---|---|
-| Gandalf 1.6 | B3 | 44,5% | 43,4% |
-| Gorma 1.0 | B3 | 9,2% | 8,7% (6.000 partidas; era 6,8% el 17/11, antes de las líneas de combo del 22/11) |
-| Giada actual | B2 | 15,0% | 15,3% |
-| Blight precon | B2 | 6,8% | 6,6% |
-| Blor 1.6 | B3 | 19,6% | 17,9% |
+| Mazo | Mesa | Referencia (6.000 partidas) |
+|---|---|---|
+| Gandalf 1.6 | B3 | 43,4% |
+| Gandalf 1.6 | Mazmorra | 9,2% (optimista 10,9; pesimista 6,6; con tiempo 12,1) |
+| Gorma 1.0 | B3 | 8,7% (era 6,8% el 17/11, antes de las líneas de combo del 22/11) |
+| Gorma 1.0 | Mazmorra | 1,9% (optimista 2,1; pesimista 1,3; con tiempo 8,9) |
+| Giada actual | B2 | 15,3% |
+| Blight precon | B2 | 6,6% |
+| Blor 1.6 | B3 | 17,9% |
+| Blor 1.6 | Mazmorra | 3,2% (optimista 4,1; pesimista 2,7) |
+
+**Mazmorra** (torneo B3 de La Mazmorra TCG): receta única en `core/mesa.py` desde el 23/11: base B4 + lo observado
+el 15/11 (relojes 4/5/6, turbo que reintenta, 7 remociones, 8 counters, remoción entre rivales que frena al más rápido,
+golpes parciales, edictos, Strip Mine). Sin límite de tiempo salvo que se pida ("Mazmorra con tiempo").
+Giada y Blight todavía no la tienen (pendiente para cuando vayan a torneo).

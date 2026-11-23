@@ -65,12 +65,10 @@ _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 
 from core import mesa as M
 WT_CASUAL, WT_B4, WT_B5, WB_CASUAL, WB_B4, WB_B5 = M.WT_CASUAL, M.WT_B4, M.WT_B5, M.WB_CASUAL, M.WB_B4, M.WB_B5
 BRACKETS = {b: dict(BASE, **M.cfg_v2(b)) for b in M.BRACKET_NAMES}
-# ---- mesa "Mazmorra" (torneo B3 de La Mazmorra TCG; core.mesa.MAZMORRA; portada 19/11) ----
-# Parte de B3 y toma de la receta relojes, dispersión, remoción, counters, cartas por turno, curva, barridas,
-# odio masivo y tipos de victoria (los de B4). Regla 8 (tiempo): apagada.
+# ---- mesa "Mazmorra" (torneo B3 de La Mazmorra TCG; portada 19/11) ----
+# Receta única de core.mesa.MAZMORRA (23/11): base B4 + lo observado. Regla 8 (tiempo): apagada.
 _Z = M.MAZMORRA
-MZ = dict(BRACKETS["B3"], bracket="Mazmorra", mz=True, mus=_Z["mus"], spread=_Z["spread"], rem=_Z["rem"], cnt=_Z["cnt"],
-          cpt=_Z["cpt"], opp_curve=_Z["curve"], wipes=_Z["wipes"], aem=_Z["aem"], win_types=_Z["wt"], win_blue=_Z["wb"])
+MZ = dict(BASE, **M.cfg_v2("Mazmorra"), mz=True, spread=_Z["spread"])
 BRACKETS["Mazmorra"] = MZ
 for _n, _v in M.MAZMORRA_VARIANTES.items():
     BRACKETS[_n] = dict(MZ, **_v)

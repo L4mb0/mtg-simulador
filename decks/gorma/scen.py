@@ -47,6 +47,7 @@ for _b in ("B1", "B2", "B3", "B4", "B5", "B3+B4"):
 # Mesa Mazmorra (torneo B3 de la tienda; claude/mesa-mazmorra.md) y sus variantes
 # Juan (17/11): sin limite de tiempo en ningun caso; toda partida termina en victoria de alguien
 SCEN["Mazmorra"] = B("Mazmorra", time_limit=False)
-SCEN["Mazmorra optimista"] = B("Mazmorra", time_limit=False, mz_mus=(4, 5, 7))
-SCEN["Mazmorra pesimista"] = B("Mazmorra", time_limit=False, mz_mus=(3, 5, 6))
+from mesa import M as _M
+for _n, _v in _M.MAZMORRA_VARIANTES.items():
+    SCEN[_n] = B("Mazmorra", time_limit=False, mz_mus=_v["mus"])
 SCEN["Mazmorra con tiempo"] = B("Mazmorra")

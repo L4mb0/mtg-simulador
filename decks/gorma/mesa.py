@@ -63,11 +63,12 @@ HATE = {b: (v["gyh"], v["gyh_perm"], v["arth"], v["wipe_lo"], v["wipe_hi"]) for 
 COMBAT_START = {b: v["combat_start"] for b, v in _B.items()}
 # Regla 5 ("edict"): cada edicto de Butcher/Grave Pact/Dictate baja 0,03 la mejor pieza de cada rival (max 0,3; dura 2 turnos)
 PACT_HIT = 0.03
-# Mesa "Mazmorra" (core.mesa.MAZMORRA). Desvío de Gorma: odio y combate de B3 (core.mesa.DESVIOS)
+# Mesa "Mazmorra" (core.mesa.MAZMORRA, receta única desde el 23/11: base B4 + lo observado)
 MZ = "Mazmorra"
 _Z = M.MAZMORRA
 OPP_CURVE[MZ] = _Z["curve"]; STOCK[MZ] = (_Z["rem"], _Z["cpt"]); CNT[MZ] = _Z["cnt"]; WIPES[MZ] = _Z["wipes"]
-MUS[MZ] = _Z["mus"]; HATE[MZ] = HATE["B3"]; COMBAT_START[MZ] = COMBAT_START["B3"]
+MUS[MZ] = _Z["mus"]
+HATE[MZ] = (_Z["gyh"], _Z["gyh_perm"], _Z["arth"], _Z["wipe_lo"], _Z["wipe_hi"]); COMBAT_START[MZ] = _Z["combat_start"]
 MZ_SPREAD = _Z["spread"]
 MZ_TURBO = (_Z["delay_turbo"], _Z["retry_turbo"])
 MZ_REM_SLOWS = _Z["rem_slows"]

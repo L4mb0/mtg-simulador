@@ -10,24 +10,26 @@ import os, sys, math, subprocess, json, time
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
-# mazo: (bracket, referencia %, de dónde sale). La lista es la de por defecto de cada adaptador.
-REF = {
-    "gandalf": ("B3", 43.4, "Gandalf 1.6, mesa v2, 6.000 partidas (claude/mazo-gandalf.md)"),
-    "gorma": ("B3", 8.7, "Gorma 1.0, 6.000 partidas, 22/11 (era 6,8% el 17/11; sube por las líneas de combo del 22/11)"),
-    "giada": ("B2", 15.3, "Giada actual (con Lyra), mesa v2, 4.000 partidas (simulador-montecarlo.md, sección 8)"),
-    "blight": ("B2", 6.6, "Blight precon, mesa v2, 4.000 partidas (simulador-montecarlo.md, sección 9)"),
-    "blor": ("B3", 17.9, "Blor 1.6, mesa v2 con extensiones Mazmorra (simulador-montecarlo.md, 19/11)"),
-}
+# (mazo, mesa, referencia %, de dónde sale). La lista es la de por defecto de cada adaptador.
+REF = [
+    ("gandalf", "B3", 43.4, "Gandalf 1.6, mesa v2, 6.000 partidas (claude/mazo-gandalf.md)"),
+    ("gandalf", "Mazmorra", 9.2, "Gandalf 1.6, receta única de la Mazmorra (23/11), sin límite de tiempo, 6.000 partidas"),
+    ("gorma", "B3", 8.7, "Gorma 1.0, 6.000 partidas, 22/11 (era 6,8% el 17/11; sube por las líneas de combo del 22/11)"),
+    ("gorma", "Mazmorra", 1.9, "Gorma 1.0, receta única de la Mazmorra (23/11), 6.000 partidas"),
+    ("giada", "B2", 15.3, "Giada actual (con Lyra), mesa v2, 4.000 partidas (simulador-montecarlo.md, sección 8)"),
+    ("blight", "B2", 6.6, "Blight precon, mesa v2, 4.000 partidas (simulador-montecarlo.md, sección 9)"),
+    ("blor", "B3", 17.9, "Blor 1.6, mesa v2 con extensiones Mazmorra (simulador-montecarlo.md, 19/11)"),
+    ("blor", "Mazmorra", 3.2, "Blor 1.6, Mazmorra (19/11; la receta única no le cambia nada), 6.000 partidas"),
+]
 
 
 def main():
     args = sys.argv[1:]
     n = int(args.pop(0)) if args and args[0].isdigit() else 2000
-    names = args or list(REF)
+    names = args or sorted({r[0] for r in REF}, key=[r[0] for r in REF].index)
     env = dict(os.environ, PYTHONHASHSEED="0")
     bad = 0
-    for name in names:
-        br, ref, src = REF[name]
+    for name, br, ref, src in [r for r in REF if r[0] in names]:
         t = time.time()
         out = subprocess.run([sys.executable, os.path.join(ROOT, "sim.py"), name, "-m", br, "-n", str(n), "--json"],
                              env=env, capture_output=True, text=True)
@@ -37,7 +39,7 @@ def main():
         se = 100 * math.sqrt(ref / 100 * (1 - ref / 100) / n)
         ok = abs(got - ref) <= 2.5 * se
         bad += not ok
-        print(f"{name:8} {br:3} {got:5.1f}%  ref {ref:5.1f}%  (±{2.5 * se:.1f})  {'OK' if ok else 'REVISAR'}  "
+        print(f"{name:8} {br:8} {got:5.1f}%  ref {ref:5.1f}%  (±{2.5 * se:.1f})  {'OK' if ok else 'REVISAR'}  "
               f"{time.time() - t:4.0f}s  — {src}", flush=True)
     sys.exit(1 if bad else 0)
 

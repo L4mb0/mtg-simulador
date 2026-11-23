@@ -57,18 +57,19 @@ def _br(b):
 BRACKETS = {b: _br(b) for b in M.BRACKETS}
 _Z = M.MAZMORRA
 TIME_TURNS = [tuple(x) for x in _Z["time_turns"]]
-# Desvíos de Gandalf en la Mazmorra (core.mesa.DESVIOS): odio a cementerio 0,30 (B4 dice 0,35) y tierras no básicas 0,7
-MZ_GYH, MZ_NB = 0.30, 0.7
 def _mz(mus, spread=_Z["spread"], delay=_Z["delay"], retry=_Z["retry"], delay_turbo=_Z["delay_turbo"],
         retry_turbo=_Z["retry_turbo"], p_partial=_Z["p_partial"], rem=_Z["rem"], cnt=_Z["cnt"], cpt=_Z["cpt"],
         edict=_Z["edict"][0], edict_rate=_Z["edict"][1], ld=_Z["strip"][0], ld_rate=_Z["strip"][1],
         rem_stop=_Z["rem_stop"], rem_slows=0.0, time_turns=TIME_TURNS, me_life=_Z["me_life"], opp_other_dmg=_Z["opp_other_dmg"]):
-    b4 = M.BRACKETS["B4"]
-    ix = _ix(rem, cpt, 1, cnt, _Z["wipes"], b4["wipe_lo"], b4["wipe_hi"], MZ_GYH, b4["gyh_perm"], b4["arth"], curve="B4")
-    ix.update(edict=edict, edict_rate=edict_rate, ld=ld, ld_rate=ld_rate, rem_slows=rem_slows, nb=MZ_NB)
+    ix = _ix(rem, cpt, 1, cnt, _Z["wipes"], _Z["wipe_lo"], _Z["wipe_hi"], _Z["gyh"], _Z["gyh_perm"], _Z["arth"], curve="B4")
+    ix.update(edict=edict, edict_rate=edict_rate, ld=ld, ld_rate=ld_rate, rem_slows=rem_slows, nb=_Z["nb"])
     return (dict(mus=list(mus), spread=spread, a=0.7, delay=delay, retry=retry, delay_turbo=delay_turbo, retry_turbo=retry_turbo,
                  p_partial=p_partial, rem_stop=rem_stop, time_turns=time_turns, me_life=me_life, opp_other_dmg=opp_other_dmg), ix)
-BRACKETS["Mazmorra"] = _mz(_Z["mus"], rem_slows=_Z["rem_slows"])
+# regla 8 (desempate por vida) apagada salvo que se pida: "Mazmorra con tiempo" (Juan, 18/11)
+BRACKETS["Mazmorra"] = _mz(_Z["mus"], rem_slows=_Z["rem_slows"], time_turns=None)
+for _n, _v in M.MAZMORRA_VARIANTES.items():
+    BRACKETS[_n] = _mz(_v["mus"], rem_slows=_Z["rem_slows"], time_turns=None)
+BRACKETS["Mazmorra con tiempo"] = _mz(_Z["mus"], rem_slows=_Z["rem_slows"])
 
 P_REM_STOP = M.P_REM_STOP
 RETRY = M.RETRY
