@@ -24,13 +24,19 @@ Se relanza solo con `PYTHONHASHSEED=0`, que es lo que hace reproducibles los nú
 | `sim.py` | Punto de entrada único: lista, mesas, cambios, candidatas, semillas nuevas |
 | `core/mesa.py` | **Fuente única de la mesa v2**: relojes, remoción, counters, barridas, odio, curva rival y tipos de victoria por bracket; receta de la Mazmorra; reloj (`attempt_p`) y sorteo (`pick`). `DESVIOS` lista lo que cada mazo hace distinto |
 | `core/harness.py` | Lotes con semillas fijas, comparación pareada e intervalos al 95% |
+| `data/efectos.yaml` | **Efectos de las cartas como datos** (una entrada por carta, compartida por los cinco mazos): roles, palabras clave, respuestas, rocas, equipos, disparadores de muerte y el bloque `motor` de cada mazo (pesos de amenaza, prioridades). Vocabulario en `data/VOCABULARIO.md` |
+| `core/efectos.py`, `core/mapeo.py` | Lector del YAML (`python3 core/efectos.py` lista pendientes) y traducción a las claves de cada `cards.py` |
 | `core/cards_db.json` | Base de cartas generada desde Forge y su comparación con los `cards.py` |
-| `decks/<mazo>/` | Motor, cartas, IA y la parte de la mesa propia del mazo (pesos por carta, blancos). `adaptador.py` conecta el mazo con `sim.py` |
+| `decks/<mazo>/` | Motor, IA y la parte de la mesa propia del mazo. `cards.py` solo tiene coste, tipo y P/T. `adaptador.py` conecta el mazo con `sim.py` |
 | `tools/huella.py` | Para refactorizar: 150 partidas por mesa y mazo que tienen que salir idénticas |
 
 Mazos: `gandalf` (Goblins' Bane, spellslinger), `gorma` (Witherbloom, aristócratas + persist), `giada` (ángeles),
 `blight` (Blight Curse, contadores -1/-1), `blor` (voltron). Las reglas de cada mesa y el checklist de auditoría
 están en el Project de Claude (`claude/simulador-montecarlo.md`).
+
+**Para agregar una carta:** su línea en `decks/<mazo>/cards.py` y su entrada en `data/efectos.yaml` (ver
+`data/VOCABULARIO.md`); si el efecto no está en el vocabulario, en el motor y marcado como `propio`.
+`python3 core/tests.py` revisa el YAML.
 
 **Para agregar un mazo:** su carpeta en `decks/` con motor y cartas, tablas de mesa armadas desde `core/mesa.py`,
 y un `adaptador.py` con `SEED0`, `LISTAS`, `DEFAULT`, `MESAS`, `DEFAULT_MESAS`, `lista()`, `conoce()` y `_one()`.

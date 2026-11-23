@@ -180,6 +180,13 @@ card("Lotus Bloom", "artifact", 0, 0, red=False) # suspend 3: entra al 4to turno
 card("Chromatic Lantern", "artifact", 3, 0, red=False)
 card("Skullclamp", "artifact", 1, 0, red=False)
 
+# Comandante y mitades de cartas especiales (antes se agregaban en engine.py)
+card("Gandalf", "creature", g=2, r=1)
+card("Flameshape", "sorcery", g=1, r=1)
+card("Emeritus Bolt", "instant", g=0, r=1)
+card("Molten Tide", "instant", g=0, r=1)
+card("Lindblum Siege", "instant", g=2, r=1)
+
 # Fase 4: los efectos de cada carta (roles, palabras clave, respuestas, rocas...) viven en data/efectos.yaml;
 # aquí quedan coste, tipo y P/T. core/mapeo.py los vuelve a poner con las claves de siempre.
 import os as _os, sys as _sys

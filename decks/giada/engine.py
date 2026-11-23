@@ -78,12 +78,15 @@ class Perm:
     attacked: bool = False
 
 
-ANTHEM_ANGELS = {"Patchwork Banner", "Vanquisher's Banner"}
-KEY_TARGETS = ["Felidar Sovereign", "Avacyn, Angel of Hope", "Sephara, Sky's Blade", "Lyra Dawnbringer",
-               "Archangel of Thune", "Righteous Valkyrie", "Herald of Eternal Dawn", "Court of Grace",
-               "Angelic Field Marshal", "Thraben Watcher", "Always Watching", "Herald of War", "Exemplar of Light",
-               "Cryptic Gateway", "Vanquisher's Banner", "Lyra, Archangel of Dawn", "Valkyrie Harbinger",
-               "Bishop of Wings", "Norn's Choirmaster", "Linvala, the Preserver", "Reya Dawnbringer"]
+# Fase 4: roles y pesos por carta en data/efectos.yaml (comunes o en el bloque "motor" de este mazo)
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import efectos as EF
+import cards as _cards_mod
+_CD = _cards_mod.C if isinstance(getattr(_cards_mod, "C", None), dict) else _cards_mod.CARDS
+_NAMES = list(_CD)
+ANTHEM_ANGELS = set(EF.motor_roles("giada", "anthem_angels", _NAMES))
+KEY_TARGETS = EF.motor_order("giada", "key_target", _NAMES)
 
 
 class Game(MesaV2):

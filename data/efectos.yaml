@@ -8,12 +8,19 @@ Blood Artist:
   - orden: 0
     propia: true
     efectos: {drain_one: 1, gain: 1}
+    controla: cualquiera
+  blight:
+    motor:
+      roles: [keep_home]
 Zulaport Cutthroat:
   tags: [black, closer, drain_each, drainer]
   on_death:
   - orden: 1
     propia: true
     efectos: {drain_each: 1, gain: 1}
+  blight:
+    motor:
+      roles: [keep_home]
 Bloodghast:
   tags: [cantblock]
 Butcher of Malakir:
@@ -72,9 +79,11 @@ Rampant Rejuvenator: {propio: 'gorma/engine.dies: busca tierras según su poder'
 Sakura-Tribe Elder:
   tags: [ramp]
 Selvala, Heart of the Wilds:
-  tags: [ramp]
+  tags: [dork, elf, ramp]
+  gorma:
+    'no': [dork]
 Elvish Mystic:
-  tags: [dork, ramp]
+  tags: [dork, elf, ramp]
   blor: {mana: 1}
 Twitching Doll:
   tags: [artifact, dork, ramp]
@@ -156,8 +165,12 @@ Vicious Rivalry:
 Witherbloom Charm: {}
 Assassin's Trophy:
   tags: [answer_any_inst]
+  blight:
+    motor: {instant_ans: any}
 Infernal Grasp:
   tags: [answer_cre_inst]
+  blight:
+    motor: {instant_ans: cre}
 Tragic Slip:
   tags: [answer_cre_inst]
 Fell:
@@ -165,7 +178,7 @@ Fell:
 Heroic Intervention:
   tags: [prot_spot]
 Victimize: {}
-Skullclamp: {equip: 1}
+Skullclamp: {equip: 1, power_bonus: 1}
 Eldritch Evolution: {}
 Dr. Joseph M'Benga: {}
 Vengeance Mission:
@@ -222,6 +235,9 @@ Grim Haruspex:
     otra: true
     no_ficha: true
     efectos: {draw: 1}
+  blight:
+    motor:
+      roles: [keep_home]
 Fecundity:
   on_death:
   - orden: 3
@@ -327,12 +343,17 @@ Gravecrawler:
 Yawgmoth, Thran Physician:
   tags: [black, legendary, outlet]
   propio: 'gorma/engine.dies: paga 1 vida y roba, 2 por turno'
+  blight:
+    motor:
+      roles: [keep_home]
 The Meathook Massacre:
   tags: [closer, drainer]
   on_death:
   - orden: 21
     una_vez: true
     efectos: {drain_each: 1}
+  blight:
+    motor: {nota: Blight le suma ganar 1 cuando muere una criatura propia (la carta real no; revisar)}
 Sephiroth, Fabled SOLDIER:
   tags: [closer, drainer]
   on_death:
@@ -405,7 +426,7 @@ Cast Down:
 Power Word Kill:
   tags: [answer_cre_inst]
 Llanowar Elves:
-  tags: [dork, ramp]
+  tags: [dork, elf, ramp]
   blor: {mana: 1}
 Three Visits:
   tags: [ramp]
@@ -443,10 +464,10 @@ Cabal Ritual:
 Elves of Deep Shadow:
   tags: [dork, ramp]
 Fyndhorn Elves:
-  tags: [dork, ramp]
+  tags: [dork, elf, ramp]
   blor: {mana: 1}
 Arbor Elf:
-  tags: [dork, ramp]
+  tags: [dork, elf, ramp]
   blor: {mana: 1}
 Deathrite Shaman:
   tags: [dork, ramp]
@@ -481,49 +502,129 @@ Pinnacle Monk:
 Mind Stone: {rock: C}
 Tablet of Discovery: {}
 The Fire Crystal: {}
-Ruby Medallion: {}
+Ruby Medallion:
+  gandalf:
+    motor:
+      roles: [counter_key]
 Primal Amulet: {}
 The One Ring:
   tags: [game_changer]
-Lightning Greaves: {equip: 0}
-Swiftfoot Boots: {equip: 1}
+  gandalf:
+    motor:
+      roles: [key_closer]
+Lightning Greaves:
+  equip: 0
+  grants: [haste]
+Swiftfoot Boots:
+  equip: 1
+  grants: [haste]
 Simian Spirit Guide: {}
 Mishra's Bauble: {}
 Harmonic Prodigy:
   tags: [wizard]
+  gandalf:
+    motor:
+      roles: [amp, key_amp, threat]
+      threat_rank: 2
+      threat_w: 0.6
 Coruscation Mage:
   tags: [wizard]
-Erebor Flamesmith: {}
+  gandalf:
+    motor:
+      roles: [threat]
+      threat_rank: 12
+Erebor Flamesmith:
+  gandalf:
+    motor:
+      roles: [threat]
+      threat_rank: 17
 Guttersnipe:
   tags: [shaman]
+  gandalf:
+    motor:
+      roles: [threat]
+      threat_rank: 8
+      threat_w: 0.4
 Kessig Flamebreather:
   tags: [shaman]
-Thunderdrum Soloist: {}
+  gandalf:
+    motor:
+      roles: [threat]
+      threat_rank: 11
+Thunderdrum Soloist:
+  gandalf:
+    motor:
+      roles: [threat]
+      threat_rank: 18
 Emeritus of Conflict:
   tags: [wizard]
 Krark, the Thumbless:
-  tags: [wizard]
+  tags: [legendary, wizard]
+  gandalf:
+    motor:
+      roles: [key_amp, threat]
+      threat_rank: 7
 Tomik, Izzet Sparkmage:
-  tags: [wizard]
+  tags: [legendary, wizard]
+  gandalf:
+    motor:
+      roles: [amp, threat]
+      threat_rank: 10
+      threat_w: 0.4
 Party Thrasher:
   tags: [wizard]
 Burning Prophet:
   tags: [wizard]
 Mysidian Elder:
   tags: [wizard]
-Electro, Assaulting Battery: {}
+  gandalf:
+    motor:
+      roles: [threat]
+      threat_rank: 19
+Electro, Assaulting Battery:
+  tags: [legendary]
+  gandalf:
+    motor: {threat_rank: 20, threat_w: 0.5}
 Pyre Rhymer: {}
 Ashling, Flame Dancer:
-  tags: [shaman]
-Longshot, Rebel Bowman: {}
-Ojer Axonil, Deepest Might: {}
+  tags: [legendary, shaman]
+  gandalf:
+    motor: {threat_rank: 21, threat_w: 0.5}
+Longshot, Rebel Bowman:
+  tags: [legendary]
+  gandalf:
+    motor:
+      roles: [threat]
+      threat_rank: 6
+Ojer Axonil, Deepest Might:
+  tags: [legendary]
+  gandalf:
+    motor:
+      roles: [amp, key_amp, threat]
+      threat_rank: 0
+      threat_w: 0.6
 Storm-Kiln Artist:
   tags: [shaman]
-Urabrask: {}
-Wiccan, Young Avenger: {}
+  gandalf:
+    motor:
+      roles: [threat]
+      threat_rank: 9
+      threat_w: 0.5
+Urabrask:
+  tags: [legendary]
+  gandalf:
+    motor:
+      roles: [threat]
+      threat_rank: 22
+Wiccan, Young Avenger:
+  tags: [legendary]
 Artist's Talent: {}
 Count on Luck: {}
-Fiery Inscription: {}
+Fiery Inscription:
+  gandalf:
+    motor:
+      roles: [threat]
+      threat_rank: 13
 Burn, Burn, Tree and Fern: {}
 Virtue of Courage: {}
 Faithless Looting: {}
@@ -534,9 +635,15 @@ Redirect Lightning: {}
 Vandalblast: {}
 Commune with Lava: {}
 Demand Answers: {}
-Desperate Ritual: {}
-Pyretic Ritual: {}
-Seething Song: {}
+Desperate Ritual:
+  gandalf:
+    motor: {copy_value: 2}
+Pyretic Ritual:
+  gandalf:
+    motor: {copy_value: 2}
+Seething Song:
+  gandalf:
+    motor: {copy_value: 5}
 Grapeshot: {}
 Reckless Impulse: {}
 Wrenn's Resolve: {}
@@ -547,16 +654,42 @@ Doublecast: {}
 Untimely Malfunction: {}
 Chaos Warp: {}
 Delayed Blast Fireball: {}
-Jeska's Will: {}
+Jeska's Will:
+  gandalf:
+    motor:
+      roles: [key_closer]
+      copy_value: 5
 Light Up the Stage: {}
-Wheel of Misfortune: {}
+Wheel of Misfortune:
+  gandalf:
+    motor:
+      roles: [key_closer]
 Seize the Spoils: {}
-Big Score: {}
-Fiery Confluence: {}
-Mizzix's Mastery: {}
-Past in Flames: {}
-Will of the Jeskai: {}
-Mana Geyser: {}
+Big Score:
+  gandalf:
+    motor: {copy_value: 3}
+Fiery Confluence:
+  gandalf:
+    motor:
+      roles: [key_closer]
+      copy_value: 6
+Mizzix's Mastery:
+  gandalf:
+    motor:
+      roles: [key_closer]
+Past in Flames:
+  gandalf:
+    motor:
+      roles: [key_closer]
+Will of the Jeskai:
+  gandalf:
+    motor:
+      roles: [key_closer]
+Mana Geyser:
+  gandalf:
+    motor:
+      roles: [counter_key]
+      copy_value: 6
 Blasphemous Act: {}
 Thunderclap: {}
 Fireblast: {}
@@ -567,14 +700,41 @@ Spikefield Hazard:
 Rite of Flame: {}
 Burst Lightning: {}
 Strike It Rich: {}
-Torbran, Thane of Red Fell: {}
-Birgi, God of Storytelling: {}
-Electrostatic Field: {}
+Torbran, Thane of Red Fell:
+  tags: [legendary]
+  gandalf:
+    motor:
+      threat_rank: 3
+      threat_w: 0.5
+      roles: [key_amp]
+Birgi, God of Storytelling:
+  tags: [legendary]
+  gandalf:
+    motor:
+      threat_rank: 5
+      threat_w: 0.6
+      roles: [key_amp]
+Electrostatic Field:
+  gandalf:
+    motor: {threat_rank: 16}
 Thermo-Alchemist:
   tags: [shaman]
-Firebrand Archer: {}
-Solphim, Mayhem Dominus: {}
-Fiery Emancipation: {}
+  gandalf:
+    motor: {threat_rank: 15}
+Firebrand Archer:
+  gandalf:
+    motor: {threat_rank: 14}
+Solphim, Mayhem Dominus:
+  tags: [legendary]
+  gandalf:
+    motor:
+      threat_rank: 4
+      threat_w: 0.6
+      roles: [key_amp]
+Fiery Emancipation:
+  gandalf:
+    motor:
+      roles: [amp, counter_key]
 Fire Diamond: {}
 Thrill of Possibility: {}
 Mine Collapse: {}
@@ -587,17 +747,27 @@ Fiery Impulse: {}
 Searing Spear: {}
 Play with Fire: {}
 Unholy Heat: {}
-Unexpected Windfall: {}
+Unexpected Windfall:
+  gandalf:
+    motor: {copy_value: 3}
 Pirate's Pillage: {}
-Runaway Steam-Kin: {}
-Neheb, the Eternal: {}
+Runaway Steam-Kin:
+  gandalf:
+    motor: {threat_w: 0.4}
+Neheb, the Eternal:
+  tags: [legendary]
+  gandalf:
+    motor: {threat_rank: 1, threat_w: 0.6}
 Faithless Salvaging: {}
 Frost Bite: {}
 Implement of Combustion: {}
 Renegade Map: {}
 The Flame of Keld: {}
 Skullcrack: {}
-Underworld Breach: {}
+Underworld Breach:
+  gandalf:
+    motor:
+      roles: [counter_key]
 Ancient Tomb:
   gandalf: {prod: C2}
 Mana Vault:
@@ -618,7 +788,10 @@ Overmaster: {}
 Manamorphose: {}
 Crash Through: {}
 Needle Drop: {}
-Bonus Round: {}
+Bonus Round:
+  gandalf:
+    motor:
+      roles: [counter_key]
 Fork: {}
 Increasing Vengeance: {}
 Grinning Ignus: {}
@@ -627,7 +800,10 @@ Aetherflux Reservoir: {}
 Crown of Flames: {}
 Helm of Awakening: {}
 Harnfel, Horn of Bounty: {}
-Embereth Blaze: {}
+Embereth Blaze:
+  gandalf:
+    motor:
+      roles: [special]
 Boltwave: {}
 Magmatic Insight: {}
 Cathartic Reunion: {}
@@ -644,30 +820,44 @@ Angel of the Ruins:
   tags: [angel, artifact, flying]
 Angelic Field Marshal:
   tags: [angel, flying]
+  giada:
+    motor: {key_target: 8}
 Angelic Sleuth:
   tags: [angel, flying]
 Archangel of Tithes:
   tags: [angel, flying]
 Bishop of Wings:
   tags: [cleric]
+  giada:
+    motor: {key_target: 17}
 Dazzling Angel:
   tags: [angel, flying]
 Emeria Shepherd:
   tags: [angel, flying]
 Exemplar of Light:
   tags: [angel, flying]
+  giada:
+    motor: {key_target: 12}
 Firemane Commando:
   tags: [angel, flying]
 Herald of Eternal Dawn:
   tags: [angel, flash, flying]
+  giada:
+    motor: {key_target: 6}
 Herald of War:
   tags: [angel, flying]
+  giada:
+    motor: {key_target: 11}
 Inspiring Overseer:
   tags: [angel, cleric, flying]
 Linvala, the Preserver:
   tags: [angel, flying]
+  giada:
+    motor: {key_target: 19}
 Lyra Dawnbringer:
   tags: [angel, first_strike, flying, lifelink]
+  giada:
+    motor: {key_target: 3}
 Merchant of Truth:
   tags: [angel, flying]
 Metallic Mimic:
@@ -676,14 +866,22 @@ Metropolis Reformer:
   tags: [angel, cleric, flying, vigilance]
 Norn's Choirmaster:
   tags: [angel, first_strike, flying]
+  giada:
+    motor: {key_target: 18}
 Reya Dawnbringer:
   tags: [angel, flying]
+  giada:
+    motor: {key_target: 20}
 Righteous Valkyrie:
   tags: [angel, cleric, flying]
+  giada:
+    motor: {key_target: 5}
 Segovian Angel:
   tags: [angel, flying, vigilance]
 Sephara, Sky's Blade:
   tags: [angel, flying, lifelink]
+  giada:
+    motor: {key_target: 2}
 Seraph of the Sword:
   tags: [angel, flying]
 Serra Avenger:
@@ -696,6 +894,8 @@ Sunblast Angel:
   tags: [angel, flying]
 Thraben Watcher:
   tags: [angel, flying, vigilance]
+  giada:
+    motor: {key_target: 9}
 Vanguard Seraph:
   tags: [angel, flying]
 Wojek Investigator:
@@ -725,19 +925,33 @@ Exorcise:
   answer_sorc: [ae, cre]
 Secret Rendezvous: {draw: 3}
 Commander's Sphere: {rock: W}
-Cryptic Gateway: {}
+Cryptic Gateway:
+  giada:
+    motor: {key_target: 13}
 Endless Atlas: {}
 Heraldic Banner: {rock: W}
 Herald's Horn: {}
 Marble Diamond:
   tags: [etb_tapped]
   rock: W
-Patchwork Banner: {rock: W}
+Patchwork Banner:
+  rock: W
+  giada:
+    motor:
+      roles: [anthem_angels]
 Tome of Legends: {}
-Vanquisher's Banner: {}
-Always Watching: {}
+Vanquisher's Banner:
+  giada:
+    motor:
+      roles: [anthem_angels]
+      key_target: 14
+Always Watching:
+  giada:
+    motor: {key_target: 10}
 Angelic Destiny: {}
-Court of Grace: {}
+Court of Grace:
+  giada:
+    motor: {key_target: 7}
 Grasp of Fate:
   answer_sorc: [ae, cre, other]
 Search the Premises: {}
@@ -747,10 +961,14 @@ Generous Gift:
   answer: [ae, cre, other]
 Valkyrie Harbinger:
   tags: [angel, cleric, flying, lifelink]
+  giada:
+    motor: {key_target: 16}
 Resplendent Angel:
   tags: [angel, flying]
 Lyra, Archangel of Dawn:
   tags: [angel, flying]
+  giada:
+    motor: {key_target: 15}
 Pearl Medallion: {}
 Guide of Souls:
   tags: [cleric]
@@ -769,13 +987,19 @@ Sigarda's Vanguard:
   tags: [angel, flash, flying]
 Felidar Sovereign:
   tags: [lifelink, vigilance]
+  giada:
+    motor: {key_target: 0}
 Akroma's Will: {}
 Karmic Guide:
   tags: [angel, flying]
 Archangel of Thune:
   tags: [angel, flying, lifelink]
+  giada:
+    motor: {key_target: 4}
 Avacyn, Angel of Hope:
   tags: [angel, flying, vigilance]
+  giada:
+    motor: {key_target: 1}
 Serra Ascendant:
   tags: [lifelink]
 Smothering Tithe: {}
@@ -786,13 +1010,13 @@ Lingering Souls:
 Disenchant:
   answer: [ae]
 Millikin:
-  tags: [artifact, colorless, etb_tapped]
+  tags: [artifact, colorless, dork, etb_tapped]
   rock: C
+  giada:
+    'no': [artifact]
   blor:
     mana: 1
     'no': [rock]
-  giada:
-    'no': [artifact]
 Urza's Incubator: {}
 Starnheim Unleashed:
   giada: {starn: true}
@@ -809,14 +1033,29 @@ Archfiend of Ifnir:
   tags: [black, flying]
 Carnifex Demon:
   tags: [black, flying, selfc]
+  blight:
+    motor:
+      roles: [self_counter]
 Channeler Initiate:
   tags: [selfc]
-Devoted Druid: {}
+  blight:
+    motor:
+      roles: [keep_home]
+Devoted Druid:
+  blight:
+    motor:
+      roles: [keep_home]
 Dread Tiller:
   tags: [black]
+  blight:
+    motor:
+      roles: [keep_home]
 Dusk Urchins:
   tags: [black]
-Evolution Sage: {}
+Evolution Sage:
+  blight:
+    motor:
+      roles: [keep_home]
 Ferrafor, Young Yew:
   tags: [legendary]
 Glissa Sunslayer:
@@ -825,9 +1064,18 @@ Grave Titan:
   tags: [black, deathtouch]
 Grim Poppet:
   tags: [selfc]
+  blight:
+    motor:
+      roles: [self_counter]
 Hapatra, Vizier of Poisons:
   tags: [black, legendary]
-Ignoble Hierarch: {}
+  blight:
+    motor:
+      roles: [engine, keep_home]
+Ignoble Hierarch:
+  blight:
+    motor:
+      roles: [keep_home]
 Kulrath Knight:
   tags: [black, flying, wither]
 Massacre Girl, Known Killer:
@@ -836,10 +1084,19 @@ Midnight Banshee:
   tags: [black, wither]
 Necroskitter:
   tags: [black, wither]
+  blight:
+    motor:
+      roles: [keep_home]
 Oft-Nabbed Goat:
   tags: [black]
+  blight:
+    motor:
+      roles: [keep_home]
 Sinister Gnarlbark:
   tags: [black]
+  blight:
+    motor:
+      roles: [keep_home]
 Skinrender:
   tags: [black]
 Soul Snuffers:
@@ -848,16 +1105,33 @@ The Reaper, King No More:
   tags: [black, legendary]
 The Scorpion God:
   tags: [black, legendary]
+  blight:
+    motor:
+      roles: [keep_home]
 Tree of Perdition:
   tags: [black, defender]
+  blight:
+    motor:
+      roles: [keep_home]
 Village Pillagers:
   tags: [wither]
 Wickerbough Elder:
   tags: [selfc]
-Cathartic Pyre: {}
-Fire Covenant: {}
-Putrefy: {}
-Terminate: {}
+  blight:
+    motor:
+      roles: [self_counter]
+Cathartic Pyre:
+  blight:
+    motor: {instant_ans: cre3}
+Fire Covenant:
+  blight:
+    motor: {instant_ans: cre}
+Putrefy:
+  blight:
+    motor: {instant_ans: cre_art}
+Terminate:
+  blight:
+    motor: {instant_ans: cre}
 Aberrant Return: {}
 Black Sun's Zenith: {}
 Burning Curiosity: {}
@@ -874,16 +1148,30 @@ Wickersmith's Tools: {}
 Binding the Old Gods: {}
 Blowfly Infestation: {}
 Everlasting Torment: {}
-Flourishing Defenses: {}
-Grave Venerations: {}
+Flourishing Defenses:
+  blight:
+    motor:
+      roles: [engine]
+Grave Venerations:
+  on_death:
+  - orden: 3
+    efectos: {drain_each: 1, gain: 1}
 Lasting Tarfire: {}
 Puca's Covenant: {}
 Liliana, Death Wielder: {}
 Vraska, Betrayal's Sting: {}
-Generous Patron: {}
+Generous Patron:
+  blight:
+    motor:
+      roles: [keep_home]
 Dawnhand Dissident:
   tags: [black]
-Grim Affliction: {}
+  blight:
+    motor:
+      roles: [keep_home]
+Grim Affliction:
+  blight:
+    motor: {instant_ans: cre1}
 Farseek:
   blor:
     fetch: [0, 0, true]
@@ -895,25 +1183,35 @@ Nature's Lore:
     fetch: [1, 0, false]
 Obelisk Spider:
   tags: [black, reach]
+  blight:
+    motor:
+      roles: [keep_home]
 Maha, Its Feathers Night:
   tags: [black, flying, legendary]
 Persistent Constrictor:
   tags: [black, persist]
-Nest of Scarabs: {}
+Nest of Scarabs:
+  blight:
+    motor:
+      roles: [engine]
 Harbinger of Night:
   tags: [black]
 Scuzzback Scrounger: {}
 Darkness Descends: {}
 Ammit Eternal:
   tags: [black]
-Atomize: {}
+Atomize:
+  blight:
+    motor: {instant_ans: any}
 Shadow Urchin:
   tags: [black]
 Banewhip Punisher:
   tags: [black]
 Mahadi, Emporium Master:
   tags: [black, legendary]
-Whisper of the Dross: {}
+Whisper of the Dross:
+  blight:
+    motor: {instant_ans: cre1}
 All Will Be One: {}
 Contagion Engine: {}
 Crumbling Ashes: {}
@@ -926,12 +1224,19 @@ Archfiend of Sorrows:
 Soul Immolation: {}
 Morselhoarder:
   tags: [selfc]
+  blight:
+    motor:
+      roles: [keep_home, self_counter]
 High-Society Hunter:
   tags: [black, flying]
 Agent Venom:
   tags: [black, menace]
-Blight Rot: {}
-Murder: {}
+Blight Rot:
+  blight:
+    motor: {instant_ans: cre4}
+Murder:
+  blight:
+    motor: {instant_ans: cre}
 Blor the Impervious: {}
 Forest: {}
 Reliquary Tower: {}
@@ -954,15 +1259,19 @@ Path of Ancestry: {}
 Gemstone Mine: {}
 Rishadan Port: {}
 Delighted Halfling:
+  tags: [dork]
   blor: {mana: 1}
 Drover of the Mighty:
+  tags: [dork]
   blor: {mana: 1}
 Bugenhagen, Wise Elder:
+  tags: [dork]
   blor: {mana: 1}
 Sanctum Weaver:
-  tags: [enchantment]
+  tags: [dork, enchantment]
   blor: {mana: 0}
 Kami of Whispered Hopes:
+  tags: [dork]
   blor: {mana: 0}
 Herd Heirloom: {rock: G}
 Necklace of Girion: {rock: G}
@@ -999,15 +1308,18 @@ Return of the Wildspeaker:
 Hunter's Insight: {}
 Garruk, Primal Hunter: {}
 Colossal Majesty: {}
-Enchantress's Presence: {}
+Enchantress's Presence:
+  tags: [enchantress]
 Season of Growth: {}
 Toski, Bearer of Secrets: {}
 Ohran Frostfang: {}
 Eidolon of Blossoms:
   tags: [enchantment]
 Setessan Champion: {}
-Verduran Enchantress: {}
-Argothian Enchantress: {}
+Verduran Enchantress:
+  tags: [enchantress]
+Argothian Enchantress:
+  tags: [enchantress]
 Adventurous Impulse: {}
 Pia, Aether Ascetic: {}
 Eternal Witness: {}
@@ -1016,17 +1328,23 @@ Crystalline Armor: {}
 Strong Back: {}
 Level Up: {}
 Ancestral Mask: {}
-Bear Umbra: {}
+Bear Umbra: {power_bonus: 2}
 Lion Umbra:
+  power_bonus: 3
+  grants: [vigilance]
   blor: {modified: true}
-Snake Umbra: {}
-Spider Umbra: {}
-Rancor: {}
+Snake Umbra:
+  power_bonus: 1
+  on_hit: {draw: 1}
+Spider Umbra: {power_bonus: 1}
+Rancor: {power_bonus: 2}
 Hydra's Growth: {}
-Colossification: {}
-Indomitable Might: {}
-Keen Sense: {}
-Sixth Sense: {}
+Colossification: {power_bonus: 20}
+Indomitable Might: {power_bonus: 3}
+Keen Sense:
+  on_hit: {draw: 1}
+Sixth Sense:
+  on_hit: {draw: 1}
 Curse of Predation: {}
 Unnatural Growth: {}
 Hardened Scales: {}
@@ -1038,37 +1356,67 @@ Blackblade Reforged:
 Staff of Titania: {equip: 3}
 Commander's Plate:
   equip: 5
+  power_bonus: 3
   blor: {leq: 3}
-Shadowspear: {equip: 2}
-Basilisk Collar: {equip: 2}
-Fireshrieker: {equip: 2}
-Leyline Axe: {equip: 3}
-Genji Glove: {equip: 3}
+Shadowspear:
+  equip: 2
+  power_bonus: 1
+  grants: [lifelink]
+Basilisk Collar:
+  equip: 2
+  grants: [lifelink]
+Fireshrieker:
+  equip: 2
+  grants: [double_strike]
+Leyline Axe:
+  equip: 3
+  power_bonus: 1
+  grants: [double_strike]
+Genji Glove:
+  equip: 3
+  grants: [double_strike]
 Inquisitor's Flail: {equip: 2}
 Power Fist: {equip: 2}
-Buster Sword: {equip: 2}
+Buster Sword: {equip: 2, power_bonus: 3}
 Bone Sabres: {equip: 3}
-Colossus Hammer: {equip: 8}
+Colossus Hammer: {equip: 8, power_bonus: 10}
 World War Hulk: {}
 Gavel of the Righteous: {equip: 3}
-Sword of Feast and Famine: {equip: 2}
-Sword of Fire and Ice: {equip: 2}
-Sword of Truth and Justice: {equip: 2}
-Sword of Hearth and Home: {equip: 2}
-Sword of the Animist: {equip: 2}
-Grafted Exoskeleton: {equip: 2}
+Sword of Feast and Famine: {equip: 2, power_bonus: 2}
+Sword of Fire and Ice: {equip: 2, power_bonus: 2}
+Sword of Truth and Justice: {equip: 2, power_bonus: 2}
+Sword of Hearth and Home: {equip: 2, power_bonus: 2}
+Sword of the Animist: {equip: 2, power_bonus: 1}
+Grafted Exoskeleton: {equip: 2, power_bonus: 2}
 Pariah's Shield: {equip: 3}
-Avarice Amulet: {equip: 2}
+Avarice Amulet:
+  equip: 2
+  power_bonus: 2
+  grants: [vigilance]
 Mask of Memory: {equip: 1}
 Umezawa's Jitte: {equip: 2}
-Loxodon Warhammer: {equip: 3}
+Loxodon Warhammer:
+  equip: 3
+  power_bonus: 3
+  grants: [lifelink]
 Thran Power Suit: {equip: 2}
-Assault Suit: {equip: 3}
-Tarrian's Soulcleaver: {equip: 2}
+Assault Suit:
+  equip: 3
+  power_bonus: 2
+  grants: [haste]
+Tarrian's Soulcleaver:
+  equip: 2
+  grants: [vigilance]
 Belt of Giant Strength: {equip: 10}
 Trailblazer's Boots: {equip: 2}
-Long-Lost Lances: {equip: 2}
-Short Bow: {equip: 1}
+Long-Lost Lances:
+  equip: 2
+  power_bonus: 2
+  grants: [vigilance]
+Short Bow:
+  equip: 1
+  power_bonus: 1
+  grants: [vigilance]
 Helm of the Host: {equip: 5}
 Berserk:
   blor: {pump: true}
@@ -1131,7 +1479,8 @@ Constant Mists:
 Silent Arbiter:
   tags: [artifact]
 Spore Frog: {}
-Tajuru Preserver: {}
+Tajuru Preserver:
+  tags: [elf]
 Forgotten Ancient: {}
 Frenzied Baloth: {}
 Questing Beast: {}
@@ -1147,18 +1496,27 @@ Survival of the Fittest:
   tags: [game_changer]
 Brass Squire:
   tags: [artifact]
-Lavaspur Boots: {equip: 1}
+Lavaspur Boots:
+  equip: 1
+  power_bonus: 1
+  grants: [haste]
 Wayfarer's Bauble: {}
-Elvish Spirit Guide: {}
-Somberwald Sage: {}
+Elvish Spirit Guide:
+  tags: [elf]
+Somberwald Sage:
+  tags: [dork]
 Exploration: {}
 Burgeoning: {}
 Harrow: {}
-Priest of Titania: {}
-Karametra's Acolyte: {}
+Priest of Titania:
+  tags: [dork, elf]
+Karametra's Acolyte:
+  tags: [dork]
 Sylvan Caryatid:
+  tags: [dork]
   blor: {mana: 1}
 Paradise Druid:
+  tags: [dork, elf]
   blor: {mana: 1}
 Lotus Cobra: {}
 Sakura-Tribe Scout: {}
@@ -1172,21 +1530,24 @@ Sprout Swarm:
   tags: [prot_spot]
 Kodama of the West Tree: {}
 Dryad Arbor: {}
-Verdant Embrace: {}
+Verdant Embrace: {power_bonus: 3}
 From Beyond: {}
 Nettlecyst:
   equip: 2
   blor: {germ: true}
 Batterskull:
   equip: 5
+  power_bonus: 4
+  grants: [lifelink, vigilance]
   blor: {germ: true}
 Flayer Husk:
   equip: 2
+  power_bonus: 1
   blor: {germ: true}
 Lair of the Hydra: {}
 Treetop Village: {}
 Mutavault: {}
-Conqueror's Flail: {equip: 2}
+Conqueror's Flail: {equip: 2, power_bonus: 1}
 Destiny Spinner:
   tags: [enchantment]
 Semblance Anvil: {}
@@ -1195,8 +1556,8 @@ Foundry Inspector:
 Cloud Key: {}
 Jhoira's Familiar:
   tags: [artifact]
-Hammer of Nazahn: {equip: 4}
-Shuko: {equip: 0}
+Hammer of Nazahn: {equip: 4, power_bonus: 2}
+Shuko: {equip: 0, power_bonus: 1}
 Whispersilk Cloak: {equip: 2}
 Darksteel Plate: {equip: 2}
 Crystal Chimes: {}
@@ -1207,9 +1568,9 @@ Tanuki Transplanter: {equip: 3}
 Nightshade Peddler: {}
 Quietus Spike: {equip: 3}
 Gorgon's Head: {equip: 2}
-Hunter's Blowgun: {equip: 2}
+Hunter's Blowgun: {equip: 2, power_bonus: 1}
 Lure: {}
-Gaea's Embrace: {}
+Gaea's Embrace: {power_bonus: 3}
 Tower Above:
   blor: {pump: true}
 Studious First-Year: {}
@@ -1229,7 +1590,7 @@ Glittering Frost:
   blor: {landaura: 1}
 Fertilid: {}
 Elvish Rejuvenator: {}
-Silken Strength: {}
+Silken Strength: {power_bonus: 1}
 Cultist's Staff: {equip: 3}
 Spider-Suit: {equip: 3}
 Neglected Heirloom: {equip: 1}
@@ -1259,3 +1620,26 @@ Bloom Tender:
 Azusa, Lost but Seeking: {}
 Collector Ouphe: {}
 Colossal Dreadmaw: {}
+Gandalf:
+  tags: [legendary, wizard]
+  gandalf:
+    motor:
+      threat_rank: 23
+      threat_w: 0.4
+      roles: [special]
+Lindblum Siege:
+  gandalf:
+    motor:
+      roles: [special]
+Molten Tide:
+  gandalf:
+    motor:
+      roles: [special]
+Emeritus Bolt:
+  gandalf:
+    motor:
+      roles: [special]
+Flameshape:
+  gandalf:
+    motor:
+      roles: [special]

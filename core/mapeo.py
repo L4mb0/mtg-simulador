@@ -94,6 +94,6 @@ def importar(mazo, nombre, stats):
             if f in e:
                 d[k] = set(e[f]) if mazo == "giada" else " ".join(e[f])
     for k, v in e.get(mazo, {}).items():
-        if k != "no":
+        if k not in ("no", "motor"):
             d[k] = tuple(v) if isinstance(v, list) else v
     return d

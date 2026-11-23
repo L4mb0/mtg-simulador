@@ -1,51 +1,38 @@
 import random, copy
 from cards import C, RITUAL_NET, VALUE
 
-C["Gandalf"] = dict(t="creature", g=2, r=1, red=True, wiz=True)
-C["Flameshape"] = dict(t="sorcery", g=1, r=1, red=True)
-C["Emeritus Bolt"] = dict(t="instant", g=0, r=1, red=True)
-C["Molten Tide"] = dict(t="instant", g=0, r=1, red=True)
-C["Lindblum Siege"] = dict(t="instant", g=2, r=1, red=True)
-THREATS = {"Guttersnipe", "Kessig Flamebreather", "Coruscation Mage", "Erebor Flamesmith", "Thunderdrum Soloist",
-           "Fiery Inscription", "Mysidian Elder", "Longshot, Rebel Bowman", "Urabrask", "Ojer Axonil, Deepest Might",
-           "Harmonic Prodigy", "Tomik, Izzet Sparkmage", "Krark, the Thumbless", "Storm-Kiln Artist"}
-LEGENDS = {"Neheb, the Eternal", "Gandalf", "Ojer Axonil, Deepest Might", "Krark, the Thumbless", "Tomik, Izzet Sparkmage", "Longshot, Rebel Bowman",
-           "Electro, Assaulting Battery", "Urabrask", "Ashling, Flame Dancer", "Wiccan, Young Avenger", "Torbran, Thane of Red Fell",
-           "Birgi, God of Storytelling", "Solphim, Mayhem Dominus"}
+# Fase 4: roles y pesos por carta en data/efectos.yaml (comunes o en el bloque "motor" de este mazo)
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import efectos as EF
+import cards as _cards_mod
+_CD = _cards_mod.C if isinstance(getattr(_cards_mod, "C", None), dict) else _cards_mod.CARDS
+_NAMES = list(_CD)
+THREATS = set(EF.motor_roles("gandalf", "threat", _NAMES))
+LEGENDS = set(EF.with_tag("legendary", _NAMES))
 VISIBLE = THREATS | {"Neheb, the Eternal", "Runaway Steam-Kin", "Gandalf", "Torbran, Thane of Red Fell", "Birgi, God of Storytelling", "Solphim, Mayhem Dominus",
                      "Firebrand Archer", "Electrostatic Field", "Thermo-Alchemist", "Electro, Assaulting Battery",
                      "Ashling, Flame Dancer", "Urabrask", "Burning Prophet", "Emeritus of Conflict"}
-THREAT_RANK = {n: i for i, n in enumerate(["Ojer Axonil, Deepest Might", "Neheb, the Eternal", "Harmonic Prodigy", "Torbran, Thane of Red Fell",
-               "Solphim, Mayhem Dominus", "Birgi, God of Storytelling", "Longshot, Rebel Bowman", "Krark, the Thumbless",
-               "Guttersnipe", "Storm-Kiln Artist", "Tomik, Izzet Sparkmage", "Kessig Flamebreather", "Coruscation Mage",
-               "Fiery Inscription", "Firebrand Archer", "Thermo-Alchemist", "Electrostatic Field", "Erebor Flamesmith",
-               "Thunderdrum Soloist", "Mysidian Elder", "Electro, Assaulting Battery", "Ashling, Flame Dancer", "Urabrask", "Gandalf"])}
+THREAT_RANK = {n: i for i, n in enumerate(EF.motor_order("gandalf", "threat_rank", _NAMES))}
 # ---- amenaza percibida (14/11/2026, estructura de la IA de Forge) ----
-THREAT_W = {  # v2 14/11 (Juan): amplificadores y motores de storm > pingers; Gandalf es un pinger mas
-            "Harmonic Prodigy": 0.6, "Birgi, God of Storytelling": 0.6, "Solphim, Mayhem Dominus": 0.6,
-            "Ojer Axonil, Deepest Might": 0.6, "Neheb, the Eternal": 0.6,
-            "Torbran, Thane of Red Fell": 0.5, "Electro, Assaulting Battery": 0.5, "Ashling, Flame Dancer": 0.5,
-            "Storm-Kiln Artist": 0.5,
-            "Gandalf": 0.4, "Tomik, Izzet Sparkmage": 0.4, "Guttersnipe": 0.4, "Runaway Steam-Kin": 0.4}
+THREAT_W = EF.motor_field("gandalf", "threat_w", _NAMES)
 THREAT_W_DEFAULT = 0.3
-COUNTER_KEYS = {"Mana Geyser", "Underworld Breach", "Bonus Round", "Fiery Emancipation", "Ruby Medallion"}
+COUNTER_KEYS = set(EF.motor_roles("gandalf", "counter_key", _NAMES))
 COUNTER_BY_CMC = {0: 0.02, 1: 0.02, 2: 0.05, 3: 0.15}
 COUNTER_HI = 0.3
 WIPE_MARGIN = 1.5
 KEEP_LAST = 0.4
 REM_THR = 0.5
-KEY_CLOSERS = {"Mizzix's Mastery", "Past in Flames", "Will of the Jeskai", "Jeska's Will", "Fiery Confluence", "Wheel of Misfortune", "The One Ring"}
-KEY_AMPS = {"Ojer Axonil, Deepest Might", "Harmonic Prodigy", "Torbran, Thane of Red Fell", "Krark, the Thumbless",
-            "Birgi, God of Storytelling", "Solphim, Mayhem Dominus"}
+KEY_CLOSERS = set(EF.motor_roles("gandalf", "key_closer", _NAMES))
+KEY_AMPS = set(EF.motor_roles("gandalf", "key_amp", _NAMES))
 DEV_TUTOR = ["Harmonic Prodigy", "Ojer Axonil, Deepest Might", "Ruby Medallion", "Past in Flames"]
 SCEN = {"geyser_f": 0.5, "jeska_top": 7, "jeska_min": 2}
-SPECIAL = {"Flameshape", "Emeritus Bolt", "Molten Tide", "Lindblum Siege", "Gandalf", "Embereth Blaze"}
+SPECIAL = set(EF.motor_roles("gandalf", "special", _NAMES))
 BR_MIZZIX = [True]
-AMP_SET = {"Ojer Axonil, Deepest Might", "Harmonic Prodigy", "Fiery Emancipation", "Tomik, Izzet Sparkmage"}
+AMP_SET = set(EF.motor_roles("gandalf", "amp", _NAMES))
 ISIS = lambda n: C[n]["t"] in ("instant", "sorcery")
 NONCRE = lambda n: C[n]["t"] not in ("creature", "land")
-COPYWORTHY = {"Unexpected Windfall": 3, "Seething Song": 5, "Jeska's Will": 5, "Fiery Confluence": 6, "Mana Geyser": 6, "Big Score": 3,
-              "Pyretic Ritual": 2, "Desperate Ritual": 2}
+COPYWORTHY = EF.motor_field("gandalf", "copy_value", _NAMES)
 TOKEN = "Wizard token"
 NB_FRAC = [0.5]   # 22/11: fraccion de tierras no basicas de los rivales (Price of Progress); la mesa la fija con ix["nb"]
 

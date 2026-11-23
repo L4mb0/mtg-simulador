@@ -16,19 +16,23 @@ import random
 from dataclasses import dataclass
 from cards import CARDS, LANDS, COMMANDER, parse_cost, mv
 
-ENGINES = {"Hapatra, Vizier of Poisons", "Flourishing Defenses", "Nest of Scarabs"}
-EACH_DRAIN = {"Grave Venerations", "Zulaport Cutthroat", "Bastion of Remembrance", "Cauldron of Essence",
-              "The Meathook Massacre"}
-INSTANT_ANS = {"Terminate": "cre", "Infernal Grasp": "cre", "Putrefy": "cre_art", "Assassin's Trophy": "any",
-               "Fire Covenant": "cre", "Cathartic Pyre": "cre3", "Atomize": "any", "Blight Rot": "cre4",
-               "Grim Affliction": "cre1", "Whisper of the Dross": "cre1", "Murder": "cre"}
+# Fase 4: roles y pesos por carta en data/efectos.yaml (comunes o en el bloque "motor" de este mazo)
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import efectos as EF
+import cards as _cards_mod
+_CD = _cards_mod.C if isinstance(getattr(_cards_mod, "C", None), dict) else _cards_mod.CARDS
+_NAMES = list(_CD)
+ENGINES = set(EF.motor_roles("blight", "engine", _NAMES))
+# disparadores de muerte compartidos (data/efectos.yaml): drenar a todos / drenar a uno (Blood Artist y similares)
+EACH_DRAIN = set(EF.with_death_effect("drain_each", _NAMES))
+DRAIN_ONE = set(EF.with_death_effect("drain_one", _NAMES))
+DRAIN_ANY = set(EF.with_death_effect("drain_one", _NAMES, controla="cualquiera"))   # también cuando muere una rival
+INSTANT_ANS = EF.motor_field("blight", "instant_ans", _NAMES)
 # probabilidad de que una respuesta frene la amenaza de un rival de combate (resistencia limitada)
 ANS_P = {"cre1": 0.35, "cre3": 0.6, "cre4": 0.8}
-SELF_COUNTER = {"Carnifex Demon", "Grim Poppet", "Wickerbough Elder", "Morselhoarder"}
-KEEP_HOME = {"Hapatra, Vizier of Poisons", "Devoted Druid", "Ignoble Hierarch", "Sinister Gnarlbark",
-             "Tree of Perdition", "Oft-Nabbed Goat", "Dawnhand Dissident", "Channeler Initiate", "Evolution Sage",
-             "Blood Artist", "Zulaport Cutthroat", "Necroskitter", "Obelisk Spider", "Generous Patron",
-             "Grim Haruspex", "Yawgmoth, Thran Physician", "The Scorpion God", "Dread Tiller", "Morselhoarder"}
+SELF_COUNTER = set(EF.motor_roles("blight", "self_counter", _NAMES))
+KEEP_HOME = set(EF.motor_roles("blight", "keep_home", _NAMES))
 
 
 @dataclass
@@ -563,7 +567,7 @@ class Game:
                 for _ in range(k):
                     self.drain_each(1)
                     self.gain(1)
-        for _ in range(self.count("Blood Artist") + (1 if c.name == "Blood Artist" else 0)):
+        for _ in range(sum(self.count(n) for n in DRAIN_ONE) + (1 if c.name in DRAIN_ONE else 0)):
             self.drain_target(1)
             self.gain(1)
         if had and self.on("Puca's Covenant") and not self.puca_used:
@@ -645,7 +649,7 @@ class Game:
                 self.treasures_tapped += 1
         if self.on("Massacre Girl, Known Killer") and c.tg + c.plus - c.m + c.mod < 1:
             self.draw(1)
-        for _ in range(self.count("Blood Artist")):
+        for _ in range(sum(self.count(n) for n in DRAIN_ANY)):
             self.drain_target(1)
             self.gain(1)
         if c.kind == "card":
@@ -835,10 +839,10 @@ class Game:
         if kind == "yawg":
             draws += 1
         each = sum(self.count(n) for n in EACH_DRAIN) + self.count("Obelisk Spider")
-        tgt = self.count("Blood Artist") + (1 if self.on("All Will Be One") else 0)
+        tgt = sum(self.count(n) for n in DRAIN_ONE) + (1 if self.on("All Will Be One") else 0)
         if kind == "yawg" and self.auntie():
             tgt += 1   # el contador va a una criatura rival que no muere: Auntie le quita 1
-        gain = sum(self.count(n) for n in EACH_DRAIN) + self.count("Obelisk Spider") + self.count("Blood Artist")
+        gain = sum(self.count(n) for n in EACH_DRAIN) + self.count("Obelisk Spider") + sum(self.count(n) for n in DRAIN_ONE)
         engines = sum(self.count(e) for e in ENGINES)
         return draws, each, tgt, gain, engines
 

@@ -119,29 +119,26 @@ def P(n):
     return C.get(n, {})
 
 
-AURA_FLAT = {"Bear Umbra": 2, "Lion Umbra": 3, "Snake Umbra": 1, "Spider Umbra": 1, "Rancor": 2,
-             "Colossification": 20, "Indomitable Might": 3, "Verdant Embrace": 3, "Gaea's Embrace": 3, "Silken Strength": 1}
-EQUIP_FLAT = {"Commander's Plate": 3, "Shadowspear": 1, "Leyline Axe": 1, "Buster Sword": 3, "Colossus Hammer": 10,
-              "Sword of Feast and Famine": 2, "Sword of Fire and Ice": 2, "Sword of Truth and Justice": 2,
-              "Sword of Hearth and Home": 2, "Sword of the Animist": 1, "Grafted Exoskeleton": 2,
-              "Avarice Amulet": 2, "Loxodon Warhammer": 3, "Assault Suit": 2, "Long-Lost Lances": 2, "Short Bow": 1,
-              "Lavaspur Boots": 1, "Batterskull": 4, "Flayer Husk": 1, "Conqueror's Flail": 1, "Hammer of Nazahn": 2, "Shuko": 1, "Hunter's Blowgun": 1,
-              "Skullclamp": 1}
+# Fase 4: roles y pesos por carta en data/efectos.yaml (comunes o en el bloque "motor" de este mazo)
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+from core import efectos as EF
+import cards as _cards_mod
+_CD = _cards_mod.C if isinstance(getattr(_cards_mod, "C", None), dict) else _cards_mod.CARDS
+_NAMES = list(_CD)
+AURA_FLAT = EF.field("power_bonus", [n for n in _NAMES if _CD[n]["t"] == "aura"])
+EQUIP_FLAT = EF.field("power_bonus", [n for n in _NAMES if _CD[n]["t"] == "equip"])
 CLAMP_AGGRO = False          # sensibilidad (22/11): clampear todo lo que se pueda
-DOUBLE_STRIKE = {"Fireshrieker", "Leyline Axe", "Genji Glove"}
-VIGILANCE_A = {"Lion Umbra"}
-VIGILANCE_E = {"Batterskull", "Avarice Amulet", "Tarrian's Soulcleaver", "Short Bow", "Long-Lost Lances"}
-LIFELINK_E = {"Batterskull", "Shadowspear", "Basilisk Collar", "Loxodon Warhammer"}
-HASTE_E = {"Swiftfoot Boots", "Lightning Greaves", "Assault Suit", "Lavaspur Boots"}
-DRAW_ON_HIT_A = {"Keen Sense": 1, "Snake Umbra": 1, "Sixth Sense": 1}
-FOGS = {"Fog", "Moment's Peace", "Constant Mists"}
-DORK_NAMES = {"Llanowar Elves", "Elvish Mystic", "Fyndhorn Elves", "Birds of Paradise", "Delighted Halfling",
-              "Drover of the Mighty", "Fanatic of Rhonas", "Bugenhagen, Wise Elder", "Sanctum Weaver",
-              "Kami of Whispered Hopes", "Millikin", "Arbor Elf", "Sylvan Caryatid", "Paradise Druid",
-              "Priest of Titania", "Karametra's Acolyte", "Selvala, Heart of the Wilds", "Somberwald Sage"}
-ELVES = {"Llanowar Elves", "Elvish Mystic", "Fyndhorn Elves", "Arbor Elf", "Priest of Titania", "Tajuru Preserver",
-         "Selvala, Heart of the Wilds", "Paradise Druid", "Elvish Spirit Guide"}
-ENCHANTRESS = {"Verduran Enchantress", "Argothian Enchantress", "Enchantress's Presence"}
+DOUBLE_STRIKE = set(EF.with_value("grants", "double_strike", _NAMES))
+VIGILANCE_A = set(EF.with_value("grants", "vigilance", [n for n in _NAMES if _CD[n]["t"] == "aura"]))
+VIGILANCE_E = set(EF.with_value("grants", "vigilance", [n for n in _NAMES if _CD[n]["t"] == "equip"]))
+LIFELINK_E = set(EF.with_value("grants", "lifelink", [n for n in _NAMES if _CD[n]["t"] == "equip"]))
+HASTE_E = set(EF.with_value("grants", "haste", [n for n in _NAMES if _CD[n]["t"] == "equip"]))
+DRAW_ON_HIT_A = {n: v["draw"] for n, v in EF.field("on_hit", [n for n in _NAMES if _CD[n]["t"] == "aura"]).items()}
+FOGS = set(EF.with_tag("fog", _NAMES))
+DORK_NAMES = set(EF.with_tag("dork", _NAMES))
+ELVES = set(EF.with_tag("elf", _NAMES))
+ENCHANTRESS = set(EF.with_tag("enchantress", _NAMES))
 
 
 class Game:
