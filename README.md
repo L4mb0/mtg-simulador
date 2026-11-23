@@ -29,6 +29,8 @@ Se relanza solo con `PYTHONHASHSEED=0`, que es lo que hace reproducibles los nú
 | `core/cards_db.json` | Base de cartas generada desde Forge y su comparación con los `cards.py` |
 | `decks/<mazo>/` | Motor, IA y la parte de la mesa propia del mazo. `cards.py` lista las cartas (`FORGE`) y los ajustes a mano. `adaptador.py` conecta el mazo con `sim.py` |
 | `tools/huella.py` | Para refactorizar: 150 partidas por mesa y mazo que tienen que salir idénticas |
+| `archivo/` | Código que vivía en el Project hasta el 23/11 (experimentos y simulador viejo), tal cual |
+| `MAPA.md` | Una página para orientarse |
 
 Mazos: `gandalf` (Goblins' Bane, spellslinger), `gorma` (Witherbloom, aristócratas + persist), `giada` (ángeles),
 `blight` (Blight Curse, contadores -1/-1), `blor` (voltron). Las reglas de cada mesa y el checklist de auditoría
