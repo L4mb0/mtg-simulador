@@ -8,6 +8,9 @@ from core import efectos as EF
 import cards as _cards_mod
 _CD = _cards_mod.C if isinstance(getattr(_cards_mod, "C", None), dict) else _cards_mod.CARDS
 _NAMES = list(_CD)
+ON_CAST_IS = EF.cast_table("instant_sorcery", _NAMES)     # "cuando lanzas un instantáneo o conjuro"
+ON_CAST_NC = EF.cast_table("noncreature", _NAMES)         # "cuando lanzas un hechizo que no es criatura"
+NC_PINGERS = {n for n, tr in ON_CAST_NC.items() if "dmg_each" in tr["efectos"]}
 THREATS = set(EF.motor_roles("gandalf", "threat", _NAMES))
 LEGENDS = set(EF.with_tag("legendary", _NAMES))
 VISIBLE = THREATS | {"Neheb, the Eternal", "Runaway Steam-Kin", "Gandalf", "Torbran, Thane of Red Fell", "Birgi, God of Storytelling", "Solphim, Mayhem Dominus",
@@ -493,19 +496,11 @@ class State:
             self.isis_turn = getattr(self, "isis_turn", 0) + 1
         if isis:
             for p in list(self.perms):
-                n = p["name"]; m = self.mult(p)
-                if n in ("Erebor Flamesmith", "Electrostatic Field", "Thermo-Alchemist"):
-                    self.dmg_each(1)
-                elif n == "Guttersnipe":
-                    for _ in range(m): self.dmg_each(2)
-                elif n == "Fiery Inscription":
-                    self.dmg_each(2)
+                n = p["name"]
+                if n in ON_CAST_IS:
+                    self.cast_trigger(p, ON_CAST_IS[n])
                 elif n == "Thunderdrum Soloist":
                     self.dmg_each(3 if spent >= 5 else 1)
-                elif n == "Urabrask":
-                    self.dmg_target(1); self.pool["R"] += 1
-                elif n == "Electro, Assaulting Battery":
-                    self.pool["R"] += 1
             if self.has("Primal Amulet"):
                 self.amulet += self.count("Primal Amulet")
                 if self.amulet >= 4:
@@ -574,21 +569,26 @@ class State:
                 self.gy.append(name)
         return True
 
+    def cast_trigger(self, p, tr):
+        """Un disparador "cuando lanzas..." de data/efectos.yaml (on_cast)."""
+        for _ in range(self.mult(p) if tr.get("multiplica") else 1):
+            for k, v in tr["efectos"].items():
+                if k == "dmg_each": self.dmg_each(v)
+                elif k == "dmg_one": self.dmg_target(v)
+                elif k == "mana": self.pool[v] += 1
+                elif k == "scry":
+                    for _ in range(v): self.scry1()
+                elif k == "impulse": self.impulse(v, self.turn)
+
     def gandalf_pings(self, k=1):
         """disparos de 'cada vez que lanzas un hechizo que no es criatura' (Gandalf y compania)"""
         for _ in range(k):
             for p in list(self.perms):
-                n = p["name"]; m = self.mult(p)
-                if n in ("Gandalf", "Coruscation Mage", "Kessig Flamebreather", "Firebrand Archer"):
-                    for _ in range(m): self.dmg_each(1)
+                n = p["name"]
+                if n in ON_CAST_NC:
+                    self.cast_trigger(p, ON_CAST_NC[n])
                 elif n == TOKEN:
-                    for _ in range(m): self.dmg_each(1, red=p.get("red", False))
-                elif n == "Longshot, Rebel Bowman":
-                    self.dmg_each(2)
-                elif n == "Wiccan, Young Avenger":
-                    self.impulse(1, self.turn)
-                elif n == "Burning Prophet":
-                    for _ in range(m): self.scry1()
+                    for _ in range(self.mult(p)): self.dmg_each(1, red=p.get("red", False))
 
     def strat_allows_copy(self):
         return True
@@ -596,7 +596,7 @@ class State:
     def respond_copy(self, target):
         n = 0
         if target == "Mana Geyser" and "Reiterate" in self.hand and self.geyser() >= 6 and self.can_pay(4, 2, True):
-            pingers = [p for p in self.perms if p["name"] in ("Gandalf", "Coruscation Mage", "Kessig Flamebreather", "Firebrand Archer", "Longshot, Rebel Bowman")]
+            pingers = [p for p in self.perms if p["name"] in NC_PINGERS]
             if pingers or "Grapeshot" in self.hand:
                 self.L("    Reiterate + Mana Geyser: loop infinito")
                 self.reit_combo = getattr(self, "reit_combo", 0) + 1

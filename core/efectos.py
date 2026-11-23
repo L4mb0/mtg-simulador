@@ -18,8 +18,9 @@ PATH = os.path.join(ROOT, "data", "efectos.yaml")
 _DB = None
 
 # condiciones que puede llevar un disparador y efectos que sabe aplicar un motor
-CONDICIONES = {"propia", "otra", "no_ficha", "sacrificada", "una_vez", "orden", "controla"}
-EFECTOS = {"drain_one", "drain_each", "gain", "draw", "token"}
+CONDICIONES = {"propia", "otra", "no_ficha", "sacrificada", "una_vez", "orden", "controla",
+               "hechizo", "multiplica"}   # on_cast: instant_sorcery | noncreature; multiplica: la duplica Harmonic Prodigy
+EFECTOS = {"drain_one", "drain_each", "gain", "draw", "token", "dmg_each", "dmg_one", "mana", "scry", "impulse"}
 
 
 def db():
@@ -86,6 +87,16 @@ def with_death_effect(effect, names, controla=None):
     return out
 
 
+def cast_table(kind, names):
+    """{carta: disparador} de on_cast para un tipo de hechizo, en el orden de `names`."""
+    out = {}
+    for n in names:
+        for tr in db().get(n, {}).get("on_cast", ()):
+            if tr["hechizo"] == kind:
+                out[n] = tr
+    return out
+
+
 def triggers(event, names=None):
     """[(orden, {carta: disparador})] agrupados por orden ascendente. Dentro de un mismo orden los disparadores
     se resuelven en el orden de los permanentes en el campo (como el bucle original del motor)."""
@@ -108,11 +119,11 @@ def check():
             errs.append(f"{n}: no es un mapa"); continue
         for k in e:
             if k not in {"tags", "answer", "answer_sorc", "rock", "draw", "equip", "power_bonus", "grants", "on_hit",
-                         "enabler", "recur", "on_death", "propio", "gandalf", "gorma", "giada", "blight", "blor"}:
+                         "enabler", "recur", "on_death", "on_cast", "propio", "gandalf", "gorma", "giada", "blight", "blor"}:
                 errs.append(f"{n}: clave desconocida '{k}'")
         try:
-            for tr in e.get("on_death", ()):
-                triggers("on_death", [n])
+            for ev in ("on_death", "on_cast"):
+                triggers(ev, [n])
         except ValueError as x:
             errs.append(str(x))
     return errs

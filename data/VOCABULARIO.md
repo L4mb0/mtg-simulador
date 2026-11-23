@@ -22,6 +22,7 @@ Pendientes (excepciones, notas, efectos escritos a mano): `python3 core/efectos.
 | `enabler` | Habilitador de bucles de persist (prioridad, menor = mejor) | `5` |
 | `recur` | Vuelve del cementerio: `[coste para lanzarla, coste del retorno]` | `[2, 2]` |
 | `on_death` | Disparadores "cuando muere una criatura" (abajo) | |
+| `on_cast` | Disparadores "cuando lanzas..." (abajo) | |
 | `propio` | El efecto sigue escrito a mano en un motor: dónde y qué hace | `"gorma/engine.dies: ..."` |
 | `<mazo>` | Lo que solo usa ese mazo (claves de su `cards.py`), más `no` y `motor` | |
 
@@ -54,6 +55,18 @@ Efectos (en el orden escrito): `drain_one` (al rival con menos vida), `drain_eac
 ficha: `spawn`, `pest`, `treasure`...).
 
 El orden importa: drenar a uno y después a todos no da lo mismo que al revés si un rival está a 1.
+
+### Disparadores al lanzar (`on_cast`)
+
+```yaml
+Guttersnipe:
+  on_cast:
+  - hechizo: instant_sorcery   # o noncreature (cualquier hechizo que no sea criatura)
+    multiplica: true           # la duplica Harmonic Prodigy (si es mago o chamán)
+    efectos: {dmg_each: 2}
+```
+
+Efectos: `dmg_each`, `dmg_one`, `mana` (color), `scry`, `impulse` (exiliar y poder jugar).
 
 ## Bloque de un mazo
 

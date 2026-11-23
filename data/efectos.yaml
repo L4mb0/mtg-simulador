@@ -529,17 +529,29 @@ Harmonic Prodigy:
       threat_w: 0.6
 Coruscation Mage:
   tags: [wizard]
+  on_cast:
+  - hechizo: noncreature
+    multiplica: true
+    efectos: {dmg_each: 1}
   gandalf:
     motor:
       roles: [threat]
       threat_rank: 12
 Erebor Flamesmith:
+  on_cast:
+  - hechizo: instant_sorcery
+    efectos: {dmg_each: 1}
   gandalf:
     motor:
       roles: [threat]
       threat_rank: 17
+      nota: es Dwarf Shaman en la carta real y no está marcada como chamán (revisar)
 Guttersnipe:
   tags: [shaman]
+  on_cast:
+  - hechizo: instant_sorcery
+    multiplica: true
+    efectos: {dmg_each: 2}
   gandalf:
     motor:
       roles: [threat]
@@ -547,11 +559,16 @@ Guttersnipe:
       threat_w: 0.4
 Kessig Flamebreather:
   tags: [shaman]
+  on_cast:
+  - hechizo: noncreature
+    multiplica: true
+    efectos: {dmg_each: 1}
   gandalf:
     motor:
       roles: [threat]
       threat_rank: 11
 Thunderdrum Soloist:
+  propio: 'gandalf/engine.cast: daño 1 a cada rival por instantáneo o conjuro, 3 si se gastaron 5+'
   gandalf:
     motor:
       roles: [threat]
@@ -575,6 +592,10 @@ Party Thrasher:
   tags: [wizard]
 Burning Prophet:
   tags: [wizard]
+  on_cast:
+  - hechizo: noncreature
+    multiplica: true
+    efectos: {scry: 1}
 Mysidian Elder:
   tags: [wizard]
   gandalf:
@@ -583,6 +604,9 @@ Mysidian Elder:
       threat_rank: 19
 Electro, Assaulting Battery:
   tags: [legendary]
+  on_cast:
+  - hechizo: instant_sorcery
+    efectos: {mana: R}
   gandalf:
     motor: {threat_rank: 20, threat_w: 0.5}
 Pyre Rhymer: {}
@@ -592,6 +616,9 @@ Ashling, Flame Dancer:
     motor: {threat_rank: 21, threat_w: 0.5}
 Longshot, Rebel Bowman:
   tags: [legendary]
+  on_cast:
+  - hechizo: noncreature
+    efectos: {dmg_each: 2}
   gandalf:
     motor:
       roles: [threat]
@@ -612,15 +639,24 @@ Storm-Kiln Artist:
       threat_w: 0.5
 Urabrask:
   tags: [legendary]
+  on_cast:
+  - hechizo: instant_sorcery
+    efectos: {dmg_one: 1, mana: R}
   gandalf:
     motor:
       roles: [threat]
       threat_rank: 22
 Wiccan, Young Avenger:
   tags: [legendary]
+  on_cast:
+  - hechizo: noncreature
+    efectos: {impulse: 1}
 Artist's Talent: {}
 Count on Luck: {}
 Fiery Inscription:
+  on_cast:
+  - hechizo: instant_sorcery
+    efectos: {dmg_each: 2}
   gandalf:
     motor:
       roles: [threat]
@@ -715,13 +751,23 @@ Birgi, God of Storytelling:
       threat_w: 0.6
       roles: [key_amp]
 Electrostatic Field:
+  on_cast:
+  - hechizo: instant_sorcery
+    efectos: {dmg_each: 1}
   gandalf:
     motor: {threat_rank: 16}
 Thermo-Alchemist:
   tags: [shaman]
+  on_cast:
+  - hechizo: instant_sorcery
+    efectos: {dmg_each: 1}
   gandalf:
-    motor: {threat_rank: 15}
+    motor: {threat_rank: 15, nota: es chamán pero su disparador no se duplica con Harmonic Prodigy (revisar)}
 Firebrand Archer:
+  on_cast:
+  - hechizo: noncreature
+    multiplica: true
+    efectos: {dmg_each: 1}
   gandalf:
     motor: {threat_rank: 14}
 Solphim, Mayhem Dominus:
@@ -1622,6 +1668,10 @@ Collector Ouphe: {}
 Colossal Dreadmaw: {}
 Gandalf:
   tags: [legendary, wizard]
+  on_cast:
+  - hechizo: noncreature
+    multiplica: true
+    efectos: {dmg_each: 1}
   gandalf:
     motor:
       threat_rank: 23
