@@ -7,7 +7,7 @@ git clone --depth 1 https://github.com/L4mb0/mtg-simulador
 cd mtg-simulador
 python3 sim.py blor                                   # lista vigente en sus mesas por defecto
 python3 sim.py gorma -m B2,B3,B4 -n 6000 -g           # varias mesas + goldfish
-python3 sim.py blor -k "Rancor>Sylvan Library" "Explore>Ancient Tomb"   # candidatas, pareadas contra la base
+python3 sim.py blor -k "Rancor>Ancient Tomb" "Rancor>The One Ring"   # candidatas, pareadas contra la base
 python3 sim.py gandalf -c "Shock>Needle Drop" --nuevas                  # cambio verificado con semillas nuevas
 python3 sim.py giada -L                               # listas y mesas disponibles
 python3 linea_base.py                                 # cada mazo contra su número de referencia
