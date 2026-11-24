@@ -167,3 +167,6 @@ DECKS["Blor 1.5"] = swap_many(DECKS["Blor 1.4"], ["Tajuru Preserver"], ["Primal 
 
 # 15/11 (Juan aprobó): Ohran Frostfang (suya) por Sword of Truth and Justice
 DECKS["Blor 1.6"] = swap_many(DECKS["Blor 1.5"], ["Sword of Truth and Justice"], ["Ohran Frostfang"])
+
+# 24/11 (Juan aprobó): Lotus Bloom (suya) por Snake Umbra. Orientada a B2, sin Game Changers
+DECKS["Blor 1.7"] = swap_many(DECKS["Blor 1.6"], ["Snake Umbra"], ["Lotus Bloom"])
