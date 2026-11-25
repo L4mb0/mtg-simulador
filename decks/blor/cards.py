@@ -481,6 +481,12 @@ card("Instill Energy")
 card("Ride the Shoopuf")
 card("The Aetherspark")
 
+
+# 25/11: cartas de Juan (bulk y sueltas) para la versión física provisional
+for _n in ("Prey Upon", "Rabid Bite", "Run Over", "Root Snare", "Wild Onslaught", "Implement of Ferocity",
+           "Potioner's Trove", "Oasis Gardener"):
+    card(_n)
+
 # Fase 4: los efectos de cada carta (roles, palabras clave, respuestas, rocas...) viven en data/efectos.yaml;
 # aquí quedan coste, tipo y P/T. core/mapeo.py los vuelve a poner con las claves de siempre.
 import os as _os, sys as _sys

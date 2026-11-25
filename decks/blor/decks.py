@@ -170,3 +170,40 @@ DECKS["Blor 1.6"] = swap_many(DECKS["Blor 1.5"], ["Sword of Truth and Justice"],
 
 # 24/11 (Juan aprobó): Lotus Bloom (suya) por Snake Umbra. Orientada a B2, sin Game Changers
 DECKS["Blor 1.7"] = swap_many(DECKS["Blor 1.6"], ["Snake Umbra"], ["Lotus Bloom"])
+
+# 25/11 (Juan aprobó): candidatas de EDHREC + paquete anterior. +5,0 en B2 y +3,8 en B3 (15.000 partidas, semillas nuevas)
+DECKS["Blor 1.8"] = swap_many(DECKS["Blor 1.7"],
+    ["Sword of Fire and Ice", "Heroic Intervention", "Forest", "Long-Lost Lances", "Inquisitor's Flail",
+     "Archdruid's Charm", "Allosaurus Shepherd"],
+    ["Sword of Truth and Justice", "Skyshroud Claim", "Castle Garenbrig", "Super State", "Court of Garenbrig",
+     "Obscuring Haze", "Thickest in the Thicket"])
+
+# 25/11: versión física provisional (Juan): solo cartas que Juan tiene libres hoy (no las de otros mazos).
+# Parte de la 1.8; lo que falta se cubre con cartas propias (sueltas, banca, ManaBox y bulk) y Forests.
+BLOR_PROPIAS_18 = ["Arcane Signet", "Cultivate", "Delighted Halfling", "Elvish Mystic", "Llanowar Elves", "Overgrowth",
+    "Sakura-Tribe Elder", "Sol Ring", "Three Visits", "Wild Growth", "Rancor", "Lotus Bloom", "Blackblade Reforged",
+    "Genji Glove", "Leyline Axe", "Ohran Frostfang", "Unnatural Growth", "Pariah's Shield", "Silent Arbiter",
+    "Tarrian's Soulcleaver", "Return of the Wildspeaker", "Sylvan Library", "Sword of Truth and Justice",
+    "Blanchwood Armor"]
+BLOR_RELLENO_FISICA = [
+    # maná (10)
+    "Elvish Rejuvenator", "Fertilid", "Far Wanderings", "Drover of the Mighty", "Elfhame Druid", "Gemhide Sliver",
+    "Goobbue Gardener", "Mind Stone", "Thought Vessel", "Coalition Relic",
+    # voltron (14)
+    "Gaea's Embrace", "Silken Strength", "Cultist's Staff", "Spider-Suit", "Colossus Hammer", "Gavel of the Righteous",
+    "Conqueror's Flail", "Shadowspear", "Swiftfoot Boots", "The Earth Crystal", "World War Hulk", "Long-Lost Lances",
+    "Heroic Intervention", "Skullclamp",
+    # contadores y trucos (8)
+    "Efflorescence", "Stony Strength", "Satyr Grovedancer", "Pollenbright Druid", "Wild Onslaught",
+    "Implement of Ferocity", "Bestow Greatness", "Mammoth Growth",
+    # respuestas (5)
+    "Thrashing Brontodon", "Prey Upon", "Rabid Bite", "Run Over", "Root Snare",
+    # robo y cuerpos (4)
+    "Adventurous Impulse", "Tanglespan Lookout", "Zopandrel, Hunger Dominus", "Hexhaven Invigorator",
+]
+DECKS["Blor física 0"] = BLOR_PROPIAS_18 + BLOR_RELLENO_FISICA + ["Forest"] * 34
+assert len(DECKS["Blor física 0"]) == 99, len(DECKS["Blor física 0"])
+# Primera limpieza (25/11): +2,2 ±0,5 en B2 y +0,4 en B3 sobre la física 0 (10.000 partidas, semillas nuevas)
+DECKS["Blor física"] = swap_many(DECKS["Blor física 0"],
+    ["Root Snare", "Cultist's Staff", "Swiftfoot Boots", "Spider-Suit"],
+    ["Flourishing Strike", "Toski, Bearer of Secrets", "Moss Diamond", "Oasis Gardener"])

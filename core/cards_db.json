@@ -8031,6 +8031,22 @@
 "Artifact"
 ]
 },
+"Implement of Ferocity": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}",
+"mv": 1,
+"name": "Implement of Ferocity",
+"oracle": "{G}, Sacrifice Implement of Ferocity: Put a +1/+1 counter on target creature. Activate only as a sorcery.\nWhen Implement of Ferocity is put into a graveyard from the battlefield, draw a card.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Artifact"
+]
+},
 "Increasing Vengeance": {
 "color_identity": "R",
 "generic": 0,
@@ -10918,6 +10934,27 @@
 "Land"
 ]
 },
+"Oasis Gardener": {
+"color_identity": "",
+"generic": 3,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{3}",
+"mv": 3,
+"name": "Oasis Gardener",
+"oracle": "When Oasis Gardener enters, you gain 2 life.\n{T}: Add one mana of any color.",
+"pips": {},
+"power": "2",
+"subtypes": [
+"Scarecrow"
+],
+"supertypes": [],
+"toughness": "2",
+"types": [
+"Artifact",
+"Creature"
+]
+},
 "Ob Nixilis, the Ascended": {
 "color_identity": "W",
 "generic": 5,
@@ -11847,6 +11884,22 @@
 "Instant"
 ]
 },
+"Potioner's Trove": {
+"color_identity": "",
+"generic": 3,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{3}",
+"mv": 3,
+"name": "Potioner's Trove",
+"oracle": "{T}: Add one mana of any color.\n{T}: You gain 2 life. Activate only if you've cast an instant or sorcery spell this turn.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Artifact"
+]
+},
 "Power Fist": {
 "color_identity": "G",
 "generic": 1,
@@ -11907,6 +11960,24 @@
 "supertypes": [],
 "types": [
 "Enchantment"
+]
+},
+"Prey Upon": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Prey Upon",
+"oracle": "Target creature you control fights target creature you don't control. (Each deals damage equal to its power to the other.)",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
 ]
 },
 "Price of Progress": {
@@ -12292,6 +12363,24 @@
 "supertypes": [],
 "types": [
 "Artifact"
+]
+},
+"Rabid Bite": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Rabid Bite",
+"oracle": "Target creature you control deals damage equal to its power to target creature you don't control.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
 ]
 },
 "Radiant Fountain": {
@@ -12974,6 +13063,24 @@
 "Land"
 ]
 },
+"Root Snare": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Root Snare",
+"oracle": "Prevent all combat damage that would be dealt this turn.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
 "Rootbound Crag": {
 "color_identity": "RG",
 "generic": 0,
@@ -13004,6 +13111,24 @@
 "supertypes": [],
 "types": [
 "Artifact"
+]
+},
+"Run Over": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Run Over",
+"oracle": "This spell costs {1} less to cast if it targets a Mount or Vehicle you control.\nTarget creature you control deals damage equal to its power to target creature an opponent controls.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Runaway Steam-Kin": {
@@ -17873,6 +17998,26 @@
 "supertypes": [],
 "types": [
 "Enchantment"
+]
+},
+"Wild Onslaught": {
+"color_identity": "G",
+"generic": 3,
+"keywords": [
+"Kicker"
+],
+"layout": "normal",
+"mana_cost": "{3}{G}",
+"mv": 4,
+"name": "Wild Onslaught",
+"oracle": "Kicker {4} (You may pay an additional {4} as you cast this spell.)\nPut a +1/+1 counter on each creature you control. If this spell was kicked, put two +1/+1 counters on each creature you control instead.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Will of the Jeskai": {

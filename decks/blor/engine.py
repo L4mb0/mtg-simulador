@@ -139,7 +139,8 @@ FOGS = set(EF.with_tag("fog", _NAMES))
 DORK_NAMES = set(EF.with_tag("dork", _NAMES))
 ELVES = set(EF.with_tag("elf", _NAMES))
 ENCHANTRESS = set(EF.with_tag("enchantress", _NAMES))
-FIGHT = {"Fight for the Throne", "Prizefight", "Ancient Animus", "Polliwallop", "Contest of Claws"}   # necesitan a Blor
+FIGHT = {"Fight for the Throne", "Prizefight", "Ancient Animus", "Polliwallop", "Contest of Claws",
+         "Prey Upon", "Rabid Bite", "Run Over"}   # necesitan a Blor
 
 
 class Game:
@@ -1262,6 +1263,13 @@ class Game:
             if best:
                 self.gy.remove(best); self.hand.append(best)
             return
+        if c == "Wild Onslaught":
+            if self.blor:
+                kick = self.can_pay(4, 0)
+                if kick:
+                    self.pay(4, 0)
+                self.add_counters(2 if kick else 1)
+            return
         if c == "Fangs of Kalonia":
             if self.blor:
                 self.add_counters(1); self.add_counters(self.blor.counters)
@@ -1485,7 +1493,7 @@ class Game:
             return self.greatest_power() >= 4
         if c in ("Soul's Majesty", "Season of Gathering"):
             return self.greatest_power() >= 5 or (len(self.hand) <= 1 and self.greatest_power() >= 4)
-        if c in ("Thickest in the Thicket", "Fangs of Kalonia"):
+        if c in ("Thickest in the Thicket", "Fangs of Kalonia", "Wild Onslaught"):
             return bool(self.blor)
         if c == "Garruk, Primal Hunter":
             return True
@@ -1782,6 +1790,11 @@ class Game:
                 self.can_pay(3, 2, extra=reserve) and self._precombat:
             self.pay(3, 2); self.add_counters(self.blor.counters); self.cast_stat("(act) Bristly Bill")
             return True
+        for a in list(self.arts):
+            if a["name"] == "Implement of Ferocity" and self.blor and self._precombat and self.can_pay(0, 1, extra=reserve):
+                self.pay(0, 1); self.arts.remove(a); self.gy.append("Implement of Ferocity")
+                self.add_counters(1); self.draw(1); self.cast_stat("(act) Implement of Ferocity")
+                return True
         if self.ench_on("Innkeeper's Talent"):
             lvl = getattr(self, "inn_lvl", 1)
             if lvl == 1 and self.can_pay(0, 1, extra=reserve):

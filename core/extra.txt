@@ -91,3 +91,12 @@ Vigor
 Well Rested
 Yavimaya Hollow
 Zopandrel, Hunger Dominus
+# 25/11: cartas de Juan para la versión física provisional de Blor
+Prey Upon
+Rabid Bite
+Run Over
+Root Snare
+Wild Onslaught
+Implement of Ferocity
+Potioner's Trove
+Oasis Gardener

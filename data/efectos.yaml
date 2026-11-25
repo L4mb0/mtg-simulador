@@ -1891,3 +1891,24 @@ Urza's Cave:
   propio: "blor/engine.use_utilities: {3}, T, sacrificar: una tierra girada"
 Blighted Woodland:
   propio: "blor/engine.use_utilities: {3}{G}, T, sacrificar: dos Forest girados"
+# ---- 25/11: cartas de Juan (bulk y sueltas) para la versión física provisional de Blor ----
+Prey Upon:
+  answer_sorc: [cre]
+  propio: "blor/engine: pelea (necesita a Blor)"
+Rabid Bite:
+  answer_sorc: [cre]
+  propio: "blor/engine: dano con Blor (necesita a Blor)"
+Run Over:
+  answer: [cre]
+  propio: "blor/engine: dano con Blor (necesita a Blor)"
+Root Snare:
+  tags: [fog]
+Wild Onslaught:
+  propio: "blor/engine.resolve_spell: +1 contador a Blor (+2 con kicker si sobran 4)"
+Implement of Ferocity:
+  propio: "blor/engine.utilities_edhrec: {G}, sacrificar: +1 contador a Blor y roba"
+Potioner's Trove:
+  rock: G
+Oasis Gardener:
+  tags: [dork]
+  blor: {mana: 1}
