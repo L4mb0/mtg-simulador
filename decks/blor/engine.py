@@ -139,6 +139,7 @@ FOGS = set(EF.with_tag("fog", _NAMES))
 DORK_NAMES = set(EF.with_tag("dork", _NAMES))
 ELVES = set(EF.with_tag("elf", _NAMES))
 ENCHANTRESS = set(EF.with_tag("enchantress", _NAMES))
+FIGHT = {"Fight for the Throne", "Prizefight", "Ancient Animus", "Polliwallop", "Contest of Claws"}   # necesitan a Blor
 
 
 class Game:
@@ -306,18 +307,31 @@ class Game:
             n += 1
         if self.cre_on("Kami of Whispered Hopes"):
             n += 1
+        if self.art_on("Ozolith, the Shattered Spire"):
+            n += 1
         k = sum(1 for e in self.enchs if e == "Branching Evolution") + (1 if self.art_on("The Earth Crystal") else 0)
+        k += 1 if self.ench_on("Innkeeper's Talent") and getattr(self, "inn_lvl", 1) >= 3 else 0
         return n * (2 ** k)
 
     def add_counters(self, n):
         if self.blor:
-            self.blor.counters += self.counters_mult(n)
+            m = self.counters_mult(n)
+            self.blor.counters += m
+            if m > 0 and self.ench_on("Terrasymbiosis") and getattr(self, "_terra_t", -1) != (self.turn, self._our):
+                self._terra_t = (self.turn, self._our)            # una vez por turno; se roba hasta 4
+                self.draw(min(m, 4)); self._st("terra_draw")
 
     def power(self, temp=True):
         b = self.blor
         if not b:
             return 0
         base = 10 if self.equip_on_blor("Belt of Giant Strength") else 3
+        if "Super State" in self.auras:
+            base = max(base, 9)
+        if self.ench_on("Raised by Giants"):
+            base = max(base, 10)
+        if self.equip_on_blor("Aettir and Priwen"):
+            base = max(base, self.life)
         p = base + b.counters
         n_att = len(self.attached())
         for a in self.auras:
@@ -350,6 +364,8 @@ class Game:
                 p += 1
             elif n == "Gavel of the Righteous":
                 p += e.get("ctr", 0)
+            elif n == "Strata Scythe":
+                p += sum(1 for l in self.lands if l["name"] == "Forest")
             else:
                 p += EQUIP_FLAT.get(n, 0)
         if temp:
@@ -370,7 +386,7 @@ class Game:
     def deathtouch(self):
         return self.equip_on_blor("Basilisk Collar") or self.deathtouch_ctr or self.cre_on("Ohran Frostfang") or \
             self.cre_on("Nightshade Peddler") or self.equip_on_blor("Quietus Spike") or self.equip_on_blor("Gorgon's Head") or \
-            (self.equip_on_blor("Hunter's Blowgun") and self._our)
+            (self.equip_on_blor("Hunter's Blowgun") and self._our) or (self.art_on("Bow of Nylea") and self._our)
 
     def infect(self):
         return self.equip_on_blor("Grafted Exoskeleton") or self.infect_turn
@@ -380,7 +396,7 @@ class Game:
             self.art_on("Akroma's Memorial")
 
     def haste(self):
-        return any(self.equip_on_blor(n) for n in HASTE_E)
+        return any(self.equip_on_blor(n) for n in HASTE_E) or "Super State" in self.auras or "Instill Energy" in self.auras
 
     def lifelink(self):
         return any(self.equip_on_blor(n) for n in LIFELINK_E)
@@ -394,7 +410,8 @@ class Game:
     W_DORK = 0.1
 
     def unblockable(self):
-        return "Indomitable Might" in self.auras or self.equip_on_blor("Commander's Plate") or self.equip_on_blor("Whispersilk Cloak")
+        return "Indomitable Might" in self.auras or self.equip_on_blor("Commander's Plate") or self.equip_on_blor("Whispersilk Cloak") \
+            or self.equip_on_blor("Brotherhood Regalia")
 
     def blor_hit(self, power=None):
         """dano esperado de un golpe (todos los pasos y combates) a un rival, con el bloqueador esperado"""
@@ -585,6 +602,23 @@ class Game:
                 self.temp += 3
         if self.cre_on("Evolution Sage"):
             self.proliferate()
+        if name == "Disciple of Freyalise" and not tapped and self._our:
+            self.life -= 3                         # Garden of Freyalise: 3 vidas para entrar enderezada
+        if name == "Urza's Saga":
+            rec["lore"] = 1
+        if self.blor:
+            nlf = sum(1 for q in self.cres if q.name == "Bristly Bill, Spine Sower") + \
+                sum(1 for e in self.enchs if e in ("Beorn's Hospitality", "Ride the Shoopuf"))
+            for _ in range(nlf):
+                self.add_counters(1)
+            for q in self.cres:
+                if q.name == "Scythecat Cub":
+                    k = (self.turn, self._our)
+                    self._scy = (k, self._scy[1] + 1) if getattr(self, "_scy", (None, 0))[0] == k else (k, 1)
+                    if self._scy[1] == 2:
+                        self.add_counters(self.blor.counters)      # la segunda vez: duplica
+                    else:
+                        self.add_counters(1)
         for q in list(self.cres):
             if q.name == "Scute Swarm":
                 self.make_token("Insect token")
@@ -611,6 +645,8 @@ class Game:
             g = 2
         if n == "Gaea's Cradle":
             g = len(self.cres) + (1 if self.blor else 0)
+        if n == "Temple of the False God" and len(self.lands) < 5:
+            c = 0
         if any(l["name"] == "Yavimaya, Cradle of Growth" for l in self.lands) and col == "C":
             g, c = 1, 0
         g += rec["aura"]
@@ -660,6 +696,8 @@ class Game:
                 self.Cl += 1
             elif r == "CC":
                 self.Cl += 2
+            elif r == "GG":
+                self.W += 2
         for c in self.cres:
             if c.sick or c.tapped:
                 continue
@@ -674,6 +712,8 @@ class Game:
                     self.W += c.p + c.counters
                 elif n == "Millikin":
                     self.Cl += 1
+                elif n == "Llanowar Tribe":
+                    self.W += 3
                 elif n == "Arbor Elf":
                     self.W += 1 + max([l["aura"] for l in self.lands if LANDS[l["name"]].get("forest")] or [0])
                 elif n == "Priest of Titania":
@@ -747,6 +787,18 @@ class Game:
                 g -= 2
         if c == "Become Immense":
             g -= min(5, len(self.gy))
+        if c == B and self.blor_zone == "hand" and getattr(self, "_beacon", False):
+            g -= self.tax                                  # Command Beacon: desde la mano no paga impuesto
+        if c == "Obscuring Haze" and self.blor:
+            return 0, 0
+        if c == "Force of Vigor" and not self._our and \
+                sum(1 for x in self.hand if x not in (c, B) and not is_land(x) and C[x]["cost"][1] > 0) >= 1:
+            return 0, 0                                    # exiliando otra carta verde (se descuenta al lanzarla)
+        if c == "Excalibur, Sword of Eden":
+            g -= sum(sum(C[a["name"]]["cost"]) for a in self.arts) + sum(sum(C[e["name"]]["cost"]) for e in self.equips) \
+                + (5 if self.blor else 0)
+        if c == "The Great Henge":
+            g -= self.greatest_power()
         return max(0, g), w
 
     def can_pay(self, g, w, extra=0, creature=False, legend=False):
@@ -946,6 +998,7 @@ class Game:
         self.cast_stat(c)
         if c == B:
             self.stats["blor_casts"] += 1
+            self._beacon = False
             if self.blor_zone == "hand":
                 self.hand.remove(B)
             self.blor_turn = self.blor_turn or self.turn
@@ -979,7 +1032,9 @@ class Game:
             if C[c].get("germ"):
                 self.make_token("Germ token", 0, 4 if c == "Batterskull" else 1)
                 self.equips[-1]["germ"] = True
-            if c in ("Lightning Greaves", "Mithril Coat") and self.blor:
+            if c == "The Aetherspark":
+                self.equips[-1]["loy"] = 4
+            if c in ("Lightning Greaves", "Mithril Coat", "Vibranium Strike Gauntlets", "The Aetherspark") and self.blor:
                 self.attach_equip(self.equips[-1], free=True)
             elif self.blor and (c == "Hammer of Nazahn" or any(x["name"] == "Hammer of Nazahn" for x in self.equips)):
                 self.attach_equip(self.equips[-1], free=True)      # Hammer of Nazahn: se equipa al entrar
@@ -1016,6 +1071,12 @@ class Game:
                 self.draw(1)
 
     def creature_enters(self, perm):
+        if not perm.token and self.art_on("The Great Henge"):
+            if perm is self.blor:
+                self.add_counters(1)
+            else:
+                perm.counters += 1
+            self.draw(1)
         if self.ench_on("Garruk's Uprising") and (perm.p + perm.counters >= 4):
             self.draw(1)
         if self.ench_on("Elemental Bond") and perm.p + perm.counters >= 3:
@@ -1033,7 +1094,7 @@ class Game:
             self.add_counters(1)
         if c == "Studious First-Year":
             self.hand.append("Rampant Growth")           # copia preparada de Rampant Growth
-        if c in ("Fertilid", "Elvish Rejuvenator") and "Forest" in self.library:
+        if c in ("Fertilid", "Elvish Rejuvenator", "Simulacrum Shaper", "Clifftop Lookout") and "Forest" in self.library:
             self.library.remove("Forest"); self.put_land("Forest", tapped=True)
         if c == "Satyr Grovedancer" and self.blor:
             self.add_counters(1)
@@ -1098,6 +1159,8 @@ class Game:
                 self.Cl += 1
             elif r == "CC":
                 self.Cl += 2
+            elif r == "GG":
+                self.W += 2
         if c == "Lotus Petal":
             self.arts.remove(a); self.gy.append(c); self.treas += 1    # one-shot mana, kept until used
         if c == "Lotus Bloom":                                         # suspendida: llega en 3 mantenimientos
@@ -1126,14 +1189,17 @@ class Game:
         self.enchantment_enters()
         if wb is not None:
             self.instant_response(wb)
-        if c in ("Level Up", "Hydra's Growth"):
+        if c in ("Level Up", "Hydra's Growth", "Seismic Tutelage"):
             self.add_counters(1)
+        for q in self.cres:
+            if q.name == "Tanglespan Lookout":
+                self.draw(1)
         if c == "Colossification":
             self.blor.tapped = True
         self.log("aura", c, "-> power", self.power())
 
     def resolve_ench(self, c):
-        if c in ("Wild Growth", "Utopia Sprawl", "Wolfwillow Haven", "Overgrowth"):
+        if c in ("Wild Growth", "Utopia Sprawl", "Wolfwillow Haven", "Overgrowth", "Fertile Ground"):
             tgt = [l for l in self.lands if LANDS[l["name"]].get("forest") or c != "Utopia Sprawl"]
             if tgt:
                 tgt[0]["aura"] += C[c]["landaura"]
@@ -1150,6 +1216,12 @@ class Game:
         self.enchantment_enters()
         if c == "Garruk's Uprising" and self.power() >= 4:
             self.draw(1)
+        if c == "Court of Garenbrig":
+            self.monarch = True
+        if c == "Thickest in the Thicket" and self.blor:
+            self.add_counters(self.power(temp=False))
+        if c == "Innkeeper's Talent":
+            self.inn_lvl = 1
 
     def resolve_garruk(self):
         # Garruk, Primal Hunter: -3 draw if Blor is big, else +1 beast
@@ -1163,7 +1235,38 @@ class Game:
     def resolve_spell(self, c):
         d = C[c]
         self.gy.append(c)
-        if c == "Finale of Devastation":                  # X=3: la mejor criatura de 3 o menos de la biblioteca
+        if c == "Entish Restoration":
+            worst = min(self.lands, key=lambda r: (r.get("aura", 0), LANDS[r["name"]].get("forest", False))) if self.lands else None
+            if worst:
+                self.lands.remove(worst); self.gy.append(worst["name"])
+            for _ in range(3 if self.greatest_power() >= 4 else 2):
+                if "Forest" in self.library:
+                    self.library.remove("Forest"); self.put_land("Forest", tapped=True)
+            self.rng.shuffle(self.library)
+            return
+        if c == "Traverse the Outlands":
+            for _ in range(self.greatest_power()):
+                if "Forest" in self.library:
+                    self.library.remove("Forest"); self.put_land("Forest", tapped=True)
+            self.rng.shuffle(self.library)
+            return
+        if c == "Soul's Majesty":
+            self.draw(self.power(temp=False) if self.blor else self.greatest_power())
+            return
+        if c == "Season of Gathering":
+            self.add_counters(1); self.add_counters(1)
+            self.draw(self.greatest_power())
+            return
+        if c == "Regrowth":
+            best = self.best_gy_card()
+            if best:
+                self.gy.remove(best); self.hand.append(best)
+            return
+        if c == "Fangs of Kalonia":
+            if self.blor:
+                self.add_counters(1); self.add_counters(self.blor.counters)
+            return
+        if c in ("Finale of Devastation", "Green Sun's Zenith"):   # X=3: la mejor criatura de 3 o menos de la biblioteca
             cs = [x for x in self.library if x in C and C[x]["t"] == "cre" and sum(C[x]["cost"]) <= 3]
             if cs:
                 best = max(cs, key=lambda x: (x == "Bugenhagen, Wise Elder", C[x].get("mana", 0), sum(C[x]["cost"])))
@@ -1303,6 +1406,10 @@ class Game:
                     "Level Up": 1 + (self.blor.counters + 1) * 1, "Hydra's Growth": 1 + (self.blor.counters + 1),
                     "Keen Sense": 1.5, "Sixth Sense": 1.5, "Indomitable Might": 4,
                     "Lure": 4 if self.deathtouch() else -1}.get(n, AURA_FLAT.get(n, 0))
+            gain += {"Super State": (0 if self.equip_on_blor("Belt of Giant Strength") else 6) + 0.8 * p0,
+                     "Well Rested": 4, "Seismic Tutelage": 1 + (self.blor.counters + 1), "Predatory Hunger": 2,
+                     "Forced Adaptation": 2, "Instill Energy": 3 if self.blor.sick else 1.5, "Mark of Sakiko": 1.5,
+                     "One with Nature": 1.5, "Meltstrider's Resolve": 1, "Druid's Call": 0.3}.get(n, 0)
             if n in ("Snake Umbra",):
                 gain += 1.5
             if n == "Bear Umbra":
@@ -1330,7 +1437,11 @@ class Game:
                 "Mask of Memory": 2, "Umezawa's Jitte": 4, "Tarrian's Soulcleaver": 2,
                 "Belt of Giant Strength": 7, "Trailblazer's Boots": 1.5, "Sword of Feast and Famine": 4,
                 "Sword of Fire and Ice": 5, "Sword of Truth and Justice": 4, "Sword of Hearth and Home": 3.5,
-                "Avarice Amulet": 4, "Assault Suit": 3, "Batterskull": 7, "Flayer Husk": 1, "Nettlecyst": self.n_art_ench() + 1, "Short Bow": 2.5, "Long-Lost Lances": 3.5}.get(n, EQUIP_FLAT.get(n, 0))
+                "Avarice Amulet": 4, "Assault Suit": 3, "Aettir and Priwen": max(0, self.life - 3 - (7 if self.equip_on_blor("Belt of Giant Strength") else 0)),
+                "Strata Scythe": sum(1 for l in self.lands if l["name"] == "Forest"), "Sword of Vengeance": 3.5,
+                "Haunted Cloak": 3 if self.blor.sick else 1.5, "Captain America's Shield": 1.5 + 0.3 * p0,
+                "Brotherhood Regalia": 1 + 0.45 * p0, "Vibranium Strike Gauntlets": 5, "The Aetherspark": 3,
+                "Excalibur, Sword of Eden": 11, "Batterskull": 7, "Flayer Husk": 1, "Nettlecyst": self.n_art_ench() + 1, "Short Bow": 2.5, "Long-Lost Lances": 3.5}.get(n, EQUIP_FLAT.get(n, 0))
         if n in ("Fireshrieker", "Genji Glove", "Leyline Axe", "Inquisitor's Flail", "Grafted Exoskeleton"):
             return gain
         if "Strong Back" in self.auras:
@@ -1368,6 +1479,14 @@ class Game:
             return self.blor_zone == "bf"
         if c == "Rishkar's Expertise":
             return self.greatest_power() >= 5 or (len(self.hand) <= 2 and self.greatest_power() >= 3)
+        if c in ("Exponential Growth", "Hunter's Prowess", "Lifestream's Blessing", "Legolas's Quick Reflexes"):
+            return False                    # antes del combate / al final del turno / no modelada
+        if c == "Traverse the Outlands":
+            return self.greatest_power() >= 4
+        if c in ("Soul's Majesty", "Season of Gathering"):
+            return self.greatest_power() >= 5 or (len(self.hand) <= 1 and self.greatest_power() >= 4)
+        if c in ("Thickest in the Thicket", "Fangs of Kalonia"):
+            return bool(self.blor)
         if c == "Garruk, Primal Hunter":
             return True
         if c == "Curse of Predation":
@@ -1384,7 +1503,8 @@ class Game:
         t = d["t"]
         if c in ("Sol Ring", "Mana Vault", "Chrome Mox", "Mox Diamond", "Lotus Petal", "Lotus Bloom"):
             return 0
-        if c in self.RAMP1 or d.get("rock") or d.get("landaura") or d.get("fetch"):
+        if c in self.RAMP1 or d.get("rock") or d.get("landaura") or d.get("fetch") or \
+                c in ("Entish Restoration", "Traverse the Outlands"):
             return 1
         if c == "Emerald Medallion" or c == "The Earth Crystal":
             return 2
@@ -1513,6 +1633,8 @@ class Game:
             break
 
     def use_utilities(self, reserve):
+        if self.utilities_edhrec(reserve):
+            return True
         # Skullclamp (22/11): equipar {1} a una ficha o dork de 1 de resistencia -> muere -> roba 2.
         # Se deja siempre al menos otra criatura (fodder contra edictos) salvo que la mano este vacia.
         if any(e["name"] == "Skullclamp" for e in self.equips) and len(self.library) > 8 \
@@ -1596,7 +1718,118 @@ class Game:
                 return True
         return False
 
+    # ------------------------------------------------------------ candidatas de EDHREC (24/11)
+    def begin_combat_counters(self):
+        """Inicio del combate en tu turno: Ouroboroid, Innkeeper's Talent, The Aetherspark, Okina."""
+        if not self.blor:
+            return
+        for q in list(self.cres):
+            if q.name == "Ouroboroid":
+                x = q.p + q.counters
+                self.add_counters(x)
+                q.counters += self.counters_mult(x)
+        if self.ench_on("Innkeeper's Talent"):
+            self.add_counters(1)
+        for e in self.equips:
+            if e["name"] == "The Aetherspark" and not getattr(self, "_spark_t", None) == self.turn:
+                self._spark_t = self.turn                         # una activacion por turno (velocidad de conjuro)
+                if e.get("loy", 4) >= 5 and len(self.library) > 8 and e["on"]:
+                    e["loy"] -= 5; self.draw(2); self._st("spark_draw")
+                else:
+                    e["loy"] = e.get("loy", 4) + 1
+                    if not e["on"]:
+                        self.attach_equip(e, free=True)
+                    self.add_counters(1)
+        if any(l["name"] == "Okina, Temple to the Grandfathers" and not l.get("tapped_entry") for l in self.lands) \
+                and self.can_pay(0, 1, extra=self.reserve + 1):
+            self.pay(0, 1); self.temp += 1                      # (aproximacion: no se descuenta el verde de la propia Okina)
+
+    def well_rested(self):
+        if "Well Rested" in self.auras and getattr(self, "_rested_t", None) != (self.turn, self._our):
+            self._rested_t = (self.turn, self._our)
+            self.add_counters(2); self.life += 2; self.draw(1); self._st("rested")
+
+    def urza_saga(self):
+        for rec in list(self.lands):
+            if rec["name"] == "Urza's Saga" and rec.get("lore", 1) >= 3:
+                self.lands.remove(rec); self.gy.append("Urza's Saga")
+                cs = [x for x in self.library if x in C and C[x]["t"] in ("art", "equip") and sum(C[x]["cost"]) <= 1
+                      and C[x]["cost"][1] == 0 and x != "Lotus Bloom"]          # Lotus Bloom no tiene coste de mana
+                if cs:
+                    best = max(cs, key=lambda x: (x in ("Sol Ring", "Mana Vault"), x == "Lotus Petal", self.card_value(x)))
+                    self.library.remove(best); self.rng.shuffle(self.library)
+                    self.cast_stat("(Urza's Saga) " + best)
+                    if C[best]["t"] == "equip":
+                        self.equips.append(dict(name=best, on=False))
+                    else:
+                        self.put_artifact(best)
+
+    def answer_extra(self, c, paid):
+        """Lo que hace una respuesta ademas de parar la amenaza."""
+        if c in ("Fight for the Throne", "Ancient Animus") and self.blor:
+            self.add_counters(1)
+        if c == "Prizefight":
+            self.treas += 1
+        if c == "Force of Vigor" and paid == 0:
+            g = [x for x in self.hand if x != B and not is_land(x) and C[x]["cost"][1] > 0]
+            if g:
+                w = min(g, key=self.card_value)
+                self.hand.remove(w); self.exiled.append(w)
+
+    def utilities_edhrec(self, reserve):
+        """Activaciones de las candidatas de EDHREC; True si hizo algo."""
+        if self.blor and self.blor.counters >= 3 and self.cre_on("Bristly Bill, Spine Sower") and \
+                self.can_pay(3, 2, extra=reserve) and self._precombat:
+            self.pay(3, 2); self.add_counters(self.blor.counters); self.cast_stat("(act) Bristly Bill")
+            return True
+        if self.ench_on("Innkeeper's Talent"):
+            lvl = getattr(self, "inn_lvl", 1)
+            if lvl == 1 and self.can_pay(0, 1, extra=reserve):
+                self.pay(0, 1); self.inn_lvl = 2; return True
+            if lvl == 2 and self.can_pay(3, 1, extra=reserve):
+                self.pay(3, 1); self.inn_lvl = 3; self.cast_stat("(act) Innkeeper's Talent 3"); return True
+        for a in self.arts:
+            if a["name"] == "Ozolith, the Shattered Spire" and self.blor and getattr(self, "_ozo_t", -1) != self.turn \
+                    and self.can_pay(1, 1, extra=reserve):
+                self._ozo_t = self.turn
+                self.pay(1, 1); self.add_counters(1); return True
+        if self.blor_zone == "cmd" and self.tax >= 2:
+            for rec in list(self.lands):
+                if rec["name"] == "Command Beacon":
+                    self.lands.remove(rec); self.gy.append("Command Beacon")
+                    self.blor_zone = "hand"; self.hand.append(B); self._beacon = True
+                    self.cast_stat("(act) Command Beacon")
+                    return True
+        for rec in list(self.lands):
+            if rec["name"] == "Urza's Cave" and len(self.lands) < 8 and self.can_pay(3, 0, extra=reserve + 1) \
+                    and "Forest" in self.library:
+                self.pay(3, 0); self.lands.remove(rec); self.gy.append("Urza's Cave")
+                self.library.remove("Forest"); self.put_land("Forest", tapped=True); return True
+            if rec["name"] == "Blighted Woodland" and len(self.lands) < 9 and self.can_pay(3, 1, extra=reserve + 1):
+                self.pay(3, 1); self.lands.remove(rec); self.gy.append("Blighted Woodland")
+                for _ in range(2):
+                    if "Forest" in self.library:
+                        self.library.remove("Forest"); self.put_land("Forest", tapped=True)
+                return True
+        return False
+
+    def end_step_edhrec(self, reserve):
+        if "Lifestream's Blessing" in self.hand and self.greatest_power() >= 5 and self.can_pay(4, 2, extra=reserve):
+            self.pay(4, 2); self.hand.remove("Lifestream's Blessing"); self.gy.append("Lifestream's Blessing")
+            self.cast_stat("Lifestream's Blessing"); self.draw(self.greatest_power())
+        if any(l["name"] == "Bonders' Enclave" for l in self.lands) and self.greatest_power() >= 4 \
+                and self.can_pay(3, 0, extra=reserve):
+            self.pay(3, 0); self.draw(1); self.cast_stat("(act) Bonders' Enclave")
+        if self.art_on("Bow of Nylea") and self.blor and self.can_pay(1, 1, extra=reserve):
+            self.pay(1, 1); self.add_counters(1)
+        if getattr(self, "monarch", False) and self.ench_on("Court of Garenbrig"):
+            self.draw(1); self._st("monarch_draw")
+        if self.ench_on("Thickest in the Thicket") and self.blor and \
+                self.power(temp=False) >= min(8, 3 + self.turn // 3):
+            self.draw(2); self._st("thickest_draw")
+
     def end_step_draws(self, reserve):
+        self.end_step_edhrec(reserve)
         if "Return of the Wildspeaker" in self.hand and self.greatest_power() >= 5 and self.can_pay(4, 1, extra=reserve):
             self.pay(4, 1); self.hand.remove("Return of the Wildspeaker"); self.gy.append("Return of the Wildspeaker")
             self.cast_stat("Return of the Wildspeaker (draw)")
@@ -1631,8 +1864,12 @@ class Game:
             return 0
         cfg = self.cfg
         if self.indomitable_turn or "Indomitable Might" in self.auras or self.passage or self.equip_on_blor("Whispersilk Cloak") \
-                or (self.art_on("Akroma's Memorial") and self.rng.random() < 0.8):     # vuela: casi nadie lo bloquea
+                or (self.art_on("Akroma's Memorial") and self.rng.random() < 0.8) \
+                or ("Super State" in self.auras and self.rng.random() < 0.8) \
+                or self.equip_on_blor("Brotherhood Regalia"):     # vuela: casi nadie lo bloquea
             return 0
+        if self.equip_on_blor("Captain America's Shield") and self.rng.random() < 0.7:
+            return 0                                              # gira al bloqueador probable al atacar
         if self.equip_on_blor("Trailblazer's Boots") and self.rng.random() < cfg.p_nonbasic:
             return 0
         if self.rng.random() > (0.9 if lethal else cfg.p_block):
@@ -1678,8 +1915,11 @@ class Game:
 
     def pump_effect(self, c, P_):
         """(add, double) for a trick given current power."""
-        if c == "Berserk":
+        if c in ("Berserk", "Tifa's Limit Break"):
             return 0, True
+        if c == "Invigorating Surge":
+            m = self.counters_mult(1)
+            return m + self.counters_mult(self.blor.counters + m) if self.blor else 0, False
         return {"Become Immense": 6, "Primal Bellow": self.forests(), "Giant Growth": 3, "Invigorate": 4,
                 "Might of Old Krosa": 2, "Gift of the Viper": self.counters_mult(1), "Tyvar's Stand": 0,
                 "Overprotect": 3, "Vines of Vastwood": 4, "Blossoming Defense": 2,
@@ -1725,7 +1965,7 @@ class Game:
     def apply_pumps(self, combo, budget):
         P_ = self.power()
         spent = 0
-        order = sorted(combo, key=lambda c: c == "Berserk")
+        order = sorted(combo, key=lambda c: c in ("Berserk", "Tifa's Limit Break"))
         for c in order:
             g, w = self.pump_cost(c)
             if c == "Tyvar's Stand":
@@ -1736,8 +1976,10 @@ class Game:
             else:
                 if not self.pay(g, w):
                     continue
-                if c == "Berserk":
+                if c in ("Berserk", "Tifa's Limit Break"):
                     self.temp += self.power()
+                elif c == "Invigorating Surge":
+                    self.add_counters(1); self.add_counters(self.blor.counters)
                 elif c in ("Gift of the Viper", "Snakeskin Veil", "Stony Strength"):
                     self.add_counters(1)
                     if c == "Gift of the Viper":
@@ -1786,6 +2028,18 @@ class Game:
             if self.hit_damage(self.power() + 4, 0, ds, mult) >= need:
                 self.pay(0, 1); self.hand.remove("Might of Old Krosa"); self.gy.append("Might of Old Krosa")
                 self.cast_stat("Might of Old Krosa"); self.temp += 4
+        if "Exponential Growth" in self.hand:
+            x = (self.avail() - self.reserve - 2) // 2
+            while x >= 1 and not self.can_pay(2 * x, 2):
+                x -= 1
+            if x >= 1 and (self.hit_damage(self.power() * 2 ** x, 0, ds, mult) >= need or x >= 2 and self.power() >= 6):
+                self.pay(2 * x, 2); self.hand.remove("Exponential Growth"); self.gy.append("Exponential Growth")
+                self.cast_stat("Exponential Growth"); self.on_cast_green("Exponential Growth")
+                self.temp += self.power() * (2 ** x - 1)
+        if "Hunter's Prowess" in self.hand and self.can_pay(4, 1, extra=self.reserve) and self.power() >= 4:
+            self.pay(4, 1); self.hand.remove("Hunter's Prowess"); self.gy.append("Hunter's Prowess")
+            self.cast_stat("Hunter's Prowess"); self.on_cast_green("Hunter's Prowess")
+            self.temp += 3; self.hunters = True
         if "Hunter's Insight" in self.hand and self.can_pay(2, 1, extra=self.reserve) and self.power() >= 4:
             self.pay(2, 1); self.hand.remove("Hunter's Insight"); self.gy.append("Hunter's Insight")
             self.cast_stat("Hunter's Insight"); self.hunters = True
@@ -1826,7 +2080,10 @@ class Game:
         if not extra:
             self.hunters = False
             self.precombat_sorceries(tgt)
+        self.begin_combat_counters()
         if self.ench_on("Unnatural Growth"):
+            self.temp += self.power()
+        if self.cre_on("Zopandrel, Hunger Dominus"):
             self.temp += self.power()
         if getattr(self, "_hulk_double", False):
             self.temp += self.power(); self._hulk_double = False
@@ -1850,6 +2107,8 @@ class Game:
                 self.add_counters(b.counters)
                 if self.power() >= 10:
                     self.draw(1)
+            elif a == "Seismic Tutelage":
+                self.add_counters(b.counters)
         for e in self.equips:
             if not e["on"]:
                 continue
@@ -1927,7 +2186,14 @@ class Game:
             d *= mult
             if d <= 0:
                 continue
+            self._combat_hit = True
             self.deal_player(tgt, d)
+            self._combat_hit = False
+            if "Super State" in self.auras:
+                for j in self.alive():
+                    if j != tgt:
+                        self.opp[j] -= d                   # no es dano de combate: no suma dano de comandante
+                self.check_win()
 
     def deal_player(self, tgt, d):
         self.cmd[tgt] += d
@@ -1970,6 +2236,17 @@ class Game:
             elif n == "Buster Sword":
                 draws += 1
                 self._buster = d
+            elif n == "Vibranium Strike Gauntlets":
+                draws += 1
+            elif n == "The Aetherspark" and self._our:
+                e["loy"] = e.get("loy", 4) + d
+        if getattr(self, "_combat_hit", False):
+            if "Mark of Sakiko" in self.auras:
+                self.W += d
+            if "One with Nature" in self.auras and "Forest" in self.library:
+                self.library.remove("Forest"); self.put_land("Forest", tapped=True)
+            if self.ench_on("Court of Garenbrig"):
+                self.monarch = True
         for q in self.cres:
             if q.name in ("Toski, Bearer of Secrets", "Ohran Frostfang"):
                 draws += 1
@@ -1985,7 +2262,11 @@ class Game:
         self.check_win()
 
     def after_combat(self):
+        if "Instill Energy" in self.auras and self.blor and self.blor.tapped:
+            self._untap_after = True
         if getattr(self, "_untap_after", False) and self.blor:
+            if self.blor.tapped:
+                self.well_rested()
             self.blor.tapped = False
         if getattr(self, "_bear", False) or getattr(self, "_ff", False):
             for rec in list(self.lands):
@@ -2021,8 +2302,14 @@ class Game:
             c.tapped = False
             c.sick = False
         if self.blor:
+            if self.blor.tapped:
+                self.well_rested()
             self.blor.tapped = False
             self.blor.sick = False
+        for rec in self.lands:
+            if rec["name"] == "Urza's Saga":
+                rec["lore"] = rec.get("lore", 1) + 1
+        self.urza_saga()
         self.upkeep()
         if self.won or self.lost:
             return
@@ -2095,6 +2382,18 @@ class Game:
                 self.draw(1)
             if self.equip_on_blor("Avarice Amulet"):
                 self.draw(1)
+            if "Forced Adaptation" in self.auras:
+                self.add_counters(1)
+            if "Predatory Hunger" in self.auras:
+                for i in self.alive():
+                    if self.rng.random() < 0.6:
+                        self.add_counters(1)
+            if self.ench_on("Court of Garenbrig"):
+                self.add_counters(2)
+                if getattr(self, "monarch", False):
+                    self.add_counters(self.blor.counters)
+        if self.cre_on("Verdant Kraken"):
+            self.dryads += len(self.alive()) + 1             # Forest Tentacle: una por mantenimiento de cada jugador
         if self.ring_on and self.ring > 0:
             self.life -= self.ring
             if self.life <= 0:
@@ -2108,6 +2407,9 @@ class Game:
             d = C.get(c, {})
             if d.get("ans") or d.get("prot") or d.get("fog"):
                 g, w = self.cost_of(c)
+                if c == "Force of Vigor" and \
+                        sum(1 for x in self.hand if x not in (c, B) and not is_land(x) and C[x]["cost"][1] > 0) >= 1:
+                    g = w = 0                      # se paga exiliando una carta verde: no hace falta guardar mana
                 best = min(best, g + w)
         return 0 if best == 99 else best
 
@@ -2209,6 +2511,7 @@ class Game:
         left = max(0, int(round(left)))
         if left > 0:
             self.life -= left
+            self.monarch = False                          # el rival que nos pega se lleva la corona
             self.stats["taken"] = self.stats.get("taken", 0) + left
             self.log("rival", i, "hits us for", left, "life", self.life)
         if self.life <= 0:
@@ -2252,7 +2555,7 @@ class Game:
             for c in list(self.hand):
                 d = C.get(c, {})
                 kinds = (d.get("sans") or "").split()
-                if c in ("Spinning Wheel Kick", "Epic Fight", "Primal Might", "Bridgeworks Battle") and not self.blor:
+                if (c in ("Spinning Wheel Kick", "Epic Fight", "Primal Might", "Bridgeworks Battle") or c in FIGHT) and not self.blor:
                     continue
                 if th["kind"] in kinds:
                     g, w = self.cost_of(c)
@@ -2876,6 +3179,8 @@ class Game:
                     ok = th["kind"] in (d.get("ans") or "").split()
                     if d.get("fog") and th["combat"]:
                         ok = True
+                    if c in FIGHT and not self.blor:
+                        ok = False
                     if not ok:
                         continue
                     g, w = self.cost_of(c)
@@ -2884,6 +3189,7 @@ class Game:
                         self.hand.remove(c)
                         self.gy.append(c)
                         self.cast_stat(c)
+                        self.answer_extra(c, g + w)
                         self.rival_next[i] = self.turn + self.dly(i)
                         self.log("answered rival", i, "with", c)
                         self._st("we_stop")

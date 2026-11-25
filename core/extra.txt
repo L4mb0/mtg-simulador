@@ -1,0 +1,93 @@
+# Cartas fuera de las listas que se guardan en cards_db.json (candidatas de EDHREC para Blor, 24/11)
+Aettir and Priwen
+Ancient Animus
+Arachnogenesis
+Bala Ged Recovery
+Beorn's Hospitality
+Blessed Respite
+Boar Umbra
+Bonders' Enclave
+Bow of Nylea
+Bristly Bill, Spine Sower
+Brotherhood Regalia
+Bushwhack
+Captain America's Shield
+Clifftop Lookout
+Collective Resistance
+Command Beacon
+Contest of Claws
+Court of Garenbrig
+Disciple of Freyalise
+Druid's Call
+Eldrazi Conscription
+Entish Restoration
+Excalibur, Sword of Eden
+Exponential Growth
+Ezuri's Predation
+Fabled Passage
+Fangs of Kalonia
+Fertile Ground
+Fight for the Throne
+Flare of Cultivation
+Force of Vigor
+Forced Adaptation
+Frog Butler
+Green Sun's Zenith
+Haunted Cloak
+Heritage Reclamation
+Hunter's Prowess
+Innkeeper's Talent
+Instill Energy
+Invigorating Surge
+Legolas's Quick Reflexes
+Lifestream's Blessing
+Lignify
+Llanowar Tribe
+Mark of Sakiko
+Meltstrider's Resolve
+Mosswort Bridge
+Noxious Newt
+Oakhollow Village
+Obscuring Haze
+Okina, Temple to the Grandfathers
+One with Nature
+Ouroboroid
+Ozolith, the Shattered Spire
+Poison Dart Frog
+Polliwallop
+Predatory Hunger
+Prizefight
+Raised by Giants
+Rampant Frogantua
+Reclamation Sage
+Regrowth
+Ride the Shoopuf
+Scythecat Cub
+Season of Gathering
+Seismic Tutelage
+Shared Roots
+Shifting Woodland
+Simulacrum Shaper
+Soul's Majesty
+Strata Scythe
+Super State
+Sword of Vengeance
+Tangle
+Tanglespan Lookout
+Temple of the False God
+Terrasymbiosis
+The Aetherspark
+The Great Henge
+Thickest in the Thicket
+Tifa's Limit Break
+Traverse the Outlands
+Ulvenwald Tracker
+Urza's Cave
+Urza's Saga
+Vastwood Fortification
+Verdant Kraken
+Vibranium Strike Gauntlets
+Vigor
+Well Rested
+Yavimaya Hollow
+Zopandrel, Hunger Dominus
