@@ -378,3 +378,4 @@ for _n in list(C):
     C[_n] = _MP.importar("blor", _n, C[_n])
 # (después de cargar los efectos; desde la fase 4 hasta el 23/11 se calculaba sin ellos)
 GAME_CHANGERS = {n for n, d in C.items() if d.get("gc")} | {"Gaea's Cradle", "Ancient Tomb"}
+card("Thrashing Brontodon", "cre", 2, 1, p=3, x=4)   # 24/11: {1}, sacrificar: destruir artefacto/encantamiento (no modelado; solo cuerpo y fodder)
