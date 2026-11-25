@@ -207,3 +207,15 @@ assert len(DECKS["Blor física 0"]) == 99, len(DECKS["Blor física 0"])
 DECKS["Blor física"] = swap_many(DECKS["Blor física 0"],
     ["Root Snare", "Cultist's Staff", "Swiftfoot Boots", "Spider-Suit"],
     ["Flourishing Strike", "Toski, Bearer of Secrets", "Moss Diamond", "Oasis Gardener"])
+
+# 25/11 (Juan): Far Wanderings ya no está; tierras libres: 17 Forest, Command Tower, Path of Ancestry, Study Hall y
+# Access Tunnel (21). Los 14 cupos que quedan van a las cartas propias que sobraban. Worldslayer queda fuera
+# (destruye todas las tierras rivales: destrucción masiva de tierras, fuera de B2/B3).
+BLOR_RELLENO_2 = ["Root Snare", "Cultist's Staff", "Swiftfoot Boots", "Spider-Suit", "Millikin", "Chromatic Lantern",
+    "Potioner's Trove", "Expedition Map", "Bloom Hulk", "Colossal Dreadmaw", "Fynn, the Fangbearer",
+    "Helm of Awakening", "Ancient Brontodon", "Emergent Growth"]
+_f = [c for c in DECKS["Blor física"] if c not in ("Forest", "Far Wanderings")]
+DECKS["Blor física 2"] = _f + BLOR_RELLENO_2 + ["Forest"] * 17 + ["Command Tower", "Path of Ancestry", "Study Hall", "Access Tunnel"]
+assert len(DECKS["Blor física 2"]) == 99, len(DECKS["Blor física 2"])
+# Medido (25/11, semillas nuevas, 10.000 partidas): física 2 = B2 9,6%, B3 2,8%. Con 13 Forest más por las 13
+# cartas más flojas: +10,6 en B2, +3,2 en B3. Con eso y el paso 1 (8 cartas, USD 8,94): +21,4 en B2, +6,2 en B3.

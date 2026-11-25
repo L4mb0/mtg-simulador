@@ -35,6 +35,22 @@
 "Instant"
 ]
 },
+"Access Tunnel": {
+"color_identity": "",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Access Tunnel",
+"oracle": "{T}: Add {C}.\n{3}, {T}: Target creature with power 3 or less can't be blocked this turn.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Land"
+]
+},
 "Adventurous Impulse": {
 "color_identity": "G",
 "generic": 0,
@@ -319,6 +335,28 @@
 "supertypes": [],
 "types": [
 "Instant"
+]
+},
+"Ancient Brontodon": {
+"color_identity": "G",
+"generic": 6,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{6}{G}{G}",
+"mv": 8,
+"name": "Ancient Brontodon",
+"oracle": "",
+"pips": {
+"G": 2
+},
+"power": "9",
+"subtypes": [
+"Dinosaur"
+],
+"supertypes": [],
+"toughness": "9",
+"types": [
+"Creature"
 ]
 },
 "Ancient Tomb": {
@@ -4726,6 +4764,24 @@
 "supertypes": [],
 "types": [
 "Artifact"
+]
+},
+"Emergent Growth": {
+"color_identity": "G",
+"generic": 3,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{3}{G}",
+"mv": 4,
+"name": "Emergent Growth",
+"oracle": "Target creature gets +5/+5 until end of turn and must be blocked this turn if able.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
 ]
 },
 "Emeria Shepherd": {
@@ -15089,6 +15145,22 @@
 "toughness": "1",
 "types": [
 "Creature"
+]
+},
+"Study Hall": {
+"color_identity": "",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Study Hall",
+"oracle": "{T}: Add {C}.\n{1}, {T}: Add one mana of any color. When you spend this mana to cast your commander, scry X, where X is the number of times it's been cast from the command zone this game.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Sunblast Angel": {

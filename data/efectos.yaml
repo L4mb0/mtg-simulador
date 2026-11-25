@@ -1912,3 +1912,8 @@ Potioner's Trove:
 Oasis Gardener:
   tags: [dork]
   blor: {mana: 1}
+Ancient Brontodon: {}
+Emergent Growth:
+  propio: "blor/engine.precombat_sorceries: +5/+5 antes del combate (el 'debe ser bloqueado' no se modela)"
+Study Hall: {}
+Access Tunnel: {}

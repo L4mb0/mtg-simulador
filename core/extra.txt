@@ -100,3 +100,7 @@ Wild Onslaught
 Implement of Ferocity
 Potioner's Trove
 Oasis Gardener
+Study Hall
+Access Tunnel
+Ancient Brontodon
+Emergent Growth

@@ -483,7 +483,10 @@ card("The Aetherspark")
 
 
 # 25/11: cartas de Juan (bulk y sueltas) para la versión física provisional
-for _n in ("Prey Upon", "Rabid Bite", "Run Over", "Root Snare", "Wild Onslaught", "Implement of Ferocity",
+LANDS["Study Hall"] = dict(col="C")        # {1},T: cualquier color (filtro, no se modela)
+LANDS["Access Tunnel"] = dict(col="C")     # {3},T: imbloqueable si la fuerza es 3 o menos (no se modela)
+card("Study Hall", "land"); card("Access Tunnel", "land")
+for _n in ("Ancient Brontodon", "Emergent Growth", "Prey Upon", "Rabid Bite", "Run Over", "Root Snare", "Wild Onslaught", "Implement of Ferocity",
            "Potioner's Trove", "Oasis Gardener"):
     card(_n)
 

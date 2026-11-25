@@ -1487,7 +1487,7 @@ class Game:
             return self.blor_zone == "bf"
         if c == "Rishkar's Expertise":
             return self.greatest_power() >= 5 or (len(self.hand) <= 2 and self.greatest_power() >= 3)
-        if c in ("Exponential Growth", "Hunter's Prowess", "Lifestream's Blessing", "Legolas's Quick Reflexes"):
+        if c in ("Exponential Growth", "Hunter's Prowess", "Emergent Growth", "Lifestream's Blessing", "Legolas's Quick Reflexes"):
             return False                    # antes del combate / al final del turno / no modelada
         if c == "Traverse the Outlands":
             return self.greatest_power() >= 4
@@ -2049,6 +2049,10 @@ class Game:
                 self.pay(2 * x, 2); self.hand.remove("Exponential Growth"); self.gy.append("Exponential Growth")
                 self.cast_stat("Exponential Growth"); self.on_cast_green("Exponential Growth")
                 self.temp += self.power() * (2 ** x - 1)
+        if "Emergent Growth" in self.hand and self.can_pay(3, 1, extra=self.reserve) and self.power() >= 4:
+            self.pay(3, 1); self.hand.remove("Emergent Growth"); self.gy.append("Emergent Growth")
+            self.cast_stat("Emergent Growth"); self.on_cast_green("Emergent Growth")
+            self.temp += 5
         if "Hunter's Prowess" in self.hand and self.can_pay(4, 1, extra=self.reserve) and self.power() >= 4:
             self.pay(4, 1); self.hand.remove("Hunter's Prowess"); self.gy.append("Hunter's Prowess")
             self.cast_stat("Hunter's Prowess"); self.on_cast_green("Hunter's Prowess")
