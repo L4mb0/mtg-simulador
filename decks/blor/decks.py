@@ -219,3 +219,14 @@ DECKS["Blor física 2"] = _f + BLOR_RELLENO_2 + ["Forest"] * 17 + ["Command Towe
 assert len(DECKS["Blor física 2"]) == 99, len(DECKS["Blor física 2"])
 # Medido (25/11, semillas nuevas, 10.000 partidas): física 2 = B2 9,6%, B3 2,8%. Con 13 Forest más por las 13
 # cartas más flojas: +10,6 en B2, +3,2 en B3. Con eso y el paso 1 (8 cartas, USD 8,94): +21,4 en B2, +6,2 en B3.
+
+# 25/11 (Juan): eran 16 Forest + Roiling Canopy (21 tierras). Con 13 Forest comprados por las 13 cartas más flojas
+# del relleno quedan 34 tierras (29 Forest). Helm of Awakening sale (acelera también a los rivales).
+_f3 = list(DECKS["Blor física 2"]); _f3.remove("Forest"); _f3.append("Roiling Canopy")
+DECKS["Blor física 3"] = _f3
+DECKS["Blor física 3 + 13 Forest"] = swap_many(_f3,
+    ["Helm of Awakening", "Heroic Intervention", "Cultist's Staff", "Spider-Suit", "Swiftfoot Boots", "Fynn, the Fangbearer",
+     "Chromatic Lantern", "Gemhide Sliver", "Expedition Map", "Bloom Hulk", "Ancient Brontodon", "Run Over", "Root Snare"],
+    ["Forest"] * 13)
+# Medido (25/11, semillas nuevas, 10.000): física 3 + 13 Forest = B2 20,4%, B3 5,6%, goldfish T10,3. Cambiar Study Hall,
+# Access Tunnel, Path of Ancestry y Roiling Canopy por Forest: 0. Helm of Awakening por Mind Stone −0,5, por Millikin −0,9.
