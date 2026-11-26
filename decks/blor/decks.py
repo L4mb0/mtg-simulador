@@ -230,3 +230,8 @@ DECKS["Blor física 3 + 13 Forest"] = swap_many(_f3,
     ["Forest"] * 13)
 # Medido (25/11, semillas nuevas, 10.000): física 3 + 13 Forest = B2 20,4%, B3 5,6%, goldfish T10,3. Cambiar Study Hall,
 # Access Tunnel, Path of Ancestry y Roiling Canopy por Forest: 0. Helm of Awakening por Mind Stone −0,5, por Millikin −0,9.
+# 25/11 (Juan, armada en físico): se quedaron Heroic Intervention, Gemhide Sliver y Run Over, y Helm of Awakening va en el
+# cupo de Far Wanderings, en lugar de Millikin, Potioner's Trove, Colossal Dreadmaw y Emergent Growth. Todo temporal.
+DECKS["Blor física armada"] = swap_many(DECKS["Blor física 3 + 13 Forest"],
+    ["Millikin", "Potioner's Trove", "Colossal Dreadmaw", "Emergent Growth"],
+    ["Heroic Intervention", "Gemhide Sliver", "Run Over", "Helm of Awakening"])
