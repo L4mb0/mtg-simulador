@@ -85,6 +85,7 @@ Elvish Mystic:
   blor: {mana: 1}
 Twitching Doll:
   tags: [artifact, dork, ramp]
+  blor: {mana: 1}
 The Gitrog, Ravenous Ride:
   tags: [haste, trample]
 Umbral Collar Zealot:
@@ -120,7 +121,7 @@ Sol Ring:
 Arcane Signet:
   tags: [ramp]
   rock: COM
-Blade of the Bloodchief: {}
+Blade of the Bloodchief: {equip: 1}
 Blight Mound:
   on_death:
   - orden: 42

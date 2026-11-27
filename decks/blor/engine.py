@@ -3150,6 +3150,9 @@ class Game:
         # Tarrian's Soulcleaver: creatures die all the time in a 4-player game
         if self.equip_on_blor("Tarrian's Soulcleaver") and self.rng.random() < 0.4:
             self.add_counters(1)
+        # Blade of the Bloodchief (27/11): same idea, but only creatures dying (no artifacts)
+        if self.equip_on_blor("Blade of the Bloodchief") and self.rng.random() < 0.35:
+            self.add_counters(1)
         # kill attempt
         if self.opp[i] > 0 and self.rival_next[i] == self.turn:
             th = self.threat.get(i)
