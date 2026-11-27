@@ -235,3 +235,32 @@ DECKS["Blor física 3 + 13 Forest"] = swap_many(_f3,
 DECKS["Blor física armada"] = swap_many(DECKS["Blor física 3 + 13 Forest"],
     ["Millikin", "Potioner's Trove", "Colossal Dreadmaw", "Emergent Growth"],
     ["Heroic Intervention", "Gemhide Sliver", "Run Over", "Helm of Awakening"])
+
+# Plan por fases de la física armada hacia 1.8 (27/11). Cada paso parte del anterior.
+DECKS["Blor física paso 1"] = swap_many(DECKS["Blor física armada"],
+    ["Helm of Awakening", "Pollenbright Druid", "Goobbue Gardener", "Conqueror's Flail", "Wild Onslaught",
+     "Gemhide Sliver", "Satyr Grovedancer", "Mammoth Growth", "Bestow Greatness", "Flourishing Strike"],
+    ["Level Up", "Lion Umbra", "Forgotten Ancient", "Avarice Amulet", "Short Bow",
+     "Keen Sense", "Bugenhagen, Wise Elder", "Beast Within", "Nature's Claim", "Harmonize"])
+DECKS["Blor física paso 2"] = swap_many(DECKS["Blor física paso 1"],
+    ["Tanglespan Lookout", "Heroic Intervention", "Run Over", "Thrashing Brontodon",
+     "Silken Strength", "Stony Strength", "Efflorescence", "Hexhaven Invigorator"],
+    ["Bone Sabres", "Staff of Titania", "Hydra's Growth", "Strong Back",
+     "Crystalline Armor", "Indomitable Might", "Fireshrieker", "Ancestral Mask"])
+DECKS["Blor física paso 3"] = swap_many(DECKS["Blor física paso 2"],
+    ["Elfhame Druid", "Oasis Gardener", "Coalition Relic", "Moss Diamond", "Adventurous Impulse",
+     "Fertilid", "Drover of the Mighty", "Elvish Rejuvenator", "Prey Upon", "Rabid Bite"],
+    ["Rampant Growth", "Nature's Lore", "Kodama's Reach", "Utopia Sprawl", "Fyndhorn Elves",
+     "Rishkar's Expertise", "Hunter's Insight", "Primal Bellow", "Basilisk Collar", "Belt of Giant Strength"])
+DECKS["Blor física paso 4"] = swap_many(DECKS["Blor física paso 3"],
+    ["Toski, Bearer of Secrets", "World War Hulk", "Mind Stone", "Thought Vessel", "Skullclamp", "Path of Ancestry"],
+    ["Super State", "Court of Garenbrig", "Thickest in the Thicket", "Obscuring Haze", "Skyshroud Claim", "Castle Garenbrig"])
+DECKS["Blor física paso 5"] = swap_many(DECKS["Blor física paso 4"],
+    ["Implement of Ferocity", "Long-Lost Lances", "The Earth Crystal", "Gaea's Embrace", "Shadowspear", "Gavel of the Righteous"],
+    ["Power Fist", "Necklace of Girion", "Birds of Paradise", "Berserk", "Bear Umbra", "Fanatic of Rhonas"])
+DECKS["Blor física paso 6"] = swap_many(DECKS["Blor física paso 5"],
+    ["Zopandrel, Hunger Dominus", "Access Tunnel", "Command Tower", "Study Hall", "Roiling Canopy", "Forest", "Forest"],
+    ["Commander's Plate", "Talon Gates of Madara", "Dryad Arbor", "Reliquary Tower", "Witch's Clinic", "Rogue's Passage", "War Room"])
+DECKS["Blor física paso 7"] = swap_many(DECKS["Blor física paso 6"],
+    ["Colossus Hammer", "Forest", "Forest", "Forest"],
+    ["Buster Sword", "Nykthos, Shrine to Nyx", "Boseiju, Who Endures", "Yavimaya, Cradle of Growth"])
