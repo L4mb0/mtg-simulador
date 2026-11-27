@@ -1487,7 +1487,8 @@ class Game:
             return self.blor_zone == "bf"
         if c == "Rishkar's Expertise":
             return self.greatest_power() >= 5 or (len(self.hand) <= 2 and self.greatest_power() >= 3)
-        if c in ("Exponential Growth", "Hunter's Prowess", "Emergent Growth", "Lifestream's Blessing", "Legolas's Quick Reflexes"):
+        if c in ("Exponential Growth", "Hunter's Prowess", "Emergent Growth", "Lifestream's Blessing", "Legolas's Quick Reflexes",
+                 "Finale of Devastation"):
             return False                    # antes del combate / al final del turno / no modelada
         if c == "Traverse the Outlands":
             return self.greatest_power() >= 4
@@ -2037,6 +2038,11 @@ class Game:
             if x >= 3 and self.hit_damage(P_ + x, 0, ds, mult) >= need:
                 self.pay(x, 1); self.hand.remove("Primal Might"); self.gy.append("Primal Might")
                 self.cast_stat("Primal Might"); self.temp += x
+        if "Finale of Devastation" in self.hand:                   # 27/11: solo como cierre, X >= 10 (+X/+X)
+            x = self.avail() - 2 - self.reserve
+            if x >= 10 and self.can_pay(x, 2) and self.hit_damage(P_ + x, 0, ds, mult) >= need:
+                self.pay(x, 2); self.hand.remove("Finale of Devastation"); self.gy.append("Finale of Devastation")
+                self.cast_stat("Finale of Devastation"); self.on_cast_green("Finale of Devastation"); self.temp += x
         if "Might of Old Krosa" in self.hand and self.can_pay(0, 1):
             if self.hit_damage(self.power() + 4, 0, ds, mult) >= need:
                 self.pay(0, 1); self.hand.remove("Might of Old Krosa"); self.gy.append("Might of Old Krosa")
