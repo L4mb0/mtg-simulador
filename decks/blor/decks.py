@@ -237,18 +237,22 @@ DECKS["Blor física armada"] = swap_many(DECKS["Blor física 3 + 13 Forest"],
     ["Heroic Intervention", "Gemhide Sliver", "Run Over", "Helm of Awakening"])
 
 # Plan por fases de la física armada hacia 1.8 (27/11). Cada paso parte del anterior.
-DECKS["Blor física paso 1"] = swap_many(DECKS["Blor física armada"],
+# 27/11 (aprobado por Juan): 3 cartas verdes que salieron de Gorma entran gratis a la física.
+DECKS["Blor física + Gorma"] = swap_many(DECKS["Blor física armada"],
+    ["Elfhame Druid", "Tanglespan Lookout", "Run Over"],
+    ["Twitching Doll", "Selvala, Heart of the Wilds", "Traverse the Outlands"])
+DECKS["Blor física paso 1"] = swap_many(DECKS["Blor física + Gorma"],
     ["Helm of Awakening", "Pollenbright Druid", "Goobbue Gardener", "Conqueror's Flail", "Wild Onslaught",
      "Gemhide Sliver", "Satyr Grovedancer", "Mammoth Growth", "Bestow Greatness", "Flourishing Strike"],
     ["Level Up", "Lion Umbra", "Forgotten Ancient", "Avarice Amulet", "Short Bow",
      "Keen Sense", "Bugenhagen, Wise Elder", "Beast Within", "Nature's Claim", "Harmonize"])
 DECKS["Blor física paso 2"] = swap_many(DECKS["Blor física paso 1"],
-    ["Tanglespan Lookout", "Heroic Intervention", "Run Over", "Thrashing Brontodon",
+    ["Selvala, Heart of the Wilds", "Heroic Intervention", "Traverse the Outlands", "Thrashing Brontodon",
      "Silken Strength", "Stony Strength", "Efflorescence", "Hexhaven Invigorator"],
     ["Bone Sabres", "Staff of Titania", "Hydra's Growth", "Strong Back",
      "Crystalline Armor", "Indomitable Might", "Fireshrieker", "Ancestral Mask"])
 DECKS["Blor física paso 3"] = swap_many(DECKS["Blor física paso 2"],
-    ["Elfhame Druid", "Oasis Gardener", "Coalition Relic", "Moss Diamond", "Adventurous Impulse",
+    ["Twitching Doll", "Oasis Gardener", "Coalition Relic", "Moss Diamond", "Adventurous Impulse",
      "Fertilid", "Drover of the Mighty", "Elvish Rejuvenator", "Prey Upon", "Rabid Bite"],
     ["Rampant Growth", "Nature's Lore", "Kodama's Reach", "Utopia Sprawl", "Fyndhorn Elves",
      "Rishkar's Expertise", "Hunter's Insight", "Primal Bellow", "Basilisk Collar", "Belt of Giant Strength"])
