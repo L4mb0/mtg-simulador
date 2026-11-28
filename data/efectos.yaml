@@ -85,6 +85,7 @@ Elvish Mystic:
   blor: {mana: 1}
 Twitching Doll:
   tags: [artifact, dork, ramp]
+  blor: {mana: 1}
 The Gitrog, Ravenous Ride:
   tags: [haste, trample]
 Umbral Collar Zealot:
@@ -120,7 +121,7 @@ Sol Ring:
 Arcane Signet:
   tags: [ramp]
   rock: COM
-Blade of the Bloodchief: {}
+Blade of the Bloodchief: {equip: 1}
 Blight Mound:
   on_death:
   - orden: 42
@@ -1683,3 +1684,237 @@ Flameshape:
   gandalf:
     motor:
       roles: [special]
+# ---- 24/11: candidatas de EDHREC para Blor (textos de Forge). Lo que dice "propio" vive en decks/blor/engine.py ----
+Simulacrum Shaper:
+  propio: "blor/engine.put_creature: al entrar, Forest girado"
+Verdant Kraken:
+  propio: "blor/engine.upkeep: un Forest Tentacle (tierra Forest) por cada mantenimiento de la mesa (4 por ronda)"
+Bristly Bill, Spine Sower:
+  propio: "blor/engine.put_land: aterrizaje +1 contador a Blor; use_utilities: {3}{G}{G} duplica contadores"
+Ulvenwald Tracker: {}
+Reclamation Sage:
+  answer_sorc: [ae]
+Poison Dart Frog:
+  tags: [dork]
+  blor: {mana: 1}
+Zopandrel, Hunger Dominus:
+  propio: "blor/engine.combat: duplica la fuerza al inicio del combate (como Unnatural Growth)"
+Frog Butler:
+  tags: [dork]
+  blor: {mana: 1}
+Disciple of Freyalise:
+  tags: [mdfc]
+  propio: "blor/cards.LANDS: va como su cara de tierra (Garden of Freyalise, 3 vidas para entrar enderezada)"
+Ouroboroid:
+  propio: "blor/engine.combat: inicio del combate, X contadores a cada criatura (X = su fuerza)"
+Llanowar Tribe:
+  tags: [dork, elf]
+  blor: {mana: 3}
+Vigor: {}
+Clifftop Lookout:
+  propio: "blor/engine.put_creature: al entrar, una tierra girada (se modela un Forest)"
+Tanglespan Lookout:
+  propio: "blor/engine.resolve_aura: roba al entrar un aura"
+Noxious Newt:
+  tags: [dork, deathtouch]
+  blor: {mana: 1}
+Rampant Frogantua: {}
+Scythecat Cub:
+  propio: "blor/engine.put_land: aterrizaje +1 contador; la segunda vez en el turno duplica los contadores"
+Obscuring Haze:
+  tags: [fog]
+  propio: "blor/engine.cost_of: gratis con Blor en el campo"
+Lifestream's Blessing:
+  propio: "blor/engine.end_step_draws: roba tanto como la mayor fuerza"
+Force of Vigor:
+  answer: [ae]
+  propio: "blor/engine.cost_of: gratis en turno rival exiliando otra carta verde"
+Tifa's Limit Break:
+  blor: {pump: true}
+  propio: "blor/engine.pump_effect: modo Meteor Strikes, duplica la fuerza"
+Entish Restoration:
+  propio: "blor/engine.resolve_spell: sacrifica una tierra, 2 basicas giradas (3 con una criatura de fuerza 4+)"
+Blessed Respite:
+  tags: [fog]
+Fight for the Throne:
+  answer: [cre]
+  propio: "blor/engine: pelea (necesita a Blor) y +1 contador a Blor"
+Collective Resistance:
+  answer: [ae]
+Invigorating Surge:
+  blor: {pump: true}
+  propio: "blor/engine.apply_pumps: +1 contador y duplica los contadores"
+Prizefight:
+  answer: [cre]
+  propio: "blor/engine: pelea (necesita a Blor) y un tesoro"
+Ancient Animus:
+  answer: [cre]
+  propio: "blor/engine: pelea (necesita a Blor) y +1 contador a Blor (legendario)"
+Arachnogenesis:
+  tags: [fog]
+Tangle:
+  tags: [fog]
+Polliwallop:
+  answer: [cre]
+  propio: "blor/engine: dano con Blor (necesita a Blor)"
+Legolas's Quick Reflexes: {}
+Heritage Reclamation:
+  answer: [ae]
+Vastwood Fortification:
+  tags: [mdfc]
+Bala Ged Recovery:
+  tags: [mdfc]
+Soul's Majesty:
+  propio: "blor/engine.resolve_spell: roba tanto como la fuerza de Blor"
+Season of Gathering:
+  propio: "blor/engine.resolve_spell: 2 contadores a Blor (uno por modo) y roba tanto como la mayor fuerza"
+Bushwhack:
+  blor:
+    fetch: [0, 1, false]
+Contest of Claws:
+  answer_sorc: [cre]
+  propio: "blor/engine: dano con Blor (necesita a Blor); el descubrir no se modela"
+Ezuri's Predation:
+  answer_sorc: [cre]
+Exponential Growth:
+  propio: "blor/engine.precombat_sorceries: duplica la fuerza X veces (X que alcance con el mana)"
+Regrowth:
+  propio: "blor/engine.resolve_spell: devuelve la mejor carta del cementerio"
+Hunter's Prowess:
+  propio: "blor/engine.precombat_sorceries: +3 y roba tanto como el dano (como Hunter's Insight)"
+Shared Roots:
+  blor:
+    fetch: [1, 0, true]
+Flare of Cultivation:
+  blor:
+    fetch: [1, 1, true]
+Fangs of Kalonia:
+  propio: "blor/engine.resolve_spell: +1 contador a Blor y duplica sus contadores"
+Excalibur, Sword of Eden:
+  equip: 2
+  power_bonus: 10
+  grants: [vigilance]
+  propio: "blor/engine.cost_of: cuesta X menos (valor de mana de los permanentes historicos)"
+The Great Henge:
+  rock: GG
+  propio: "blor/engine: cuesta menos segun la mayor fuerza; cada criatura no ficha que entra: +1 contador y roba"
+Captain America's Shield:
+  equip: 2
+  grants: [vigilance]
+  propio: "blor/engine.blocker: al atacar gira una criatura del defensor (el bloqueador probable)"
+Ozolith, the Shattered Spire:
+  propio: "blor/engine.counters_mult: un contador mas; use_utilities: {1}{G}, T: +1 contador"
+Strata Scythe:
+  equip: 3
+  propio: "blor/engine.power: +1 por cada Forest (nombre exacto)"
+Sword of Vengeance:
+  equip: 3
+  power_bonus: 2
+  grants: [vigilance, haste, first_strike]
+Bow of Nylea:
+  propio: "blor/engine.deathtouch: atacando; end_step_draws: {1}{G}, T: +1 contador"
+Brotherhood Regalia:
+  equip: 1
+  propio: "blor/engine.unblockable: no se puede bloquear (equipar legendario {1})"
+Haunted Cloak:
+  equip: 1
+  grants: [vigilance, haste]
+Aettir and Priwen:
+  equip: 5
+  propio: "blor/engine.power: fuerza base = tus vidas"
+Vibranium Strike Gauntlets:
+  equip: 3
+  power_bonus: 3
+  propio: "blor/engine: se adjunta al entrar; roba al hacer dano de combate"
+Super State:
+  grants: [haste]
+  propio: "blor/engine: base 9/9, vuela (casi sin bloqueo), dano igual a los otros rivales (no es dano de comandante)"
+Eldrazi Conscription:
+  power_bonus: 10
+Well Rested:
+  propio: "blor/engine: al enderezarse Blor (una vez por turno), +2 contadores, 2 vidas y roba"
+Thickest in the Thicket:
+  propio: "blor/engine: al entrar, contadores igual a la fuerza de Blor; final del turno: roba 2 si Blor es la mayor"
+Lignify:
+  answer_sorc: [cre]
+  blor: {rival_aura: true}
+Meltstrider's Resolve:
+  propio: "blor/engine.attach_gain: pelea al entrar (quita un bloqueador); +0/+2"
+Raised by Giants:
+  propio: "blor/engine.power: fuerza base 10 (trasfondo)"
+Predatory Hunger:
+  propio: "blor/engine.upkeep: +1 contador por cada rival que lanzo una criatura (60 % cada uno)"
+Beorn's Hospitality:
+  propio: "blor/engine.put_land: aterrizaje +1 contador a Blor"
+Seismic Tutelage:
+  propio: "blor/engine: al entrar +1 contador; al atacar duplica los contadores"
+Mark of Sakiko:
+  propio: "blor/engine.deal_player: verde igual al dano de combate"
+Innkeeper's Talent:
+  propio: "blor/engine: inicio del combate +1 contador; nivel 3 duplica los contadores que pones"
+Terrasymbiosis:
+  propio: "blor/engine.add_counters: roba tantas como contadores (una vez por turno, hasta 4)"
+Boar Umbra:
+  power_bonus: 3
+One with Nature:
+  propio: "blor/engine.deal_player: Forest girado al hacer dano de combate"
+Druid's Call: {}
+Fertile Ground:
+  blor: {landaura: 1}
+Court of Garenbrig:
+  propio: "blor/engine: monarca al entrar; mantenimiento +2 contadores y duplica si eres monarca"
+Forced Adaptation:
+  propio: "blor/engine.upkeep: +1 contador"
+Instill Energy:
+  propio: "blor/engine: prisa y se endereza despues del combate"
+Ride the Shoopuf:
+  propio: "blor/engine.put_land: aterrizaje +1 contador a Blor"
+Mosswort Bridge: {}
+Bonders' Enclave:
+  propio: "blor/engine.end_step_draws: {3}, T: roba con Blor de fuerza 4+"
+Urza's Saga:
+  propio: "blor/engine: capitulo III busca un artefacto de coste 0 o 1"
+Command Beacon:
+  propio: "blor/engine: pone a Blor en la mano desde la zona de mando (sin impuesto)"
+Shifting Woodland: {}
+Oakhollow Village: {}
+Okina, Temple to the Grandfathers:
+  propio: "blor/engine.combat: {G}, T: +1/+1 a Blor"
+Yavimaya Hollow: {}
+Temple of the False God:
+  propio: "blor/engine.land_mana: CC solo con 5 tierras"
+The Aetherspark:
+  equip: 0
+  propio: "blor/engine: +1 cada turno (+1 contador) o -5 roba 2; lealtad por el dano de combate"
+Snow-Covered Forest: {}
+Fabled Passage: {}
+Urza's Cave:
+  propio: "blor/engine.use_utilities: {3}, T, sacrificar: una tierra girada"
+Blighted Woodland:
+  propio: "blor/engine.use_utilities: {3}{G}, T, sacrificar: dos Forest girados"
+# ---- 25/11: cartas de Juan (bulk y sueltas) para la versión física provisional de Blor ----
+Prey Upon:
+  answer_sorc: [cre]
+  propio: "blor/engine: pelea (necesita a Blor)"
+Rabid Bite:
+  answer_sorc: [cre]
+  propio: "blor/engine: dano con Blor (necesita a Blor)"
+Run Over:
+  answer: [cre]
+  propio: "blor/engine: dano con Blor (necesita a Blor)"
+Root Snare:
+  tags: [fog]
+Wild Onslaught:
+  propio: "blor/engine.resolve_spell: +1 contador a Blor (+2 con kicker si sobran 4)"
+Implement of Ferocity:
+  propio: "blor/engine.utilities_edhrec: {G}, sacrificar: +1 contador a Blor y roba"
+Potioner's Trove:
+  rock: G
+Oasis Gardener:
+  tags: [dork]
+  blor: {mana: 1}
+Ancient Brontodon: {}
+Emergent Growth:
+  propio: "blor/engine.precombat_sorceries: +5/+5 antes del combate (el 'debe ser bloqueado' no se modela)"
+Study Hall: {}
+Access Tunnel: {}

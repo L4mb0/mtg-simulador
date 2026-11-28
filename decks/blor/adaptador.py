@@ -6,9 +6,9 @@ from decks import DECKS
 
 SEED0 = 12345
 LISTAS = DECKS
-DEFAULT = "Blor 1.6"
+DEFAULT = "Blor 1.8"
 MESAS = list(SCEN)
-DEFAULT_MESAS = ["B3", "Mazmorra"]
+DEFAULT_MESAS = ["B2", "B3", "Mazmorra"]   # 22/11: orientado a B2
 
 
 def lista(nombre):

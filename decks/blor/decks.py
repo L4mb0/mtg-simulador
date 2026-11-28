@@ -167,3 +167,114 @@ DECKS["Blor 1.5"] = swap_many(DECKS["Blor 1.4"], ["Tajuru Preserver"], ["Primal 
 
 # 15/11 (Juan aprobó): Ohran Frostfang (suya) por Sword of Truth and Justice
 DECKS["Blor 1.6"] = swap_many(DECKS["Blor 1.5"], ["Sword of Truth and Justice"], ["Ohran Frostfang"])
+
+# 24/11 (Juan aprobó): Lotus Bloom (suya) por Snake Umbra. Orientada a B2, sin Game Changers
+DECKS["Blor 1.7"] = swap_many(DECKS["Blor 1.6"], ["Snake Umbra"], ["Lotus Bloom"])
+
+# 25/11 (Juan aprobó): candidatas de EDHREC + paquete anterior. +5,0 en B2 y +3,8 en B3 (15.000 partidas, semillas nuevas)
+DECKS["Blor 1.8"] = swap_many(DECKS["Blor 1.7"],
+    ["Sword of Fire and Ice", "Heroic Intervention", "Forest", "Long-Lost Lances", "Inquisitor's Flail",
+     "Archdruid's Charm", "Allosaurus Shepherd"],
+    ["Sword of Truth and Justice", "Skyshroud Claim", "Castle Garenbrig", "Super State", "Court of Garenbrig",
+     "Obscuring Haze", "Thickest in the Thicket"])
+
+# 25/11: versión física provisional (Juan): solo cartas que Juan tiene libres hoy (no las de otros mazos).
+# Parte de la 1.8; lo que falta se cubre con cartas propias (sueltas, banca, ManaBox y bulk) y Forests.
+BLOR_PROPIAS_18 = ["Arcane Signet", "Cultivate", "Delighted Halfling", "Elvish Mystic", "Llanowar Elves", "Overgrowth",
+    "Sakura-Tribe Elder", "Sol Ring", "Three Visits", "Wild Growth", "Rancor", "Lotus Bloom", "Blackblade Reforged",
+    "Genji Glove", "Leyline Axe", "Ohran Frostfang", "Unnatural Growth", "Pariah's Shield", "Silent Arbiter",
+    "Tarrian's Soulcleaver", "Return of the Wildspeaker", "Sylvan Library", "Sword of Truth and Justice",
+    "Blanchwood Armor"]
+BLOR_RELLENO_FISICA = [
+    # maná (10)
+    "Elvish Rejuvenator", "Fertilid", "Far Wanderings", "Drover of the Mighty", "Elfhame Druid", "Gemhide Sliver",
+    "Goobbue Gardener", "Mind Stone", "Thought Vessel", "Coalition Relic",
+    # voltron (14)
+    "Gaea's Embrace", "Silken Strength", "Cultist's Staff", "Spider-Suit", "Colossus Hammer", "Gavel of the Righteous",
+    "Conqueror's Flail", "Shadowspear", "Swiftfoot Boots", "The Earth Crystal", "World War Hulk", "Long-Lost Lances",
+    "Heroic Intervention", "Skullclamp",
+    # contadores y trucos (8)
+    "Efflorescence", "Stony Strength", "Satyr Grovedancer", "Pollenbright Druid", "Wild Onslaught",
+    "Implement of Ferocity", "Bestow Greatness", "Mammoth Growth",
+    # respuestas (5)
+    "Thrashing Brontodon", "Prey Upon", "Rabid Bite", "Run Over", "Root Snare",
+    # robo y cuerpos (4)
+    "Adventurous Impulse", "Tanglespan Lookout", "Zopandrel, Hunger Dominus", "Hexhaven Invigorator",
+]
+DECKS["Blor física 0"] = BLOR_PROPIAS_18 + BLOR_RELLENO_FISICA + ["Forest"] * 34
+assert len(DECKS["Blor física 0"]) == 99, len(DECKS["Blor física 0"])
+# Primera limpieza (25/11): +2,2 ±0,5 en B2 y +0,4 en B3 sobre la física 0 (10.000 partidas, semillas nuevas)
+DECKS["Blor física"] = swap_many(DECKS["Blor física 0"],
+    ["Root Snare", "Cultist's Staff", "Swiftfoot Boots", "Spider-Suit"],
+    ["Flourishing Strike", "Toski, Bearer of Secrets", "Moss Diamond", "Oasis Gardener"])
+
+# 25/11 (Juan): Far Wanderings ya no está; tierras libres: 17 Forest, Command Tower, Path of Ancestry, Study Hall y
+# Access Tunnel (21). Los 14 cupos que quedan van a las cartas propias que sobraban. Worldslayer queda fuera
+# (destruye todas las tierras rivales: destrucción masiva de tierras, fuera de B2/B3).
+BLOR_RELLENO_2 = ["Root Snare", "Cultist's Staff", "Swiftfoot Boots", "Spider-Suit", "Millikin", "Chromatic Lantern",
+    "Potioner's Trove", "Expedition Map", "Bloom Hulk", "Colossal Dreadmaw", "Fynn, the Fangbearer",
+    "Helm of Awakening", "Ancient Brontodon", "Emergent Growth"]
+_f = [c for c in DECKS["Blor física"] if c not in ("Forest", "Far Wanderings")]
+DECKS["Blor física 2"] = _f + BLOR_RELLENO_2 + ["Forest"] * 17 + ["Command Tower", "Path of Ancestry", "Study Hall", "Access Tunnel"]
+assert len(DECKS["Blor física 2"]) == 99, len(DECKS["Blor física 2"])
+# Medido (25/11, semillas nuevas, 10.000 partidas): física 2 = B2 9,6%, B3 2,8%. Con 13 Forest más por las 13
+# cartas más flojas: +10,6 en B2, +3,2 en B3. Con eso y el paso 1 (8 cartas, USD 8,94): +21,4 en B2, +6,2 en B3.
+
+# 25/11 (Juan): eran 16 Forest + Roiling Canopy (21 tierras). Con 13 Forest comprados por las 13 cartas más flojas
+# del relleno quedan 34 tierras (29 Forest). Helm of Awakening sale (acelera también a los rivales).
+_f3 = list(DECKS["Blor física 2"]); _f3.remove("Forest"); _f3.append("Roiling Canopy")
+DECKS["Blor física 3"] = _f3
+DECKS["Blor física 3 + 13 Forest"] = swap_many(_f3,
+    ["Helm of Awakening", "Heroic Intervention", "Cultist's Staff", "Spider-Suit", "Swiftfoot Boots", "Fynn, the Fangbearer",
+     "Chromatic Lantern", "Gemhide Sliver", "Expedition Map", "Bloom Hulk", "Ancient Brontodon", "Run Over", "Root Snare"],
+    ["Forest"] * 13)
+# Medido (25/11, semillas nuevas, 10.000): física 3 + 13 Forest = B2 20,4%, B3 5,6%, goldfish T10,3. Cambiar Study Hall,
+# Access Tunnel, Path of Ancestry y Roiling Canopy por Forest: 0. Helm of Awakening por Mind Stone −0,5, por Millikin −0,9.
+# 25/11 (Juan, armada en físico): se quedaron Heroic Intervention, Gemhide Sliver y Run Over, y Helm of Awakening va en el
+# cupo de Far Wanderings, en lugar de Millikin, Potioner's Trove, Colossal Dreadmaw y Emergent Growth. Todo temporal.
+DECKS["Blor física armada"] = swap_many(DECKS["Blor física 3 + 13 Forest"],
+    ["Millikin", "Potioner's Trove", "Colossal Dreadmaw", "Emergent Growth"],
+    ["Heroic Intervention", "Gemhide Sliver", "Run Over", "Helm of Awakening"])
+
+# Plan por fases de la física armada hacia 1.8 (27/11). Cada paso parte del anterior.
+# 27/11 (aprobado por Juan): 3 cartas verdes que salieron de Gorma entran gratis a la física.
+DECKS["Blor física + Gorma"] = swap_many(DECKS["Blor física armada"],
+    ["Elfhame Druid", "Tanglespan Lookout", "Run Over"],
+    ["Twitching Doll", "Selvala, Heart of the Wilds", "Traverse the Outlands"])
+# Plan v2 (27/11, Juan: "el primer paso enfocado en card draw"). Mismos ins/outs que el plan del 27/11,
+# reordenados: el robo va primero. El paso 8 = Blor 1.8.
+# 27/11 noche (Juan): Buster Sword (suya) por Helm of Awakening y Hydra's Growth (encontrada) por Efflorescence.
+DECKS["Blor física 27/11"] = swap_many(DECKS["Blor física + Gorma"],
+    ["Helm of Awakening", "Efflorescence"], ["Buster Sword", "Hydra's Growth"])
+DECKS["Blor física paso 1"] = swap_many(DECKS["Blor física 27/11"],
+    ["Heroic Intervention", "Pollenbright Druid", "Goobbue Gardener", "Conqueror's Flail",
+     "Wild Onslaught", "Gemhide Sliver", "Satyr Grovedancer", "Study Hall"],
+    ["Keen Sense", "Avarice Amulet", "Harmonize", "Hunter's Insight",
+     "Rishkar's Expertise", "Thickest in the Thicket", "Court of Garenbrig", "War Room"])
+DECKS["Blor física paso 2"] = swap_many(DECKS["Blor física paso 1"],
+    ["Mammoth Growth", "Bestow Greatness", "Flourishing Strike", "Drover of the Mighty",
+     "Adventurous Impulse", "Mind Stone", "World War Hulk"],
+    ["Level Up", "Lion Umbra", "Forgotten Ancient", "Short Bow",
+     "Bugenhagen, Wise Elder", "Beast Within", "Nature's Claim"])
+DECKS["Blor física paso 3"] = swap_many(DECKS["Blor física paso 2"],
+    ["Selvala, Heart of the Wilds", "Colossus Hammer", "Traverse the Outlands", "Thrashing Brontodon",
+     "Silken Strength", "Stony Strength", "Hexhaven Invigorator"],
+    ["Bone Sabres", "Staff of Titania", "Fireshrieker", "Strong Back",
+     "Crystalline Armor", "Indomitable Might", "Ancestral Mask"])
+DECKS["Blor física paso 4"] = swap_many(DECKS["Blor física paso 3"],
+    ["Twitching Doll", "Oasis Gardener", "Coalition Relic", "Moss Diamond",
+     "Fertilid", "Elvish Rejuvenator", "Prey Upon", "Rabid Bite"],
+    ["Rampant Growth", "Nature's Lore", "Kodama's Reach", "Utopia Sprawl",
+     "Fyndhorn Elves", "Primal Bellow", "Basilisk Collar", "Belt of Giant Strength"])
+DECKS["Blor física paso 5"] = swap_many(DECKS["Blor física paso 4"],
+    ["Toski, Bearer of Secrets", "Thought Vessel", "Skullclamp", "Path of Ancestry"],
+    ["Super State", "Obscuring Haze", "Skyshroud Claim", "Castle Garenbrig"])
+DECKS["Blor física paso 6"] = swap_many(DECKS["Blor física paso 5"],
+    ["Implement of Ferocity", "Long-Lost Lances", "The Earth Crystal", "Gaea's Embrace", "Shadowspear", "Gavel of the Righteous"],
+    ["Power Fist", "Necklace of Girion", "Birds of Paradise", "Berserk", "Bear Umbra", "Fanatic of Rhonas"])
+DECKS["Blor física paso 7"] = swap_many(DECKS["Blor física paso 6"],
+    ["Zopandrel, Hunger Dominus", "Access Tunnel", "Command Tower", "Forest", "Roiling Canopy", "Forest"],
+    ["Commander's Plate", "Talon Gates of Madara", "Dryad Arbor", "Reliquary Tower", "Witch's Clinic", "Rogue's Passage"])
+DECKS["Blor física paso 8"] = swap_many(DECKS["Blor física paso 7"],
+    ["Forest", "Forest", "Forest"],
+    ["Nykthos, Shrine to Nyx", "Boseiju, Who Endures", "Yavimaya, Cradle of Growth"])

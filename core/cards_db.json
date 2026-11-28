@@ -35,6 +35,22 @@
 "Instant"
 ]
 },
+"Access Tunnel": {
+"color_identity": "",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Access Tunnel",
+"oracle": "{T}: Add {C}.\n{3}, {T}: Target creature with power 3 or less can't be blocked this turn.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Land"
+]
+},
 "Adventurous Impulse": {
 "color_identity": "G",
 "generic": 0,
@@ -89,6 +105,28 @@
 "pips": {},
 "subtypes": [],
 "supertypes": [],
+"types": [
+"Artifact"
+]
+},
+"Aettir and Priwen": {
+"color_identity": "",
+"generic": 6,
+"keywords": [
+"Equip"
+],
+"layout": "normal",
+"mana_cost": "{6}",
+"mv": 6,
+"name": "Aettir and Priwen",
+"oracle": "Equipped creature has base power and toughness X/X, where X is your life total.\nEquip {5}",
+"pips": {},
+"subtypes": [
+"Equipment"
+],
+"supertypes": [
+"Legendary"
+],
 "types": [
 "Artifact"
 ]
@@ -281,6 +319,46 @@
 "Enchantment"
 ]
 },
+"Ancient Animus": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Ancient Animus",
+"oracle": "Put a +1/+1 counter on target creature you control if it's legendary. Then it fights target creature an opponent controls. (Each deals damage equal to its power to the other.)",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
+"Ancient Brontodon": {
+"color_identity": "G",
+"generic": 6,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{6}{G}{G}",
+"mv": 8,
+"name": "Ancient Brontodon",
+"oracle": "",
+"pips": {
+"G": 2
+},
+"power": "9",
+"subtypes": [
+"Dinosaur"
+],
+"supertypes": [],
+"toughness": "9",
+"types": [
+"Creature"
+]
+},
 "Ancient Tomb": {
 "color_identity": "",
 "generic": 0,
@@ -439,6 +517,24 @@
 "toughness": "3",
 "types": [
 "Creature"
+]
+},
+"Arachnogenesis": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Arachnogenesis",
+"oracle": "Create X 1/2 green Spider creature tokens with reach, where X is the number of creatures attacking you. Prevent all combat damage that would be dealt this turn by non-Spider creatures.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Arbor Elf": {
@@ -879,6 +975,41 @@
 "Creature"
 ]
 },
+"Bala Ged Recovery": {
+"color_identity": "G",
+"faces": [
+{
+"generic": 0,
+"keywords": [],
+"mana_cost": null,
+"mv": 0,
+"name": "Bala Ged Sanctuary",
+"oracle": "Bala Ged Sanctuary enters tapped.\n{T}: Add {G}.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Land"
+]
+}
+],
+"full_name": "Bala Ged Recovery // Bala Ged Sanctuary",
+"generic": 2,
+"keywords": [],
+"layout": "modal_dfc",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Bala Ged Recovery",
+"oracle": "Return target card from your graveyard to your hand.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
 "Banewhip Punisher": {
 "color_identity": "B",
 "generic": 2,
@@ -1091,6 +1222,24 @@
 "supertypes": [],
 "types": [
 "Artifact"
+]
+},
+"Beorn's Hospitality": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Beorn's Hospitality",
+"oracle": "Landfall — Whenever a land you control enters, put a +1/+1 counter on target creature you control.\n{5}{G}{G}: This enchantment becomes a Bear creature in addition to its other types and gains \"This creature's power and toughness are each equal to the number of lands you control.\" (This effect doesn't end.)",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Enchantment"
 ]
 },
 "Berserk": {
@@ -1414,6 +1563,24 @@
 "Artifact"
 ]
 },
+"Blessed Respite": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Blessed Respite",
+"oracle": "Target player shuffles their graveyard into their library. Prevent all combat damage that would be dealt this turn.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
 "Blight Mound": {
 "color_identity": "B",
 "generic": 2,
@@ -1709,6 +1876,29 @@
 "Enchantment"
 ]
 },
+"Boar Umbra": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [
+"Enchant",
+"Umbra armor"
+],
+"layout": "normal",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Boar Umbra",
+"oracle": "Enchant creature\nEnchanted creature gets +3/+3.\nUmbra armor (If enchanted creature would be destroyed, instead remove all damage from it and destroy this Aura.)",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
 "Bojuka Bog": {
 "color_identity": "B",
 "generic": 0,
@@ -1817,6 +2007,27 @@
 "Land"
 ]
 },
+"Bow of Nylea": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}{G}",
+"mv": 3,
+"name": "Bow of Nylea",
+"oracle": "Attacking creatures you control have deathtouch.\n{1}{G}, {T}: Choose one —\n• Put a +1/+1 counter on target creature.\n• Bow of Nylea deals 2 damage to target creature with flying.\n• You gain 3 life.\n• Put up to four target cards from your graveyard on the bottom of your library in any order.",
+"pips": {
+"G": 2
+},
+"subtypes": [],
+"supertypes": [
+"Legendary"
+],
+"types": [
+"Enchantment",
+"Artifact"
+]
+},
 "Braids, Arisen Nightmare": {
 "color_identity": "B",
 "generic": 1,
@@ -1913,6 +2124,51 @@
 "supertypes": [],
 "types": [
 "Sorcery"
+]
+},
+"Bristly Bill, Spine Sower": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Bristly Bill, Spine Sower",
+"oracle": "Landfall — Whenever a land you control enters, put a +1/+1 counter on target creature.\n{3}{G}{G}: Double the number of +1/+1 counters on each creature you control.",
+"pips": {
+"G": 1
+},
+"power": "2",
+"subtypes": [
+"Plant",
+"Druid"
+],
+"supertypes": [
+"Legendary"
+],
+"toughness": "2",
+"types": [
+"Creature"
+]
+},
+"Brotherhood Regalia": {
+"color_identity": "",
+"generic": 2,
+"keywords": [
+"Equip"
+],
+"layout": "normal",
+"mana_cost": "{2}",
+"mv": 2,
+"name": "Brotherhood Regalia",
+"oracle": "Equipped creature has ward {2}, is an Assassin in addition to its other types, and can't be blocked.\nEquip legendary creature {1}\nEquip {3}",
+"pips": {},
+"subtypes": [
+"Equipment"
+],
+"supertypes": [],
+"types": [
+"Artifact"
 ]
 },
 "Bugenhagen, Wise Elder": {
@@ -2041,6 +2297,24 @@
 "Instant"
 ]
 },
+"Bushwhack": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Bushwhack",
+"oracle": "Choose one —\n• Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n• Target creature you control fights target creature you don't control. (Each deals damage equal to its power to the other.)",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
 "Buster Sword": {
 "color_identity": "",
 "generic": 3,
@@ -2146,6 +2420,29 @@
 "supertypes": [],
 "types": [
 "Land"
+]
+},
+"Captain America's Shield": {
+"color_identity": "",
+"generic": 2,
+"keywords": [
+"Equip",
+"Indestructible"
+],
+"layout": "normal",
+"mana_cost": "{2}",
+"mv": 2,
+"name": "Captain America's Shield",
+"oracle": "Indestructible\nEquipped creature gets +0/+8 and has vigilance.\nWhenever equipped creature attacks, tap target creature defending player controls.\nEquip {2}",
+"pips": {},
+"subtypes": [
+"Equipment"
+],
+"supertypes": [
+"Legendary"
+],
+"types": [
+"Artifact"
 ]
 },
 "Carnifex Demon": {
@@ -2529,6 +2826,31 @@
 "Sorcery"
 ]
 },
+"Clifftop Lookout": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [
+"Reach"
+],
+"layout": "normal",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Clifftop Lookout",
+"oracle": "Reach\nWhen Clifftop Lookout enters, reveal cards from the top of your library until you reveal a land card. Put that card onto the battlefield tapped and the rest on the bottom of your library in a random order.",
+"pips": {
+"G": 1
+},
+"power": "1",
+"subtypes": [
+"Frog",
+"Scout"
+],
+"supertypes": [],
+"toughness": "2",
+"types": [
+"Creature"
+]
+},
 "Cloud Key": {
 "color_identity": "",
 "generic": 3,
@@ -2570,6 +2892,26 @@
 "mv": 4,
 "name": "Collected Company",
 "oracle": "Look at the top six cards of your library. Put up to two creature cards with mana value 3 or less from among them onto the battlefield. Put the rest on the bottom of your library in any order.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
+"Collective Resistance": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Escalate"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Collective Resistance",
+"oracle": "Escalate {G} (Pay this cost for each mode chosen beyond the first.)\nChoose one or more —\n• Destroy target artifact.\n• Destroy target enchantment.\n• Target creature gains hexproof and indestructible until end of turn.",
 "pips": {
 "G": 1
 },
@@ -2683,6 +3025,22 @@
 "supertypes": [],
 "types": [
 "Artifact"
+]
+},
+"Command Beacon": {
+"color_identity": "",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Command Beacon",
+"oracle": "{T}: Add {C}.\n{T}, Sacrifice Command Beacon: Put your commander into your hand from the command zone.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Land"
 ]
 },
 "Command Tower": {
@@ -2827,6 +3185,24 @@
 "Artifact"
 ]
 },
+"Contest of Claws": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Contest of Claws",
+"oracle": "Target creature you control deals damage equal to its power to another target creature. If excess damage was dealt this way, discover X, where X is that excess damage. (Exile cards from the top of your library until you exile a nonland card with that mana value or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
 "Coruscation Mage": {
 "color_identity": "R",
 "generic": 1,
@@ -2863,6 +3239,24 @@
 "oracle": "At the beginning of your upkeep, exile the top card of your library. You may play that card this turn.",
 "pips": {
 "R": 3
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
+"Court of Garenbrig": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}{G}",
+"mv": 3,
+"name": "Court of Garenbrig",
+"oracle": "When Court of Garenbrig enters, you become the monarch.\nAt the beginning of your upkeep, distribute two +1/+1 counters among up to two target creatures. Then if you're the monarch, double the number of +1/+1 counters on each creature you control.",
+"pips": {
+"G": 2
 },
 "subtypes": [],
 "supertypes": [],
@@ -3735,6 +4129,46 @@
 "Creature"
 ]
 },
+"Disciple of Freyalise": {
+"color_identity": "G",
+"faces": [
+{
+"generic": 0,
+"keywords": [],
+"mana_cost": null,
+"mv": 0,
+"name": "Garden of Freyalise",
+"oracle": "As Garden of Freyalise enters, you may pay 3 life. If you don't, it enters tapped.\n{T}: Add {G}.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Land"
+]
+}
+],
+"full_name": "Disciple of Freyalise // Garden of Freyalise",
+"generic": 3,
+"keywords": [],
+"layout": "modal_dfc",
+"mana_cost": "{3}{G}{G}{G}",
+"mv": 6,
+"name": "Disciple of Freyalise",
+"oracle": "When Disciple of Freyalise enters, you may sacrifice another creature. If you do, you gain X life and draw X cards, where X is that creature's power.",
+"pips": {
+"G": 3
+},
+"power": "3",
+"subtypes": [
+"Elf",
+"Druid"
+],
+"supertypes": [],
+"toughness": "3",
+"types": [
+"Creature"
+]
+},
 "Disenchant": {
 "color_identity": "W",
 "generic": 1,
@@ -3919,6 +4353,28 @@
 "Creature"
 ]
 },
+"Druid's Call": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Druid's Call",
+"oracle": "Enchant creature\nWhenever enchanted creature is dealt damage, its controller creates that many 1/1 green Squirrel creature tokens.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
 "Dryad Arbor": {
 "color_identity": "G",
 "generic": 0,
@@ -4068,6 +4524,28 @@
 "supertypes": [],
 "types": [
 "Instant"
+]
+},
+"Eldrazi Conscription": {
+"color_identity": "",
+"generic": 8,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{8}",
+"mv": 8,
+"name": "Eldrazi Conscription",
+"oracle": "Enchant creature\nEnchanted creature gets +10/+10 and has trample and annihilator 2. (Whenever it attacks, defending player sacrifices two permanents.)",
+"pips": {},
+"subtypes": [
+"Eldrazi",
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Kindred",
+"Enchantment"
 ]
 },
 "Eldritch Evolution": {
@@ -4288,6 +4766,24 @@
 "Artifact"
 ]
 },
+"Emergent Growth": {
+"color_identity": "G",
+"generic": 3,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{3}{G}",
+"mv": 4,
+"name": "Emergent Growth",
+"oracle": "Target creature gets +5/+5 until end of turn and must be blocked this turn if able.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
 "Emeria Shepherd": {
 "color_identity": "W",
 "generic": 5,
@@ -4427,6 +4923,24 @@
 "supertypes": [],
 "types": [
 "Artifact"
+]
+},
+"Entish Restoration": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Entish Restoration",
+"oracle": "Sacrifice a land. Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle. If you control a creature with power 4 or greater, instead search your library for up to three basic land cards, put them onto the battlefield tapped, then shuffle.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Epic Fight": {
@@ -4594,6 +5108,28 @@
 "Land"
 ]
 },
+"Excalibur, Sword of Eden": {
+"color_identity": "",
+"generic": 12,
+"keywords": [
+"Equip"
+],
+"layout": "normal",
+"mana_cost": "{12}",
+"mv": 12,
+"name": "Excalibur, Sword of Eden",
+"oracle": "This spell costs {X} less to cast, where X is the total mana value of historic permanents you control. (Artifacts, legendaries, and Sagas are historic.)\nEquipped creature gets +10/+0 and has vigilance.\nEquip legendary creature {2}",
+"pips": {},
+"subtypes": [
+"Equipment"
+],
+"supertypes": [
+"Legendary"
+],
+"types": [
+"Artifact"
+]
+},
 "Exemplar of Light": {
 "color_identity": "W",
 "generic": 2,
@@ -4697,6 +5233,42 @@
 "oracle": "You may play an additional land this turn.\nDraw a card.",
 "pips": {
 "G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
+"Exponential Growth": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{X}{X}{G}{G}",
+"mv": 2,
+"name": "Exponential Growth",
+"oracle": "Until end of turn, double target creature's power X times.",
+"pips": {
+"G": 2
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
+"Ezuri's Predation": {
+"color_identity": "G",
+"generic": 5,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{5}{G}{G}{G}",
+"mv": 8,
+"name": "Ezuri's Predation",
+"oracle": "For each creature your opponents control, create a 4/4 green Phyrexian Beast creature token. Each of those Beasts fights a different one of those creatures.",
+"pips": {
+"G": 3
 },
 "subtypes": [],
 "supertypes": [],
@@ -4808,6 +5380,26 @@
 "toughness": "4",
 "types": [
 "Creature"
+]
+},
+"Fangs of Kalonia": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Overload"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Fangs of Kalonia",
+"oracle": "Put a +1/+1 counter on target creature you control, then double the number of +1/+1 counters on each creature that had a +1/+1 counter put on it this way.\nOverload {4}{G}{G} (You may cast this spell for its overload cost. If you do, change \"target\" in its text to \"each.\")",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
 ]
 },
 "Far Wanderings": {
@@ -5037,6 +5629,28 @@
 "Creature"
 ]
 },
+"Fertile Ground": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Fertile Ground",
+"oracle": "Enchant land\nWhenever enchanted land is tapped for mana, its controller adds an additional one mana of any color.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
 "Fertilid": {
 "color_identity": "G",
 "generic": 2,
@@ -5150,6 +5764,24 @@
 "supertypes": [],
 "types": [
 "Enchantment"
+]
+},
+"Fight for the Throne": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Fight for the Throne",
+"oracle": "Put a +1/+1 counter on target creature you control. Then it fights target creature an opponent controls. When the creature an opponent controls dies this turn, if you control your commander, you become the monarch.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Finale of Devastation": {
@@ -5329,6 +5961,24 @@
 "Artifact"
 ]
 },
+"Flare of Cultivation": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}{G}",
+"mv": 3,
+"name": "Flare of Cultivation",
+"oracle": "You may sacrifice a nontoken green creature rather than pay this spell's mana cost.\nSearch your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.",
+"pips": {
+"G": 2
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
 "Flashback": {
 "color_identity": "R",
 "generic": 0,
@@ -5486,6 +6136,46 @@
 "Artifact"
 ]
 },
+"Force of Vigor": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{2}{G}{G}",
+"mv": 4,
+"name": "Force of Vigor",
+"oracle": "If it's not your turn, you may exile a green card from your hand rather than pay this spell's mana cost.\nDestroy up to two target artifacts and/or enchantments.",
+"pips": {
+"G": 2
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
+"Forced Adaptation": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Forced Adaptation",
+"oracle": "Enchant creature\nAt the beginning of your upkeep, put a +1/+1 counter on enchanted creature.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
 "Forest": {
 "color_identity": "",
 "generic": 0,
@@ -5588,6 +6278,31 @@
 ],
 "supertypes": [],
 "toughness": "2",
+"types": [
+"Creature"
+]
+},
+"Frog Butler": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Deathtouch"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Frog Butler",
+"oracle": "Deathtouch\n{T}: Add one mana of any color.\n{2}: This creature gains reach until end of turn.",
+"pips": {
+"G": 1
+},
+"power": "1",
+"subtypes": [
+"Frog",
+"Spirit"
+],
+"supertypes": [],
+"toughness": "1",
 "types": [
 "Creature"
 ]
@@ -6839,6 +7554,26 @@
 "Instant"
 ]
 },
+"Haunted Cloak": {
+"color_identity": "",
+"generic": 3,
+"keywords": [
+"Equip"
+],
+"layout": "normal",
+"mana_cost": "{3}",
+"mv": 3,
+"name": "Haunted Cloak",
+"oracle": "Equipped creature has vigilance, trample, and haste.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+"pips": {},
+"subtypes": [
+"Equipment"
+],
+"supertypes": [],
+"types": [
+"Artifact"
+]
+},
 "Haunted Mire": {
 "color_identity": "",
 "generic": 0,
@@ -7042,6 +7777,24 @@
 "Artifact"
 ]
 },
+"Heritage Reclamation": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Heritage Reclamation",
+"oracle": "Choose one —\n• Destroy target artifact.\n• Destroy target enchantment.\n• Exile up to one target card from a graveyard. Draw a card.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
 "Heroic Intervention": {
 "color_identity": "G",
 "generic": 1,
@@ -7198,6 +7951,24 @@
 "Instant"
 ]
 },
+"Hunter's Prowess": {
+"color_identity": "G",
+"generic": 4,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{4}{G}",
+"mv": 5,
+"name": "Hunter's Prowess",
+"oracle": "Until end of turn, target creature gets +3/+3 and gains trample and \"Whenever this creature deals combat damage to a player, draw that many cards.\"",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
 "Hydra's Growth": {
 "color_identity": "G",
 "generic": 2,
@@ -7316,6 +8087,22 @@
 "Artifact"
 ]
 },
+"Implement of Ferocity": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}",
+"mv": 1,
+"name": "Implement of Ferocity",
+"oracle": "{G}, Sacrifice Implement of Ferocity: Put a +1/+1 counter on target creature. Activate only as a sorcery.\nWhen Implement of Ferocity is put into a graveyard from the battlefield, draw a card.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Artifact"
+]
+},
 "Increasing Vengeance": {
 "color_identity": "R",
 "generic": 0,
@@ -7393,6 +8180,26 @@
 "supertypes": [],
 "types": [
 "Instant"
+]
+},
+"Innkeeper's Talent": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Innkeeper's Talent",
+"oracle": "(Gain the next level as a sorcery to add its ability.)\nAt the beginning of combat on your turn, put a +1/+1 counter on target creature you control.\n{G}: Level 2\nPermanents you control with counters on them have ward {1}.\n{3}{G}: Level 3\nIf you would put one or more counters on a permanent or player, put twice that many of each of those kinds of counters on that permanent or player instead.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Class"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
 ]
 },
 "Inquisitor's Flail": {
@@ -7482,6 +8289,28 @@
 "Creature"
 ]
 },
+"Instill Energy": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Instill Energy",
+"oracle": "Enchant creature\nEnchanted creature can attack as though it had haste.\n{0}: Untap enchanted creature. Activate only during your turn and only once each turn.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
 "Invigorate": {
 "color_identity": "G",
 "generic": 2,
@@ -7491,6 +8320,24 @@
 "mv": 3,
 "name": "Invigorate",
 "oracle": "If you control a Forest, rather than pay this spell's mana cost, you may have an opponent gain 3 life.\nTarget creature gets +4/+4 until end of turn.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
+"Invigorating Surge": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Invigorating Surge",
+"oracle": "Put a +1/+1 counter on target creature you control, then double the number of +1/+1 counters on that creature.",
 "pips": {
 "G": 1
 },
@@ -8090,6 +8937,26 @@
 "Enchantment"
 ]
 },
+"Legolas's Quick Reflexes": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [
+"Split second"
+],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Legolas's Quick Reflexes",
+"oracle": "Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.)\nUntap target creature. Until end of turn, it gains hexproof, reach, and \"Whenever this creature becomes tapped, it deals damage equal to its power to up to one target creature.\"",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
 "Lesser Masticore": {
 "color_identity": "",
 "generic": 2,
@@ -8153,6 +9020,26 @@
 "supertypes": [],
 "types": [
 "Artifact"
+]
+},
+"Lifestream's Blessing": {
+"color_identity": "G",
+"generic": 4,
+"keywords": [
+"Foretell"
+],
+"layout": "normal",
+"mana_cost": "{4}{G}{G}",
+"mv": 6,
+"name": "Lifestream's Blessing",
+"oracle": "Draw X cards, where X is the greatest power among creatures you controlled as you cast this spell. If this spell was cast from exile, you gain twice X life.\nForetell {4}{G} (During your turn, you may pay {2} and exile this card from your hand face down. Cast it on a later turn for its foretell cost.)",
+"pips": {
+"G": 2
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Light Up the Stage": {
@@ -8229,6 +9116,30 @@
 "supertypes": [],
 "types": [
 "Instant"
+]
+},
+"Lignify": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Lignify",
+"oracle": "Enchant creature\nEnchanted creature is a Treefolk with base power and toughness 0/4 and loses all abilities.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Treefolk",
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Kindred",
+"Enchantment"
 ]
 },
 "Liliana, Death Wielder": {
@@ -8406,6 +9317,29 @@
 ],
 "supertypes": [],
 "toughness": "1",
+"types": [
+"Creature"
+]
+},
+"Llanowar Tribe": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{G}{G}{G}",
+"mv": 3,
+"name": "Llanowar Tribe",
+"oracle": "{T}: Add {G}{G}{G}.",
+"pips": {
+"G": 3
+},
+"power": "3",
+"subtypes": [
+"Elf",
+"Druid"
+],
+"supertypes": [],
+"toughness": "3",
 "types": [
 "Creature"
 ]
@@ -8830,6 +9764,28 @@
 "Creature"
 ]
 },
+"Mark of Sakiko": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Mark of Sakiko",
+"oracle": "Enchant creature\nEnchanted creature has \"Whenever this creature deals combat damage to a player, add that much {G}. Until end of turn, you don't lose this mana as steps and phases end.\"",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
 "Mask of Memory": {
 "color_identity": "",
 "generic": 2,
@@ -8976,6 +9932,28 @@
 "toughness": "2",
 "types": [
 "Creature"
+]
+},
+"Meltstrider's Resolve": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Meltstrider's Resolve",
+"oracle": "Enchant creature you control\nWhen this Aura enters, enchanted creature fights up to one target creature an opponent controls. (Each deals damage equal to its power to the other.)\nEnchanted creature gets +0/+2 and can't be blocked by more than one creature.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
 ]
 },
 "Memorial to Glory": {
@@ -9459,6 +10437,24 @@
 "Artifact"
 ]
 },
+"Mosswort Bridge": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [
+"Hideaway"
+],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Mosswort Bridge",
+"oracle": "Hideaway 4 (When this permanent enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom of your library.)\nMosswort Bridge enters tapped.\n{T}: Add {G}.\n{G}, {T}: You may play the exiled card without paying its mana cost if creatures you control have total power 10 or greater.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Land"
+]
+},
 "Mountain": {
 "color_identity": "",
 "generic": 0,
@@ -9936,6 +10932,30 @@
 "Creature"
 ]
 },
+"Noxious Newt": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Deathtouch"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Noxious Newt",
+"oracle": "Deathtouch\n{T}: Add {G}.",
+"pips": {
+"G": 1
+},
+"power": "1",
+"subtypes": [
+"Salamander"
+],
+"supertypes": [],
+"toughness": "2",
+"types": [
+"Creature"
+]
+},
 "Nykthos, Shrine to Nyx": {
 "color_identity": "",
 "generic": 0,
@@ -9952,6 +10972,43 @@
 ],
 "types": [
 "Land"
+]
+},
+"Oakhollow Village": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Oakhollow Village",
+"oracle": "{T}: Add {C}.\n{T}: Add {G}. Spend this mana only to cast a creature spell.\n{G}, {T}: Put a +1/+1 counter on each Frog, Rabbit, Raccoon, or Squirrel you control that entered the battlefield this turn.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Land"
+]
+},
+"Oasis Gardener": {
+"color_identity": "",
+"generic": 3,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{3}",
+"mv": 3,
+"name": "Oasis Gardener",
+"oracle": "When Oasis Gardener enters, you gain 2 life.\n{T}: Add one mana of any color.",
+"pips": {},
+"power": "2",
+"subtypes": [
+"Scarecrow"
+],
+"supertypes": [],
+"toughness": "2",
+"types": [
+"Artifact",
+"Creature"
 ]
 },
 "Ob Nixilis, the Ascended": {
@@ -10003,6 +11060,24 @@
 "toughness": "4",
 "types": [
 "Creature"
+]
+},
+"Obscuring Haze": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Obscuring Haze",
+"oracle": "If you control a commander, you may cast this spell without paying its mana cost.\nPrevent all damage that would be dealt this turn by creatures your opponents control.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Oft-Nabbed Goat": {
@@ -10094,6 +11169,46 @@
 "Creature"
 ]
 },
+"Okina, Temple to the Grandfathers": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Okina, Temple to the Grandfathers",
+"oracle": "{T}: Add {G}.\n{G}, {T}: Target legendary creature gets +1/+1 until end of turn.",
+"pips": {},
+"subtypes": [],
+"supertypes": [
+"Legendary"
+],
+"types": [
+"Land"
+]
+},
+"One with Nature": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "One with Nature",
+"oracle": "Enchant creature\nWhenever enchanted creature deals combat damage to a player, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
 "Ophiomancer": {
 "color_identity": "B",
 "generic": 2,
@@ -10131,6 +11246,29 @@
 "supertypes": [],
 "types": [
 "Land"
+]
+},
+"Ouroboroid": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{2}{G}{G}",
+"mv": 4,
+"name": "Ouroboroid",
+"oracle": "At the beginning of combat on your turn, put X +1/+1 counters on each creature you control, where X is this creature's power.",
+"pips": {
+"G": 2
+},
+"power": "1",
+"subtypes": [
+"Plant",
+"Wurm"
+],
+"supertypes": [],
+"toughness": "3",
+"types": [
+"Creature"
 ]
 },
 "Overgrown Tomb": {
@@ -10208,6 +11346,28 @@
 "supertypes": [],
 "types": [
 "Instant"
+]
+},
+"Ozolith, the Shattered Spire": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Cycling"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Ozolith, the Shattered Spire",
+"oracle": "If one or more +1/+1 counters would be put on an artifact or creature you control, that many plus one +1/+1 counters are put on it instead.\n{1}{G}, {T}: Put a +1/+1 counter on target artifact or creature you control. Activate only as a sorcery.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [
+"Legendary"
+],
+"types": [
+"Artifact"
 ]
 },
 "Painful Truths": {
@@ -10686,6 +11846,30 @@
 "Instant"
 ]
 },
+"Poison Dart Frog": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Reach"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Poison Dart Frog",
+"oracle": "Reach\n{T}: Add one mana of any color.\n{2}: Poison Dart Frog gains deathtouch until end of turn.",
+"pips": {
+"G": 1
+},
+"power": "1",
+"subtypes": [
+"Frog"
+],
+"supertypes": [],
+"toughness": "1",
+"types": [
+"Creature"
+]
+},
 "Poison-Tip Archer": {
 "color_identity": "BG",
 "generic": 2,
@@ -10736,6 +11920,42 @@
 "Creature"
 ]
 },
+"Polliwallop": {
+"color_identity": "G",
+"generic": 3,
+"keywords": [
+"Affinity"
+],
+"layout": "normal",
+"mana_cost": "{3}{G}",
+"mv": 4,
+"name": "Polliwallop",
+"oracle": "Affinity for Frogs (This spell costs {1} less to cast for each Frog you control.)\nTarget creature you control deals damage equal to twice its power to target creature you don't control.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
+"Potioner's Trove": {
+"color_identity": "",
+"generic": 3,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{3}",
+"mv": 3,
+"name": "Potioner's Trove",
+"oracle": "{T}: Add one mana of any color.\n{T}: You gain 2 life. Activate only if you've cast an instant or sorcery spell this turn.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Artifact"
+]
+},
 "Power Fist": {
 "color_identity": "G",
 "generic": 1,
@@ -10774,6 +11994,46 @@
 "supertypes": [],
 "types": [
 "Instant"
+]
+},
+"Predatory Hunger": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Predatory Hunger",
+"oracle": "Enchant creature\nWhenever an opponent casts a creature spell, put a +1/+1 counter on enchanted creature.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
+"Prey Upon": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Prey Upon",
+"oracle": "Target creature you control fights target creature you don't control. (Each deals damage equal to its power to the other.)",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
 ]
 },
 "Price of Progress": {
@@ -10925,6 +12185,24 @@
 "supertypes": [],
 "types": [
 "Enchantment"
+]
+},
+"Prizefight": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Prizefight",
+"oracle": "Target creature you control fights target creature you don't control. (Each deals damage equal to its power to the other.)\nCreate a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Profane Tutor": {
@@ -11143,6 +12421,24 @@
 "Artifact"
 ]
 },
+"Rabid Bite": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Rabid Bite",
+"oracle": "Target creature you control deals damage equal to its power to target creature you don't control.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
 "Radiant Fountain": {
 "color_identity": "",
 "generic": 0,
@@ -11157,6 +12453,28 @@
 "supertypes": [],
 "types": [
 "Land"
+]
+},
+"Raised by Giants": {
+"color_identity": "G",
+"generic": 5,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{5}{G}",
+"mv": 6,
+"name": "Raised by Giants",
+"oracle": "Commander creatures you own have base power and toughness 10/10 and are Giants in addition to their other types.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Background"
+],
+"supertypes": [
+"Legendary"
+],
+"types": [
+"Enchantment"
 ]
 },
 "Rakdos Carnarium": {
@@ -11191,6 +12509,30 @@
 "supertypes": [],
 "types": [
 "Instant"
+]
+},
+"Rampant Frogantua": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [
+"Trample"
+],
+"layout": "normal",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Rampant Frogantua",
+"oracle": "Trample\nRampant Frogantua gets +10/+10 for each player who has lost the game.\nWhenever Rampant Frogantua deals combat damage to a player, you may mill that many cards. Put any number of land cards from among them onto the battlefield tapped.",
+"pips": {
+"G": 1
+},
+"power": "3",
+"subtypes": [
+"Frog"
+],
+"supertypes": [],
+"toughness": "3",
+"types": [
+"Creature"
 ]
 },
 "Rampant Growth": {
@@ -11320,6 +12662,29 @@
 "Sorcery"
 ]
 },
+"Reclamation Sage": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Reclamation Sage",
+"oracle": "When Reclamation Sage enters, you may destroy target artifact or enchantment.",
+"pips": {
+"G": 1
+},
+"power": "2",
+"subtypes": [
+"Elf",
+"Shaman"
+],
+"supertypes": [],
+"toughness": "1",
+"types": [
+"Creature"
+]
+},
 "Redirect Lightning": {
 "color_identity": "R",
 "generic": 0,
@@ -11340,6 +12705,24 @@
 "supertypes": [],
 "types": [
 "Instant"
+]
+},
+"Regrowth": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Regrowth",
+"oracle": "Return target card from your graveyard to your hand.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
 ]
 },
 "Reiterate": {
@@ -11593,6 +12976,24 @@
 "Creature"
 ]
 },
+"Ride the Shoopuf": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Ride the Shoopuf",
+"oracle": "Landfall — Whenever a land you control enters, put a +1/+1 counter on target creature you control.\n{5}{G}{G}: This enchantment becomes a 7/7 Beast creature in addition to its other types.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
 "Righteous Valkyrie": {
 "color_identity": "W",
 "generic": 2,
@@ -11718,6 +13119,24 @@
 "Land"
 ]
 },
+"Root Snare": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Root Snare",
+"oracle": "Prevent all combat damage that would be dealt this turn.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
 "Rootbound Crag": {
 "color_identity": "RG",
 "generic": 0,
@@ -11748,6 +13167,24 @@
 "supertypes": [],
 "types": [
 "Artifact"
+]
+},
+"Run Over": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Run Over",
+"oracle": "This spell costs {1} less to cast if it targets a Mount or Vehicle you control.\nTarget creature you control deals damage equal to its power to target creature an opponent controls.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Runaway Steam-Kin": {
@@ -12029,6 +13466,30 @@
 "Creature"
 ]
 },
+"Scythecat Cub": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Trample"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Scythecat Cub",
+"oracle": "Trample\nLandfall — Whenever a land you control enters, put a +1/+1 counter on target creature you control. If this is the second time this ability has resolved this turn, double the number of +1/+1 counters on that creature instead.",
+"pips": {
+"G": 1
+},
+"power": "2",
+"subtypes": [
+"Cat"
+],
+"supertypes": [],
+"toughness": "2",
+"types": [
+"Creature"
+]
+},
 "Search the Premises": {
 "color_identity": "W",
 "generic": 3,
@@ -12063,6 +13524,24 @@
 "supertypes": [],
 "types": [
 "Instant"
+]
+},
+"Season of Gathering": {
+"color_identity": "G",
+"generic": 4,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{4}{G}{G}",
+"mv": 6,
+"name": "Season of Gathering",
+"oracle": "Choose up to five {P} worth of modes. You may choose the same mode more than once.\n{P} — Put a +1/+1 counter on a creature you control. It gains vigilance and trample until end of turn.\n{P}{P} — Choose artifact or enchantment. Destroy all permanents of the chosen type.\n{P}{P}{P} — Draw cards equal to the greatest power among creatures you control.",
+"pips": {
+"G": 2
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
 ]
 },
 "Season of Growth": {
@@ -12182,6 +13661,28 @@
 "toughness": "1",
 "types": [
 "Creature"
+]
+},
+"Seismic Tutelage": {
+"color_identity": "G",
+"generic": 3,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{3}{G}",
+"mv": 4,
+"name": "Seismic Tutelage",
+"oracle": "Enchant creature\nWhen this Aura enters, put a +1/+1 counter on enchanted creature.\nWhenever enchanted creature attacks, double the number of +1/+1 counters on it.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
 ]
 },
 "Seize the Spoils": {
@@ -12505,6 +14006,26 @@
 "Artifact"
 ]
 },
+"Shared Roots": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Shared Roots",
+"oracle": "Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Lesson"
+],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
 "Shatterskull Smashing": {
 "color_identity": "R",
 "faces": [
@@ -12556,6 +14077,22 @@
 "Mountain",
 "Forest"
 ],
+"supertypes": [],
+"types": [
+"Land"
+]
+},
+"Shifting Woodland": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Shifting Woodland",
+"oracle": "Shifting Woodland enters tapped unless you control a Forest.\n{T}: Add {G}.\nDelirium — {2}{G}{G}: Shifting Woodland becomes a copy of target permanent card in your graveyard until end of turn. Activate only if there are four or more card types among cards in your graveyard.",
+"pips": {},
+"subtypes": [],
 "supertypes": [],
 "types": [
 "Land"
@@ -12756,6 +14293,29 @@
 "subtypes": [
 "Ape",
 "Spirit"
+],
+"supertypes": [],
+"toughness": "2",
+"types": [
+"Creature"
+]
+},
+"Simulacrum Shaper": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}{G}",
+"mv": 3,
+"name": "Simulacrum Shaper",
+"oracle": "When this creature enters, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.\nWhen this creature dies, draw a card.",
+"pips": {
+"G": 2
+},
+"power": "2",
+"subtypes": [
+"Elf",
+"Druid"
 ],
 "supertypes": [],
 "toughness": "2",
@@ -13158,6 +14718,24 @@
 "Creature"
 ]
 },
+"Soul's Majesty": {
+"color_identity": "G",
+"generic": 4,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{4}{G}",
+"mv": 5,
+"name": "Soul's Majesty",
+"oracle": "Draw cards equal to the power of target creature you control.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Sorcery"
+]
+},
 "Spawning Pit": {
 "color_identity": "",
 "generic": 2,
@@ -13484,6 +15062,26 @@
 "Creature"
 ]
 },
+"Strata Scythe": {
+"color_identity": "",
+"generic": 3,
+"keywords": [
+"Equip"
+],
+"layout": "normal",
+"mana_cost": "{3}",
+"mv": 3,
+"name": "Strata Scythe",
+"oracle": "Imprint — When Strata Scythe enters, search your library for a land card, exile it, then shuffle.\nEquipped creature gets +1/+1 for each land on the battlefield with the same name as the exiled card.\nEquip {3}",
+"pips": {},
+"subtypes": [
+"Equipment"
+],
+"supertypes": [],
+"types": [
+"Artifact"
+]
+},
 "Strike It Rich": {
 "color_identity": "R",
 "generic": 0,
@@ -13549,6 +15147,22 @@
 "Creature"
 ]
 },
+"Study Hall": {
+"color_identity": "",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Study Hall",
+"oracle": "{T}: Add {C}.\n{1}, {T}: Add one mana of any color. When you spend this mana to cast your commander, scry X, where X is the number of times it's been cast from the command zone this game.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Land"
+]
+},
 "Sunblast Angel": {
 "color_identity": "W",
 "generic": 4,
@@ -13606,6 +15220,28 @@
 "supertypes": [],
 "types": [
 "Sorcery"
+]
+},
+"Super State": {
+"color_identity": "",
+"generic": 7,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{7}",
+"mv": 7,
+"name": "Super State",
+"oracle": "Enchant creature you control\nEnchanted creature has base power and toughness 9/9 and has flying, first strike, trample, and haste.\nWhenever enchanted creature deals combat damage to an opponent, it deals that much damage to each other opponent.",
+"pips": {},
+"subtypes": [
+"Aura"
+],
+"supertypes": [
+"Legendary"
+],
+"types": [
+"Enchantment"
 ]
 },
 "Support Mission": {
@@ -13755,6 +15391,26 @@
 "mv": 3,
 "name": "Sword of Truth and Justice",
 "oracle": "Equipped creature gets +2/+2 and has protection from white and from blue.\nWhenever equipped creature deals combat damage to a player, put a +1/+1 counter on a creature you control, then proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)\nEquip {2}",
+"pips": {},
+"subtypes": [
+"Equipment"
+],
+"supertypes": [],
+"types": [
+"Artifact"
+]
+},
+"Sword of Vengeance": {
+"color_identity": "",
+"generic": 3,
+"keywords": [
+"Equip"
+],
+"layout": "normal",
+"mana_cost": "{3}",
+"mv": 3,
+"name": "Sword of Vengeance",
+"oracle": "Equipped creature gets +2/+0 and has first strike, vigilance, trample, and haste.\nEquip {3}",
 "pips": {},
 "subtypes": [
 "Equipment"
@@ -13988,6 +15644,46 @@
 "Instant"
 ]
 },
+"Tangle": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Tangle",
+"oracle": "Prevent all combat damage that would be dealt this turn.\nEach attacking creature doesn't untap during its controller's next untap step.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
+"Tanglespan Lookout": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Tanglespan Lookout",
+"oracle": "Whenever an Aura you control enters, draw a card.",
+"pips": {
+"G": 1
+},
+"power": "2",
+"subtypes": [
+"Satyr"
+],
+"supertypes": [],
+"toughness": "3",
+"types": [
+"Creature"
+]
+},
 "Tanuki Transplanter": {
 "color_identity": "G",
 "generic": 3,
@@ -14196,6 +15892,24 @@
 "Land"
 ]
 },
+"Terrasymbiosis": {
+"color_identity": "G",
+"generic": 2,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{2}{G}",
+"mv": 3,
+"name": "Terrasymbiosis",
+"oracle": "Whenever you put one or more +1/+1 counters on a creature you control, you may draw that many cards. Do this only once each turn.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
 "Test of Courage": {
 "color_identity": "G",
 "generic": 0,
@@ -14230,6 +15944,28 @@
 "supertypes": [],
 "types": [
 "Sorcery"
+]
+},
+"The Aetherspark": {
+"color_identity": "",
+"generic": 4,
+"keywords": [],
+"layout": "normal",
+"loyalty": "4",
+"mana_cost": "{4}",
+"mv": 4,
+"name": "The Aetherspark",
+"oracle": "As long as The Aetherspark is attached to a creature, The Aetherspark can't be attacked and has \"Whenever equipped creature deals combat damage during your turn, put that many loyalty counters on The Aetherspark.\"\n[+1]: Attach The Aetherspark to up to one target creature you control. Put a +1/+1 counter on that creature.\n[-5]: Draw two cards.\n[-10]: Add ten mana of any one color.",
+"pips": {},
+"subtypes": [
+"Equipment"
+],
+"supertypes": [
+"Legendary"
+],
+"types": [
+"Artifact",
+"Planeswalker"
 ]
 },
 "The Earth Crystal": {
@@ -14321,6 +16057,26 @@
 "toughness": "5",
 "types": [
 "Creature"
+]
+},
+"The Great Henge": {
+"color_identity": "G",
+"generic": 7,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{7}{G}{G}",
+"mv": 9,
+"name": "The Great Henge",
+"oracle": "This spell costs {X} less to cast, where X is the greatest power among creatures you control.\n{T}: Add {G}{G}. You gain 2 life.\nWhenever a nontoken creature you control enters, put a +1/+1 counter on it and draw a card.",
+"pips": {
+"G": 2
+},
+"subtypes": [],
+"supertypes": [
+"Legendary"
+],
+"types": [
+"Artifact"
 ]
 },
 "The Meathook Massacre": {
@@ -14438,6 +16194,24 @@
 "toughness": "3",
 "types": [
 "Creature"
+]
+},
+"Thickest in the Thicket": {
+"color_identity": "G",
+"generic": 3,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{3}{G}{G}",
+"mv": 5,
+"name": "Thickest in the Thicket",
+"oracle": "When Thickest in the Thicket enters, put X +1/+1 counters on target creature, where X is that creature's power.\nAt the beginning of your end step, draw two cards if you control the creature with the greatest power or tied for the greatest power.",
+"pips": {
+"G": 2
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Enchantment"
 ]
 },
 "Thought Vessel": {
@@ -14666,6 +16440,26 @@
 "toughness": "3",
 "types": [
 "Creature"
+]
+},
+"Tifa's Limit Break": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [
+"Tiered"
+],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Tifa's Limit Break",
+"oracle": "Tiered (Choose one additional cost.)\n• Somersault — {0} — Target creature gets +2/+2 until end of turn.\n• Meteor Strikes — {2} — Double target creature's power and toughness until end of turn.\n• Final Heaven — {6}{G} — Triple target creature's power and toughness until end of turn.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Tireless Provisioner": {
@@ -15066,6 +16860,29 @@
 "Instant"
 ]
 },
+"Ulvenwald Tracker": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Ulvenwald Tracker",
+"oracle": "{1}{G}, {T}: Target creature you control fights another target creature.",
+"pips": {
+"G": 1
+},
+"power": "1",
+"subtypes": [
+"Human",
+"Shaman"
+],
+"supertypes": [],
+"toughness": "1",
+"types": [
+"Creature"
+]
+},
 "Umbral Collar Zealot": {
 "color_identity": "B",
 "generic": 1,
@@ -15247,6 +17064,25 @@
 "Creature"
 ]
 },
+"Urza's Cave": {
+"color_identity": "",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Urza's Cave",
+"oracle": "{T}: Add {C}.\n{3}, {T}, Sacrifice Urza's Cave: Search your library for a land card, put it onto the battlefield tapped, then shuffle.",
+"pips": {},
+"subtypes": [
+"Urza's",
+"Cave"
+],
+"supertypes": [],
+"types": [
+"Land"
+]
+},
 "Urza's Incubator": {
 "color_identity": "",
 "generic": 3,
@@ -15261,6 +17097,26 @@
 "supertypes": [],
 "types": [
 "Artifact"
+]
+},
+"Urza's Saga": {
+"color_identity": "",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Urza's Saga",
+"oracle": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Urza's Saga gains \"{T}: Add {C}.\"\nII — Urza's Saga gains \"{2}, {T}: Create a 0/0 colorless Construct artifact creature token with 'This token gets +1/+1 for each artifact you control.'\"\nIII — Search your library for an artifact card with mana cost {0} or {1}, put it onto the battlefield, then shuffle.",
+"pips": {},
+"subtypes": [
+"Urza's",
+"Saga"
+],
+"supertypes": [],
+"types": [
+"Enchantment",
+"Land"
 ]
 },
 "Utopia Sprawl": {
@@ -15467,6 +17323,41 @@
 "Artifact"
 ]
 },
+"Vastwood Fortification": {
+"color_identity": "G",
+"faces": [
+{
+"generic": 0,
+"keywords": [],
+"mana_cost": null,
+"mv": 0,
+"name": "Vastwood Thicket",
+"oracle": "Vastwood Thicket enters tapped.\n{T}: Add {G}.",
+"pips": {},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Land"
+]
+}
+],
+"full_name": "Vastwood Fortification // Vastwood Thicket",
+"generic": 0,
+"keywords": [],
+"layout": "modal_dfc",
+"mana_cost": "{G}",
+"mv": 1,
+"name": "Vastwood Fortification",
+"oracle": "Put a +1/+1 counter on target creature.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
+]
+},
 "Veil of Summer": {
 "color_identity": "G",
 "generic": 0,
@@ -15573,6 +17464,29 @@
 "Enchantment"
 ]
 },
+"Verdant Kraken": {
+"color_identity": "G",
+"generic": 4,
+"keywords": [],
+"layout": "normal",
+"mana_cost": "{4}{G}{G}{G}",
+"mv": 7,
+"name": "Verdant Kraken",
+"oracle": "At the beginning of each player's upkeep, you create a 3/3 green Forest Tentacle land creature token. (It has \"{T}: Add {G}.\" It's affected by summoning sickness until your next turn.)",
+"pips": {
+"G": 3
+},
+"power": "6",
+"subtypes": [
+"Plant",
+"Kraken"
+],
+"supertypes": [],
+"toughness": "6",
+"types": [
+"Creature"
+]
+},
 "Verduran Enchantress": {
 "color_identity": "G",
 "generic": 1,
@@ -15615,6 +17529,27 @@
 "Land"
 ]
 },
+"Vibranium Strike Gauntlets": {
+"color_identity": "",
+"generic": 4,
+"keywords": [
+"Equip",
+"Flash"
+],
+"layout": "normal",
+"mana_cost": "{4}",
+"mv": 4,
+"name": "Vibranium Strike Gauntlets",
+"oracle": "Flash\nWhen this Equipment enters, attach it to target creature you control.\nEquipped creature gets +3/+0 and has trample and \"Whenever this creature deals combat damage to a player, draw a card.\"\nEquip {3}",
+"pips": {},
+"subtypes": [
+"Equipment"
+],
+"supertypes": [],
+"types": [
+"Artifact"
+]
+},
 "Vicious Rivalry": {
 "color_identity": "BG",
 "generic": 2,
@@ -15650,6 +17585,31 @@
 "supertypes": [],
 "types": [
 "Sorcery"
+]
+},
+"Vigor": {
+"color_identity": "G",
+"generic": 3,
+"keywords": [
+"Trample"
+],
+"layout": "normal",
+"mana_cost": "{3}{G}{G}{G}",
+"mv": 6,
+"name": "Vigor",
+"oracle": "Trample\nIf damage would be dealt to another creature you control, prevent that damage. Put a +1/+1 counter on that creature for each 1 damage prevented this way.\nWhen Vigor is put into a graveyard from anywhere, shuffle it into its owner's library.",
+"pips": {
+"G": 3
+},
+"power": "6",
+"subtypes": [
+"Elemental",
+"Incarnation"
+],
+"supertypes": [],
+"toughness": "6",
+"types": [
+"Creature"
 ]
 },
 "Village Pillagers": {
@@ -15921,6 +17881,28 @@
 "Artifact"
 ]
 },
+"Well Rested": {
+"color_identity": "G",
+"generic": 1,
+"keywords": [
+"Enchant"
+],
+"layout": "normal",
+"mana_cost": "{1}{G}",
+"mv": 2,
+"name": "Well Rested",
+"oracle": "Enchant creature\nEnchanted creature has \"Whenever this creature becomes untapped, put two +1/+1 counters on it, then you gain 2 life and draw a card. This ability triggers only once each turn.\"",
+"pips": {
+"G": 1
+},
+"subtypes": [
+"Aura"
+],
+"supertypes": [],
+"types": [
+"Enchantment"
+]
+},
 "Wheel of Misfortune": {
 "color_identity": "R",
 "generic": 2,
@@ -16088,6 +18070,26 @@
 "supertypes": [],
 "types": [
 "Enchantment"
+]
+},
+"Wild Onslaught": {
+"color_identity": "G",
+"generic": 3,
+"keywords": [
+"Kicker"
+],
+"layout": "normal",
+"mana_cost": "{3}{G}",
+"mv": 4,
+"name": "Wild Onslaught",
+"oracle": "Kicker {4} (You may pay an additional {4} as you cast this spell.)\nPut a +1/+1 counter on each creature you control. If this spell was kicked, put two +1/+1 counters on each creature you control instead.",
+"pips": {
+"G": 1
+},
+"subtypes": [],
+"supertypes": [],
+"types": [
+"Instant"
 ]
 },
 "Will of the Jeskai": {
@@ -16449,6 +18451,24 @@
 "Creature"
 ]
 },
+"Yavimaya Hollow": {
+"color_identity": "G",
+"generic": 0,
+"keywords": [],
+"layout": "normal",
+"mana_cost": null,
+"mv": 0,
+"name": "Yavimaya Hollow",
+"oracle": "{T}: Add {C}.\n{G}, {T}: Regenerate target creature.",
+"pips": {},
+"subtypes": [],
+"supertypes": [
+"Legendary"
+],
+"types": [
+"Land"
+]
+},
 "Yavimaya, Cradle of Growth": {
 "color_identity": "",
 "generic": 0,
@@ -16566,6 +18586,33 @@
 "supertypes": [],
 "types": [
 "Land"
+]
+},
+"Zopandrel, Hunger Dominus": {
+"color_identity": "G",
+"generic": 5,
+"keywords": [
+"Reach"
+],
+"layout": "normal",
+"mana_cost": "{5}{G}{G}",
+"mv": 7,
+"name": "Zopandrel, Hunger Dominus",
+"oracle": "Reach\nAt the beginning of each combat, double the power and toughness of each creature you control until end of turn.\n{G/P}{G/P}, Sacrifice two other creatures: Put an indestructible counter on Zopandrel, Hunger Dominus. ({G/P} can be paid with either {G} or 2 life.)",
+"pips": {
+"G": 2
+},
+"power": "4",
+"subtypes": [
+"Phyrexian",
+"Horror"
+],
+"supertypes": [
+"Legendary"
+],
+"toughness": "6",
+"types": [
+"Creature"
 ]
 },
 "Zulaport Cutthroat": {

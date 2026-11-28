@@ -574,6 +574,43 @@ def lotus_bloom_llega_en_tres_mantenimientos():
     g.upkeep(); g.upkeep(); assert g.treas == t0
     g.upkeep(); assert g.treas == t0 + 3
 
+# 24/11: candidatas de EDHREC
+@test
+def force_of_vigor_no_guarda_mana():
+    g = g0(); g.hand = ["Force of Vigor", "Rancor"]
+    assert g.hold_amount() == 0
+    g.hand = ["Force of Vigor"]
+    assert g.hold_amount() == 4
+
+@test
+def force_of_vigor_no_exilia_a_blor():
+    g = g0(); g._our = False; g.hand = ["Force of Vigor", B]
+    assert g.cost_of("Force of Vigor") == (2, 2)
+
+@test
+def great_henge_da_dos_verdes():
+    g = g0(mode="goldfish"); g.arts.append(dict(name="The Great Henge", used=False))
+    for l in g.lands: l["tapped_entry"] = True
+    g.compute_pool(); assert g.W == 2
+
+@test
+def command_beacon_sin_impuesto():
+    g = g0(); g.blor = None; g.blor_zone = "cmd"; g.tax = 4
+    g.lands.append(dict(name="Command Beacon", aura=0, dep=0, tapped_entry=False))
+    assert g.utilities_edhrec(0) and B in g.hand and g.cost_of(B) == (3, 2)
+
+@test
+def super_state_base_nueve_y_salpica():
+    g = g0(); g.auras.append("Super State"); g.blor.counters = 1
+    assert g.power() == 10
+    o = list(g.opp); g._combat_hit = True; g.resolve_hits(0, 0, False, 1)
+    assert g.opp[0] == o[0] - 10 and g.opp[1] == o[1] - 10 and g.cmd[1] == 0
+
+@test
+def court_duplica_si_eres_monarca():
+    g = g0(mode="goldfish"); g.enchs.append("Court of Garenbrig"); g.monarch = True; g.blor.counters = 1
+    g.upkeep(); assert g.blor.counters == 6
+
 if __name__ == "__main__":
     ok = 0
     for f in T:
