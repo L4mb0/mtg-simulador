@@ -246,10 +246,10 @@ DECKS["Blor física + Gorma"] = swap_many(DECKS["Blor física armada"],
 # 27/11 noche (Juan): Buster Sword (suya) por Helm of Awakening y Hydra's Growth (encontrada) por Efflorescence.
 DECKS["Blor física 27/11"] = swap_many(DECKS["Blor física + Gorma"],
     ["Helm of Awakening", "Efflorescence"], ["Buster Sword", "Hydra's Growth"])
-# 27/11 23:00 (Juan consiguió Harmonize): entra por Heroic Intervention (+1,1 en B2; por Goobbue +0,6).
-DECKS["Blor física 27/11b"] = swap_many(DECKS["Blor física 27/11"], ["Heroic Intervention"], ["Harmonize"])
+# 27/11 23:00 (Juan consiguió Harmonize): la metió por Goobbue Gardener (+0,6 en B2; por Heroic era +1,1).
+DECKS["Blor física 27/11b"] = swap_many(DECKS["Blor física 27/11"], ["Goobbue Gardener"], ["Harmonize"])
 DECKS["Blor física paso 1"] = swap_many(DECKS["Blor física 27/11b"],
-    ["Goobbue Gardener", "Pollenbright Druid", "Conqueror's Flail",
+    ["Heroic Intervention", "Pollenbright Druid", "Conqueror's Flail",
      "Wild Onslaught", "Gemhide Sliver", "Satyr Grovedancer", "Study Hall"],
     ["Keen Sense", "Avarice Amulet", "Hunter's Insight",
      "Rishkar's Expertise", "Thickest in the Thicket", "Court of Garenbrig", "War Room"])
