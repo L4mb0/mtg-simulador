@@ -243,8 +243,11 @@ DECKS["Blor física + Gorma"] = swap_many(DECKS["Blor física armada"],
     ["Twitching Doll", "Selvala, Heart of the Wilds", "Traverse the Outlands"])
 # Plan v2 (27/11, Juan: "el primer paso enfocado en card draw"). Mismos ins/outs que el plan del 27/11,
 # reordenados: el robo va primero. El paso 8 = Blor 1.8.
-DECKS["Blor física paso 1"] = swap_many(DECKS["Blor física + Gorma"],
-    ["Helm of Awakening", "Pollenbright Druid", "Goobbue Gardener", "Conqueror's Flail",
+# 27/11 noche (Juan): Buster Sword (suya) por Helm of Awakening y Hydra's Growth (encontrada) por Efflorescence.
+DECKS["Blor física 27/11"] = swap_many(DECKS["Blor física + Gorma"],
+    ["Helm of Awakening", "Efflorescence"], ["Buster Sword", "Hydra's Growth"])
+DECKS["Blor física paso 1"] = swap_many(DECKS["Blor física 27/11"],
+    ["Heroic Intervention", "Pollenbright Druid", "Goobbue Gardener", "Conqueror's Flail",
      "Wild Onslaught", "Gemhide Sliver", "Satyr Grovedancer", "Study Hall"],
     ["Keen Sense", "Avarice Amulet", "Harmonize", "Hunter's Insight",
      "Rishkar's Expertise", "Thickest in the Thicket", "Court of Garenbrig", "War Room"])
@@ -254,10 +257,10 @@ DECKS["Blor física paso 2"] = swap_many(DECKS["Blor física paso 1"],
     ["Level Up", "Lion Umbra", "Forgotten Ancient", "Short Bow",
      "Bugenhagen, Wise Elder", "Beast Within", "Nature's Claim"])
 DECKS["Blor física paso 3"] = swap_many(DECKS["Blor física paso 2"],
-    ["Selvala, Heart of the Wilds", "Heroic Intervention", "Traverse the Outlands", "Thrashing Brontodon",
-     "Silken Strength", "Stony Strength", "Efflorescence", "Hexhaven Invigorator"],
-    ["Bone Sabres", "Staff of Titania", "Hydra's Growth", "Strong Back",
-     "Crystalline Armor", "Indomitable Might", "Fireshrieker", "Ancestral Mask"])
+    ["Selvala, Heart of the Wilds", "Colossus Hammer", "Traverse the Outlands", "Thrashing Brontodon",
+     "Silken Strength", "Stony Strength", "Hexhaven Invigorator"],
+    ["Bone Sabres", "Staff of Titania", "Fireshrieker", "Strong Back",
+     "Crystalline Armor", "Indomitable Might", "Ancestral Mask"])
 DECKS["Blor física paso 4"] = swap_many(DECKS["Blor física paso 3"],
     ["Twitching Doll", "Oasis Gardener", "Coalition Relic", "Moss Diamond",
      "Fertilid", "Elvish Rejuvenator", "Prey Upon", "Rabid Bite"],
@@ -273,5 +276,5 @@ DECKS["Blor física paso 7"] = swap_many(DECKS["Blor física paso 6"],
     ["Zopandrel, Hunger Dominus", "Access Tunnel", "Command Tower", "Forest", "Roiling Canopy", "Forest"],
     ["Commander's Plate", "Talon Gates of Madara", "Dryad Arbor", "Reliquary Tower", "Witch's Clinic", "Rogue's Passage"])
 DECKS["Blor física paso 8"] = swap_many(DECKS["Blor física paso 7"],
-    ["Colossus Hammer", "Forest", "Forest", "Forest"],
-    ["Buster Sword", "Nykthos, Shrine to Nyx", "Boseiju, Who Endures", "Yavimaya, Cradle of Growth"])
+    ["Forest", "Forest", "Forest"],
+    ["Nykthos, Shrine to Nyx", "Boseiju, Who Endures", "Yavimaya, Cradle of Growth"])
